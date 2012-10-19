@@ -1,9 +1,10 @@
-<!DOCTYPE html>
-<html>
-<head>
-    <title></title>
-</head>
-<body>
-    Editando Perfil
-</body>
-</html>
+{% extends "base.html" %}
+{% block title %}Edición de Perfil{% endblock %}
+{% block content %}
+    <table>
+        <form method='post' action='' enctype="multipart/form-data">{% csrf_token %}
+            {{ profile_form }}
+            <tr><td></td><td><input type="submit" value="Actualizar tu Perfil" /></td>
+        </form>
+    </table>
+{% endblock %}
