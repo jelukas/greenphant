@@ -1,4 +1,5 @@
 from django.db import models
+from django.conf import settings
 from django.contrib.auth.models import User
 from django.db.models.signals import post_save
 import os
@@ -9,7 +10,7 @@ import os
 class Profile(models.Model):
     user = models.OneToOneField(User,unique=True)
     description = models.TextField(blank=False)
-    image = models.ImageField(upload_to=os.path.dirname(os.path.realpath(__file__))+'/media/profile_images',blank=True)
+    image = models.ImageField(upload_to='profile_images',blank=True)
     country = models.CharField(max_length=250,blank=True)
     state = models.CharField(max_length=250,blank=True)
     address = models.CharField(max_length=250,blank=True)

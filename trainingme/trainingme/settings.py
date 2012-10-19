@@ -51,12 +51,12 @@ USE_TZ = True
 
 # Absolute filesystem path to the directory that will hold user-uploaded files.
 # Example: "/home/media/media.lawrence.com/media/"
-MEDIA_ROOT = ''
+MEDIA_ROOT = '/home/luks/Escritorio/django/estable/greenphant/trainingme/media/'
 
 # URL that handles the media served from MEDIA_ROOT. Make sure to use a
 # trailing slash.
 # Examples: "http://media.lawrence.com/media/", "http://example.com/media/"
-MEDIA_URL =  SITE_URL
+MEDIA_URL = '/media/'
 
 # Absolute path to the directory static files should be collected to.
 # Don't put anything in this directory yourself; store your static files
@@ -80,7 +80,7 @@ STATICFILES_DIRS = (
 STATICFILES_FINDERS = (
     'django.contrib.staticfiles.finders.FileSystemFinder',
     'django.contrib.staticfiles.finders.AppDirectoriesFinder',
-#    'django.contrib.staticfiles.finders.DefaultStorageFinder',
+    'django.contrib.staticfiles.finders.DefaultStorageFinder',
 )
 
 # Make this unique, and don't share it with anybody.
@@ -168,7 +168,7 @@ ACCOUNT_ACTIVATION_DAYS = 7 # One-week activation window; you may, of course, us
 
 EMAIL_HOST = 'smtp.gmail.com'
 EMAIL_PORT = 587
-EMAIL_HOST_USER ='mail@gmail.com'
+EMAIL_HOST_USER ='email@gmail.com'
 EMAIL_HOST_PASSWORD = 'pass'
 EMAIL_USE_TLS = True
 
@@ -177,4 +177,4 @@ Para indicar que este modelo es el modelo de
  perfil de usuario para un sitio determinado, rellene el AUTH_PROFILE_MODULE
   ajuste con una cadena que consta de los siguientes elementos, separados por un punto: nombre_aplicacion.Modelo_del_perfil
  """
- #AUTH_PROFILE_MODULE = 'pitapp.Profile'
+AUTH_PROFILE_MODULE = 'personal.Profile'
