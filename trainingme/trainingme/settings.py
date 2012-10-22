@@ -129,6 +129,8 @@ INSTALLED_APPS = (
     'registration',
     'widget_tweaks',
     'personal',
+    'financial',
+    'elearning',
 )
 
 # A sample logging configuration. The only tangible logging

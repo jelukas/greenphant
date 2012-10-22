@@ -25,7 +25,7 @@ class Status(models.Model):
 
 #Course model
 class Course(models.Model):
-    user = models.ManyToManyField(User,related_name='courses')
+    user = models.ForeignKey(User,related_name='courses')
     created_at = models.DateTimeField(blank=False,auto_now_add=True)
     price = models.DecimalField(blank=False,max_digits=20,decimal_places=2)
     title = models.CharField(blank=False,max_length=245)
@@ -34,8 +34,8 @@ class Course(models.Model):
     image = models.ImageField(upload_to='course_images',blank=True)
     video = models.ImageField(upload_to='course_promo_videos',blank=True)
     published_at = models.DateTimeField(blank=True)
-    status = models.ManyToManyField(Status,related_name='courses')
-    category = models.ManyToManyField(Category,related_name='courses')
+    status = models.ForeignKey(Status,related_name='courses')
+    category = models.ForeignKey(Category,related_name='courses')
 
     def __unicode__(self):
         return self.title
@@ -43,7 +43,7 @@ class Course(models.Model):
 
 #Subjects of the Courses
 class Subject(models.Model):
-    course = models.ManyToManyField(Course,related_name='subjects')
+    course = models.ForeignKey(Course,related_name='subjects')
     created_at = models.DateTimeField(blank=False,auto_now_add=True)
     title = models.CharField(blank=False,max_length=245)
 
@@ -53,7 +53,7 @@ class Subject(models.Model):
 
 #Subject's Lessons
 class Lesson(models.Model):
-    subject = models.ManyToManyField(Subject,related_name='lessons')
+    subject = models.ForeignKey(Subject,related_name='lessons')
     created_at = models.DateTimeField(blank=False,auto_now_add=True)
     title = models.CharField(blank=False,max_length=245)
     is_preview = models.BooleanField()

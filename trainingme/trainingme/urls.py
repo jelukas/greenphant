@@ -10,6 +10,8 @@ urlpatterns = patterns('',
     # Examples:
     url(r'^accounts/', include('registration.backends.default.urls')),
     url(r'^personal/', include('personal.urls')),
+    url(r'^elearning/', include('elearning.urls')),
+    url(r'^financial/', include('financial.urls')),
 
     # url(r'^$', 'trainingme.views.home', name='home'),
     # url(r'^trainingme/', include('trainingme.foo.urls')),
