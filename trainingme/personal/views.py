@@ -9,7 +9,7 @@ from django.core.urlresolvers import reverse
 def edit(request):
     profile = request.user.get_profile()
     if request.method == 'POST': # If the form has been submitted...
-        profile_form = ProfileForm(request.POST,instance=profile) # A form bound to the POST data
+        profile_form = ProfileForm(request.POST,request.FILES,instance=profile) # A form bound to the POST data
         if profile_form.is_valid(): # All validation rules pass
             # Process the data in form.cleaned_data
             profile_form.save()
