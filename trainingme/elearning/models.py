@@ -1,5 +1,7 @@
 from django.db import models
 from django.contrib.auth.models import User
+from django.db.models import Max
+from django.db.models import F
 
 #Category of the Courses Model
 class Category(models.Model):
@@ -28,12 +30,14 @@ class Course(models.Model):
     user = models.ForeignKey(User,related_name='courses')
     created_at = models.DateTimeField(blank=False,auto_now_add=True)
     price = models.DecimalField(blank=False,max_digits=20,decimal_places=2)
-    title = models.CharField(blank=False,max_length=245)
-    language = models.CharField(blank=False,max_length=245)
-    description = models.TextField(blank=False)
+    title = models.CharField(blank=False,max_length=80)
+    language = models.CharField(blank=False,max_length=100)
     image = models.ImageField(upload_to='course_images',blank=True)
+    short_description = models.TextField(blank=False,max_length=160)
+    large_description = models.TextField(blank=False)
     video = models.ImageField(upload_to='course_promo_videos',blank=True)
-    published_at = models.DateTimeField(blank=True)
+    published_at = models.DateTimeField(null=True,blank=True)
+    download_allowed = models.BooleanField()
     status = models.ForeignKey(Status,related_name='courses')
     category = models.ForeignKey(Category,related_name='courses')
 
@@ -46,10 +50,32 @@ class Subject(models.Model):
     course = models.ForeignKey(Course,related_name='subjects')
     created_at = models.DateTimeField(blank=False,auto_now_add=True)
     title = models.CharField(blank=False,max_length=245)
+    order = models.IntegerField(blank=False)
+
+
 
     def __unicode__(self):
-        return self.title
+        return self.title + ' Orden: ' + str(self.order)
 
+
+    """
+    UPDATE tabla SET orden = orden - 1 WHERE orden > ordenActual AND orden <= nuevoOrden
+    UPDATE tabla SET orden = nuevoOrden WHERE id = idRegistro
+    """
+    #To save and update the order
+    def save(self):
+        if not self.id:
+            q = Subject.objects.filter(course=self.course).aggregate(Max('order'))
+            self.order = int(q['order__max'] or 0) + 1
+        else:
+            subject = Subject.objects.get(pk = self.id)
+            old_order = subject.order
+            new_order = self.order
+            if old_order > new_order:
+                Subject.objects.filter(order__lt=old_order,order__gte = new_order).update(order=F('order')+1)
+            if old_order < new_order:
+                Subject.objects.filter(order__gt=old_order,order__lte = new_order).update(order=F('order')-1)
+        super(Subject, self).save()
 
 #Subject's Lessons
 class Lesson(models.Model):
@@ -57,10 +83,25 @@ class Lesson(models.Model):
     created_at = models.DateTimeField(blank=False,auto_now_add=True)
     title = models.CharField(blank=False,max_length=245)
     is_preview = models.BooleanField()
+    order = models.IntegerField(blank=False)
 
     def __unicode__(self):
         return self.title
 
+    #To save and update the order
+    def save(self):
+        if not self.id:
+            q = Lesson.objects.filter(subject=self.subject).aggregate(Max('order'))
+            self.order = int(q['order__max'] or 0) + 1
+        else:
+            lesson = Lesson.objects.get(pk = self.id)
+            old_order = lesson.order
+            new_order = self.order
+            if old_order > new_order:
+                Lesson.objects.filter(order__lt=old_order,order__gte = new_order).update(order=F('order')+1)
+            if old_order < new_order:
+                Lesson.objects.filter(order__gt=old_order,order__lte = new_order).update(order=F('order')-1)
+        super(Lesson, self).save()
 
 #Lesson's Videos
 class Video(models.Model):

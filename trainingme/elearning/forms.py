@@ -4,4 +4,4 @@ from elearning.models import Course
 class CourseForm(ModelForm):
     class Meta:
         model = Course
-        exclude = ('user',)
+        exclude = ('user','published_at','status')
