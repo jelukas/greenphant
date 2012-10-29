@@ -2,10 +2,11 @@ from django.db import models
 from django.contrib.auth.models import User
 from django.db.models import Max
 from django.db.models import F
+from django.utils.translation import ugettext as _
 
 #Category of the Courses Model
 class Category(models.Model):
-    name = models.CharField(blank=False,max_length=245)
+    name = models.CharField(_('Name'),blank=False,max_length=245)
 
     class Meta:
         verbose_name_plural = 'categories'
@@ -16,10 +17,10 @@ class Category(models.Model):
 
 #Status of the Courses Model
 class Status(models.Model):
-    name = models.CharField(blank=False,max_length=245)
+    name = models.CharField(_('Status'),blank=False,max_length=245)
 
     class Meta:
-        verbose_name_plural = 'statuses'
+        verbose_name_plural = _('statuses')
 
     def __unicode__(self):
         return self.name
@@ -29,17 +30,17 @@ class Status(models.Model):
 class Course(models.Model):
     user = models.ForeignKey(User,related_name='courses')
     created_at = models.DateTimeField(blank=False,auto_now_add=True)
-    price = models.DecimalField(blank=False,max_digits=20,decimal_places=2)
-    title = models.CharField(blank=False,max_length=80)
-    language = models.CharField(blank=False,max_length=100)
-    image = models.ImageField(upload_to='course_images',blank=True)
-    short_description = models.TextField(blank=False,max_length=160)
-    large_description = models.TextField(blank=False)
-    video = models.ImageField(upload_to='course_promo_videos',blank=True)
+    price = models.DecimalField(_('price'),blank=False,max_digits=20,decimal_places=2)
+    title = models.CharField(_('title'),blank=False,max_length=80)
+    language = models.CharField(_('language'),blank=False,max_length=100)
+    image = models.ImageField(_('Featured Image'),upload_to='course_images',blank=True)
+    short_description = models.TextField(_('Short Description'),blank=False,max_length=160)
+    large_description = models.TextField(_('Presentation'),blank=False)
+    video = models.ImageField(_('Featured Video'),upload_to='course_promo_videos',blank=True)
     published_at = models.DateTimeField(null=True,blank=True)
-    download_allowed = models.BooleanField()
+    download_allowed = models.BooleanField(_('Download Allowed'))
     status = models.ForeignKey(Status,related_name='courses')
-    category = models.ForeignKey(Category,related_name='courses')
+    category = models.ForeignKey(Category,related_name='courses',verbose_name=_('Category'))
 
     def __unicode__(self):
         return self.title
@@ -52,10 +53,11 @@ class Subject(models.Model):
     title = models.CharField(blank=False,max_length=245)
     order = models.IntegerField(blank=False)
 
-
-
     def __unicode__(self):
         return self.title + ' Orden: ' + str(self.order)
+
+    class Meta:
+        ordering = ["order"]
 
 
     """
@@ -87,6 +89,9 @@ class Lesson(models.Model):
 
     def __unicode__(self):
         return self.title
+
+    class Meta:
+        ordering = ["order"]
 
     #To save and update the order
     def save(self):

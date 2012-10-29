@@ -1,0 +1,10 @@
+{% extends 'base.html' %}
+{% load i18n %}
+{% block content %}
+    <table>
+        <form method='post' action=''>{% csrf_token %}
+            {{ lesson_form.as_table }}
+            <tr><td></td><td><input type="submit" value="{% trans 'Add Lesson' %}" /></td>
+        </form>
+    </table>
+{% endblock %}

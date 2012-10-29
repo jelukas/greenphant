@@ -1,0 +1,20 @@
+{% extends 'base.html' %}
+{% load i18n %}
+{% block content %}
+    <h2>{{ course.title }}</h2>
+    <ul>
+    {% for subject in course.subjects.all %}
+        <li>
+            {% trans 'Subject' %} {{ forloop.counter }} - {{ subject.title }}  <a href="{% url edit_subject subject.id %}">{% trans 'Edit Subject' %}</a> | <a href="{% url delete_subject subject.id %}">{% trans 'Delete Subject' %}</a>
+            <ul>
+                {% for lesson in subject.lessons.all %}
+                    <li>{% trans 'Lesson' %} {{ forloop.counter }} - {{ lesson.title }} <a href="{% url edit_lesson lesson.id %}">{% trans 'Edit Lesson' %}</a> | <a href="{% url delete_lesson lesson.id %}">{% trans 'Delete Lesson' %}</a></li>
+                {% endfor %}
+            </ul>
+            <div><a href="{% url add_lesson subject.id %}">{% trans 'Add Lesson' %}</a></div>
+        </li>
+    {% endfor %}
+    </ul>
+    <div><a href="{% url add_subject course.id %}">{% trans 'Add Subject' %}</a></div>
+    <div><a href="#?">{% trans 'Send to Checking' %}</a></div>
+{% endblock %}
