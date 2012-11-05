@@ -128,6 +128,7 @@ INSTALLED_APPS = (
     # 'django.contrib.admindocs',
     'registration',
     'widget_tweaks',
+    'django_countries',
     'personal',
     'financial',
     'elearning',

@@ -5,6 +5,7 @@ urlpatterns = patterns('',
 
     # url(r'^$', 'trainingme.views.home', name='home'),
     url(r'^profile/edit/','personal.views.edit', name='edit_profile' ),
+    url(r'^profile/login/','personal.views.custom_login', name='custom_login' ),
 
     # Uncomment the admin/doc line below to enable admin documentation:
     # url(r'^admin/doc/', include('django.contrib.admindocs.urls')),

@@ -27,13 +27,27 @@ class Status(models.Model):
         return self.name
 
 
+
+
 #Course model
 class Course(models.Model):
     user = models.ForeignKey(User,related_name='courses')
     created_at = models.DateTimeField(blank=False,auto_now_add=True)
     price = models.DecimalField(_('price'),blank=False,max_digits=20,decimal_places=2)
     title = models.CharField(_('title'),blank=False,max_length=80)
-    language = models.CharField(_('language'),blank=False,max_length=100)
+    LANGUAGE_CHOICES = (
+        ('es-es','spanish (Spain)'),
+        ('es-la','spanish (Latin)'),
+        ('en','english'),
+        ('ge','german'),
+        ('pt','portuguese'),
+        ('fr','french'),
+        ('it','italian'),
+        ('ch','chinese'),
+        ('ru','russian'),
+        ('hi','hindi'),
+    )
+    language = models.CharField(choices=LANGUAGE_CHOICES,default='es-es',blank=False,max_length=100)
     image = models.ImageField(_('Featured Image'),upload_to='course_images',blank=True)
     short_description = models.TextField(_('Short Description'),blank=False,max_length=160)
     large_description = models.TextField(_('Presentation'),blank=False)
@@ -156,6 +170,7 @@ class Video(models.Model):
                 default_storage.delete(video.original_video_file.path)
         super(Video,self).delete()
 
+
 #Lesson's Attach
 class Attach(models.Model):
     lesson = models.OneToOneField(Lesson,unique=True,related_name='attach')
@@ -172,3 +187,34 @@ class Attach(models.Model):
             if(os.path.isfile(attach.file.path)):
                 default_storage.delete(attach.file.path)
         super(Attach,self).delete()
+
+
+#Courses Enrrollment's
+class Enrollment(models.Model):
+    user = models.ForeignKey(User,verbose_name=_('User'),related_name='enrollments')
+    course = models.ForeignKey(Course,verbose_name=_('Course'),related_name='enrollments')
+    start_date = models.DateTimeField(_('Start Date'))
+
+    def get_owner_id(self):
+        return self.user.id
+
+
+#Lessons votes
+class Vote(models.Model):
+    user = models.ForeignKey(User,verbose_name=_('User'),related_name='votes')
+    lesson = models.ForeignKey(Lesson,verbose_name=_('Lesson'),related_name='votes')
+    created_at = models.DateTimeField(blank=False,auto_now_add=True)
+    points = models.SmallIntegerField(verbose_name=_('Points'),max_length=1)
+
+    def get_owner_id(self):
+        return self.user.id
+
+#Lesson comments
+class Comment(models.Model):
+    user = models.ForeignKey(User,verbose_name=_('User'),related_name='comments')
+    lesson = models.ForeignKey(Lesson,verbose_name=_('Lesson'),related_name='comments')
+    created_at = models.DateTimeField(blank=False,auto_now_add=True)
+    message = models.TextField(_('Message'),max_length=1000)
+
+    def get_owner_id(self):
+        return self.user.id

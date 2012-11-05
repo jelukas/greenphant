@@ -17,6 +17,18 @@
     <script src="http://vjs.zencdn.net/c/video.js"></script>
 </head>
 <body>
+{% block menu %}
+    <a href="{% url auth_logout %}">Logout</a>
+{% endblock %}
+{% block messages %}
+    {% if messages %}
+        <ul class="messages">
+            {% for message in messages %}
+                <li{% if message.tags %} class="{{ message.tags }}"{% endif %}>{{ message }}</li>
+            {% endfor %}
+        </ul>
+    {% endif %}
+{% endblock %}
 {% block content %}
 
 {% endblock %}

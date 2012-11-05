@@ -4,4 +4,4 @@ from personal.models import Profile
 class ProfileForm(ModelForm):
     class Meta:
         model = Profile
-        exclude = ('user',)
+        exclude = ('user','is_first_login')

@@ -1,6 +1,7 @@
 {% extends 'base.html' %}
 
 {% block content %}
+
     <table>
         <form method='post' action='' enctype="multipart/form-data">{% csrf_token %}
             {{ course_form.as_table }}
