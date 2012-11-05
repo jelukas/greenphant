@@ -3,6 +3,7 @@ from django.contrib.auth.models import User
 from django.db.models import Max
 from django.db.models import F
 from django.utils.translation import ugettext as _
+from django.core.files.storage import default_storage
 
 #Category of the Courses Model
 class Category(models.Model):
@@ -45,6 +46,8 @@ class Course(models.Model):
     def __unicode__(self):
         return self.title
 
+    def get_owner_id(self):
+        return self.user.id
 
 #Subjects of the Courses
 class Subject(models.Model):
@@ -55,6 +58,9 @@ class Subject(models.Model):
 
     def __unicode__(self):
         return self.title + ' Orden: ' + str(self.order)
+
+    def get_owner_id(self):
+        return self.course.user.id
 
     class Meta:
         ordering = ["order"]
@@ -74,10 +80,19 @@ class Subject(models.Model):
             old_order = subject.order
             new_order = self.order
             if old_order > new_order:
-                Subject.objects.filter(order__lt=old_order,order__gte = new_order).update(order=F('order')+1)
+                Subject.objects.filter(order__lt=old_order,order__gte = new_order, course = subject.course).update(order=F('order')+1)
             if old_order < new_order:
-                Subject.objects.filter(order__gt=old_order,order__lte = new_order).update(order=F('order')-1)
+                Subject.objects.filter(order__gt=old_order,order__lte = new_order, course = subject.course).update(order=F('order')-1)
         super(Subject, self).save()
+
+    #To delete and update the order
+    def delete(self):
+        if self.id:
+            subject = Subject.objects.get(pk = self.id)
+            old_order = subject.order
+            Subject.objects.filter(order__gt = old_order, course = subject.course).update(order=F('order')-1)
+        super(Subject,self).delete()
+
 
 #Subject's Lessons
 class Lesson(models.Model):
@@ -89,6 +104,9 @@ class Lesson(models.Model):
 
     def __unicode__(self):
         return self.title
+
+    def get_owner_id(self):
+        return self.subject.course.user.id
 
     class Meta:
         ordering = ["order"]
@@ -103,22 +121,54 @@ class Lesson(models.Model):
             old_order = lesson.order
             new_order = self.order
             if old_order > new_order:
-                Lesson.objects.filter(order__lt=old_order,order__gte = new_order).update(order=F('order')+1)
+                Lesson.objects.filter(order__lt=old_order,order__gte = new_order,subject = lesson.subject).update(order=F('order')+1)
             if old_order < new_order:
-                Lesson.objects.filter(order__gt=old_order,order__lte = new_order).update(order=F('order')-1)
+                Lesson.objects.filter(order__gt=old_order,order__lte = new_order,subject = lesson.subject).update(order=F('order')-1)
         super(Lesson, self).save()
+
+    #To delete and update the order
+    def delete(self):
+        if self.id:
+            lesson = Lesson.objects.get(pk = self.id)
+            old_order = lesson.order
+            Lesson.objects.filter(order__gt = old_order, subject = lesson.subject).update(order=F('order')-1)
+        super(Lesson,self).delete()
+
 
 #Lesson's Videos
 class Video(models.Model):
     lesson = models.OneToOneField(Lesson,unique=True,related_name='video')
-    original_video_file = models.FileField(upload_to='original_lesson_videos',max_length=245)
+    original_video_file = models.FileField(_('Video'),upload_to='original_lesson_videos',max_length=245)
     converted_video_file = models.FileField(upload_to='converted_lesson_videos',max_length=245,blank=True,null=True)
 
     def __unicode__(self):
         return self.original_video_file
 
+    def get_owner_id(self):
+        return self.lesson.subject.course.user.id
+
+    #Delete the file when deleting the record
+    def delete(self):
+        import os.path
+        if self.id:
+            video = Video.objects.get(pk = self.id)
+            if(os.path.isfile(video.original_video_file.path)):
+                default_storage.delete(video.original_video_file.path)
+        super(Video,self).delete()
 
 #Lesson's Attach
 class Attach(models.Model):
     lesson = models.OneToOneField(Lesson,unique=True,related_name='attach')
-    file = models.FileField(upload_to='lesson_attaches',max_length=245)
+    file = models.FileField(_('File'),upload_to='lesson_attaches',max_length=245)
+
+    def get_owner_id(self):
+        return self.lesson.subject.course.user.id
+
+    #Delete the file when deleting the record
+    def delete(self):
+        import os.path
+        if self.id:
+            attach = Attach.objects.get(pk = self.id)
+            if(os.path.isfile(attach.file.path)):
+                default_storage.delete(attach.file.path)
+        super(Attach,self).delete()

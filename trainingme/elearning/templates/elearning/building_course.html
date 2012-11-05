@@ -8,7 +8,20 @@
             {% trans 'Subject' %} {{ forloop.counter }} - {{ subject.title }}  <a href="{% url edit_subject subject.id %}">{% trans 'Edit Subject' %}</a> | <a href="{% url delete_subject subject.id %}">{% trans 'Delete Subject' %}</a>
             <ul>
                 {% for lesson in subject.lessons.all %}
-                    <li>{% trans 'Lesson' %} {{ forloop.counter }} - {{ lesson.title }} <a href="{% url edit_lesson lesson.id %}">{% trans 'Edit Lesson' %}</a> | <a href="{% url delete_lesson lesson.id %}">{% trans 'Delete Lesson' %}</a></li>
+                    <li>
+                        {% trans 'Lesson' %} {{ forloop.counter }} - {{ lesson.title }} <a href="{% url edit_lesson lesson.id %}">{% trans 'Edit Lesson' %}</a> | <a href="{% url delete_lesson lesson.id %}">{% trans 'Delete Lesson' %}</a>
+                        {% if lesson.video %}
+                            <p>Video: {{ lesson.video.original_video_file.url }}| <a href="{% url delete_video lesson.video.id %}">{% trans 'Delete' %}</a> | <a href="{% url test_video lesson.video.id %}">{% trans 'Test' %}</a></p>
+
+                        {% else %}
+                            <p><a href="{% url add_video lesson.id %}">{% trans 'Add Video' %}</a></p>
+                        {% endif %}
+                        {% if lesson.attach %}
+                            <p>Extra Content: {{ lesson.attach.file.url }}| <a href="{% url delete_attach lesson.attach.id %}">{% trans 'Delete' %}</a></p>
+                        {% else %}
+                            <p><a href="{% url add_attach lesson.id %}">{% trans 'Add Attachment' %}</a></p>
+                        {% endif %}
+                    </li>
                 {% endfor %}
             </ul>
             <div><a href="{% url add_lesson subject.id %}">{% trans 'Add Lesson' %}</a></div>

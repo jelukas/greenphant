@@ -10,6 +10,12 @@ urlpatterns = patterns('',
     url(r'^course/lesson/add/(\d+)/$','elearning.views.add_lesson', name='add_lesson' ),
     url(r'^course/lesson/edit/(\d+)/$','elearning.views.edit_lesson', name='edit_lesson' ),
     url(r'^course/lesson/delete/(\d+)/$','elearning.views.delete_lesson', name='delete_lesson' ),
-
+    url(r'^course/video/add/(\d+)/$','elearning.views.add_video', name='add_video' ),
+    #url(r'^course/video/edit/(\d+)/$','elearning.views.edit_video', name='edit_video' ),
+    url(r'^course/video/delete/(\d+)/$','elearning.views.delete_video', name='delete_video' ),
+    url(r'^course/attach/add/(\d+)/$','elearning.views.add_attach', name='add_attach' ),
+    #url(r'^course/attach/edit/(\d+)/$','elearning.views.edit_attach', name='edit_attach' ),
+    url(r'^course/attach/delete/(\d+)/$','elearning.views.delete_attach', name='delete_attach' ),
+    url(r'^course/video/test/(\d+)/$','elearning.views.test_video', name='test_video' ),
 )
 

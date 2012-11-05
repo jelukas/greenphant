@@ -5,6 +5,7 @@ from django.db.models.signals import post_save
 
 
 #Billing where save the billing details of the user
+
 class Billing(models.Model):
     user = models.OneToOneField(User,unique=True)
     balance = models.DecimalField(max_digits=20, decimal_places=2)
