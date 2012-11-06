@@ -3,7 +3,7 @@ from django.shortcuts import render_to_response, get_object_or_404
 from django.template.context import  RequestContext
 from django.contrib.auth.decorators import login_required
 from django.core.urlresolvers import reverse
-from elearning.models import Status, Course, Subject, Lesson, Video, Attach
+from elearning.models import Status, Course, Subject, Lesson, Video, Attach, Enrollment
 from elearning.forms import CourseForm, SubjectForm, LessonForm, VideoForm, AttachForm
 from personal.decorators import owner_required
 from django.contrib import messages
@@ -20,7 +20,7 @@ def new_course(request):
             course.status = Status.objects.get(name="building")
             course.save()
             messages.success(request,_('Course created successfully'))
-            return HttpResponseRedirect(reverse('elearning.views.edit_course', args=(course.id,))) # Redirect after POST
+            return HttpResponseRedirect(reverse('elearning.views.building_course', args=(course.id,))) # Redirect after POST
         else:
             messages.error(request,_('Course failed to create'))
     else:
@@ -225,6 +225,22 @@ def delete_attach(request,attach_id):
 
 
 
+"""
+---------------------------------------
+DASHBOARD VIEWS
+---------------------------------------
+"""
+
 @login_required()
 def dashboard(request):
     return render_to_response('elearning/dashboard.html',{},context_instance = RequestContext(request))
+
+@login_required()
+def learning(request):
+    enrollments = Enrollment.objects.filter(user_id=request.user.id)
+    return render_to_response('elearning/dashboard_learning.html',{'enrollments':enrollments},context_instance = RequestContext(request))
+
+@login_required()
+def teaching(request):
+    courses = Course.objects.filter(user_id=request.user.id)
+    return render_to_response('elearning/dashboard_teaching.html',{'courses':courses},context_instance = RequestContext(request))

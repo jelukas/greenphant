@@ -17,6 +17,7 @@ class Category(models.Model):
 
 
 #Status of the Courses Model
+""" There are 4: (building, checking, evaluating, published) """
 class Status(models.Model):
     name = models.CharField(_('Status'),blank=False,max_length=245)
 
@@ -25,8 +26,6 @@ class Status(models.Model):
 
     def __unicode__(self):
         return self.name
-
-
 
 
 #Course model
@@ -62,6 +61,7 @@ class Course(models.Model):
 
     def get_owner_id(self):
         return self.user.id
+
 
 #Subjects of the Courses
 class Subject(models.Model):

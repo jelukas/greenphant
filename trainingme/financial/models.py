@@ -3,9 +3,9 @@ from django.contrib.auth.models import User
 from elearning.models import Course
 from django.db.models.signals import post_save
 from django.utils.translation import ugettext as _
+from datetime import datetime
 
-
-#Billing where save the billing details of the user
+#Billing where save the financial details of the user
 class Billing(models.Model):
     user = models.OneToOneField(User,unique=True)
     balance = models.DecimalField(max_digits=20, decimal_places=2)
@@ -15,7 +15,7 @@ class Billing(models.Model):
     id_number = models.CharField(max_length=250,blank=True)
 
     def __unicode__(self):
-        return "%s's billing details" % self.user
+        return "%s's financial details" % self.user
 
 
 #Withdraw : That are the withdraws records.
@@ -43,6 +43,11 @@ class Order(models.Model):
     def get_buyer(self):
         return self.user
 
+    def clear_amount(self):
+        self.datetime_cleared = datetime.now()
+        self.save()
+        self.user.billing.balance = self.user.billing.balance + self.amount
+        self.user.billing.save()
 
 
 
@@ -53,4 +58,14 @@ def create_user_billing(sender, instance, created, **kwargs):
     if created:
         Billing.objects.create(user=instance,balance = 0)
 
-post_save.connect(create_user_billing, sender=User, dispatch_uid="users-billing-creation-signal")
+post_save.connect(create_user_billing, sender=User, dispatch_uid="users-financial-creation-signal")
+
+
+# On save a new withdraw , the balance must down with the amount
+def reduce_balance(sender, instance, created, **kwargs):
+    if created:
+        billing = Billing.objects.get(user_id=instance.user.id)
+        billing.balance = billing.balance - instance.amount
+        billing.save()
+
+post_save.connect(reduce_balance, sender=Withdraw, dispatch_uid="new-withdraw-reduce-balance-signal")

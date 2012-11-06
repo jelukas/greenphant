@@ -4,7 +4,7 @@ from django.contrib.auth.models import User
 from django.db.models.signals import post_save
 from django_countries import CountryField
 import os
-
+from django.utils.translation import ugettext as _
 
 
 #Profile where save the personal details of the user
@@ -29,6 +29,6 @@ class Profile(models.Model):
 # Create the user profile when create the User is created.
 def create_user_profile(sender, instance, created, **kwargs):
     if created:
-        Profile.objects.create(user=instance,description = "Change your description",is_first_login = True)
+        Profile.objects.create(user=instance,description = _('Change your description'),is_first_login = True)
 
-post_save.connect(create_user_profile, sender=User, dispatch_uid="users-profile-creation-signal")
+post_save.connect(create_user_profile, sender=User, dispatch_uid='users-profile-creation-signal')

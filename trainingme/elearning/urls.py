@@ -17,6 +17,10 @@ urlpatterns = patterns('',
     #url(r'^course/attach/edit/(\d+)/$','elearning.views.edit_attach', name='edit_attach' ),
     url(r'^course/attach/delete/(\d+)/$','elearning.views.delete_attach', name='delete_attach' ),
     url(r'^course/video/test/(\d+)/$','elearning.views.test_video', name='test_video' ),
+
+    #Dashboard
     url(r'^dashboard/$','elearning.views.dashboard', name='dashboard' ),
+    url(r'^dashboard/learning/$','elearning.views.learning', name='learning' ),
+    url(r'^dashboard/teaching/$','elearning.views.teaching', name='teaching' ),
 )
 
