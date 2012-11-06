@@ -22,5 +22,8 @@ urlpatterns = patterns('',
     url(r'^dashboard/$','elearning.views.dashboard', name='dashboard' ),
     url(r'^dashboard/learning/$','elearning.views.learning', name='learning' ),
     url(r'^dashboard/teaching/$','elearning.views.teaching', name='teaching' ),
+
+    #Testing Paypal
+    url(r'^paypal/$','elearning.views.paypal', name='paypal' ),
 )
 

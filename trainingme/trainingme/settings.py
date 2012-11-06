@@ -3,7 +3,7 @@
 import os
 
 SITE_ROOT = os.path.dirname(os.path.realpath(__file__))
-
+SITE_NAME = "trainingme.net"
 SITE_URL = 'http://192.168.1.202:8000'
 
 DEBUG = True
@@ -129,6 +129,7 @@ INSTALLED_APPS = (
     'registration',
     'widget_tweaks',
     'django_countries',
+    'paypal.standard.ipn',
     'personal',
     'financial',
     'elearning',
@@ -181,3 +182,7 @@ Para indicar que este modelo es el modelo de
   ajuste con una cadena que consta de los siguientes elementos, separados por un punto: nombre_aplicacion.Modelo_del_perfil
  """
 AUTH_PROFILE_MODULE = 'personal.Profile'
+
+
+"Paypal Details"
+PAYPAL_RECEIVER_EMAIL = "turico_1350147627_biz@gmail.com"

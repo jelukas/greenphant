@@ -244,3 +244,31 @@ def learning(request):
 def teaching(request):
     courses = Course.objects.filter(user_id=request.user.id)
     return render_to_response('elearning/dashboard_teaching.html',{'courses':courses},context_instance = RequestContext(request))
+
+
+"""
+---------------------------------------
+PAYPAL TESTING
+---------------------------------------
+"""
+
+from paypal.standard.forms import PayPalPaymentsForm
+from django.conf import settings
+
+def paypal(request):
+
+    # What you want the button to do.
+
+    paypal_dict = {
+        "business": settings.PAYPAL_RECEIVER_EMAIL,
+        "amount": "10.00",
+        "item_name": "Curso de Algo",
+        "invoice": "unique-invoice-id",
+        "notify_url": "%s%s" % (settings.SITE_NAME, reverse('paypal-ipn')),
+        "return_url": "http://www.google.es",
+        "cancel_return": "http://www.marca.com",
+    }
+
+    # Create the instance.
+    form = PayPalPaymentsForm(initial=paypal_dict)
+    return render_to_response('elearning/tests/paypal.html',{"form": form.sandbox()},context_instance = RequestContext(request))
