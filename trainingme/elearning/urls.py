@@ -25,5 +25,9 @@ urlpatterns = patterns('',
 
     #Testing Paypal
     url(r'^paypal/$','elearning.views.paypal', name='paypal' ),
+
+    #Course
+    url(r'^course/(\d+)/$','elearning.views.view_course', name='view_course' ),
+    url(r'^course/buy/$','elearning.views.buy_course', name='buy_course' ),
 )
 

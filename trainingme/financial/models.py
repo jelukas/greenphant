@@ -36,6 +36,8 @@ class Order(models.Model):
     is_refund = models.BooleanField(blank=False)
     #This is the date when the amount of this order is sent to the Seller balance.
     datetime_cleared = models.DateTimeField(blank=True,null=True)
+    #Paypal Transaction ID
+    paypal_txn_id = models.CharField(max_length=255)
 
     def get_seller(self):
         return self.course.user

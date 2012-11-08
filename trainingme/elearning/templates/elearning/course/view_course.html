@@ -1,0 +1,10 @@
+{% extends 'base.html' %}
+{% load i18n %}
+{% block content %}
+    <h2>{{ course.title }}</h2>
+    {% if enrrolled %}
+        Ya estas matriculado: <a href="#?">ACCEDER</a>
+    {% else %}
+        {{ paypal_button }}
+    {% endif %}
+{% endblock %}
