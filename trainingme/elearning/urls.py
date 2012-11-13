@@ -19,6 +19,7 @@ urlpatterns = patterns('',
     url(r'^course/video/test/(\d+)/$','elearning.views.test_video', name='test_video' ),
 
     #Dashboard
+    url(r'^$','elearning.views.dashboard', name='dashboard_home' ),
     url(r'^dashboard/$','elearning.views.dashboard', name='dashboard' ),
     url(r'^dashboard/learning/$','elearning.views.learning', name='learning' ),
     url(r'^dashboard/teaching/$','elearning.views.teaching', name='teaching' ),

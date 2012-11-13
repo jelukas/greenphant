@@ -6,6 +6,7 @@
     {% for enrrolment in enrollments %}
         <div class="enrrolment">
             {{ enrrolment.course.title }}
+            <a href="{% url view_course enrrolment.course.id %}">Acceder</a>
         </div>
     {% endfor %}
 {% endblock %}

@@ -12,7 +12,7 @@ from django.views.decorators.csrf import csrf_exempt
 from django.views.decorators.http import require_POST
 from django.http import HttpResponseNotFound
 from django.core.exceptions import ObjectDoesNotExist
-
+from datetime import datetime
 
 @login_required()
 def new_course(request):
@@ -292,7 +292,18 @@ def buy_course(request):
     if exists_paypal_txn_order(request.POST['item_number'],request.POST['txn_id']):
         return HttpResponseNotFound('<h1>Duplicated Transaction</h1>')
     if post_data['payment_status'] == 'Completed':
-        return render_to_response('elearning/course/buy_course.html',{'post_data':post_data},context_instance = RequestContext(request))
+        course = get_object_or_404(Course,pk=request.POST['item_number'])
+        if float(post_data['mc_gross']) == float(course.price) :
+            # Create the Order
+            from financial.models import Order
+            order = Order(user=request.user,course = course,created_at = datetime.now(),amount = post_data['mc_gross'],is_refund = False, paypal_txn_id = post_data['txn_id'])
+            order.save()
+            #All OK so Enrroll the Student into the Course
+            enrollment = Enrollment(user = request.user, course = course, start_date = datetime.now())
+            enrollment.save()
+            messages.success(request,_('You had been enrolled into the Course ')+course.title)
+            return HttpResponseRedirect(reverse('elearning.views.view_course', args=(course.id,)))
+    return HttpResponseNotFound('<h1>Error Transaction</h1>')
 
 
 def exists_paypal_txn_order(course_id,txn_id):

@@ -193,7 +193,7 @@ class Attach(models.Model):
 class Enrollment(models.Model):
     user = models.ForeignKey(User,verbose_name=_('User'),related_name='enrollments')
     course = models.ForeignKey(Course,verbose_name=_('Course'),related_name='enrollments')
-    start_date = models.DateTimeField(_('Start Date'))
+    start_date = models.DateTimeField(_('Start Date'),auto_created=True)
 
     def get_owner_id(self):
         return self.user.id
