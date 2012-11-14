@@ -25,10 +25,21 @@
   <component name="ExecutionTargetManager" SELECTED_TARGET="default_target" />
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="actualize.py" pinned="false" current="true" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/trainingme/actualize.py">
+      <file leaf-file-name="prueba.py" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/elearning/management/commands/prueba.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="6" column="13" selection-start="116" selection-end="116" vertical-scroll-proportion="0.106132075">
+            <state line="5" column="58" selection-start="194" selection-end="194" vertical-scroll-proportion="0.0">
+              <folding>
+                <element signature="e#0#65#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="models.py" pinned="false" current="true" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/elearning/models.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="66" column="47" selection-start="2370" selection-end="2370" vertical-scroll-proportion="-2.2996433">
               <folding />
             </state>
           </provider>
@@ -44,14 +55,12 @@
   <component name="IdeDocumentHistory">
     <option name="changedFiles">
       <list>
-        <option value="$PROJECT_DIR$/elearning/templates/elearning/dashboard.html" />
         <option value="$PROJECT_DIR$/elearning/templates/elearning/learning.html" />
         <option value="$PROJECT_DIR$/elearning/templates/elearning/dashboard_teaching.html" />
         <option value="$PROJECT_DIR$/elearning/templates/elearning/tests/paypal.html" />
         <option value="$PROJECT_DIR$/elearning/templates/elearning/course/buy_course.html" />
         <option value="$PROJECT_DIR$/financial/models.py" />
         <option value="$PROJECT_DIR$/elearning/templates/elearning/course/view_course.html" />
-        <option value="$PROJECT_DIR$/elearning/models.py" />
         <option value="$PROJECT_DIR$/elearning/urls.py" />
         <option value="$PROJECT_DIR$/elearning/templates/elearning/dashboard_learning.html" />
         <option value="$PROJECT_DIR$/elearning/views.py" />
@@ -60,13 +69,16 @@
         <option value="$PROJECT_DIR$/personal/templates/ij+.html" />
         <option value="$PROJECT_DIR$/trainingme/settings.py" />
         <option value="$PROJECT_DIR$/trainingme/actualize.py" />
+        <option value="$PROJECT_DIR$/elearning/management/commands/prueba.py" />
+        <option value="$PROJECT_DIR$/elearning/models.py" />
       </list>
     </option>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="y" value="26" />
-    <option name="width" value="1919" />
-    <option name="height" value="1029" />
+    <option name="x" value="-10" />
+    <option name="y" value="17" />
+    <option name="width" value="1940" />
+    <option name="height" value="1047" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="false">
     <OptionsSetting value="true" id="Add" />
@@ -94,7 +106,6 @@
       <sortByType />
     </navigator>
     <panes>
-      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -113,47 +124,20 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="trainingme" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="trainingme" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="trainingme" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="trainingme" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="trainingme" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="elearning" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
         </subPane>
       </pane>
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
     <property name="options.splitter.main.proportions" value="0.3" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="recentsLimit" value="5" />
     <property name="options.lastSelected" value="com.jetbrains.python.configuration.PythonSdkConfigurable" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../.." />
+    <property name="recentsLimit" value="5" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="DefaultHtmlFileTemplate" value="Html5" />
-    <property name="options.splitter.details.proportions" value="0.2" />
     <property name="options.searchVisible" value="true" />
+    <property name="options.splitter.details.proportions" value="0.2" />
   </component>
   <component name="PyConsoleOptionsProvider">
     <option name="myPythonConsoleState">
@@ -190,7 +174,25 @@
       <EXTENSION ID="PythonCoverageRunConfigurationExtension" enabled="false" sample_coverage="true" runner="coverage.py" />
       <option name="SCRIPT_NAME" value="" />
       <option name="PARAMETERS" value="" />
-      <option name="MULTIPROCESS" value="false" />
+      <method />
+    </configuration>
+    <configuration default="true" type="tests" factoryName="Unittests">
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs />
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="" />
+      <option name="IS_MODULE_SDK" value="false" />
+      <module name="trainingme" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" enabled="false" sample_coverage="true" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="" />
+      <option name="CLASS_NAME" value="" />
+      <option name="METHOD_NAME" value="" />
+      <option name="FOLDER_NAME" value="" />
+      <option name="TEST_TYPE" value="TEST_SCRIPT" />
+      <option name="PATTERN" value="" />
+      <option name="USE_PATTERN" value="false" />
+      <option name="PUREUNITTEST" value="true" />
       <method />
     </configuration>
     <configuration default="true" type="Python.DjangoServer" factoryName="Django server">
@@ -212,25 +214,6 @@
       <option name="runNoReload" value="false" />
       <option name="useCustomRunCommand" value="false" />
       <option name="customRunCommand" value="" />
-      <method />
-    </configuration>
-    <configuration default="true" type="tests" factoryName="Unittests">
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs />
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="" />
-      <option name="IS_MODULE_SDK" value="false" />
-      <module name="trainingme" />
-      <EXTENSION ID="PythonCoverageRunConfigurationExtension" enabled="false" sample_coverage="true" runner="coverage.py" />
-      <option name="SCRIPT_NAME" value="" />
-      <option name="CLASS_NAME" value="" />
-      <option name="METHOD_NAME" value="" />
-      <option name="FOLDER_NAME" value="" />
-      <option name="TEST_TYPE" value="TEST_SCRIPT" />
-      <option name="PATTERN" value="" />
-      <option name="USE_PATTERN" value="false" />
-      <option name="PUREUNITTEST" value="true" />
       <method />
     </configuration>
     <configuration default="true" type="tests" factoryName="Doctests">
@@ -311,14 +294,14 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="0" y="26" width="1919" height="1029" extended-state="0" />
+    <frame x="-10" y="17" width="1940" height="1047" extended-state="7" />
     <editor active="false" />
     <layout>
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3297587" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.1764075" sideWeight="0.3892694" order="1" side_tool="true" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.1764075" sideWeight="0.60273975" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.171123" sideWeight="0.39494833" order="1" side_tool="true" content_ui="tabs" />
+      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.171123" sideWeight="0.5970149" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32876712" sideWeight="0.5" order="9" side_tool="true" content_ui="tabs" />
@@ -416,11 +399,6 @@
         <state line="4" column="16" selection-start="97" selection-end="106" vertical-scroll-proportion="0.1119403" />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/elearning/models.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="191" column="22" selection-start="6971" selection-end="6971" vertical-scroll-proportion="0.3985849" />
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/elearning/templates/elearning/course/view_course.html">
       <provider selected="true" editor-type-id="text-editor">
         <state line="5" column="40" selection-start="157" selection-end="157" vertical-scroll-proportion="-3.125" />
@@ -458,9 +436,25 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/trainingme/actualize.py">
+    <entry file="file://$PROJECT_DIR$/../../local/lib/python2.7/site-packages/PIL/Image.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="6" column="13" selection-start="116" selection-end="116" vertical-scroll-proportion="0.106132075">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="-0.10701546">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/elearning/management/commands/prueba.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="5" column="58" selection-start="194" selection-end="194" vertical-scroll-proportion="0.0">
+          <folding>
+            <element signature="e#0#65#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/elearning/models.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="66" column="47" selection-start="2370" selection-end="2370" vertical-scroll-proportion="-2.2996433">
           <folding />
         </state>
       </provider>

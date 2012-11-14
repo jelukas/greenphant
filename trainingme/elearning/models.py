@@ -62,6 +62,32 @@ class Course(models.Model):
     def get_owner_id(self):
         return self.user.id
 
+    def save(self):
+        super(Course, self).save()
+        #Resize the image preventing big images
+        from PIL import Image
+        """
+        On Ubuntu:
+
+        # install libjpeg-dev with apt
+        sudo apt-get install libjpeg-dev
+
+        # reinstall PIL
+        pip install -I PIL
+        If that doesn't work, try this:
+
+        sudo ln -s /usr/lib/x86_64-linux-gnu/libjpeg.so /usr/lib
+        sudo ln -s /usr/lib/x86_64-linux-gnu/libfreetype.so /usr/lib
+        sudo ln -s /usr/lib/x86_64-linux-gnu/libz.so /usr/lib
+        """
+        size=(400, 300)
+        filename = self.image.path
+        image = Image.open(filename)
+        image.thumbnail(size, Image.ANTIALIAS)
+        image.save(filename)
+
+
+
 
 #Subjects of the Courses
 class Subject(models.Model):
@@ -156,7 +182,7 @@ class Video(models.Model):
     converted_video_file = models.FileField(upload_to='converted_lesson_videos',max_length=245,blank=True,null=True)
 
     def __unicode__(self):
-        return self.original_video_file
+        return self.original_video_file.name
 
     def get_owner_id(self):
         return self.lesson.subject.course.user.id
