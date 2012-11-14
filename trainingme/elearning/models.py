@@ -4,6 +4,7 @@ from django.db.models import Max
 from django.db.models import F
 from django.utils.translation import ugettext as _
 from django.core.files.storage import default_storage
+from validatedfile import ValidatedFileField
 
 #Category of the Courses Model
 class Category(models.Model):
@@ -178,7 +179,9 @@ class Lesson(models.Model):
 #Lesson's Videos
 class Video(models.Model):
     lesson = models.OneToOneField(Lesson,unique=True,related_name='video')
-    original_video_file = models.FileField(_('Video'),upload_to='original_lesson_videos',max_length=245)
+    #original_video_file = models.FileField(_('Video'),upload_to='original_lesson_videos',max_length=245)
+    original_video_file = ValidatedFileField(_('Video'),upload_to='original_lesson_videos',max_length=245,content_types = ['image/jpg','image/jpeg'])
+
     converted_video_file = models.FileField(upload_to='converted_lesson_videos',max_length=245,blank=True,null=True)
 
     def __unicode__(self):

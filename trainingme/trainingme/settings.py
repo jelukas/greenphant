@@ -130,6 +130,7 @@ INSTALLED_APPS = (
     'widget_tweaks',
     'django_countries',
     'paypal.standard.ipn',
+    'validatedfile', #Requires python-magic
     'personal',
     'financial',
     'elearning',
