@@ -5,3 +5,21 @@ video/quicktime
 video/mp4
 video/mpeg
 video/x-ms-wmv
+
+
+greenphant$ pip freeze
+
+Django==1.4.2
+M2Crypto==0.21.1
+PIL==1.1.7
+South==0.7.6
+distribute==0.6.28
+django-common-helpers==0.3
+django-countries==1.4
+django-cron==0.2.2
+django-paypal==0.1.2
+django-registration==0.8
+django-validated-file==0.0.1
+django-widget-tweaks==1.1.2
+python-magic==0.4.3
+wsgiref==0.1.2
