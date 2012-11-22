@@ -180,7 +180,7 @@ class Lesson(models.Model):
 class Video(models.Model):
     lesson = models.OneToOneField(Lesson,unique=True,related_name='video')
     #original_video_file = models.FileField(_('Video'),upload_to='original_lesson_videos',max_length=245)
-    original_video_file = ValidatedFileField(_('Video'),upload_to='original_lesson_videos',max_length=245,content_types = ['image/jpg','image/jpeg'])
+    original_video_file = ValidatedFileField(_('Video'),upload_to='original_lesson_videos',max_length=245,content_types = ['video/x-ms-asf','video/x-msvideo','video/x-flv','video/quicktime','video/mp4','video/mpeg','video/x-ms-wmv'])
 
     converted_video_file = models.FileField(upload_to='converted_lesson_videos',max_length=245,blank=True,null=True)
 
