@@ -262,7 +262,7 @@ def view_course(request,course_id):
     from paypal.standard.forms import PayPalEncryptedPaymentsForm
     from django.conf import settings
 
-    course = get_object_or_404(Course,pk=course_id)
+    course = get_object_or_404(Course,pk=course_id,status = Status.objects.get(name="published"))
     enrrollment = course.enrollments.filter(user_id=request.user.id)
 
     if not enrrollment:
@@ -289,7 +289,7 @@ Vista de los contenidos del Curso una vez matriculado
 """
 @login_required()
 def learning_course(request,course_id):
-    course = get_object_or_404(Course,pk=course_id)
+    course = get_object_or_404(Course,pk=course_id,status = Status.objects.get(name="published"))
     enrrollment = course.enrollments.filter(user_id=request.user.id)
     if not enrrollment:
         return HttpResponseRedirect(reverse('elearning.views.view_course', args=(course.id,)))
@@ -298,6 +298,10 @@ def learning_course(request,course_id):
     return render_to_response('elearning/course/learning_course.html',context,context_instance = RequestContext(request))
 
 
+
+"""
+COMPRA DEL CURSO
+"""
 @require_POST
 @login_required()
 @csrf_exempt
