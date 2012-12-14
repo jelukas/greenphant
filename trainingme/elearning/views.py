@@ -284,6 +284,20 @@ def view_course(request,course_id):
     return render_to_response('elearning/course/view_course.html',context,context_instance = RequestContext(request))
 
 
+"""
+Vista de los contenidos del Curso una vez matriculado
+"""
+@login_required()
+def learning_course(request,course_id):
+    course = get_object_or_404(Course,pk=course_id)
+    enrrollment = course.enrollments.filter(user_id=request.user.id)
+    if not enrrollment:
+        return HttpResponseRedirect(reverse('elearning.views.view_course', args=(course.id,)))
+    else:
+        context = {'course':course,'enrrolled':True}
+    return render_to_response('elearning/course/learning_course.html',context,context_instance = RequestContext(request))
+
+
 @require_POST
 @login_required()
 @csrf_exempt

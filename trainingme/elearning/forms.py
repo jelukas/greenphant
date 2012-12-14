@@ -23,7 +23,7 @@ class LessonForm(ModelForm):
 class VideoForm(ModelForm):
     class Meta:
         model = Video
-        exclude = ('lesson','converted_video_file')
+        exclude = ('lesson','converted_video_file_mp4','converted_video_file_webm')
 
 
 class AttachForm(ModelForm):

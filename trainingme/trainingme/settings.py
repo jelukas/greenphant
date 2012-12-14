@@ -4,7 +4,7 @@ import os
 
 SITE_ROOT = os.path.dirname(os.path.realpath(__file__))
 SITE_NAME = "trainingme.net"
-SITE_URL = 'http://192.168.1.202:8000'
+SITE_URL = 'http://192.168.1.202'
 
 DEBUG = True
 TEMPLATE_DEBUG = DEBUG
@@ -18,7 +18,7 @@ MANAGERS = ADMINS
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.sqlite3', # Add 'postgresql_psycopg2', 'mysql', 'sqlite3' or 'oracle'.
-        'NAME': 'dbtrainingme',                      # Or path to database file if using sqlite3.
+        'NAME': '/home/luks/Escritorio/django/estable/greenphant/trainingme/dbtrainingme',                      # Or path to database file if using sqlite3.
         'USER': '',                      # Not used with sqlite3.
         'PASSWORD': '',                  # Not used with sqlite3.
         'HOST': '',                      # Set to empty string for localhost. Not used with sqlite3.
@@ -109,7 +109,7 @@ ROOT_URLCONF = 'trainingme.urls'
 WSGI_APPLICATION = 'trainingme.wsgi.application'
 
 TEMPLATE_DIRS = (
-    '/home/luks/Escritorio/django/estable/greenphant/trainingme/templates/',
+    '/home/luks/Escritorio/django/estable/greenphant/trainingme/templates',
     # Put strings here, like "/home/html/django_templates" or "C:/www/django/templates".
     # Always use forward slashes, even on Windows.
     # Don't forget to use absolute paths, not relative paths.

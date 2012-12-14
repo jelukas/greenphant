@@ -3,7 +3,7 @@
 {% block content %}
     <h2>{{ course.title }}</h2>
     {% if enrrolled %}
-        Ya estas matriculado: <a href="#?">ACCEDER</a>
+        Ya estas matriculado: <a href="{% url learning_course course.id %}" title="Acceder">ACCEDER</a>
     {% else %}
         {{ paypal_button }}
     {% endif %}

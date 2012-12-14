@@ -23,3 +23,14 @@ django-validated-file==0.0.1
 django-widget-tweaks==1.1.2
 python-magic==0.4.3
 wsgiref==0.1.2
+
+
+Necesitamos dos Videos para que funcione en todos los navegadores:
+
+Webm (contenedor) y VP8 (video) + Vorbis (audio) - esta fórmula la promueve Google para Chrome y a futuro para Android.  Es libre.
+MP4 (contenedor) y H.264 (video) + AAC (audio) - esta fórmula la promueve apple y recuerda que más de 20 millones de iPads se vendieron el año pasado
+
+<video width=”320” height=”240” controls>
+  <source src="mejorandola.mp4" type='video/mp4; codecs="avc1.42E01E,mp4a.40.2"'>
+  <source src="mejorandola.webm" type='video/webm; codecs="vp8,vorbis"'>
+</video>

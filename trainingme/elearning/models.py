@@ -82,10 +82,12 @@ class Course(models.Model):
         sudo ln -s /usr/lib/x86_64-linux-gnu/libz.so /usr/lib
         """
         size=(400, 300)
-        filename = self.image.path
-        image = Image.open(filename)
-        image.thumbnail(size, Image.ANTIALIAS)
-        image.save(filename)
+        if self.image:
+            filename = self.image.path
+            image = Image.open(filename)
+            image.thumbnail(size, Image.ANTIALIAS)
+            image.save(filename)
+
 
 
 
@@ -180,9 +182,9 @@ class Lesson(models.Model):
 class Video(models.Model):
     lesson = models.OneToOneField(Lesson,unique=True,related_name='video')
     #original_video_file = models.FileField(_('Video'),upload_to='original_lesson_videos',max_length=245)
-    original_video_file = ValidatedFileField(_('Video'),upload_to='new_lesson_videos',max_length=245,content_types = ['video/x-ms-asf','video/x-msvideo','video/x-flv','video/quicktime','video/mp4','video/mpeg','video/x-ms-wmv'])
-
-    converted_video_file = models.FileField(upload_to='converted_lesson_videos',max_length=245,blank=True,null=True)
+    original_video_file = ValidatedFileField(_('Video'),upload_to='new_lesson_videos',max_length=245,content_types = ['video/x-ms-asf','video/x-msvideo','video/x-flv','video/quicktime','video/mp4','video/mpeg','video/x-ms-wmv','video/webm'])
+    converted_video_file_mp4 = models.FileField(upload_to='converted_lesson_videos',max_length=245,blank=True,null=True)
+    converted_video_file_webm = models.FileField(upload_to='converted_lesson_videos',max_length=245,blank=True,null=True)
 
     def __unicode__(self):
         return self.original_video_file.name
@@ -197,6 +199,10 @@ class Video(models.Model):
             video = Video.objects.get(pk = self.id)
             if(os.path.isfile(video.original_video_file.path)):
                 default_storage.delete(video.original_video_file.path)
+            if(os.path.isfile(video.converted_video_file_mp4.path)):
+                default_storage.delete(video.converted_video_file_mp4.path)
+            if(os.path.isfile(video.converted_video_file_webm.path)):
+                default_storage.delete(video.converted_video_file_webm.path)
         super(Video,self).delete()
 
 
@@ -237,6 +243,7 @@ class Vote(models.Model):
 
     def get_owner_id(self):
         return self.user.id
+
 
 #Lesson comments
 class Comment(models.Model):
