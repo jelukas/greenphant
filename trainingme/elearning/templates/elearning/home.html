@@ -1,0 +1,13 @@
+{% extends 'base.html' %}
+{% load i18n %}
+{% block content %}
+    {% for course in courses %}
+        <div class="course_home" style="background-color: #008FD5; color: #ffffff; font-weight: bold; min-height: 100px; margin: 10px; border-radius: 5px;">
+            <ul>
+                <li>{{ course.title }}</li>
+                <li>{{ course.price }} €</li>
+                <li><a href="{% url view_course course.id %}">Ver</a></li>
+            </ul>
+        </div>
+    {%  endfor %}
+{% endblock %}

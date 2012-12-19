@@ -257,30 +257,35 @@ COURSE
 --------------------------
 """
 
-@login_required()
+#@login_required() # No es necesario que este logueado para ver los detalles del curso , Si para comprarlo
+
 def view_course(request,course_id):
     from paypal.standard.forms import PayPalEncryptedPaymentsForm
     from django.conf import settings
 
     course = get_object_or_404(Course,pk=course_id,status = Status.objects.get(name="published"))
-    enrrollment = course.enrollments.filter(user_id=request.user.id)
 
-    if not enrrollment:
-        paypal_dict = {
-            "business": settings.PAYPAL_RECEIVER_EMAIL,
-            "amount": course.price,
-            "currency_code": "EUR",
-            "item_name": course.title,
-            "item_number": course.id,
-            "invoice": "unique-invoice-id",
-            "notify_url": "%s%s" % (settings.SITE_NAME, reverse('paypal-ipn')),
-            "return_url": "%s%s" % (settings.SITE_URL, reverse('elearning.views.buy_course',)),
-            "cancel_return": "http://www.marca.com",
-            }
-        paypal_button = PayPalEncryptedPaymentsForm(initial=paypal_dict)
-        context = {'course':course,'paypal_button':paypal_button.sandbox()}
+    if request.user.is_authenticated():
+        enrrollment = course.enrollments.filter(user_id=request.user.id)
+
+        if not enrrollment:
+            paypal_dict = {
+                "business": settings.PAYPAL_RECEIVER_EMAIL,
+                "amount": course.price,
+                "currency_code": "EUR",
+                "item_name": course.title,
+                "item_number": course.id,
+                "invoice": "unique-invoice-id",
+                "notify_url": "%s%s" % (settings.SITE_NAME, reverse('paypal-ipn')),
+                "return_url": "%s%s" % (settings.SITE_URL, reverse('elearning.views.buy_course',)),
+                "cancel_return": "http://www.marca.com",
+                }
+            paypal_button = PayPalEncryptedPaymentsForm(initial=paypal_dict)
+            context = {'course':course,'paypal_button':paypal_button.sandbox()}
+        else:
+            context = {'course':course,'enrrolled':True}
     else:
-        context = {'course':course,'enrrolled':True}
+        context = {'course':course,'enrrolled':False}
     return render_to_response('elearning/course/view_course.html',context,context_instance = RequestContext(request))
 
 
@@ -358,7 +363,14 @@ def vote_lesson(request,lesson_id,points):
         back = request.META.get('HTTP_REFERER',None)
         return HttpResponseRedirect(back)
 
+"""
+HOME PAGE
+"""
 
+def home(request):
+    courses = Course.objects.filter(status = Status.objects.get(name="published"))
+    context = {'courses' : courses}
+    return render_to_response('elearning/home.html',context,context_instance = RequestContext(request))
 
 
 """

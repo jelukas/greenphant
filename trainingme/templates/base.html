@@ -18,7 +18,9 @@
 </head>
 <body>
 {% block menu %}
-    <a href="{% url auth_logout %}">Logout</a>
+    {% if user.is_authenticated %}
+        <a href="{% url auth_logout %}">Logout</a>
+    {% endif %}
 {% endblock %}
 {% block messages %}
     {% if messages %}

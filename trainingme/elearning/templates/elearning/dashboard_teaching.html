@@ -1,8 +1,9 @@
 {% extends 'base.html' %}
 {% load i18n %}
 {% block content %}
-    <h1 xmlns="http://www.w3.org/1999/html">Teaching</h1>
+    <h1>Teaching</h1>
     <a href="{% url dashboard %}">Back to Dashboard</a>
+    <a href="{% url new_course %}"> | {% trans 'Create Course' %}</a>
     {% for course in courses %}
         <div class="teaching_course" style="background-color: #d9edf7;">
             <p style="font-weight: bold;">{{ course.title }}</p>

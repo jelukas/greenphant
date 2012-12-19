@@ -51,6 +51,9 @@ class Order(models.Model):
         self.user.billing.balance = self.user.billing.balance + self.amount
         self.user.billing.save()
 
+    def __unicode__(self):
+        return str(self.created_at) + ' -- ' + self.course.title + ' -- ' + self.user.username + ' -- ' + str(self.datetime_cleared)
+
 
 
 # -------- Signals -----------

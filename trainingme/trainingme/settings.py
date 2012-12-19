@@ -173,8 +173,8 @@ ACCOUNT_ACTIVATION_DAYS = 7 # One-week activation window; you may, of course, us
 
 EMAIL_HOST = 'smtp.gmail.com'
 EMAIL_PORT = 587
-EMAIL_HOST_USER ='email@gmail.com'
-EMAIL_HOST_PASSWORD = 'password'
+EMAIL_HOST_USER ='guadaluxfoundation@gmail.com'
+EMAIL_HOST_PASSWORD = 'g74d4l7x'
 EMAIL_USE_TLS = True
 
 """

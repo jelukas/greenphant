@@ -2,9 +2,11 @@
 {% load i18n %}
 {% block content %}
     <h2>{{ course.title }}</h2>
-    {% if enrrolled %}
-        Ya estas matriculado: <a href="{% url learning_course course.id %}" title="Acceder">ACCEDER</a>
-    {% else %}
-        {{ paypal_button }}
-    {% endif %}
+    <div class="enrroled_data">
+        {% if enrrolled %}
+            Ya estás matriculado: <a href="{% url learning_course course.id %}" title="Acceder">ACCEDER</a>
+        {% elif user.is_authenticated %}
+            {{ paypal_button }}
+        {% endif %}
+    </div>
 {% endblock %}

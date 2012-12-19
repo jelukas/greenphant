@@ -7,14 +7,11 @@ from django.contrib import admin
 admin.autodiscover()
 
 urlpatterns = patterns('',
-    # Examples:
+    url(r'^$','elearning.views.home', name='home'),
     url(r'^accounts/', include('registration.backends.default.urls')),
     url(r'^personal/', include('personal.urls')),
     url(r'^elearning/', include('elearning.urls')),
     url(r'^financial/', include('financial.urls')),
-
-    # url(r'^$', 'trainingme.views.home', name='home'),
-    # url(r'^trainingme/', include('trainingme.foo.urls')),
 
     # Uncomment the admin/doc line below to enable admin documentation:
     # url(r'^admin/doc/', include('django.contrib.admindocs.urls')),

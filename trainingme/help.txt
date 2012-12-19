@@ -34,3 +34,16 @@ MP4 (contenedor) y H.264 (video) + AAC (audio) - esta fórmula la promueve apple
   <source src="mejorandola.mp4" type='video/mp4; codecs="avc1.42E01E,mp4a.40.2"'>
   <source src="mejorandola.webm" type='video/webm; codecs="vp8,vorbis"'>
 </video>
+
+
+Lineas de CRON:
+
+Para la conversion:
+
+*/2 * * * * root /home/luks/Escritorio/django/estable/greenphant/trainingme/convertvideo.sh
+
+
+Para los clears:
+
+25 6    * * *   root /home/luks/Escritorio/django/estable/greenphant/trainingme/clear_amounts.sh
+
