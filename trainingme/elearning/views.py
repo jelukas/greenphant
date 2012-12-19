@@ -333,6 +333,34 @@ def exists_paypal_txn_order(course_id,txn_id):
         return_value = False
     return return_value
 
+
+"""
+VOTAMOS una LECCION:
+Para votar la leccion debemos:
+1- El curso debe estar en estado published
+2- Estar matriculados en el curso de la leccion
+3- No haberla votado antes
+"""
+@login_required()
+def vote_lesson(request,lesson_id,points):
+    lesson = get_object_or_404(Lesson,pk=lesson_id)
+    if lesson.subject.course.status.name != 'published':
+        messages.error(request,_('This Course is not Published: ')+lesson.subject.course.title)
+        return HttpResponseRedirect(reverse('elearning.views.learning',))
+    else:
+        enrollment = get_object_or_404(Enrollment,course_id=lesson.subject.course_id,user_id=request.user.id) # you can't vote if you re not enrroled in the course
+        if not points or points < 0:
+            points = 0
+        if points > 5:
+            points = 5
+        if not lesson.vote(request.user.id,points):
+            messages.error(request,_('You can not vote twice this lesson: ')+lesson.title)
+        back = request.META.get('HTTP_REFERER',None)
+        return HttpResponseRedirect(back)
+
+
+
+
 """
 ---------------------------------------
 PAYPAL TESTING

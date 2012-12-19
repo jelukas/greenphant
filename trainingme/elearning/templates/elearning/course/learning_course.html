@@ -22,13 +22,17 @@
                             {% if lesson.attach %}
                                 <p>Extra Content: {{ lesson.attach.file.url }}</p>
                             {% endif %}
+                            {% load elearning_extras %}
+                            {% if not lesson|user_had_vote_lesson:user.id %}
                             <ul>
-                                <li><a href="#?" title="1 Star">1 Star</a></li>
-                                <li><a href="#?" title="2 Star">2 Star</a></li>
-                                <li><a href="#?" title="3 Star">3 Star</a></li>
-                                <li><a href="#?" title="4 Star">4 Star</a></li>
-                                <li><a href="#?" title="5 Star">5 Star</a></li>
+                                <li><a href="{% url vote_lesson lesson.id 1 %}" title="1 Star">1 Star</a></li>
+                                <li><a href="{% url vote_lesson lesson.id 2 %}" title="2 Star">2 Star</a></li>
+                                <li><a href="{% url vote_lesson lesson.id 3 %}" title="3 Star">3 Star</a></li>
+                                <li><a href="{% url vote_lesson lesson.id 4 %}" title="4 Star">4 Star</a></li>
+                                <li><a href="{% url vote_lesson lesson.id 5 %}" title="5 Star">5 Star</a></li>
                             </ul>
+                            {% endif %}
+                            <p>{% trans 'Stars' %}({{ lesson.votes.all.count }}): {{ lesson.get_scoring }}</p>
                         </li>
                     {% endfor %}
                 </ul>

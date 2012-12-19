@@ -2,8 +2,10 @@ from django.db import models
 from django.contrib.auth.models import User
 from django.db.models import Max
 from django.db.models import F
+from django.db.models import Avg
 from django.utils.translation import ugettext as _
 from django.core.files.storage import default_storage
+
 from validatedfile import ValidatedFileField
 
 #Category of the Courses Model
@@ -146,10 +148,36 @@ class Lesson(models.Model):
     order = models.IntegerField(blank=False)
 
     def __unicode__(self):
-        return self.title
+        return self.subject.title + ' -- ' + self.title
 
     def get_owner_id(self):
         return self.subject.course.user.id
+
+    def user_had_vote_lesson(self,user_id):
+        if self.id:
+            try:
+                vote = self.votes.get(user_id=user_id)
+            except Vote.DoesNotExist:
+                return False
+            else:
+                return True
+        else:
+            return False
+
+    @property
+    def get_scoring(self):
+        score = self.votes.all().aggregate(Avg('points'))
+        return score['points__avg']
+
+    def vote(self,user_id,points):
+        if self.id:
+            from datetime import datetime
+            if not self.user_had_vote_lesson(user_id):
+                vote = Vote(user_id = user_id, points = points,created_at = datetime.now(),lesson_id = self.id)
+                vote.save()
+                return True
+            else:
+                return False
 
     class Meta:
         ordering = ["order"]
@@ -234,6 +262,7 @@ class Enrollment(models.Model):
         return self.user.id
 
 
+
 #Lessons votes
 class Vote(models.Model):
     user = models.ForeignKey(User,verbose_name=_('User'),related_name='votes')
@@ -243,6 +272,9 @@ class Vote(models.Model):
 
     def get_owner_id(self):
         return self.user.id
+
+    def __str__(self):
+        return unicode(self.user.username) + '--' + str(self.points)
 
 
 #Lesson comments
