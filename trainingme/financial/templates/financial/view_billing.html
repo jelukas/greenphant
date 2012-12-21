@@ -4,7 +4,7 @@
     <a href="{% url edit_billing %}">{% trans 'Update Billing Details' %}</a>
     <h2>{% trans 'You are viewing your financial details' %}</h2>
     <ul>
-        <li>{% trans 'Balance' %}: {{ billing.balance|floatformat:2 }} &euro;</li>
+        <li>{% trans 'Aviable Balance' %}: {{ billing.balance|floatformat:2 }} &euro;</li>
         <li>{% trans 'Paypal Account' %}: {{ billing.paypal_account|default:'not specified' }}</li>
         <li>{% trans 'Name for Invoice' %}: {{ billing.name|default:'not specified' }}</li>
         <li>{% trans 'Surname for Invoice' %}: {{ billing.surname|default:'not specified' }}</li>
@@ -47,7 +47,7 @@
             <td>{% trans 'Course' %}</td>
             <td>{% trans 'Buyer' %}</td>
             <td>{% trans 'Date Cleared' %}</td>
-            <td>{% trans 'Amount' %}</td>
+            <td>{% trans 'Net Amount' %}</td>
         </tr>
         {% for order in sells %}
             <tr>
@@ -55,7 +55,7 @@
                 <td>{{ order.course.title }}</td>
                 <td>{{ order.user.username }}</td>
                 <td>{{ order.datetime_cleared|date:"SHORT_DATE_FORMAT" }}</td>
-                <td>{{ order.amount|floatformat:2 }}</td>
+                <td>{{ order.net_amount|floatformat:2 }}</td>
             </tr>
         {% endfor %}
     </table>

@@ -286,3 +286,6 @@ class Comment(models.Model):
 
     def get_owner_id(self):
         return self.user.id
+
+    def __unicode__(self):
+        return unicode(self.created_at) + '--' + unicode(self.lesson.title) + '--' + unicode(self.user) + '--' + unicode(self.message)

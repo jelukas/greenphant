@@ -303,6 +303,20 @@ def learning_course(request,course_id):
     return render_to_response('elearning/course/learning_course.html',context,context_instance = RequestContext(request))
 
 
+"""
+Vista de la Leccion una vez matriculado
+"""
+@login_required()
+def learning_lesson(request,lesson_id):
+    lesson = get_object_or_404(Lesson,pk=lesson_id,Subject__Course__Status = Status.objects.get(name="published"))
+    enrrollment = lesson.subject.course.enrollments.filter(user_id=request.user.id)
+    if not enrrollment:
+        messages.warning(request,_('You are not enrroled in that course: ')+lesson.subject.course.title)
+        return HttpResponseRedirect(reverse('elearning.views.view_course', args=(lesson.subject.course.id,)))
+    else:
+        context = {'lesson':lesson,'enrrolled':True}
+    return render_to_response('elearning/course/learning_lesson.html',context,context_instance = RequestContext(request))
+
 
 """
 COMPRA DEL CURSO

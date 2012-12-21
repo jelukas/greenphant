@@ -45,6 +45,10 @@ class Order(models.Model):
     def get_buyer(self):
         return self.user
 
+    def net_amount(self):
+            return str(float(self.amount)*float(0.7))
+    net_amount.short_description = 'Net AMount'
+
     def clear_amount(self):
         self.datetime_cleared = datetime.now()
         self.save()

@@ -6,3 +6,4 @@ class BillingForm(ModelForm):
     class Meta:
         model = Billing
         exclude = ('user','balance')
+

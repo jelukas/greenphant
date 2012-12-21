@@ -1,0 +1,32 @@
+{% extends 'base.html' %}
+{% load i18n %}
+{% block content %}
+    <h2>{{ lesson.subject.course.title }}</h2>
+    {% if lesson.subject.course.image %}
+        <img src="{{ lesson.subject.course.image.url }}" alt="{{ lesson.subject.course.title }}" title="{{ lesson.subject.course.title }}"/>
+    {% endif %}
+
+    {% trans 'Lesson' %} - {{ lesson.title }}
+    {% if lesson.video.converted_video_file_mp4 %}
+        <video id="video_course" class="video-js vjs-default-skin" controls preload="auto" width="940" height="500"
+               data-setup="{}">
+            <source type='video/mp4' src="{{ lesson.video.converted_video_file_mp4.url }}">
+            <source type='video/webm' src="{{ lesson.video.converted_video_file_webm.url }}">
+        </video>
+    {% endif %}
+    {% if lesson.attach %}
+        <p>Extra Content: {{ lesson.attach.file.url }}</p>
+    {% endif %}
+    {% load elearning_extras %}
+    {% if not lesson|user_had_vote_lesson:user.id %}
+        <ul>
+            <li><a href="{% url vote_lesson lesson.id 1 %}" title="1 Star">1 Star</a></li>
+            <li><a href="{% url vote_lesson lesson.id 2 %}" title="2 Star">2 Star</a></li>
+            <li><a href="{% url vote_lesson lesson.id 3 %}" title="3 Star">3 Star</a></li>
+            <li><a href="{% url vote_lesson lesson.id 4 %}" title="4 Star">4 Star</a></li>
+            <li><a href="{% url vote_lesson lesson.id 5 %}" title="5 Star">5 Star</a></li>
+        </ul>
+    {% endif %}
+    <p>{% trans 'Stars' %}({{ lesson.votes.all.count }}): {{ lesson.get_scoring }}</p>
+
+{% endblock %}
