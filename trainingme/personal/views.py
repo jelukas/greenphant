@@ -6,7 +6,7 @@ from personal.forms import ProfileForm
 from django.core.urlresolvers import reverse
 from django.contrib import messages
 from django.utils.translation import ugettext as _
-
+from django.contrib.auth import logout
 
 @login_required
 def edit(request):
@@ -28,9 +28,7 @@ def edit(request):
     return render_to_response('personal/edit_profile.html',{'profile_form':profile_form},context_instance = RequestContext(request))
 
 
-@login_required
-def custom_login(request):
-    if request.user.personal_profile.is_first_login == False:
-        return HttpResponseRedirect(reverse('dashboard'))
-    else:
-        return HttpResponseRedirect(reverse('edit_profile'))
+
+def logout_view(request):
+    logout(request)
+    return HttpResponseRedirect(reverse('home'))

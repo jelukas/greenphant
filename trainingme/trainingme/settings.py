@@ -126,7 +126,8 @@ INSTALLED_APPS = (
     'django.contrib.admin',
     # Uncomment the next line to enable admin documentation:
     # 'django.contrib.admindocs',
-    'registration',
+    #'registration',
+    'social_auth',
     'widget_tweaks',
     'django_countries',
     'paypal.standard.ipn',
@@ -165,8 +166,42 @@ LOGGING = {
     }
 }
 
-#Django Registration Options
-ACCOUNT_ACTIVATION_DAYS = 7 # One-week activation window; you may, of course, use a different value.
+
+# Social Authentication
+
+AUTHENTICATION_BACKENDS = (
+    'social_auth.backends.twitter.TwitterBackend',
+    'social_auth.backends.facebook.FacebookBackend',
+    'django.contrib.auth.backends.ModelBackend',
+    )
+
+TWITTER_CONSUMER_KEY         = 'YyLFIRiVZv1ksLGW1aw'
+TWITTER_CONSUMER_SECRET      = 'c8Gwdwd3hdM31Eyjii0IAkA1MOY4sWkgjK88GsCI'
+FACEBOOK_APP_ID              = '560302190653717'
+FACEBOOK_API_SECRET          = '5a7a46d0f6c60d83b37e356fe8f7d323'
+
+LOGIN_URL          = '/login-form/'
+LOGIN_REDIRECT_URL = '/'
+LOGIN_ERROR_URL    = '/login-error/'
+SOCIAL_AUTH_NEW_USER_REDIRECT_URL = '/personal/profile/edit/'
+
+
+TEMPLATE_CONTEXT_PROCESSORS = (
+    "django.contrib.auth.context_processors.auth",
+    "django.core.context_processors.debug",
+    "django.core.context_processors.i18n",
+    "django.core.context_processors.media",
+    "django.core.context_processors.static",
+    "django.core.context_processors.tz",
+    "django.contrib.messages.context_processors.messages",
+    'social_auth.context_processors.social_auth_by_name_backends',
+    'social_auth.context_processors.social_auth_backends',
+    'social_auth.context_processors.social_auth_by_type_backends',
+    'social_auth.context_processors.social_auth_login_redirect',
+)
+
+
+SOCIAL_AUTH_EXPIRATION = 'expires'
 
 
 #Email
