@@ -31,9 +31,10 @@ urlpatterns = patterns('',
     url(r'^course/(\d+)/$','elearning.views.view_course', name='view_course' ),
     url(r'^course/buy/$','elearning.views.buy_course', name='buy_course' ),
     url(r'^course/learning/(\d+)/$','elearning.views.learning_course', name='learning_course' ),
-    url(r'^course/lesson/learning/(\d+)/$','elearning.views.learning_lesson', name='learning_lesson' ),
 
     #Lesson
     url(r'^lesson/(\d+)/(\d+)?/$','elearning.views.vote_lesson', name='vote_lesson' ),
+    url(r'^course/lesson/learning/(\d+)/$','elearning.views.learning_lesson', name='learning_lesson' ),
+
 )
 

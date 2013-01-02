@@ -1,5 +1,6 @@
 from django.forms import ModelForm
-from elearning.models import Course,Subject,Lesson,Video, Attach
+from django.forms import widgets
+from elearning.models import Course,Subject,Lesson,Video, Attach, Comment
 
 
 class CourseForm(ModelForm):
@@ -12,6 +13,12 @@ class SubjectForm(ModelForm):
     class Meta:
         model = Subject
         exclude = ('course','created_at','order')
+
+
+class CommentForm(ModelForm):
+    class Meta:
+        model = Comment
+        exclude = ('created_at','user','lesson')
 
 
 class LessonForm(ModelForm):

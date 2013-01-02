@@ -28,5 +28,21 @@
         </ul>
     {% endif %}
     <p>{% trans 'Stars' %}({{ lesson.votes.all.count }}): {{ lesson.get_scoring }}</p>
-
+    <div class="lessson_comments">
+        <form action="" method="post">{% csrf_token %}
+            {{ comment_form.as_p }}
+            <input type="submit" value="Enviar" />
+        </form>
+        <ul>
+            {% for comment in comments %}
+                <li>
+                    <p><strong>{{ comment.user.username }} - {{ comment.created_at }}</strong></p>
+                    <p>{{ comment.message }}</p>
+                </li>
+            {% endfor %}
+        </ul>
+    </div>
+    <script>
+        $(document).ready(function(){ document.oncontextmenu = function() {return false;}; });
+    </script>
 {% endblock %}

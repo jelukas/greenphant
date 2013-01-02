@@ -6,8 +6,10 @@
     <a href="{% url new_course %}"> | {% trans 'Create Course' %}</a>
     {% for course in courses %}
         <div class="teaching_course" style="background-color: #d9edf7;">
-            <p style="font-weight: bold;">{{ course.title }}</p>
-            <p>{% trans 'Students' %}:{{ course.enrollments.all|length }}</p>
+            <p style="font-weight: bold;">{{ course.title }} -- {% trans 'Status' %}: {{ course.status.name }}</p>
+            {%  if course.status.name == 'published' %}
+                <p>{% trans 'Students' %}:{{ course.enrollments.all|length }}</p>
+            {% endif %}
         </div>
     {% endfor %}
 {% endblock %}
