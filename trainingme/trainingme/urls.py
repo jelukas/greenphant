@@ -8,6 +8,7 @@ admin.autodiscover()
 
 urlpatterns = patterns('',
     url(r'^$','elearning.views.home', name='home'),
+    url(r'^accounts/', include('registration.backends.default.urls')),
     url(r'', include('social_auth.urls')),
     url(r'^personal/', include('personal.urls')),
     url(r'^elearning/', include('elearning.urls')),

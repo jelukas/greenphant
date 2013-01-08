@@ -13,6 +13,9 @@ from django.views.decorators.http import require_POST
 from django.http import HttpResponseNotFound
 from django.core.exceptions import ObjectDoesNotExist
 from datetime import datetime
+from django.template.defaultfilters import slugify
+from django.db import IntegrityError
+
 
 @login_required()
 def new_course(request):
@@ -22,8 +25,13 @@ def new_course(request):
             # Process the data in form.cleaned_data
             course = course_form.save(commit=False)
             course.user = request.user
+            course.slug = slugify(course.title)
             course.status = Status.objects.get(name="building")
-            course.save()
+            try:
+                course.save()
+            except IntegrityError:
+                messages.error(request,_('Course failed to create: Title exits'))
+                return HttpResponseRedirect(reverse('elearning.views.new_course',))
             messages.success(request,_('Course created successfully'))
             return HttpResponseRedirect(reverse('elearning.views.building_course', args=(course.id,))) # Redirect after POST
         else:
@@ -44,7 +52,12 @@ def edit_course(request,course_id):
             # Process the data in form.cleaned_data
             course = course_form.save(commit=False)
             course.user = request.user
-            course.save()
+            course.slug = slugify(course.title)
+            try:
+                course.save()
+            except IntegrityError:
+                messages.error(request,_('Course failed to create: Title exits'))
+                return render_to_response('elearning/edit_course.html',{'course_form':course_form},context_instance = RequestContext(request))
             messages.success(request,_('Course updated successfully'))
             return HttpResponseRedirect(reverse('elearning.views.building_course', args=(course.id,))) # Redirect after POST
         else:
@@ -259,11 +272,11 @@ COURSE
 
 #@login_required() # No es necesario que este logueado para ver los detalles del curso , Si para comprarlo
 
-def view_course(request,course_id):
+def view_course(request,slug):
     from paypal.standard.forms import PayPalEncryptedPaymentsForm
     from django.conf import settings
 
-    course = get_object_or_404(Course,pk=course_id,status = Status.objects.get(name="published"))
+    course = get_object_or_404(Course,slug=slug,status = Status.objects.get(name="published"))
 
     if request.user.is_authenticated():
         enrrollment = course.enrollments.filter(user_id=request.user.id)

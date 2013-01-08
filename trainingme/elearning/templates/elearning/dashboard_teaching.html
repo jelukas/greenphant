@@ -9,6 +9,11 @@
             <p style="font-weight: bold;">{{ course.title }} -- {% trans 'Status' %}: {{ course.status.name }}</p>
             {%  if course.status.name == 'published' %}
                 <p>{% trans 'Students' %}:{{ course.enrollments.all|length }}</p>
+                <p><a href="{% url view_course course.slug %}">{% trans 'View' %}</a></p>
+            {% endif %}
+            {%  if course.status.name == 'building' %}
+                <p><a href="{% url edit_course course.id %}">{% trans 'Edit' %}</a></p>
+                <p><a href="#">{% trans 'Delete' %}</a></p>
             {% endif %}
         </div>
     {% endfor %}

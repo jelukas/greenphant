@@ -6,7 +6,7 @@
             <ul>
                 <li>{{ course.title }}</li>
                 <li>{{ course.price }} €</li>
-                <li><a href="{% url view_course course.id %}">Ver</a></li>
+                <li><a href="{% url view_course course.slug %}">Ver</a></li>
             </ul>
         </div>
     {%  endfor %}

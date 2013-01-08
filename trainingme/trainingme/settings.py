@@ -126,7 +126,7 @@ INSTALLED_APPS = (
     'django.contrib.admin',
     # Uncomment the next line to enable admin documentation:
     # 'django.contrib.admindocs',
-    #'registration',
+    'registration',
     'social_auth',
     'widget_tweaks',
     'django_countries',
@@ -180,8 +180,8 @@ TWITTER_CONSUMER_SECRET      = 'c8Gwdwd3hdM31Eyjii0IAkA1MOY4sWkgjK88GsCI'
 FACEBOOK_APP_ID              = '560302190653717'
 FACEBOOK_API_SECRET          = '5a7a46d0f6c60d83b37e356fe8f7d323'
 
-LOGIN_URL          = '/login-form/'
-LOGIN_REDIRECT_URL = '/'
+LOGIN_URL          = '/accounts/login/'
+LOGIN_REDIRECT_URL = '/elearning/'
 LOGIN_ERROR_URL    = '/login-error/'
 SOCIAL_AUTH_NEW_USER_REDIRECT_URL = '/personal/profile/edit/'
 
@@ -202,6 +202,11 @@ TEMPLATE_CONTEXT_PROCESSORS = (
 
 
 SOCIAL_AUTH_EXPIRATION = 'expires'
+
+#Settings for  Registration app
+
+ACCOUNT_ACTIVATION_DAYS=7
+
 
 
 #Email

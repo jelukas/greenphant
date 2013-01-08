@@ -33,6 +33,7 @@ class Status(models.Model):
 
 #Course model
 class Course(models.Model):
+    slug = models.SlugField(max_length=75,unique=True)
     user = models.ForeignKey(User,related_name='courses')
     created_at = models.DateTimeField(blank=False,auto_now_add=True)
     price = models.DecimalField(_('price'),blank=False,max_digits=20,decimal_places=2)
@@ -64,6 +65,9 @@ class Course(models.Model):
 
     def get_owner_id(self):
         return self.user.id
+
+    def get_absolute_url(self):
+        return "/elearning/course/%s/" % self.slug
 
     def save(self):
         super(Course, self).save()
