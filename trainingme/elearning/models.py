@@ -87,7 +87,7 @@ class Course(models.Model):
         sudo ln -s /usr/lib/x86_64-linux-gnu/libfreetype.so /usr/lib
         sudo ln -s /usr/lib/x86_64-linux-gnu/libz.so /usr/lib
         """
-        size=(400, 300)
+        size=(263, 130)
         if self.image:
             filename = self.image.path
             image = Image.open(filename)

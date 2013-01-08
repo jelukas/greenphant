@@ -1,13 +1,122 @@
 {% extends 'base.html' %}
 {% load i18n %}
-{% block content %}
-    {% for course in courses %}
-        <div class="course_home" style="background-color: #008FD5; color: #ffffff; font-weight: bold; min-height: 100px; margin: 10px; border-radius: 5px;">
-            <ul>
-                <li>{{ course.title }}</li>
-                <li>{{ course.price }} €</li>
-                <li><a href="{% url view_course course.slug %}">Ver</a></li>
-            </ul>
+{% block sections %}
+    <section class="bodyGradient">
+        <div class="row-fluid">
+            <div class="span6 center">
+                <a href="#" >
+                    <img  class="main-logo" src="{{ STATIC_URL }}img/TrainingMe-logo.png" alt="Training Me Cursos">
+                </a>
+            </div>
+            <div class="span6">
+                <a href="#" >
+                    <img class="fraseheader" src="{{ STATIC_URL }}img/disfruta-aprendiendo-ensenando.png" alt="Disfruta aprendiendo, Disfruta ense&ntilde;ando">
+                </a>
+            </div>
         </div>
-    {%  endfor %}
-{% endblock %}
+        <div class="row-fluid mainSplash">
+            <div class="span6 center screensplash">
+            </div>
+            <div class="span6">
+                <fieldset class="prettyprint">
+                    <p class="formTitle">Reg&iacute;strate</p>
+                    <form class="form-horizontal">
+                        <div class="control-group">
+                            <label class="control-label">Nombre Completo:</label>
+                            <div class="controls">
+                                <input type="text" id="inputNombreCompleto" placeholder="" class="span10" >
+                            </div>
+                        </div>
+                        <div class="control-group">
+                            <label class="control-label">Correo Electr&oacute;nico:</label>
+                            <div class="controls">
+                                <input type="text" id="inputEmail" placeholder="" class="span10">
+                            </div>
+                        </div>
+                        <div class="control-group">
+                            <label class="control-label">Contrase&ntilde;a:</label>
+                            <div class="controls">
+                                <input type="password" id="inputPassword" placeholder="" class="span10">
+                            </div>
+                        </div>
+                    </form>
+                    <div class="row-fluid registration-line" >
+                        <div class="span7">
+                            <span>Si est&aacute;s registrado.</span>
+                            <a href="#">Inicia Sesi&oacute;n</a>
+                        </div>
+                        <div class="span4">
+                            <button type="button" class="btn btn-primary span10">Registrarme</button>
+                        </div>
+                    </div>
+                    <div class="panelPizarra">
+                        <div class="row-fluid">
+                            <div class="span4">
+                                <img src="{{ STATIC_URL }}img/ensena-aprende-cursos.png" alt="Cursos - Ense&ntilde;a - Aprende">
+                            </div>
+                            <div class="span4">
+                                <button type="button" class="btn btn-greyday span10">Aprende</button>
+                            </div>
+                            <div class="span4">
+                                <button type="button" class="btn span10">Ense&ntilde;a</button>
+                            </div>
+                        </div>
+                    </div>
+                </fieldset>
+            </div>
+        </div>
+    </section>
+    <section>
+        <div class="row-fluid searchBar">
+            <div class="span12">
+                <!-- linea divisora -->
+                <div class="span10 center">
+                    <input type="text" class="span11" placeholder="Introduce aqu&iacute; que te gustar&iacute;a aprender">
+                </div>
+                <div class="span2 center">
+                    <button type="button" class="btn btn-primary span8">Buscar</button>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="cursosResultado">
+        <div class="container">
+            <div class="row-fluid">
+                <div class="boxLine">
+                    {% for course in courses %}
+                    <div class="span3 cursoBox">
+                        <div class="boxTitleBG">
+                            {% if course.image %}
+                                <a href="{% url view_course course.slug %}" title="{{ course.title }}"><img src="{{ course.image.url }}" alt="{{ course.title }}"/></a>
+                            {% else %}
+                                <a href="{% url view_course course.slug %}" title="{{ course.title }}"><img src="{{ STATIC_URL }}img/image-not-found.png" /></a>
+                            {% endif %}
+                        </div>
+                        <div class="boxTitle" >
+                            <a href="{% url view_course course.slug %}" title="{{ course.title }}">{{ course.title }}</a>
+                        </div>
+                        <div class="boxDescription">
+                            <p>
+                                {{ course.short_description }}
+                            </p>
+                        </div>
+                        <div class="boxInfoFooter">
+                            <div class="headerTitle">
+                                <div class="leftSide">{% trans "Enrolls" %}</div>
+                                <div class="middleSide">{% trans "Price" %}</div>
+                                <div class="rightSide">{% trans "Points" %}</div>
+                            </div>
+                            <div class="footerInfo">
+                                <div class="leftSide">{{ course.enrollments.count }}</div>
+                                <div class="middleSide">{{ course.price }} &euro;</div>
+                                <div id="starRaitings_1" class="rightSide"></div>
+                            </div>
+                        </div>
+                    </div>
+                    {%  endfor %}
+                </div>
+            </div>
+        </div>
+    </section>
+
+{% endblock sections %}

@@ -1,44 +1,48 @@
-{% load url from future %}
-<!doctype html>
 <html>
 <head>
-    <title>
-        {% block title %}
-        TrainingMe.Net - New Elearning Plataform
-        {% endblock %}
-    </title>
-    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.8.0/jquery.min.js"></script>
-    <script src="//ajax.googleapis.com/ajax/libs/jqueryui/1.8.23/jquery-ui.min.js"></script>
-    <!-- Javascript for CRFS in AJAX requests -->
-    <script type="text/javascript">
-        jQuery(document).ajaxSend(function(a,b,c){function d(a){var b=null;if(document.cookie&&document.cookie!=""){var c=document.cookie.split(";");for(var d=0;d<c.length;d++){var e=jQuery.trim(c[d]);if(e.substring(0,a.length+1)==a+"="){b=decodeURIComponent(e.substring(a.length+1));break}}}return b}function e(a){var b=document.location.host;var c=document.location.protocol;var d="//"+b;var e=c+d;return a==e||a.slice(0,e.length+1)==e+"/"||a==d||a.slice(0,d.length+1)==d+"/"||!/^(\/\/|http:|https:).*/.test(a)}function f(a){return/^(GET|HEAD|OPTIONS|TRACE)$/.test(a)}if(!f(c.type)&&e(c.url)){b.setRequestHeader("X-CSRFToken",d("csrftoken"))}})
-    </script>
-    <link type="text/css" rel="stylesheet" href="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8.10/themes/flick/jquery-ui.css" />
-    <link href="http://vjs.zencdn.net/c/video-js.css" rel="stylesheet">
-    <script src="http://vjs.zencdn.net/c/video.js"></script>
+    <title>Fundaci&oacute;n Guadalux</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="{{ STATIC_URL }}css/styles.css" rel="stylesheet">
+    <script type="text/javascript" src="{{ STATIC_URL }}js/jquery-1.8.3.min.js"></script>
+    <script type="text/javascript" src="{{ STATIC_URL }}js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="{{ STATIC_URL }}js/jquery.raty.min.js"></script>
 </head>
 <body>
-{% block menu %}
-    {% if user.is_authenticated %}
-        <a rel="nofollow" class="logout" href="{% url 'logout' %}">Logout</a>
-        | {{ user.username }}
-    {% else %}
-        <a href="{% url "socialauth_begin" "facebook" %}">Login With Facebook</a>
-        <a href="{% url "socialauth_begin" "twitter" %}">Login With Twitter</a>
-    {% endif %}
+<header>
+    {% block header %}
+        <div class="navbar-inner">
 
-{% endblock %}
-{% block messages %}
-    {% if messages %}
-        <ul class="messages">
-            {% for message in messages %}
-                <li{% if message.tags %} class="{{ message.tags }}"{% endif %}>{{ message }}</li>
-            {% endfor %}
-        </ul>
-    {% endif %}
-{% endblock %}
-{% block content %}
+        </div>
+    {% endblock header %}
+</header>
+{% block sections %}
 
-{% endblock %}
+{% endblock sections %}
+<footer>
+    {% block footer %}
+    {% endblock footer %}
+</footer>
+<script type="text/javascript">
+    $('#starRaitings_1').raty({
+        half  : true,
+        readOnly   : true,
+        noRatedMsg : 'anyone rated this product yet!'
+    });
+    $('#starRaitings_2').raty({
+        half  : true,
+        readOnly   : true,
+        noRatedMsg : 'anyone rated this product yet!'
+    });
+    $('#starRaitings_3').raty({
+        readOnly   : true,
+        half  : true,
+        noRatedMsg : 'anyone rated this product yet!'
+    });
+    $('#starRaitings_4').raty({
+        readOnly   : true,
+        half  : true,
+        noRatedMsg : 'anyone rated this product yet!'
+    });
+</script>
 </body>
 </html>
