@@ -1,13 +1,15 @@
 {% extends "registration/registration_base.html" %}
 {% load url from future %}
-{% block title %}Registrarme{% endblock %}
-{% block content %}
-<a href="{% url "socialauth_begin" "facebook" %}">Login With Facebook</a>
-<a href="{% url "socialauth_begin" "twitter" %}">Login With Twitter</a>
-<table>
-    <form method='post' action=''>{% csrf_token %}
-        {{ form }}
-        <tr><td></td><td><input type="submit" value="Registrarme" /></td>
-    </form>
-</table>
-{% endblock %}
+{% load i18n %}
+{% block title %}{% trans "Create a new Account" %}{% endblock %}
+{% block sections %}
+    <section class="form-signin">
+        <h1>{% trans "Create Account" %}</h1>
+        <table>
+            <form method='post' action=''>{% csrf_token %}
+                {{ form }}
+                <tr><td></td><td><input class="btn btn-large btn-primary" type="submit" value="{% trans "Create Account" %}" /></td>
+            </form>
+        </table>
+    </section>
+{% endblock sections %}

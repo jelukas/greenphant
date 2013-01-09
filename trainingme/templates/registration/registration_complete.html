@@ -1,6 +1,13 @@
 {% extends "registration/registration_base.html" %}
-{% block title %}Correo eléctronico de Activación enviado{% endblock %}
-{% block content %}
-Se ha enviado el enlace de activación a tu cuenta de correo electrónico. Por favor revisa tu bandeja de correo electronico y haz clic en el enlace para activar tu cuenta
-{% endblock %}
+{% load i18n %}
+{% block title %}{% trans "Correo eléctronico de Activación enviado" %}{% endblock %}
+{% block sections %}
+    <section>
+        <div class="alert alert-block">
+            <button type="button" class="close" data-dismiss="alert">&times;</button>
+            <h4>{% trans "Info!" %}</h4>
+            {% trans "Se ha enviado el enlace de activación a tu cuenta de correo electrónico. Por favor revisa tu bandeja de correo electronico y haz clic en el enlace para activar tu cuenta" %}
+        </div>
+    </section>
+{% endblock sections %}
 

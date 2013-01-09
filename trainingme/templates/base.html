@@ -1,19 +1,64 @@
+{% load i18n %}
 <html>
 <head>
     <title>Fundaci&oacute;n Guadalux</title>
+    <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="{{ STATIC_URL }}css/styles.css" rel="stylesheet">
-    <script type="text/javascript" src="{{ STATIC_URL }}js/jquery-1.8.3.min.js"></script>
-    <script type="text/javascript" src="{{ STATIC_URL }}js/bootstrap.min.js"></script>
-    <script type="text/javascript" src="{{ STATIC_URL }}js/jquery.raty.min.js"></script>
+    {% block footerscripts %}
+        <script type="text/javascript" src="{{ STATIC_URL }}js/jquery-1.8.3.min.js"></script>
+        <script type="text/javascript" src="{{ STATIC_URL }}js/bootstrap.min.js"></script>
+        <script type="text/javascript" src="{{ STATIC_URL }}js/jquery.raty.min.js"></script>
+    {% endblock %}
 </head>
 <body>
 <header>
-    {% block header %}
+    <div class="navbar">
         <div class="navbar-inner">
+            <div class="container">
 
+                <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </a>
+
+                <a href="/">
+                    <img class="headerLogo" src="{{ STATIC_URL }}img/HeaderLogo.png" alt="TrainingMe.Net - Cursos">
+                </a>
+                {% if user.is_authenticated %}
+                    <div class="nav-collapse collapse MenuBarResponsiveFirst">
+                        <div class="nav-collapse collapse navbar-inverse-collapse MenuBarResponsiveSecond">
+                            <ul class="nav">
+                                <li class="active"><a href="#">{% trans "My Courses" %}</a></li>
+                                <li><a href="#">{% trans "Create New Course" %}</a></li>
+                                <li><a href="#">{% trans "Search Courses" %}</a></li>
+                                <li class="dropdown">
+                                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">{% trans "My Account" %}<b class="caret"></b></a>
+                                    <ul class="dropdown-menu">
+                                        <li><a href="#">{% trans "My Profile" %}</a></li>
+                                        <li><a href="#">{% trans "Earnings" %}</a></li>
+                                        <li><a href="#">{% trans "Balance" %}</a></li>
+                                    </ul>
+                                </li>
+                            </ul>
+                            <ul class="nav pull-right">
+                                <li class="welcomeMenuItem">{% trans "Welcome" %}</li>
+                                <li class="divider-vertical"></li>
+                                <li class="dropdown">
+                                    <a href="#" class="dropdown-toggle" data-toggle="dropdown"> {{ user.username }} <b class="caret"></b></a>
+                                    <ul class="dropdown-menu">
+                                        <li><a href="{% url logout %}">{% trans "Log Out" %}</a></li>
+                                    </ul>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                {% endif %}
+
+            </div>
         </div>
-    {% endblock header %}
+    </div>
 </header>
 {% block sections %}
 
@@ -22,27 +67,5 @@
     {% block footer %}
     {% endblock footer %}
 </footer>
-<script type="text/javascript">
-    $('#starRaitings_1').raty({
-        half  : true,
-        readOnly   : true,
-        noRatedMsg : 'anyone rated this product yet!'
-    });
-    $('#starRaitings_2').raty({
-        half  : true,
-        readOnly   : true,
-        noRatedMsg : 'anyone rated this product yet!'
-    });
-    $('#starRaitings_3').raty({
-        readOnly   : true,
-        half  : true,
-        noRatedMsg : 'anyone rated this product yet!'
-    });
-    $('#starRaitings_4').raty({
-        readOnly   : true,
-        half  : true,
-        noRatedMsg : 'anyone rated this product yet!'
-    });
-</script>
 </body>
 </html>

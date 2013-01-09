@@ -1,4 +1,5 @@
 {% extends 'base.html' %}
+{% load url from future %}
 {% load i18n %}
 {% block sections %}
     <section class="bodyGradient">
@@ -19,34 +20,21 @@
             </div>
             <div class="span6">
                 <fieldset class="prettyprint">
-                    <p class="formTitle">Reg&iacute;strate</p>
-                    <form class="form-horizontal">
-                        <div class="control-group">
-                            <label class="control-label">Nombre Completo:</label>
-                            <div class="controls">
-                                <input type="text" id="inputNombreCompleto" placeholder="" class="span10" >
-                            </div>
-                        </div>
-                        <div class="control-group">
-                            <label class="control-label">Correo Electr&oacute;nico:</label>
-                            <div class="controls">
-                                <input type="text" id="inputEmail" placeholder="" class="span10">
-                            </div>
-                        </div>
-                        <div class="control-group">
-                            <label class="control-label">Contrase&ntilde;a:</label>
-                            <div class="controls">
-                                <input type="password" id="inputPassword" placeholder="" class="span10">
-                            </div>
-                        </div>
-                    </form>
+                    <p class="formTitle">{% trans "Sign in" %}</p>
+                    <p class="social-login">
+                        <a href="{% url "socialauth_begin" "facebook" %}"><img src="{{ STATIC_URL }}img/{% trans "login-fb-en.png" %}"/></a>
+                        <a href="{% url "socialauth_begin" "twitter" %}"><img src="{{ STATIC_URL }}img/{% trans "login-tw-en.png" %}"/></a>
+                    </p>
+                    <h3 class="center">
+                        <span>{% trans "or sign in with" %}</span>
+                        <a href="{% url "registration_register" %}"> {% trans "your email address"%} </a>
+                    </h3>
                     <div class="row-fluid registration-line" >
-                        <div class="span7">
-                            <span>Si est&aacute;s registrado.</span>
-                            <a href="#">Inicia Sesi&oacute;n</a>
-                        </div>
-                        <div class="span4">
-                            <button type="button" class="btn btn-primary span10">Registrarme</button>
+                        <div class="span12">
+                            <h4 class="center">
+                                <span>{% trans "already have account?" %}</span>
+                                <a href="/accounts/login/" >{% trans "Log In" %}</a>
+                            </h4>
                         </div>
                     </div>
                     <div class="panelPizarra">
@@ -85,19 +73,16 @@
                 <div class="boxLine">
                     {% for course in courses %}
                     <div class="span3 cursoBox">
-                        <div class="boxTitleBG">
-                            {% if course.image %}
-                                <a href="{% url view_course course.slug %}" title="{{ course.title }}"><img src="{{ course.image.url }}" alt="{{ course.title }}"/></a>
-                            {% else %}
-                                <a href="{% url view_course course.slug %}" title="{{ course.title }}"><img src="{{ STATIC_URL }}img/image-not-found.png" /></a>
-                            {% endif %}
+                        <a href="{% url "view_course" course.slug %}">
+                        <div class="boxTitleBG" style="background-image: url({{ course.image.url }});background-size: contain;">
                         </div>
+                        </a>
                         <div class="boxTitle" >
-                            <a href="{% url view_course course.slug %}" title="{{ course.title }}">{{ course.title }}</a>
+                            <a href="{% url "view_course" course.slug %}">{{ course.title }}</a>
                         </div>
                         <div class="boxDescription">
                             <p>
-                                {{ course.short_description }}
+                                {{ course.short_description|truncatewords:14 }}
                             </p>
                         </div>
                         <div class="boxInfoFooter">
@@ -113,10 +98,19 @@
                             </div>
                         </div>
                     </div>
-                    {%  endfor %}
+                    {% endfor %}
                 </div>
             </div>
         </div>
     </section>
-
 {% endblock sections %}
+{% block footerscripts %}
+    {{ block.super }}
+<script type="text/javascript">
+    $('#starRaitings_1').raty({
+        half  : true,
+        readOnly   : true,
+        noRatedMsg : 'anyone rated this product yet!'
+    });
+</script>
+{% endblock footerscripts %}
