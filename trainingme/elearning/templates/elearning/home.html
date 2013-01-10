@@ -62,7 +62,7 @@
                     <input type="text" class="span11" placeholder="Introduce aqu&iacute; que te gustar&iacute;a aprender">
                 </div>
                 <div class="span2 center">
-                    <button type="button" class="btn btn-primary span8">Buscar</button>
+                    <button type="button" class="btn btn-primary span8">{% trans "Search" %}</button>
                 </div>
             </div>
         </div>
@@ -94,7 +94,7 @@
                             <div class="footerInfo">
                                 <div class="leftSide">{{ course.enrollments.count }}</div>
                                 <div class="middleSide">{{ course.price }} &euro;</div>
-                                <div id="starRaitings_1" class="rightSide"></div>
+                                <div id="curso-{{ course.id }}"  data-rating="{{ course.get_scoring }}" class="star rightSide"></div>
                             </div>
                         </div>
                     </div>
@@ -107,10 +107,12 @@
 {% block footerscripts %}
     {{ block.super }}
 <script type="text/javascript">
-    $('#starRaitings_1').raty({
-        half  : true,
-        readOnly   : true,
-        noRatedMsg : 'anyone rated this product yet!'
+    $('.star').raty({
+        readOnly: true,
+        half: true,
+        score: function() {
+            return $(this).attr('data-rating');
+        }
     });
 </script>
 {% endblock footerscripts %}

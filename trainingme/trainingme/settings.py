@@ -93,9 +93,22 @@ TEMPLATE_LOADERS = (
 #     'django.template.loaders.eggs.Loader',
 )
 
+#Locale Path
+LOCALE_PATHS = (
+    '/home/luks/Escritorio/django/estable/greenphant/trainingme/locale',
+)
+
+#Localizacion
+LANGUAGES = (
+    ('en', 'English'),
+    ('es', 'Spanish'),
+)
+
+
 MIDDLEWARE_CLASSES = (
-    'django.middleware.common.CommonMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
+    'django.middleware.locale.LocaleMiddleware',
+    'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',

@@ -69,6 +69,14 @@ class Course(models.Model):
     def get_absolute_url(self):
         return "/elearning/course/%s/" % self.slug
 
+    @property
+    def get_scoring(self):
+        from django.db import connection
+        cursor = connection.cursor()
+        cursor.execute("SELECT AVG(points) FROM elearning_vote WHERE lesson_id IN (SELECT id FROM elearning_lesson WHERE subject_id IN (SELECT id FROM elearning_subject WHERE course_id = %s))",[self.id,])
+        score = cursor.fetchone()[0]
+        return score
+
     def save(self):
         super(Course, self).save()
         #Resize the image preventing big images
