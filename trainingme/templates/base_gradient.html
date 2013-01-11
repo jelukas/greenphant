@@ -1,0 +1,23 @@
+{% extends "base.html" %}
+{% load i18n %}
+{% block body-class %}class="gradientGB"{% endblock %}
+{% block sections %}
+    <!-- Inicia Contenido -->
+    <div class="bodyGradient mainContent">
+        <section>
+            {% block warnings %}
+                {% if messages %}
+                    {% for message in messages %}
+                        <div class="alert alert-info">
+                            <button type="button" class="close" data-dismiss="alert">&times;</button>
+                            <strong>{% trans "Info" %}:</strong> {{ message }}.
+                        </div>
+                    {% endfor %}
+                {% endif %}
+            {% endblock %}
+        </section>
+        {% block content %}
+        {% endblock content %}
+    </div>
+    <!-- Fin Contenido -->
+{% endblock sections %}

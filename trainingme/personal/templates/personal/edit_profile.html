@@ -1,10 +1,17 @@
-{% extends "base.html" %}
-{% block title %}Edición de Perfil{% endblock %}
+{% extends "base_gradient.html" %}{% load i18n %}
+{% block title %}{% trans "Edit Profile" %}{% endblock %}
 {% block content %}
-    <table>
-        <form method='post' action='' enctype="multipart/form-data">{% csrf_token %}
-            {{ profile_form }}
-            <tr><td></td><td><input type="submit" value="Actualizar tu Perfil" /></td>
-        </form>
-    </table>
+    <section>
+        <div class="container MainTitle">
+            <h3>{% trans "Mi Perfil" %}</h3>
+        </div>
+    </section>
+    <section>
+        <table>
+            <form method='post' action='' enctype="multipart/form-data">{% csrf_token %}
+                {{ profile_form }}
+                <tr><td></td><td><input type="submit" class="btn btn-primary" value="{% trans "Actualizar tu Perfil" %}" /></td>
+            </form>
+        </table>
+    </section>
 {% endblock %}

@@ -1,0 +1,24 @@
+{% extends "base_gradient.html" %}{% load i18n %}
+{% block title %}{% trans "Mi Perfil" %}{% endblock %}
+{% block body-class %}class="gradientGB"{% endblock %}
+{% block content %}
+    <!-- Inicia Contenido -->
+    <div class="bodyGradient mainContent">
+        <section>
+            <div class="container MainTitle">
+                <h3>{% trans "Mi Perfil" %}</h3>
+            </div>
+        </section>
+        <section>
+            <img src="{{ profile.image.url }}" alt="{{ user.username }}"  class="span2" />
+            <p><a href="{% url edit_profile %}" class="btn">{% trans "Edit your Profile" %}</a></p>
+            <p><span>{% trans 'Username' %}</span>{{ profile.user.username }}</p>
+            <p><span>{% trans 'State' %}</span>{{ profile.state }}</p>
+            <p><span>{% trans 'Description' %}</span>{{ profile.description }}</p>
+            <p><span>{% trans 'Country' %}</span>{{ profile.country }}</p>
+            <p><span>{% trans 'Address' %}</span>{{ profile.address }}</p>
+            <p><span>{% trans 'Website' %}</span>{{ profile.website }}</p>
+        </section>
+    </div>
+    <!-- Fin Contenido -->
+{% endblock content %}
