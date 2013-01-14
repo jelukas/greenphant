@@ -1,6 +1,6 @@
 {% extends 'base.html' %}
 {% load i18n %}
-{% block content %}
+{% block sections %}
     <h2>{{ lesson.subject.course.title }}</h2>
     {% if lesson.subject.course.image %}
         <img src="{{ lesson.subject.course.image.url }}" alt="{{ lesson.subject.course.title }}" title="{{ lesson.subject.course.title }}"/>

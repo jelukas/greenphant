@@ -1,6 +1,6 @@
 {% extends 'base.html' %}
 
-{% block content %}
+{% block sections %}
     <table>
         <form method='post' action=''>{% csrf_token %}
             {{ subject_form.as_table }}

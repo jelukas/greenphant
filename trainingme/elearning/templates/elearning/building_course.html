@@ -1,6 +1,6 @@
 {% extends 'base.html' %}
 {% load i18n %}
-{% block content %}
+{% block sections %}
     <h2>{{ course.title }} <a href="{% url edit_course course.id %}">{% trans 'Edit Course' %}</a></h2>
     <ul>
     {% for subject in course.subjects.all %}

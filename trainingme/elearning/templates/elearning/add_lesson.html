@@ -1,6 +1,6 @@
 {% extends 'base.html' %}
 {% load i18n %}
-{% block content %}
+{% block sections %}
     <table>
         <form method='post' action=''>{% csrf_token %}
             {{ lesson_form.as_table }}

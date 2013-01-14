@@ -1,6 +1,6 @@
 {% extends 'base.html' %}
 {% load i18n %}
-{% block content %}
+{% block sections %}
     <table>
         <form method='post' action=''  enctype='multipart/form-data'>{% csrf_token %}
             {{ attach_form.as_table }}

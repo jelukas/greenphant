@@ -1,6 +1,6 @@
 {% extends 'base.html' %}
 
-{% block content %}
+{% block sections %}
     <video id="my_video_1" class="video-js vjs-default-skin" controls preload="auto" width="940" height="500" autoplay="true" data-setup="{}" >
         <source type='video/mp4' src="{{ video.converted_video_file_mp4.url }}">
         <source type='video/webm' src="{{ video.converted_video_file_webm.url }}">

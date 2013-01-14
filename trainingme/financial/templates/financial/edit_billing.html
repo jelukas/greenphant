@@ -1,6 +1,6 @@
 {% extends 'base.html' %}
 {% load i18n %}
-{% block content %}
+{% block sections %}
     <a href="{% url view_billing %}">{% trans 'Back to Financial Details' %}</a>
     <table>
         <form method='post' action='' enctype="multipart/form-data">{% csrf_token %}

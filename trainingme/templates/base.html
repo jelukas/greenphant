@@ -16,13 +16,11 @@
     <div class="navbar">
         <div class="navbar-inner">
             <div class="container">
-
                 <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </a>
-
                 <a href="/">
                     <img class="headerLogo" src="{{ STATIC_URL }}img/HeaderLogo.png" alt="TrainingMe.Net - Cursos">
                 </a>
@@ -30,15 +28,14 @@
                     <div class="nav-collapse collapse MenuBarResponsiveFirst">
                         <div class="nav-collapse collapse navbar-inverse-collapse MenuBarResponsiveSecond">
                             <ul class="nav">
-                                <li><a href="#">{% trans "My Courses" %}</a></li>
-                                <li><a href="#">{% trans "Create New Course" %}</a></li>
+                                <li><a href="{% url dashboard_home %}">{% trans "My Courses" %}</a></li>
+                                <li><a href="{% url new_course %}">{% trans "Create New Course" %}</a></li>
                                 <li><a href="#">{% trans "Search Courses" %}</a></li>
                                 <li class="dropdown">
                                     <a href="#" class="dropdown-toggle" data-toggle="dropdown">{% trans "My Account" %}<b class="caret"></b></a>
                                     <ul class="dropdown-menu">
                                         <li><a href="{% url view_profile %}">{% trans "My Profile" %}</a></li>
-                                        <li><a href="#">{% trans "Earnings" %}</a></li>
-                                        <li><a href="#">{% trans "Balance" %}</a></li>
+                                        <li><a href="{% url view_billing %}">{% trans "Earnings" %}</a></li>
                                     </ul>
                                 </li>
                             </ul>
