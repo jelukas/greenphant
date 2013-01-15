@@ -56,14 +56,14 @@
     </section>
     <section>
         <div class="row-fluid searchBar">
-            <div class="span12">
+            <div class="span12 center">
                 <!-- linea divisora -->
-                <div class="span10 center">
-                    <input type="text" class="span11" placeholder="Introduce aqu&iacute; que te gustar&iacute;a aprender">
-                </div>
-                <div class="span2 center">
-                    <button type="button" class="btn btn-primary span8">{% trans "Search" %}</button>
-                </div>
+                <form class="form-search" method="post" action="">{% csrf_token %}
+                    <div class="span12 input-append">
+                        <input name="query" type="text" class="span8 search-query" placeholder="{% trans "Search courses...." %}">
+                        <button type="submit" class="btn btn-primary"><i class="icon-search icon-white"></i> {% trans "Search Course" %}</button>
+                    </div>
+                </form>
             </div>
         </div>
     </section>

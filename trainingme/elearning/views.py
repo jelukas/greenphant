@@ -15,6 +15,7 @@ from django.core.exceptions import ObjectDoesNotExist
 from datetime import datetime
 from django.template.defaultfilters import slugify
 from django.db import IntegrityError
+from django.db.models import Q
 
 
 @login_required()
@@ -409,7 +410,11 @@ HOME PAGE
 """
 
 def home(request):
-    courses = Course.objects.filter(status = Status.objects.get(name="published"))
+    status = Status.objects.get(name="published")
+    if request.POST:
+        courses = Course.objects.filter(Q(short_description__icontains=request.POST['query']) | Q(title__icontains=request.POST['query']),status_id = status.id)
+    else:
+        courses = Course.objects.filter(status_id = status.id)
     context = {'courses' : courses}
     return render_to_response('elearning/home.html',context,context_instance = RequestContext(request))
 
