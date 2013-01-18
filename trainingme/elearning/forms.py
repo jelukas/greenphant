@@ -6,7 +6,7 @@ from elearning.models import Course,Subject,Lesson,Video, Attach, Comment
 class CourseForm(ModelForm):
     class Meta:
         model = Course
-        exclude = ('user','published_at','status','slug')
+        exclude = ('user','published_at','status','slug','video',)
 
 
 class SubjectForm(ModelForm):

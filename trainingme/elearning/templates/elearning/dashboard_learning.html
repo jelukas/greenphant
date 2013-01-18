@@ -1,12 +1,35 @@
 {% extends 'base.html' %}
 {% load i18n %}
 {% block sections %}
-    <h1>Learning</h1>
-    <a href="{% url dashboard %}">Back to Dashboard</a>
-    {% for enrrolment in enrollments %}
-        <div class="enrrolment">
-            {{ enrrolment.course.title }}
-            <a href="{% url view_course enrrolment.course.slug %}">Acceder</a>
+    <h1>{% trans "Learning Courses" %}</h1>
+    <section class="cursosResultado">
+        <div class="container">
+            <div class="row-fluid">
+                <div class="boxLine">
+                    {% for enrrolment in enrollments %}
+                        <div class="span3 cursoBox">
+                            <a href="{% url learning_course enrrolment.course.id %}">
+                                <div class="boxTitleBG" style="background-image: url({{ enrrolment.course.image.url }});background-size: contain;">
+                                </div>
+                            </a>
+                            <div class="boxTitle" >
+                                <a href="{% url learning_course enrrolment.course.id %}">{{ enrrolment.course.title }}</a>
+                            </div>
+                            <div class="boxDescription">
+                                <p>
+                                    {{ enrrolment.course.short_description|truncatewords:14 }}
+                                </p>
+                            </div>
+                            <div class="boxInfoFooter center">
+                                <a class="btn btn-info" href="{% url learning_course enrrolment.course.id %}">{% trans "Enter" %}</a>
+                            </div>
+                        </div>
+                    {% endfor %}
+                </div>
+            </div>
         </div>
-    {% endfor %}
+    </section>
+    <section>
+        <a class="btn btn-block" href="{% url dashboard %}">{% trans "Back to Dashboard" %}</a>
+    </section>
 {% endblock %}

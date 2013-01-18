@@ -1,20 +1,40 @@
 {% extends 'base.html' %}
 {% load i18n %}
 {% block sections %}
-    <h1>Teaching</h1>
-    <a href="{% url dashboard %}">Back to Dashboard</a>
-    <a href="{% url new_course %}"> | {% trans 'Create Course' %}</a>
-    {% for course in courses %}
-        <div class="teaching_course" style="background-color: #d9edf7;">
-            <p style="font-weight: bold;">{{ course.title }} -- {% trans 'Status' %}: {{ course.status.name }}</p>
-            {%  if course.status.name == 'published' %}
-                <p>{% trans 'Students' %}:{{ course.enrollments.all|length }}</p>
-                <p><a href="{% url view_course course.slug %}">{% trans 'View' %}</a></p>
-            {% endif %}
-            {%  if course.status.name == 'building' %}
-                <p><a href="{% url edit_course course.id %}">{% trans 'Edit' %}</a></p>
-                <p><a href="#">{% trans 'Delete' %}</a></p>
-            {% endif %}
+    <h1>{% trans "Teaching Courses" %}</h1>
+    <section class="centeredbutton">
+        <a class="btn btn-inverse btn-large" href="{% url new_course %}">{% trans "Create a New Course" %}</a>
+    </section>
+    <section class="cursosResultado">
+        <div class="container">
+            <div class="row-fluid">
+                <div class="boxLine">
+                    {% for course in courses %}
+                        <div class="span3 cursoBox">
+                                <div class="boxTitleBG" style="background-image: url({{ course.image.url }});background-size: contain;">
+                                </div>
+                            <div class="boxTitle" >
+                                <a href="{% url view_course course.slug %}">{{ course.title }}</a>
+                            </div>
+                            <div class="boxDescription">
+                                <p>
+                                    {{ course.short_description|truncatewords:14 }}
+                                </p>
+                            </div>
+                            <div class="boxInfoFooter center">
+                                <i class="icon-user"></i> {{ course.enrollments.count }} {% trans "Students" %}
+                                <i class="icon-eye-open"></i> {% trans "Status" %}: {% trans course.status.name %}
+                                {% if course.status.name == "building" %}
+                                    <a class="btn btn-info" href="{% url building_course course.id %}">{% trans "Continue Building" %}</a>
+                                {% endif %}
+                            </div>
+                        </div>
+                    {% endfor %}
+                </div>
+            </div>
         </div>
-    {% endfor %}
+    </section>
+    <section class="centeredbutton">
+        <a class="btn btn-large" href="{% url dashboard %}">{% trans "Back to Dashboard" %}</a>
+    </section>
 {% endblock %}
