@@ -2,6 +2,12 @@
 {% load i18n %}
 {% block sections %}
     <h1>{% trans "Learning Courses" %}</h1>
+    <section class="centeredbutton">
+        <div class="btn-group" data-toggle="buttons-radio">
+            <a href="{% url learning %}" class="btn btn-large btn-primary active">{% trans "Learning" %}</a>
+            <a href="{% url teaching %}" class="btn btn-large btn-primary">{% trans "Teaching" %}</a>
+        </div>
+    </section>
     <section class="cursosResultado">
         <div class="container">
             <div class="row-fluid">
@@ -28,8 +34,5 @@
                 </div>
             </div>
         </div>
-    </section>
-    <section>
-        <a class="btn btn-block" href="{% url dashboard %}">{% trans "Back to Dashboard" %}</a>
     </section>
 {% endblock %}

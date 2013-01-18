@@ -3,7 +3,10 @@
 {% block sections %}
     <h1>{% trans "Teaching Courses" %}</h1>
     <section class="centeredbutton">
-        <a class="btn btn-inverse btn-large" href="{% url new_course %}">{% trans "Create a New Course" %}</a>
+            <div class="btn-group" data-toggle="buttons-radio">
+                <a href="{% url learning %}" class="btn btn-large btn-primary ">{% trans "Learning" %}</a>
+                <a href="{% url teaching %}" class="btn btn-large btn-primary active">{% trans "Teaching" %}</a>
+            </div>
     </section>
     <section class="cursosResultado">
         <div class="container">
@@ -35,6 +38,6 @@
         </div>
     </section>
     <section class="centeredbutton">
-        <a class="btn btn-large" href="{% url dashboard %}">{% trans "Back to Dashboard" %}</a>
+        <a class="btn btn-inverse btn-large" href="{% url new_course %}">{% trans "Create a New Course" %}</a>
     </section>
 {% endblock %}
