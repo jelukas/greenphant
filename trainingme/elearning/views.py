@@ -58,14 +58,14 @@ def edit_course(request,course_id):
                 course.save()
             except IntegrityError:
                 messages.error(request,_('Course failed to create: Title exits'))
-                return render_to_response('elearning/edit_course.html',{'course_form':course_form},context_instance = RequestContext(request))
+                return render_to_response('elearning/edit_course.html',{'course_form':course_form,'course':course},context_instance = RequestContext(request))
             messages.success(request,_('Course updated successfully'))
             return HttpResponseRedirect(reverse('elearning.views.building_course', args=(course.id,))) # Redirect after POST
         else:
             messages.error(request,_('Failed to update the course'))
     else:
         course_form = CourseForm(instance=course) # An unbound form
-    return render_to_response('elearning/edit_course.html',{'course_form':course_form},context_instance = RequestContext(request))
+    return render_to_response('elearning/edit_course.html',{'course_form':course_form,'course':course},context_instance = RequestContext(request))
 
 
 @login_required()
@@ -78,6 +78,7 @@ def building_course(request,course_id):
 @login_required()
 @owner_required(Course)
 def add_subject(request,course_id):
+    course = get_object_or_404(Course,pk = course_id,status__name = 'building')
     if request.method == 'POST': # If the form has been submitted...
         subject_form = SubjectForm(request.POST) # A form bound to the POST data
         if subject_form.is_valid(): # All validation rules pass
@@ -93,7 +94,7 @@ def add_subject(request,course_id):
     else:
         subject_form = SubjectForm() # An unbound form
 
-    return render_to_response('elearning/add_subject.html',{'subject_form':subject_form},context_instance = RequestContext(request))
+    return render_to_response('elearning/add_subject.html',{'subject_form':subject_form,'course_id': course.id},context_instance = RequestContext(request))
 
 
 @login_required()
@@ -121,20 +122,27 @@ def edit_subject(request,subject_id):
 def delete_subject(request,subject_id):
     subject = get_object_or_404(Subject,pk=subject_id)
     course = subject.course
-    subject.delete()
-    messages.success(request,_('Subject deleted successfully'))
-    return HttpResponseRedirect(reverse('elearning.views.building_course', args=(course.id,))) # Redirect after POST
+    if course.status.name == 'building':
+        subject.delete()
+        messages.success(request,_('Subject deleted successfully'))
+        return_dict = (reverse('elearning.views.building_course', args=(course.id,))) # Redirect after POST
+    else:
+        messages.error(request,_('Course is not in Building Status'))
+        return_dict = (reverse('elearning.views.teaching',)) # Redirect after POST
+    return HttpResponseRedirect(return_dict) # Redirect after POST
+
 
 
 @login_required()
 @owner_required(Subject)
 def add_lesson(request,subject_id):
+    subject = get_object_or_404(Subject,pk=subject_id,course__status__name = 'building')
     if request.method == 'POST': # If the form has been submitted...
         lesson_form = LessonForm(request.POST) # A form bound to the POST data
-        if lesson_form.is_valid(): # All validation rules pass
+        if lesson_form.is_valid() : # All validation rules pass
             # Process the data in form.cleaned_data
             lesson = lesson_form.save(commit=False)
-            lesson.subject = get_object_or_404(Subject,pk=subject_id)
+            lesson.subject = subject
             lesson.order = 1
             lesson.save()
             messages.success(request,_('Lesson added successfully'))
@@ -143,14 +151,13 @@ def add_lesson(request,subject_id):
             messages.error(request,_('Failed to add the lesson'))
     else:
         lesson_form = LessonForm() # An unbound form
-
-    return render_to_response('elearning/add_lesson.html',{'lesson_form':lesson_form},context_instance = RequestContext(request))
+    return render_to_response('elearning/add_lesson.html',{'lesson_form':lesson_form,'subject': subject},context_instance = RequestContext(request))
 
 
 @login_required()
 @owner_required(Lesson)
 def edit_lesson(request,lesson_id):
-    lesson = get_object_or_404(Lesson,pk=lesson_id)
+    lesson = get_object_or_404(Lesson,pk=lesson_id,subject__course__status__name = 'building')
     if request.method == 'POST': # If the form has been submitted...
         lesson_form = LessonForm(request.POST,instance=lesson) # A form bound to the POST data
         if lesson_form.is_valid(): # All validation rules pass
@@ -164,14 +171,15 @@ def edit_lesson(request,lesson_id):
             messages.error(request,_('Failed to updated the lesson'))
     else:
         lesson_form = LessonForm(instance=lesson) # An unbound form
-    return render_to_response('elearning/edit_lesson.html',{'lesson_form':lesson_form},context_instance = RequestContext(request))
+    return render_to_response('elearning/edit_lesson.html',{'lesson_form':lesson_form,},context_instance = RequestContext(request))
 
 
 @login_required()
 @owner_required(Lesson)
 def delete_lesson(request,lesson_id):
-    lesson = get_object_or_404(Lesson,pk=lesson_id)
+    lesson = get_object_or_404(Lesson,pk=lesson_id,subject__course__status__name = 'building')
     course = lesson.subject.course
+    lesson.delete()
     messages.success(request,_('Lesson deleted successfully'))
     return HttpResponseRedirect(reverse('elearning.views.building_course', args=(course.id,))) # Redirect after POST
 
@@ -298,6 +306,7 @@ def view_course(request,slug):
             context = {'course':course,'paypal_button':paypal_button.sandbox()}
         else:
             context = {'course':course,'enrrolled':True}
+            HttpResponseRedirect(reverse('elearning.views.learning_course', args=(course.id,)))
     else:
         context = {'course':course,'enrrolled':False}
     return render_to_response('elearning/course/view_course.html',context,context_instance = RequestContext(request))

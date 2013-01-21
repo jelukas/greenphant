@@ -13,21 +13,25 @@
                 {% for subject in course.subjects.all %}
                 <div class="accordion-group">
                     <div class="accordion-heading">
+                        <a href="{% url delete_subject subject.id %}" title="{% trans "Delete Subject" %}"><img src="{{ STATIC_URL }}img/delete-icon.png" class="subject-icon"/></a>
+                        <a href="{% url edit_subject subject.id %}" title="{% trans "Edit Subject" %}"><img src="{{ STATIC_URL }}img/edit.png" class="subject-icon"/></a>
                         <a class="accordion-toggle" data-toggle="collapse" data-parent="#AccordionCurso" href="#collapse{{ forloop.counter|apnumber }}">
                             {% trans 'Subject' %} {{ forloop.counter }} - {{ subject.title }}
                         </a>
-                        <div  class="arrowAccordion" ></div>
+                        <div  class="arrowAccordion"  data-toggle="collapse" data-parent="#AccordionCurso" href="#collapse{{ forloop.counter|apnumber }}"></div>
                     </div>
                     <div id="collapse{{ forloop.counter|apnumber }}" class="accordion-body collapse">
                         <div class="accordion-inner">
                             {% for lesson in subject.lessons.all %}
                             <div class="accordionLine">
+                                <a href="{% url delete_lesson lesson.id %}" title="{% trans "Delete Lesson" %}"><img src="{{ STATIC_URL }}img/delete-icon.png" class="lesson-icon"/></a>
+                                <a href="{% url edit_lesson lesson.id %}" title="{% trans "Edit Lesson" %}"><img src="{{ STATIC_URL }}img/edit.png" class="lesson-icon"/></a>
                                 {% trans 'Lesson' %} {{ forloop.counter }} - {{ lesson.title }}
-                                {% if lesson.attach %}
-                                    <a href="{{ lesson.lesson.attach.url }}"><div class="btnDownload"></div></a>
+                                {% if lesson.attach.url %}
+                                    <a href="{{ lesson.attach }}"><div class="btnDownload"></div></a>
                                 {% endif %}
-                                {% if lesson.video %}
-                                    <a href="{{ lesson.video.original_video_file.url }}"><div class="btnVideo"></div></a>
+                                {% if lesson.video.original_video_file.url %}
+                                    <a href="{% url test_video lesson.video.id %}"><div class="btnVideo"></div></a>
                                 {% endif %}
                             </div>
                             {% endfor %}

@@ -195,7 +195,7 @@ FACEBOOK_APP_ID              = '560302190653717'
 FACEBOOK_API_SECRET          = '5a7a46d0f6c60d83b37e356fe8f7d323'
 
 LOGIN_URL          = '/accounts/login/'
-LOGIN_REDIRECT_URL = '/elearning/'
+LOGIN_REDIRECT_URL = '/elearning/dashboard/learning/'
 LOGIN_ERROR_URL    = '/login-error/'
 SOCIAL_AUTH_NEW_USER_REDIRECT_URL = '/personal/profile/edit/'
 
