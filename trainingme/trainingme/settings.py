@@ -140,6 +140,7 @@ INSTALLED_APPS = (
     # Uncomment the next line to enable admin documentation:
     # 'django.contrib.admindocs',
     'django.contrib.humanize',
+    'sorl.thumbnail',
     'registration',
     'social_auth',
     'widget_tweaks',

@@ -24,11 +24,16 @@
                         <div class="accordion-inner">
                             {% for lesson in subject.lessons.all %}
                             <div class="accordionLine">
+                                {% if lesson.attach %}
+                                    <a href="{% url delete_attach lesson.attach.id %}" title="{% trans "Delete Attached file" %}"><img src="{{ STATIC_URL }}img/attach_delete.png" class="lesson-icon"/></a>
+                                {% else %}
+                                    <a href="{% url add_attach lesson.id %}" title="{% trans "Attach file" %}"><img src="{{ STATIC_URL }}img/attach.png" class="lesson-icon"/></a>
+                                {% endif %}
                                 <a href="{% url delete_lesson lesson.id %}" title="{% trans "Delete Lesson" %}"><img src="{{ STATIC_URL }}img/delete-icon.png" class="lesson-icon"/></a>
                                 <a href="{% url edit_lesson lesson.id %}" title="{% trans "Edit Lesson" %}"><img src="{{ STATIC_URL }}img/edit.png" class="lesson-icon"/></a>
                                 {% trans 'Lesson' %} {{ forloop.counter }} - {{ lesson.title }}
-                                {% if lesson.attach.url %}
-                                    <a href="{{ lesson.attach }}"><div class="btnDownload"></div></a>
+                                {% if lesson.attach %}
+                                    <a href="{{ lesson.attach.file.url }}"><div class="btnDownload"></div></a>
                                 {% endif %}
                                 {% if lesson.video.original_video_file.url %}
                                     <a href="{% url test_video lesson.video.id %}"><div class="btnVideo"></div></a>

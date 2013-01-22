@@ -1,4 +1,4 @@
-{% extends 'base.html' %}
+{% extends 'base.html' %}{% load thumbnail %}
 {% load i18n %}
 {% block sections %}
     <h1>{% trans "Teaching Courses" %}</h1>
@@ -14,8 +14,10 @@
                 <div class="boxLine">
                     {% for course in courses %}
                         <div class="span3 cursoBox">
-                                <div class="boxTitleBG" style="background-image: url({{ course.image.url }});background-size: contain;">
+                            {% thumbnail course.image "238x135" as im %}
+                                <div class="boxTitleBG" style="background-image: url({{ im.url }});background-size: contain;">
                                 </div>
+                            {% endthumbnail %}
                             <div class="boxTitle" >
                                 <a href="{% url view_course course.slug %}">{{ course.title }}</a>
                             </div>

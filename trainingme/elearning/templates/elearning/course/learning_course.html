@@ -1,9 +1,9 @@
 {% extends 'base_gradient.html' %}
-{% load i18n %}{% load humanize %}
+{% load i18n %}{% load humanize %}{% load thumbnail %}
 {% block content %}
     <div class="container-fluid">
         <div class="row-fluid">
-            <div class="span10">
+            <div class="span8">
                 <section>
                     <div class="container MainTitle">
                         <h3>{{ course.title }}</h3>
@@ -12,8 +12,11 @@
                 <section class="formContent">
                     <div class="container">
                         <div class="presentation">
-                            <img src="{{ course.image.url }}" class="image_course_description">
+                            {% thumbnail course.image "300x200" as im %}
+                                <img src="{{ im.url }}" class="image_course_description">
+                            {% endthumbnail %}
                             {{ course.large_description }}
+                            <div class="clearfix"></div>
                         </div>
                     </div>
                 </section>
@@ -50,7 +53,7 @@
                     </div>
                 </section>
             </div>
-            <div class="span2">
+            <div class="offset2 span2">
                 <h4>{% trans 'Teacher' %}</h4>
                 <section class="teacher_profile_course">
                     <img src="{{ course.user.get_profile.image.url }}" />

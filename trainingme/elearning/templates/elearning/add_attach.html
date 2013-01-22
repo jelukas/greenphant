@@ -1,10 +1,31 @@
 {% extends 'base.html' %}
-{% load i18n %}
+{% load i18n %}{% load widget_tweaks %}
 {% block sections %}
-    <table>
-        <form method='post' action=''  enctype='multipart/form-data'>{% csrf_token %}
-            {{ attach_form.as_table }}
-            <tr><td></td><td><input type="submit" value="{% trans 'Add Attachment' %}" /></td>
-        </form>
-    </table>
+    <section>
+        <div class="container MainTitle">
+            <h3>{% trans "You are Attching a File to the Lesson" %}</h3>
+        </div>
+    </section>
+    <section class="formContent">
+        <div class="container">
+            <form class="form-horizontal fixedContent" method='post' action='' id="attach_course_form" enctype="multipart/form-data">{% csrf_token %}
+                <div class="control-group">
+                    <label class="control-label">{% trans "File" %}</label>
+                    <div class="controls">
+                        {% for error in attach_form.file.errors %}
+                            <span class="text-error">{{ error }}</span>
+                        {% endfor %}
+                        {{ attach_form.file|add_class:"fixedtype" }}
+                        <span class="help-inline">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+                    </div>
+                </div>
+            </form>
+            <div class="buttons-dashboard">
+                <button type="submit" form="attach_course_form" class="btn btn-primary"><i class="icon-ok icon-white"></i> {% trans "Attach File" %}</button>
+            </div>
+        </div>
+    </section>
+    <section class="centeredbutton">
+        <a class="btn btn-large" href="{% url building_course course_id %}">{% trans "Back to Course" %}</a>
+    </section>
 {% endblock %}

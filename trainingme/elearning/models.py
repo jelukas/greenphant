@@ -5,7 +5,6 @@ from django.db.models import F
 from django.db.models import Avg
 from django.utils.translation import ugettext as _
 from django.core.files.storage import default_storage
-
 from validatedfile import ValidatedFileField
 
 #Category of the Courses Model
@@ -77,10 +76,12 @@ class Course(models.Model):
         score = cursor.fetchone()[0]
         return score
 
+        """
     def save(self):
         super(Course, self).save()
         #Resize the image preventing big images
         from PIL import Image
+        """
         """
         On Ubuntu:
 
@@ -95,13 +96,14 @@ class Course(models.Model):
         sudo ln -s /usr/lib/x86_64-linux-gnu/libfreetype.so /usr/lib
         sudo ln -s /usr/lib/x86_64-linux-gnu/libz.so /usr/lib
         """
+        """
         size=(263, 130)
         if self.image:
             filename = self.image.path
             image = Image.open(filename)
             image.thumbnail(size, Image.ANTIALIAS)
             image.save(filename)
-
+        """
 
 
 
@@ -222,7 +224,7 @@ class Lesson(models.Model):
 class Video(models.Model):
     lesson = models.OneToOneField(Lesson,unique=True,related_name='video')
     #original_video_file = models.FileField(_('Video'),upload_to='original_lesson_videos',max_length=245)
-    original_video_file = ValidatedFileField(_('Video'),upload_to='new_lesson_videos',max_length=245,content_types = ['video/x-ms-asf','video/x-msvideo','video/x-flv','video/quicktime','video/mp4','video/mpeg','video/x-ms-wmv','video/webm'])
+    original_video_file = ValidatedFileField(_('Video'),upload_to='new_lesson_videos',max_length=245,content_types = ['video/mp4','video/x-ms-asf','video/x-msvideo','video/x-flv','video/quicktime','video/mpeg','video/x-ms-wmv','video/webm',])
     converted_video_file_mp4 = models.FileField(upload_to='converted_lesson_videos',max_length=245,blank=True,null=True)
     converted_video_file_webm = models.FileField(upload_to='converted_lesson_videos',max_length=245,blank=True,null=True)
 
@@ -235,14 +237,13 @@ class Video(models.Model):
     #Delete the file when deleting the record
     def delete(self):
         import os.path
-        if self.id:
-            video = Video.objects.get(pk = self.id)
-            if(os.path.isfile(video.original_video_file.path)):
-                default_storage.delete(video.original_video_file.path)
-            if(os.path.isfile(video.converted_video_file_mp4.path)):
-                default_storage.delete(video.converted_video_file_mp4.path)
-            if(os.path.isfile(video.converted_video_file_webm.path)):
-                default_storage.delete(video.converted_video_file_webm.path)
+        video = Video.objects.get(pk = self.id)
+        if(os.path.isfile(video.original_video_file.path)):
+            default_storage.delete(video.original_video_file.path)
+        if(os.path.isfile(video.converted_video_file_mp4.path)):
+            default_storage.delete(video.converted_video_file_mp4.path)
+        if(os.path.isfile(video.converted_video_file_webm.path)):
+            default_storage.delete(video.converted_video_file_webm.path)
         super(Video,self).delete()
 
 

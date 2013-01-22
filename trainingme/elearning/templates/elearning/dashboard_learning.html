@@ -1,4 +1,4 @@
-{% extends 'base.html' %}
+{% extends 'base.html' %}{% load thumbnail %}
 {% load i18n %}
 {% block sections %}
     <h1>{% trans "Learning Courses" %}</h1>
@@ -15,8 +15,10 @@
                     {% for enrrolment in enrollments %}
                         <div class="span3 cursoBox">
                             <a href="{% url learning_course enrrolment.course.id %}">
-                                <div class="boxTitleBG" style="background-image: url({{ enrrolment.course.image.url }});background-size: contain;">
-                                </div>
+                                {% thumbnail enrrolment.course.image "238x135" as im %}
+                                    <div class="boxTitleBG" style="background-image: url({{ im.url }});background-size: contain;">
+                                    </div>
+                                {% endthumbnail %}
                             </a>
                             <div class="boxTitle" >
                                 <a href="{% url learning_course enrrolment.course.id %}">{{ enrrolment.course.title }}</a>

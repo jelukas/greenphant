@@ -29,6 +29,16 @@
                         <span class="help-inline">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
                     </div>
                 </div>
+                <div class="control-group">
+                    <label class="control-label">{% trans "Video" %}</label>
+                    <div class="controls">
+                        {% for error in video_form.original_video_file.errors %}
+                            <span class="text-error">{{ error }}</span>
+                        {% endfor %}
+                        {{ video_form.original_video_file|add_class:"fixedtype"}}
+                        <span class="help-inline">{% trans 'Format' %}: MP4, WMV, MPEG, MOV, AVI</span>
+                    </div>
+                </div>
             </form>
             <div class="buttons-dashboard">
                 <button type="submit" form="lesson_course_form" class="btn btn-primary"><i class="icon-refresh icon-white"></i> {% trans "Update Lesson" %}</button>

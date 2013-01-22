@@ -1,6 +1,5 @@
 {% extends 'base.html' %}
-{% load url from future %}
-{% load i18n %}
+{% load url from future %}{% load thumbnail %}{% load i18n %}
 {% block sections %}
     {% if not user.is_authenticated %}
     <section class="bodyGradient">
@@ -63,7 +62,7 @@
                 <!-- linea divisora -->
                 <form class="form-search" method="post" action="">{% csrf_token %}
                     <div class="span12 input-append">
-                        <input name="query" type="text" class="span8 search-query" placeholder="{% trans "Search courses...." %}">
+                        <input name="query" type="text" class="span8 search-query" placeholder="{% trans "Search courses...." %}" />
                         <button type="submit" class="btn btn-primary"><i class="icon-search icon-white"></i> {% trans "Search Course" %}</button>
                     </div>
                 </form>
@@ -77,8 +76,10 @@
                     {% for course in courses %}
                     <div class="span3 cursoBox">
                         <a href="{% url "view_course" course.slug %}">
-                        <div class="boxTitleBG" style="background-image: url({{ course.image.url }});background-size: contain;">
-                        </div>
+                            {% thumbnail course.image "238x135" as im %}
+                            <div class="boxTitleBG" style="background-image: url({{ im.url }});background-size: contain;">
+                            </div>
+                            {% endthumbnail %}
                         </a>
                         <div class="boxTitle" >
                             <a href="{% url "view_course" course.slug %}">{{ course.title }}</a>

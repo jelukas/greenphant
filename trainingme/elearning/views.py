@@ -139,39 +139,53 @@ def add_lesson(request,subject_id):
     subject = get_object_or_404(Subject,pk=subject_id,course__status__name = 'building')
     if request.method == 'POST': # If the form has been submitted...
         lesson_form = LessonForm(request.POST) # A form bound to the POST data
-        if lesson_form.is_valid() : # All validation rules pass
+        video_form = VideoForm(request.POST,request.FILES) # A form bound to the POST data
+        if lesson_form.is_valid() and video_form.is_valid(): # All validation rules pass
             # Process the data in form.cleaned_data
             lesson = lesson_form.save(commit=False)
             lesson.subject = subject
             lesson.order = 1
             lesson.save()
+            video = video_form.save(commit=False)
+            video.lesson = lesson
+            video.save()
             messages.success(request,_('Lesson added successfully'))
             return HttpResponseRedirect(reverse('elearning.views.building_course', args=(lesson.subject.course.id,))) # Redirect after POST
         else:
             messages.error(request,_('Failed to add the lesson'))
     else:
         lesson_form = LessonForm() # An unbound form
-    return render_to_response('elearning/add_lesson.html',{'lesson_form':lesson_form,'subject': subject},context_instance = RequestContext(request))
+        video_form = VideoForm() # An unbound form
+    return render_to_response('elearning/add_lesson.html',{'lesson_form':lesson_form,'video_form': video_form,'subject': subject},context_instance = RequestContext(request))
 
 
 @login_required()
 @owner_required(Lesson)
 def edit_lesson(request,lesson_id):
     lesson = get_object_or_404(Lesson,pk=lesson_id,subject__course__status__name = 'building')
+    try:
+        video = Video.objects.get(pk=lesson.video.id,lesson__subject__course__status__name = 'building')
+    except ObjectDoesNotExist:
+        video = None
     if request.method == 'POST': # If the form has been submitted...
         lesson_form = LessonForm(request.POST,instance=lesson) # A form bound to the POST data
-        if lesson_form.is_valid(): # All validation rules pass
+        video_form = VideoForm(request.POST,request.FILES,instance=video)
+        if lesson_form.is_valid() and video_form.is_valid(): # All validation rules pass
             # Process the data in form.cleaned_data
             lesson = lesson_form.save(commit=False)
             lesson.order = 1
             lesson.save()
+            video = video_form.save(commit=False)
+            video.lesson = lesson
+            video.save()
             messages.success(request,_('Lesson updated successfully'))
             return HttpResponseRedirect(reverse('elearning.views.building_course', args=(lesson.subject.course.id,))) # Redirect after POST
         else:
             messages.error(request,_('Failed to updated the lesson'))
     else:
         lesson_form = LessonForm(instance=lesson) # An unbound form
-    return render_to_response('elearning/edit_lesson.html',{'lesson_form':lesson_form,},context_instance = RequestContext(request))
+        video_form = VideoForm(instance=video) # An unbound form
+    return render_to_response('elearning/edit_lesson.html',{'lesson_form':lesson_form,'video_form':video_form},context_instance = RequestContext(request))
 
 
 @login_required()
@@ -220,10 +234,11 @@ def test_video(request,video_id):
     video = get_object_or_404(Video,pk=video_id)
     return render_to_response('elearning/tests/test_video.html',{'video':video},context_instance = RequestContext(request))
 
-
+""" Anadimos un Adjunto """
 @login_required()
 @owner_required(Lesson)
 def add_attach(request,lesson_id):
+    lesson =get_object_or_404(Lesson,pk=lesson_id)
     if request.method == 'POST': # If the form has been submitted...
         attach_form = AttachForm(request.POST,request.FILES) # A form bound to the POST data
         if attach_form.is_valid(): # All validation rules pass
@@ -238,7 +253,7 @@ def add_attach(request,lesson_id):
     else:
         attach_form = AttachForm() # An unbound form
 
-    return render_to_response('elearning/add_attach.html',{'attach_form':attach_form},context_instance = RequestContext(request))
+    return render_to_response('elearning/add_attach.html',{'attach_form':attach_form,'course_id':lesson.subject.course_id},context_instance = RequestContext(request))
 
 
 @login_required()
