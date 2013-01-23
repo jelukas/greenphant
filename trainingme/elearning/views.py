@@ -77,6 +77,16 @@ def building_course(request,course_id):
 
 @login_required()
 @owner_required(Course)
+def change_checking_status(request,course_id):
+    course = get_object_or_404(Course,pk=course_id)
+    course.status = Status.objects.get(name="checking")
+    course.save()
+    messages.success(request,_('Course sent to Checking process'))
+    return HttpResponseRedirect(reverse('elearning.views.teaching'))
+
+
+@login_required()
+@owner_required(Course)
 def add_subject(request,course_id):
     course = get_object_or_404(Course,pk = course_id,status__name = 'building')
     if request.method == 'POST': # If the form has been submitted...
@@ -304,7 +314,7 @@ def dashboard(request):
 
 @login_required()
 def learning(request):
-    enrollments = Enrollment.objects.filter(user_id=request.user.id)
+    enrollments = Enrollment.objects.filter(user_id=request.user.id,course__status__name='published')
     return render_to_response('elearning/dashboard_learning.html',{'enrollments':enrollments},context_instance = RequestContext(request))
 
 @login_required()
@@ -447,8 +457,7 @@ def vote_lesson(request,lesson_id,points):
         enrollment = get_object_or_404(Enrollment,course_id=lesson.subject.course_id,user_id=request.user.id) # you can't vote if you re not enrroled in the course
         if not points or points < 0:
             points = 0
-        if points > 5:
-            points = 5
+
         if not lesson.vote(request.user.id,points):
             messages.error(request,_('You can not vote twice this lesson: ')+lesson.title)
         back = request.META.get('HTTP_REFERER',None)

@@ -4,6 +4,7 @@ urlpatterns = patterns('',
     url(r'^course/new/$','elearning.views.new_course', name='new_course' ),
     url(r'^course/edit/(\d+)/$','elearning.views.edit_course', name='edit_course' ),
     url(r'^course/build/(\d+)/$','elearning.views.building_course', name='building_course' ),
+    url(r'^course/send-to-checking-process/(\d+)/$','elearning.views.change_checking_status', name='change_checking_status' ),
     #Subjects
     url(r'^course/subject/add/(\d+)/$','elearning.views.add_subject', name='add_subject' ),
     url(r'^course/subject/edit/(\d+)/$','elearning.views.edit_subject', name='edit_subject' ),
@@ -40,7 +41,7 @@ urlpatterns = patterns('',
     url(r'^course/learning/(\d+)/$','elearning.views.learning_course', name='learning_course' ),
 
     #Lesson
-    url(r'^lesson/(\d+)/(\d+)?/$','elearning.views.vote_lesson', name='vote_lesson' ),
+    url(r'^lesson/(\d+)/(\d+)?$','elearning.views.vote_lesson', name='vote_lesson' ),
     url(r'^course/lesson/learning/(\d+)/$','elearning.views.learning_lesson', name='learning_lesson' ),
 
 )

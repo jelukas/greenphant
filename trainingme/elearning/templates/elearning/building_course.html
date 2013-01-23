@@ -41,8 +41,10 @@
                                 {% if lesson.attach %}
                                     <a href="{{ lesson.attach.file.url }}"><div class="btnDownload"></div></a>
                                 {% endif %}
-                                {% if lesson.video.original_video_file.url %}
-                                    <a href="{% url test_video lesson.video.id %}"><div class="btnVideo"></div></a>
+                                {% if lesson.video.converted_video_file_mp4 %}
+                                    <a href="{% url learning_lesson lesson.id %}"><div class="btnVideo"></div></a>
+                                {% elif lesson.video.original_video_file %}
+                                    <span class="label label-warning">{% trans 'Processing Video' %}</span>
                                 {% endif %}
                             </div>
                             {% endfor %}
@@ -55,6 +57,7 @@
                 {% endfor %}
             </div>
             <div style="text-align: center;">
+                <a class="btn btn-success btn-small" href="{% url change_checking_status course.id %}">{% trans "Send to Checking" %}</a>
                 <a href="{% url add_subject course.id %}" class="btn btn-small btn-warning ">{% trans "Add Subject" %}</a>
             </div>
         </div>
