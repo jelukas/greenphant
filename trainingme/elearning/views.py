@@ -132,6 +132,31 @@ def delete_subject(request,subject_id):
     return HttpResponseRedirect(return_dict) # Redirect after POST
 
 
+"""Move Up in Order One Subject"""
+@login_required()
+@owner_required(Subject)
+def up_order_subject(request,subject_id):
+    subject = get_object_or_404(Subject,pk=subject_id,course__status__name="building")
+    course = subject.course
+    subject.order = subject.order - 1
+    subject.save()
+    messages.success(request,_('Subject order changed successfully'))
+    return_dict = (reverse('elearning.views.building_course', args=(course.id,))) # Redirect
+    return HttpResponseRedirect(return_dict) # Redirect
+
+
+"""Move Down in Order One Subject"""
+@login_required()
+@owner_required(Subject)
+def down_order_subject(request,subject_id):
+    subject = get_object_or_404(Subject,pk=subject_id,course__status__name="building")
+    course = subject.course
+    subject.order = subject.order + 1
+    subject.save()
+    messages.success(request,_('Subject order changed successfully'))
+    return_dict = (reverse('elearning.views.building_course', args=(course.id,))) # Redirect
+    return HttpResponseRedirect(return_dict) # Redirect
+
 
 @login_required()
 @owner_required(Subject)
