@@ -56,18 +56,20 @@
         </div>
     </div>
 </header>
-<section>
-    {% block warnings %}
-        {% if messages %}
-            {% for message in messages %}
-                <div class="alert alert-info">
-                    <button type="button" class="close" data-dismiss="alert">&times;</button>
-                    <strong>{% trans "Info" %}:</strong> {{ message }}.
-                </div>
-            {% endfor %}
-        {% endif %}
-    {% endblock %}
-</section>
+{% block section_warning %}
+    <section>
+        {% block warnings %}
+            {% if messages %}
+                {% for message in messages %}
+                    <div class="alert alert-{% if message.tags %}{{ message.tags }}{% endif %}">
+                        <button type="button" class="close" data-dismiss="alert">&times;</button>
+                        <strong>{% if message.tags %}{{ message.tags|upper }}{% endif %}:</strong> {{ message }}.
+                    </div>
+                {% endfor %}
+            {% endif %}
+        {% endblock %}
+    </section>
+{% endblock %}
 {% block sections %}
 
 {% endblock sections %}

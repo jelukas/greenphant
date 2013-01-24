@@ -25,31 +25,20 @@
   <component name="ExecutionTargetManager" SELECTED_TARGET="default_target" />
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="dashboard_teaching.html" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/elearning/templates/elearning/dashboard_teaching.html">
+      <file leaf-file-name="new_course.html" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/elearning/templates/elearning/new_course.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="41" column="36" selection-start="2154" selection-end="2154" vertical-scroll-proportion="-25.625">
+            <state line="106" column="33" selection-start="5453" selection-end="5453" vertical-scroll-proportion="-29.333334">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="urls.py" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/elearning/urls.py">
+      <file leaf-file-name="edit_course.html" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/elearning/templates/elearning/edit_course.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="31" column="59" selection-start="2223" selection-end="2223" vertical-scroll-proportion="0.0">
+            <state line="103" column="28" selection-start="5627" selection-end="5627" vertical-scroll-proportion="-33.083332">
               <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="views.py" pinned="false" current="true" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/elearning/views.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="322" column="72" selection-start="15170" selection-end="15170" vertical-scroll-proportion="0.4563679">
-              <folding>
-                <element signature="e#0#44#0" expanded="true" />
-              </folding>
             </state>
           </provider>
         </entry>
@@ -57,20 +46,26 @@
       <file leaf-file-name="view_course.html" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/elearning/templates/elearning/course/view_course.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="77" column="25" selection-start="4221" selection-end="4221" vertical-scroll-proportion="-25.583334">
+            <state line="17" column="60" selection-start="806" selection-end="806" vertical-scroll-proportion="-8.708333">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="building_course.html" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/elearning/templates/elearning/building_course.html">
+      <file leaf-file-name="settings.py" pinned="false" current="true" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/trainingme/settings.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="59" column="81" selection-start="4393" selection-end="4393" vertical-scroll-proportion="-27.5">
-              <folding>
-                <element signature="e#3978#4004#0" expanded="true" />
-                <element signature="e#4283#4310#0" expanded="true" />
-              </folding>
+            <state line="6" column="31" selection-start="170" selection-end="170" vertical-scroll-proportion="-1.1143868">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="learning_course.html" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/elearning/templates/elearning/course/learning_course.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="41" column="61" selection-start="2736" selection-end="2736" vertical-scroll-proportion="-25.625">
+              <folding />
             </state>
           </provider>
         </entry>
@@ -85,22 +80,22 @@
   <component name="IdeDocumentHistory">
     <option name="changedFiles">
       <list>
-        <option value="$PROJECT_DIR$/elearning/templates/elearning/dashboard_learning.html" />
-        <option value="$PROJECT_DIR$/elearning/templates/elearning/edit_lesson.html" />
-        <option value="$PROJECT_DIR$/elearning/templates/elearning/add_lesson.html" />
-        <option value="$PROJECT_DIR$/trainingme/urls.py" />
-        <option value="$PROJECT_DIR$/elearning/templates/elearning/add_attach.html" />
-        <option value="$PROJECT_DIR$/static/css/styles.less" />
-        <option value="$PROJECT_DIR$/../../lib/python2.6/site-packages/django_validated_file-0.0.1-py2.6.egg/validatedfile/__init__.py" />
         <option value="$PROJECT_DIR$/elearning/templates/elearning/course/view_lesson.html" />
-        <option value="$PROJECT_DIR$/elearning/templates/elearning/course/view_course.html" />
-        <option value="$PROJECT_DIR$/elearning/templates/elearning/course/learning_course.html" />
-        <option value="$PROJECT_DIR$/elearning/templates/elearning/course/learning_lesson.html" />
         <option value="$PROJECT_DIR$/elearning/models.py" />
-        <option value="$PROJECT_DIR$/elearning/templates/elearning/dashboard_teaching.html" />
         <option value="$PROJECT_DIR$/elearning/urls.py" />
         <option value="$PROJECT_DIR$/elearning/templates/elearning/building_course.html" />
+        <option value="$PROJECT_DIR$/elearning/templates/elearning/course/learning_lesson.html" />
         <option value="$PROJECT_DIR$/elearning/views.py" />
+        <option value="$PROJECT_DIR$/templates/base_gradient.html" />
+        <option value="$PROJECT_DIR$/templates/base.html" />
+        <option value="$PROJECT_DIR$/elearning/templates/elearning/dashboard_teaching.html" />
+        <option value="$PROJECT_DIR$/elearning/admin.py" />
+        <option value="$PROJECT_DIR$/elearning/templates/elearning/new_course.html" />
+        <option value="$PROJECT_DIR$/elearning/templates/elearning/course/learning_course.html" />
+        <option value="$PROJECT_DIR$/elearning/templates/elearning/edit_course.html" />
+        <option value="$PROJECT_DIR$/static/js/tiny_mce/basic_config.js" />
+        <option value="$PROJECT_DIR$/elearning/templates/elearning/course/view_course.html" />
+        <option value="$PROJECT_DIR$/trainingme/settings.py" />
       </list>
     </option>
   </component>
@@ -148,6 +143,20 @@
             <PATH_ELEMENT>
               <option name="myItemId" value="trainingme" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="trainingme" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="trainingme" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="trainingme" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="trainingme" />
@@ -223,12 +232,12 @@
   <component name="PropertiesComponent">
     <property name="options.splitter.main.proportions" value="0.3" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="options.lastSelected" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
     <property name="recentsLimit" value="5" />
+    <property name="options.lastSelected" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="DefaultHtmlFileTemplate" value="Html5" />
-    <property name="options.searchVisible" value="true" />
     <property name="options.splitter.details.proportions" value="0.2" />
+    <property name="options.searchVisible" value="true" />
   </component>
   <component name="PyConsoleOptionsProvider">
     <option name="myPythonConsoleState">
@@ -240,10 +249,10 @@
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/static/js" />
       <recent name="$PROJECT_DIR$/static/img" />
       <recent name="$PROJECT_DIR$/templates" />
       <recent name="$PROJECT_DIR$/personal/templates/personal" />
-      <recent name="$PROJECT_DIR$/static/js" />
       <recent name="$PROJECT_DIR$/static" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
@@ -287,25 +296,6 @@
       <option name="MULTIPROCESS" value="false" />
       <method />
     </configuration>
-    <configuration default="true" type="tests" factoryName="Unittests">
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs />
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="" />
-      <option name="IS_MODULE_SDK" value="false" />
-      <module name="trainingme" />
-      <EXTENSION ID="PythonCoverageRunConfigurationExtension" enabled="false" sample_coverage="true" runner="coverage.py" />
-      <option name="SCRIPT_NAME" value="" />
-      <option name="CLASS_NAME" value="" />
-      <option name="METHOD_NAME" value="" />
-      <option name="FOLDER_NAME" value="" />
-      <option name="TEST_TYPE" value="TEST_SCRIPT" />
-      <option name="PATTERN" value="" />
-      <option name="USE_PATTERN" value="false" />
-      <option name="PUREUNITTEST" value="true" />
-      <method />
-    </configuration>
     <configuration default="true" type="Python.DjangoServer" factoryName="Django server">
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -325,6 +315,25 @@
       <option name="runNoReload" value="false" />
       <option name="useCustomRunCommand" value="false" />
       <option name="customRunCommand" value="" />
+      <method />
+    </configuration>
+    <configuration default="true" type="tests" factoryName="Unittests">
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs />
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="" />
+      <option name="IS_MODULE_SDK" value="false" />
+      <module name="trainingme" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" enabled="false" sample_coverage="true" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="" />
+      <option name="CLASS_NAME" value="" />
+      <option name="METHOD_NAME" value="" />
+      <option name="FOLDER_NAME" value="" />
+      <option name="TEST_TYPE" value="TEST_SCRIPT" />
+      <option name="PATTERN" value="" />
+      <option name="USE_PATTERN" value="false" />
+      <option name="PUREUNITTEST" value="true" />
       <method />
     </configuration>
     <configuration default="true" type="tests" factoryName="Doctests">
@@ -406,13 +415,13 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="26" width="1920" height="1029" extended-state="0" />
-    <editor active="false" />
+    <editor active="true" />
     <layout>
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3297587" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.24705252" sideWeight="0.39497718" order="1" side_tool="true" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.24705252" sideWeight="0.59703195" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.24973205" sideWeight="0.40068492" order="1" side_tool="true" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.24973205" sideWeight="0.5913242" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33789954" sideWeight="0.5" order="9" side_tool="true" content_ui="tabs" />
@@ -478,122 +487,125 @@
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
-      <option name="time" value="1" />
+      <option name="time" value="2" />
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/elearning/templates/elearning/add_lesson.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="40" column="22" selection-start="2183" selection-end="2183" vertical-scroll-proportion="0.7281553">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/elearning/templates/elearning/tests/test_video.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/elearning/templates/elearning/add_subject.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="1486" vertical-scroll-proportion="-0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/elearning/templates/elearning/add_attach.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="28" column="71" selection-start="1378" selection-end="1387" vertical-scroll-proportion="0.50970876">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/elearning/templates/elearning/dashboard.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="-0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/static/css/styles.less">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="1311" column="13" selection-start="22521" selection-end="22521" vertical-scroll-proportion="0.6047904" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/../../lib/python2.6/site-packages/django_validated_file-0.0.1-py2.6.egg/validatedfile/__init__.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="21" column="12" selection-start="746" selection-end="746" vertical-scroll-proportion="0.37146226" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/elearning/templates/elearning/course/learning_course.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="70" column="31" selection-start="3916" selection-end="3916" vertical-scroll-proportion="0.8543689">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/elearning/templates/elearning/home.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="100" column="133" selection-start="5301" selection-end="5402" vertical-scroll-proportion="0.50849515">
+        <state line="48" column="4" selection-start="2459" selection-end="2623" vertical-scroll-proportion="0.8737864">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/elearning/templates/elearning/course/learning_lesson.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="37" column="18" selection-start="1634" selection-end="1634" vertical-scroll-proportion="0.6735437">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/elearning/models.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="189" column="111" selection-start="6558" selection-end="6558" vertical-scroll-proportion="0.6742515">
-          <folding>
-            <element signature="e#0#28#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/elearning/templates/elearning/dashboard_teaching.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="41" column="36" selection-start="2154" selection-end="2154" vertical-scroll-proportion="-25.625">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/elearning/templates/elearning/course/view_course.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="77" column="25" selection-start="4221" selection-end="4221" vertical-scroll-proportion="-25.583334">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/elearning/templates/elearning/building_course.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="59" column="81" selection-start="4393" selection-end="4393" vertical-scroll-proportion="-27.5">
-          <folding>
-            <element signature="e#3978#4004#0" expanded="true" />
-            <element signature="e#4283#4310#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/elearning/urls.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="31" column="59" selection-start="2223" selection-end="2223" vertical-scroll-proportion="0.0">
+        <state line="20" column="64" selection-start="1090" selection-end="1090" vertical-scroll-proportion="-12.5">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/elearning/views.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="322" column="72" selection-start="15170" selection-end="15170" vertical-scroll-proportion="0.4563679">
+        <state line="462" column="13" selection-start="21289" selection-end="21289" vertical-scroll-proportion="0.5448113">
           <folding>
             <element signature="e#0#44#0" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/base_gradient.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="13" column="78" selection-start="649" selection-end="649" vertical-scroll-proportion="0.23665048">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/base.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="65" column="74" selection-start="3583" selection-end="3583" vertical-scroll-proportion="0.80097085">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/elearning/templates/elearning/dashboard_learning.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/elearning/templates/elearning/dashboard_teaching.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="30" column="206" selection-start="1781" selection-end="1781" vertical-scroll-proportion="-18.75">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/financial/admin.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
+          <folding>
+            <element signature="e#0#32#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/elearning/admin.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="14" column="39" selection-start="457" selection-end="457" vertical-scroll-proportion="0.0">
+          <folding>
+            <element signature="e#0#32#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/elearning/templates/elearning/building_course.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="58" column="24" selection-start="4290" selection-end="4290" vertical-scroll-proportion="0.7780518">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/elearning/templates/elearning/new_course.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="106" column="33" selection-start="5453" selection-end="5453" vertical-scroll-proportion="-29.333334">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/elearning/templates/elearning/edit_course.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="103" column="28" selection-start="5627" selection-end="5627" vertical-scroll-proportion="-33.083332">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/static/js/tiny_mce/basic_config.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="1" column="20" selection-start="35" selection-end="35" vertical-scroll-proportion="0.017688679">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/elearning/templates/elearning/course/learning_course.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="41" column="61" selection-start="2736" selection-end="2736" vertical-scroll-proportion="-25.625">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/elearning/templates/elearning/course/view_course.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="17" column="60" selection-start="806" selection-end="806" vertical-scroll-proportion="-8.708333">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/trainingme/settings.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="6" column="31" selection-start="170" selection-end="170" vertical-scroll-proportion="-1.1143868">
+          <folding />
         </state>
       </provider>
     </entry>

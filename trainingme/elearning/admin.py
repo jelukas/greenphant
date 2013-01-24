@@ -9,8 +9,14 @@ class CommentAdmin(admin.ModelAdmin):
 class EnrollmentAdmin(admin.ModelAdmin):
     list_display = ('user','course','start_date',)
 
+class CourseAdmin(admin.ModelAdmin):
+    class Media:
+        js = ('js/tiny_mce/tiny_mce.js',
+              'js/tiny_mce/basic_config.js',
+            )
+
 admin.site.register(Category)
-admin.site.register(Course)
+admin.site.register(Course,CourseAdmin)
 admin.site.register(Status)
 admin.site.register(Subject)
 admin.site.register(Attach)

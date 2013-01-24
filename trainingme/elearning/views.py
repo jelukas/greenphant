@@ -460,6 +460,8 @@ def vote_lesson(request,lesson_id,points):
 
         if not lesson.vote(request.user.id,points):
             messages.error(request,_('You can not vote twice this lesson: ')+lesson.title)
+        else:
+            messages.success(request,_('You have Rated the lesson with ' + points + ' points'))
         back = request.META.get('HTTP_REFERER',None)
         return HttpResponseRedirect(back)
 

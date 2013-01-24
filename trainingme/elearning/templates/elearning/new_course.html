@@ -99,6 +99,11 @@
     </section>
 
     <section class="centeredbutton">
-        <a class="btn btn-large" href="{% url dashboard %}">{% trans "Back to Dashboard" %}</a>
+        <a class="btn btn-large" href="{% url teaching %}">{% trans "Back to Dashboard" %}</a>
     </section>
 {% endblock %}
+{% block footerscripts %}
+    {{ block.super }}
+    <script type="text/javascript" src="{{ STATIC_URL }}js/tiny_mce/tiny_mce.js"></script>
+    <script type="text/javascript" src="{{ STATIC_URL }}js/tiny_mce/basic_config.js"></script>
+{% endblock footerscripts %}

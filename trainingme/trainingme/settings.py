@@ -4,7 +4,7 @@ import os
 
 SITE_ROOT = os.path.dirname(os.path.realpath(__file__))
 SITE_NAME = "trainingme.net"
-SITE_URL = 'http://192.168.1.202'
+SITE_URL = 'http://192.168.1.222'
 
 DEBUG = True
 TEMPLATE_DEBUG = DEBUG
