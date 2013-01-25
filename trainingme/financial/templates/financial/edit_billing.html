@@ -1,12 +1,61 @@
 {% extends 'base.html' %}
-{% load i18n %}
+{% load i18n %}{% load widget_tweaks %}
 {% block sections %}
-    <a href="{% url view_billing %}">{% trans 'Back to Financial Details' %}</a>
-    <table>
-        <form method='post' action='' enctype="multipart/form-data">{% csrf_token %}
-            {{ billing_form.as_table }}
-            <tr><td></td><td><input type="submit" value="Update Billing Details" /></td>
-        </form>
-    </table>
-
-{% endblock %}
+    <section>
+        <div class="container MainTitle">
+            <h3>{% trans "You are Editing your Financial Details" %}</h3>
+        </div>
+    </section>
+    <section class="formContent">
+        <div class="container">
+            <form class="form-horizontal fixedContent" method='post' action='' id="financial_details_form" enctype="multipart/form-data">{% csrf_token %}
+                <div class="control-group">
+                    <label class="control-label">{% trans "Paypal Account Email" %}</label>
+                    <div class="controls">
+                        {% for error in billing_form.paypal_account.errors %}
+                            <span class="text-error">{{ error }}</span>
+                        {% endfor %}
+                        {{ billing_form.paypal_account|add_class:"fixedtype" }}
+                        <span class="help-inline">{% trans "You Paypal email" %}</span>
+                    </div>
+                </div>
+                <div class="control-group">
+                    <label class="control-label">{% trans "Invoice's Firstname" %}</label>
+                    <div class="controls">
+                        {% for error in billing_form.name.errors %}
+                            <span class="text-error">{{ error }}</span>
+                        {% endfor %}
+                        {{ billing_form.name|add_class:"fixedtype" }}
+                        <span class="help-inline">{% trans "Your Firstname for Invoice" %}</span>
+                    </div>
+                </div>
+                <div class="control-group">
+                    <label class="control-label">{% trans "Invoice's Surname" %}</label>
+                    <div class="controls">
+                        {% for error in billing_form.surname.errors %}
+                            <span class="text-error">{{ error }}</span>
+                        {% endfor %}
+                        {{ billing_form.surname|add_class:"fixedtype" }}
+                        <span class="help-inline">{% trans "Your Surname for Invoice" %}</span>
+                    </div>
+                </div>
+                <div class="control-group">
+                    <label class="control-label">{% trans "National ID Number" %}</label>
+                    <div class="controls">
+                        {% for error in billing_form.id_number.errors %}
+                            <span class="text-error">{{ error }}</span>
+                        {% endfor %}
+                        {{ billing_form.id_number|add_class:"fixedtype" }}
+                        <span class="help-inline">{% trans "Your National ID number" %}</span>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </section>
+    <section class="centeredbutton">
+                <button type="submit" form="financial_details_form" class="btn btn-primary">{% trans "Update Billing Details" %}</button>
+    </section>
+    <section class="centeredbutton">
+        <a class="btn btn-large" href="{% url view_billing %}">{% trans 'Back to Financial Details' %}</a>
+    </section>
+{% endblock sections %}

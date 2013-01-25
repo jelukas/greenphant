@@ -10,7 +10,9 @@
             </div>
         </section>
         <section>
-            <img src="{{ profile.image.url }}" alt="{{ user.username }}"  class="span2" />
+            {% if profile.image %}
+                <img src="{{ profile.image.url }}" alt="{{ user.username }}"  class="span2" />
+            {% endif %}
             <p><a href="{% url edit_profile %}" class="btn">{% trans "Edit your Profile" %}</a></p>
             <p><span>{% trans 'Username' %}</span>{{ profile.user.username }}</p>
             <p><span>{% trans 'State' %}</span>{{ profile.state }}</p>

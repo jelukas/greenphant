@@ -13,6 +13,15 @@ from financial.forms import BillingForm
 @login_required()
 def view_billing(request):
     billing = get_object_or_404(Billing,pk=request.user.id)
+    #Show Messages if Empty:
+    if not billing.paypal_account:
+        messages.warning(request,_('You can\' recive payments because your Paypal Adress is not set'))
+    if not billing.name:
+        messages.warning(request,_('You should set your Name for Invoices'))
+    if not billing.surname:
+        messages.warning(request,_('You should set your Surname for Invoices'))
+    if not billing.id_number:
+        messages.warning(request,_('You must set your National ID number in order to recive payments from Trainingme.net'))
     withdraws = Withdraw.objects.filter(user_id=request.user.id)
     purchases = Order.objects.filter(user_id=request.user.id)#Your pruchases
     sells = Order.objects.filter(course__user_id=request.user.id)#Your sells
@@ -29,7 +38,7 @@ def edit_billing(request):
             billing.user = request.user
             billing.save()
             messages.success(request,_('Billing details updated successfully'))
-            return HttpResponseRedirect(reverse('financial.views.edit_billing')) # Redirect after POST
+            return HttpResponseRedirect(reverse('financial.views.view_billing')) # Redirect after POST
         else:
             messages.error(request,_('Failed to update the Billing details'))
     else:

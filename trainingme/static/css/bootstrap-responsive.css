@@ -45,12 +45,12 @@
 }
 
 .hidden {
-  display: none;
+  display: none !important;
   visibility: hidden;
 }
 
 .visible-phone {
-  display: none !important;
+    display: none !important;
 }
 
 .visible-tablet {

@@ -57,11 +57,11 @@
     </div>
 </header>
 {% block section_warning %}
-    <section>
+    <section id="messages">
         {% block warnings %}
             {% if messages %}
                 {% for message in messages %}
-                    <div class="alert alert-{% if message.tags %}{{ message.tags }}{% endif %}">
+                    <div class="fade alert alert-{% if message.tags %}{{ message.tags }}{% endif %} hide">
                         <button type="button" class="close" data-dismiss="alert">&times;</button>
                         <strong>{% if message.tags %}{{ message.tags|upper }}{% endif %}:</strong> {{ message }}.
                     </div>
@@ -78,7 +78,14 @@
     {% endblock footer %}
 </footer>
 {% block footerscripts %}
-
+<script>
+    $(function(){
+        function showAlert(){
+            $(".alert").addClass("display-block in");
+        }
+        window.setTimeout(showAlert,800);
+    });
+</script>
 {% endblock footerscripts %}
 </body>
 </html>
