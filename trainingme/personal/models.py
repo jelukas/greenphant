@@ -11,6 +11,7 @@ from django.utils.translation import ugettext as _
 class Profile(models.Model):
     user = models.OneToOneField(User,unique=True,related_name='personal_profile')
     description = models.TextField(blank=False)
+    subtitle = models.CharField(max_length=100,blank=False)
     image = models.ImageField(upload_to='profile_images',blank=True)
     country = CountryField()
     state = models.CharField(max_length=250,blank=True)
@@ -18,6 +19,10 @@ class Profile(models.Model):
     phone_number = models.CharField(max_length=250,blank=True)
     address = models.CharField(max_length=250,blank=True)
     website = models.CharField(max_length=250,blank=True)
+    twitter = models.CharField(max_length=50,blank=True)
+    facebook = models.CharField(max_length=50,blank=True)
+    linkedin = models.URLField(blank=True)
+    googleplus = models.URLField(blank=True)
     is_first_login = models.BooleanField(default=False,editable=True)
 
     def __unicode__(self):

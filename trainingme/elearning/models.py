@@ -19,7 +19,7 @@ class Category(models.Model):
 
 
 #Status of the Courses Model
-""" There are 4: (building, checking, evaluating, published) """
+""" There are 5: (building, checking, evaluation period, published,forzen) """
 class Status(models.Model):
     name = models.CharField(_('Status'),blank=False,max_length=245)
 
