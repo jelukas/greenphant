@@ -1,0 +1,37 @@
+[
+    {
+        "model": "elearning.status",
+        "pk": 1,
+        "fields": {
+            "name": "building"
+        }
+    },
+    {
+        "model": "elearning.status",
+        "pk": 2,
+        "fields": {
+            "name": "checking"
+        }
+    },
+    {
+        "model": "elearning.status",
+        "pk": 3,
+        "fields": {
+            "name": "evaluation period"
+        }
+    },
+    {
+        "model": "elearning.status",
+        "pk": 4,
+        "fields": {
+            "name": "published"
+        }
+    },
+    {
+        "model": "elearning.status",
+        "pk": 5,
+        "fields": {
+            "name": "frozen"
+        }
+    }
+]

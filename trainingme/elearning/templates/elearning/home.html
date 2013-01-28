@@ -25,6 +25,7 @@
                     <p class="social-login">
                         <a href="{% url "socialauth_begin" "facebook" %}"><img src="{{ STATIC_URL }}img/{% trans "login-fb-en.png" %}"/></a>
                         <a href="{% url "socialauth_begin" "twitter" %}"><img src="{{ STATIC_URL }}img/{% trans "login-tw-en.png" %}"/></a>
+                        <a href="{% url "socialauth_begin" "google-oauth2" %}"><img src="{{ STATIC_URL }}img/{% trans "login-tw-en.png" %}"/></a>
                     </p>
                     <h3 class="center">
                         <span>{% trans "or sign in with" %}</span>
@@ -36,19 +37,6 @@
                                 <span>{% trans "already have account?" %}</span>
                                 <a href="/accounts/login/" >{% trans "Log In" %}</a>
                             </h4>
-                        </div>
-                    </div>
-                    <div class="panelPizarra">
-                        <div class="row-fluid">
-                            <div class="span4">
-                                <img src="{{ STATIC_URL }}img/ensena-aprende-cursos.png" alt="Cursos - Ense&ntilde;a - Aprende">
-                            </div>
-                            <div class="span4">
-                                <button type="button" class="btn btn-greyday span10">Aprende</button>
-                            </div>
-                            <div class="span4">
-                                <button type="button" class="btn span10">Ense&ntilde;a</button>
-                            </div>
                         </div>
                     </div>
                 </fieldset>

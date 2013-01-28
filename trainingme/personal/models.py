@@ -17,12 +17,11 @@ class Profile(models.Model):
     state = models.CharField(max_length=250,blank=True)
     address = models.CharField(max_length=250,blank=True)
     phone_number = models.CharField(max_length=250,blank=True)
-    address = models.CharField(max_length=250,blank=True)
     website = models.CharField(max_length=250,blank=True)
-    twitter = models.CharField(max_length=50,blank=True)
-    facebook = models.CharField(max_length=50,blank=True)
-    linkedin = models.URLField(blank=True)
-    googleplus = models.URLField(blank=True)
+    twitter_user = models.CharField(max_length=50,blank=True)
+    facebook_url = models.URLField(blank=True)
+    linkedin_url = models.URLField(blank=True)
+    googleplus_url = models.URLField(blank=True)
     is_first_login = models.BooleanField(default=False,editable=True)
 
     def __unicode__(self):

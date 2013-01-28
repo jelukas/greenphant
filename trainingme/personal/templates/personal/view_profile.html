@@ -7,19 +7,46 @@
         <section>
             <div class="container MainTitle">
                 <h3>{% trans "Mi Perfil" %}</h3>
+                <a href="{% url edit_profile %}" class="btn">{% trans "Edit your Profile" %}</a>
             </div>
         </section>
         <section>
-            {% if profile.image %}
-                <img src="{{ profile.image.url }}" alt="{{ user.username }}"  class="span2" />
-            {% endif %}
-            <p><a href="{% url edit_profile %}" class="btn">{% trans "Edit your Profile" %}</a></p>
-            <p><span>{% trans 'Username' %}</span>{{ profile.user.username }}</p>
-            <p><span>{% trans 'State' %}</span>{{ profile.state }}</p>
-            <p><span>{% trans 'Description' %}</span>{{ profile.description }}</p>
-            <p><span>{% trans 'Country' %}</span>{{ profile.country }}</p>
-            <p><span>{% trans 'Address' %}</span>{{ profile.address }}</p>
-            <p><span>{% trans 'Website' %}</span>{{ profile.website }}</p>
+                <div class="container">
+                <dl id="profile-details" class="dl-horizontal">
+                    <dt>{% trans 'Profile Image' %}</dt>
+                    <dd>
+                        {% if profile.image %}
+                        <img src="{{ profile.image.url }}" alt="{{ user.username }}" />
+                    {% endif %}
+                    </dd>
+                    <dt>{% trans 'Username' %}</dt>
+                    <dd>{{ user.username }}</dd>
+                    <dt>{% trans 'Your Email Address' %}</dt>
+                    <dd>{{ user.email }}</dd>
+                    <dt>{% trans 'Presentation' %}</dt>
+                    <dd>{{ profile.description|safe }} </dd>
+                    <dt>{% trans 'Subtitle' %}</dt>
+                    <dd>{{ profile.subtitle }}</dd>
+                    <dt>{% trans 'Country' %}</dt>
+                    <dd>{{ user.country }}</dd>
+                    <dt>{% trans 'State' %}</dt>
+                    <dd>{{ user.state }}</dd>
+                    <dt>{% trans 'Address' %}</dt>
+                    <dd>{{ user.address }}</dd>
+                    <dt>{% trans 'Phone Number' %}</dt>
+                    <dd>{{ user.phone_number }}</dd>
+                    <dt>{% trans 'Personal Website' %}</dt>
+                    <dd>{{ user.website }}</dd>
+                    <dt>{% trans "Twitter User" %}</dt>
+                    <dd>{{ user.twitter_user }}</dd>
+                    <dt>{% trans "Facebook Url" %}</dt>
+                    <dd>{{ user.facebook_url }}</dd>
+                    <dt>{% trans "Google Plus Url" %}</dt>
+                    <dd>{{ user.googleplus_url }}</dd>
+                    <dt>{% trans "Linkedin Public Url" %}</dt>
+                    <dd>{{ user.linkedin_url }}</dd>
+                </dl>
+            </div>
         </section>
     </div>
     <!-- Fin Contenido -->

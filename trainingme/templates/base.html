@@ -61,7 +61,7 @@
         {% block warnings %}
             {% if messages %}
                 {% for message in messages %}
-                    <div class="fade alert alert-{% if message.tags %}{{ message.tags }}{% endif %} hide">
+                    <div class="fade display-block in alert alert-{% if message.tags %}{{ message.tags }}{% endif %} hide">
                         <button type="button" class="close" data-dismiss="alert">&times;</button>
                         <strong>{% if message.tags %}{{ message.tags|upper }}{% endif %}:</strong> {{ message }}.
                     </div>
@@ -79,12 +79,12 @@
 </footer>
 {% block footerscripts %}
 <script>
-    $(function(){
+    /*$(function(){
         function showAlert(){
             $(".alert").addClass("display-block in");
         }
         window.setTimeout(showAlert,800);
-    });
+    });*/
 </script>
 {% endblock footerscripts %}
 </body>

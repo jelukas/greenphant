@@ -187,6 +187,7 @@ LOGGING = {
 AUTHENTICATION_BACKENDS = (
     'social_auth.backends.twitter.TwitterBackend',
     'social_auth.backends.facebook.FacebookBackend',
+    'social_auth.backends.google.GoogleOAuth2Backend',
     'django.contrib.auth.backends.ModelBackend',
     )
 
@@ -194,6 +195,10 @@ TWITTER_CONSUMER_KEY         = 'YyLFIRiVZv1ksLGW1aw'
 TWITTER_CONSUMER_SECRET      = 'c8Gwdwd3hdM31Eyjii0IAkA1MOY4sWkgjK88GsCI'
 FACEBOOK_APP_ID              = '560302190653717'
 FACEBOOK_API_SECRET          = '5a7a46d0f6c60d83b37e356fe8f7d323'
+FACEBOOK_EXTENDED_PERMISSIONS = ['email']
+GOOGLE_OAUTH2_CLIENT_ID      = '903944638666.apps.googleusercontent.com'
+GOOGLE_OAUTH2_CLIENT_SECRET  = 'oOzZscdWb_tu4RqWsyB1UAIR'
+SOCIAL_AUTH_PROTECTED_USER_FIELDS = ['email',]
 
 LOGIN_URL          = '/accounts/login/'
 LOGIN_REDIRECT_URL = '/elearning/dashboard/learning/'
