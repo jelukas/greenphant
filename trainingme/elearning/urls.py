@@ -23,7 +23,6 @@ urlpatterns = patterns('',
     url(r'^course/attach/add/(\d+)/$','elearning.views.add_attach', name='add_attach' ),
     #url(r'^course/attach/edit/(\d+)/$','elearning.views.edit_attach', name='edit_attach' ),
     url(r'^course/attach/delete/(\d+)/$','elearning.views.delete_attach', name='delete_attach' ),
-    url(r'^course/video/test/(\d+)/$','elearning.views.test_video', name='test_video' ),
 
     #Dashboard
     url(r'^$','elearning.views.dashboard', name='dashboard_home' ),
@@ -31,7 +30,7 @@ urlpatterns = patterns('',
     url(r'^dashboard/learning/$','elearning.views.learning', name='learning' ),
     url(r'^dashboard/teaching/$','elearning.views.teaching', name='teaching' ),
 
-    #Testing Paypal
+    # Paypal
     url(r'^paypal/$','elearning.views.paypal', name='paypal' ),
 
     #Course
@@ -44,6 +43,7 @@ urlpatterns = patterns('',
     #Lesson
     url(r'^lesson/(\d+)/(\d+)?$','elearning.views.vote_lesson', name='vote_lesson' ),
     url(r'^course/lesson/learning/(\d+)/$','elearning.views.learning_lesson', name='learning_lesson' ),
+    url(r'^course/lesson/preview/(\d+)/$','elearning.views.preview_lesson', name='preview_lesson' ),
 
 )
 

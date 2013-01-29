@@ -10,7 +10,7 @@ from django.contrib import messages
 from django.utils.translation import ugettext as _
 from django.views.decorators.csrf import csrf_exempt
 from django.views.decorators.http import require_POST
-from django.http import HttpResponseNotFound
+from django.http import HttpResponseNotFound, Http404
 from django.core.exceptions import ObjectDoesNotExist
 from datetime import datetime
 from django.template.defaultfilters import slugify
@@ -350,13 +350,13 @@ def view_course(request,slug):
                 "invoice": "unique-invoice-id",
                 "notify_url": "%s%s" % (settings.SITE_NAME, reverse('paypal-ipn')),
                 "return_url": "%s%s" % (settings.SITE_URL, reverse('elearning.views.buy_course',)),
-                "cancel_return": "http://www.marca.com",
+                "cancel_return": "http://www.trainingme.net",
                 }
             paypal_button = PayPalEncryptedPaymentsForm(initial=paypal_dict)
             context = {'course':course,'paypal_button':paypal_button.sandbox()}
         else:
             context = {'course':course,'enrrolled':True}
-            HttpResponseRedirect(reverse('elearning.views.learning_course', args=(course.id,)))
+            return HttpResponseRedirect(reverse('elearning.views.learning_course', args=(course.id,)))
     else:
         context = {'course':course,'enrrolled':False}
     return render_to_response('elearning/course/view_course.html',context,context_instance = RequestContext(request))
@@ -403,7 +403,18 @@ def learning_lesson(request,lesson_id):
         context = {'lesson':lesson,'comments':comments,'comment_form':comment_form,'enrrolled':True}
     return render_to_response('elearning/course/learning_lesson.html',context,context_instance = RequestContext(request))
 
-
+"""
+Vista Previa de la Leccion con el curso en estado Bulding
+"""
+@login_required()
+def preview_lesson(request,lesson_id):
+    try:
+        lesson = Lesson.objects.get(pk=lesson_id,subject__course__user_id = request.user.id,subject__course__status = Status.objects.get(name="building"))
+    except ObjectDoesNotExist:
+        raise Http404
+    else:
+        context = {'lesson':lesson,'enrrolled':True}
+    return render_to_response('elearning/course/preview_lesson.html',context,context_instance = RequestContext(request))
 
 """
 COMPRA DEL CURSO

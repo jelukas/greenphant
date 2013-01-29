@@ -1,12 +1,17 @@
 {% extends "registration/registration_base.html" %}
 {% load i18n %}
-{% block title %}Activation complete{% endblock %}
+{% block title %}{% trans 'Activation complete' %}{% endblock %}
 {% block sections %}
-    <div class="alert alert-success">
-        <button type="button" class="close" data-dismiss="alert">&times;</button>
-        {% trans "Thanks, activation complete!  You may now" %}
-         <a href='{% url auth_login %}'> {% trans "login" %}</a> {% trans "using the username and password you set at registration." %}
-    </div>
+    <section>
+        <div class="alert alert-success">
+            <button type="button" class="close" data-dismiss="alert">&times;</button>
+            {% trans "Thanks, activation complete!  You may now" %}
+             <a href='{% url auth_login %}'> {% trans "login" %}</a> {% trans "using the username and password you set at registration." %}
+        </div>
+    </section>
+    <section class="centeredbutton">
+        <a class="btn btn-large" href="{% url home %}">{% trans "Back to Home" %}</a>
+    </section>
 {% endblock %}
 
 

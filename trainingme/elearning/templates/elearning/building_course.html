@@ -42,7 +42,7 @@
                                     <a href="{{ lesson.attach.file.url }}"><div class="btnDownload"></div></a>
                                 {% endif %}
                                 {% if lesson.video.converted_video_file_mp4 %}
-                                    <a href="{% url learning_lesson lesson.id %}"><div class="btnVideo"></div></a>
+                                    <a href="{% url preview_lesson lesson.id %}"><div class="btnVideo"></div></a>
                                 {% elif lesson.video.original_video_file %}
                                     <span class="label label-warning">{% trans 'Processing Video' %}</span>
                                 {% endif %}

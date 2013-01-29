@@ -16,6 +16,9 @@
             <a href="{% url "socialauth_begin" "twitter" %}"><img src="{{ STATIC_URL }}img/{% trans "login-tw-en.png" %}"/></a>
         </p>
         <p class="social-login">
+            <a href="{% url "socialauth_begin" "google-oauth2" %}"><img src="{{ STATIC_URL }}img/{% trans "login-gl-en.png" %}"/></a>
+        </p>
+        <p class="social-login">
             Or
         </p>
         <form method="post" action="{% url "django.contrib.auth.views.login" %}">{% csrf_token %}
@@ -34,5 +37,8 @@
         <input class="btn btn-large btn-primary" type="submit" value="{% trans "Log in" %}" />
             <input type="hidden" name="next" value="{{ next }}" />
         </form>
+    </section>
+    <section class="centeredbutton">
+        <a class="btn btn-large" href="{% url 'home' %}">{% trans "Back to Home" %}</a>
     </section>
 {% endblock sections%}

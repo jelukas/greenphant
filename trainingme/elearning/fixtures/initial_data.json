@@ -33,5 +33,124 @@
         "fields": {
             "name": "frozen"
         }
+    },
+    {
+        "models": "elearning.category",
+        "pk": 1,
+        "fields": {
+            "name": "Arts and Photography"
+        }
+    },
+    {
+        "models": "elearning.category",
+        "pk": 2,
+        "fields": {
+            "name": "Business"
+        }
+    },
+    {
+        "models": "elearning.category",
+        "pk": 3,
+        "fields": {
+            "name": "Crafts and Hobbies"
+        }
+    },
+    {
+        "models": "elearning.category",
+        "pk": 4,
+        "fields": {
+            "name": "Design"
+        }
+    },
+    {
+        "models": "elearning.category",
+        "pk": 5,
+        "fields": {
+            "name": "Education"
+        }
+    },
+    {
+        "models": "elearning.category",
+        "pk": 6,
+        "fields": {
+            "name": "Games"
+        }
+    },
+    {
+        "models": "elearning.category",
+        "pk": 7,
+        "fields": {
+            "name": "Health and Fitness"
+        }
+    },
+    {
+        "models": "elearning.category",
+        "pk": 8,
+        "fields": {
+            "name": "Humanities"
+        }
+    },
+    {
+        "models": "elearning.category",
+        "pk": 9,
+        "fields": {
+            "name": "Languages"
+        }
+    },
+    {
+        "models": "elearning.category",
+        "pk": 10,
+        "fields": {
+            "name": "Lifestyle"
+        }
+    },
+    {
+        "models": "elearning.category",
+        "pk": 11,
+        "fields": {
+            "name": "Math and Science"
+        }
+    },
+    {
+        "models": "elearning.category",
+        "pk": 12,
+        "fields": {
+            "name": "Music"
+        }
+    },
+    {
+        "models": "elearning.category",
+        "pk": 13,
+        "fields": {
+            "name": "Social Sciences"
+        }
+    },
+    {
+        "models": "elearning.category",
+        "pk": 14,
+        "fields": {
+            "name": "Sports"
+        }
+    },
+    {
+        "models": "elearning.category",
+        "pk": 15,
+        "fields": {
+            "name": "Technology"
+        }
+    },
+    {
+        "models": "elearning.category",
+        "pk": 16,
+        "fields": {
+            "name": "Other"
+        }
+    },
+    {
+        "models": "elearning.category",
+        "pk": 17,
+        "fields": {
+            "name": "Test"
+        }
     }
 ]

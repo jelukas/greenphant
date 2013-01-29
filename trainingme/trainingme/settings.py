@@ -254,3 +254,8 @@ PAYPAL_PRIVATE_CERT = SITE_ROOT + '/certs/paypal.pem'
 PAYPAL_PUBLIC_CERT = SITE_ROOT + '/certs/pubpaypal.pem'
 PAYPAL_CERT = SITE_ROOT + '/certs/paypal_cert.pem'
 PAYPAL_CERT_ID = 'PXKA9Y3MH3RHJ'
+
+
+"Cargamos por defecto el tag i18n"
+from django import template
+template.add_to_builtins('django.templatetags.i18n')

@@ -54,9 +54,13 @@
                 </section>
             </div>
             <div class="offset2 span2">
-                <h4>{% trans 'Teacher' %}</h4>
+                <h4>{{ course.user.first_name }} {{ course.user.last_name }}</h4>
+                <h5>{{ course.user.get_profile.subtitle }}</h5>
                 <section class="teacher_profile_course">
-                    <img src="{{ course.user.get_profile.image.url }}" />
+                    {% if course.user.get_profile.image %}
+                        <img src="{{ course.user.get_profile.image.url }}" />
+                    {% endif %}
+                    {{ course.user.get_profile.description|safe }}
                 </section>
             </div>
         </div>

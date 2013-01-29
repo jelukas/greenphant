@@ -31,7 +31,7 @@
                                         </a>
                                         <div  class="arrowAccordion"  data-toggle="collapse" data-parent="#AccordionCurso" href="#collapse{{ forloop.counter|apnumber }}"></div>
                                     </div>
-                                    <div id="collapse{{ forloop.counter|apnumber }}" class="accordion-body collapse">
+                                    <div id="collapse{{ forloop.counter|apnumber }}" class="accordion-body collapse in">
                                         <div class="accordion-inner">
                                             {% for lesson in subject.lessons.all %}
                                                 <div class="accordionLine">
@@ -56,17 +56,18 @@
             <div class="span2">
                 <div class="enrroled_data">
                     {% if enrrolled %}
-                        Ya estás matriculado: <a href="{% url learning_course course.id %}" title="Acceder">ACCEDER</a>
+                        {% trans 'You are enrrolled' %}: <a href="{% url learning_course course.id %}" title="Acceder">{% trans 'Access' %}</a>
                     {% elif user.is_authenticated %}
                         {{ paypal_button }}
                     {% endif %}
                 </div>
-                <h4>{% trans 'Teacher' %}</h4>
+                <h4>{{ course.user.first_name }} {{ course.user.last_name }}</h4>
+                <h5>{{ course.user.get_profile.subtitle }}</h5>
                 <section class="teacher_profile_course">
                     {% if course.user.get_profile.image %}
                         <img src="{{ course.user.get_profile.image.url }}" />
-                    {% else %}
                     {% endif %}
+                    {{ course.user.get_profile.description|safe }}
                 </section>
             </div>
         </div>

@@ -1,5 +1,13 @@
 {% extends "registration/registration_base.html" %}
-{% block title %}Logged out{% endblock %}
+{% block title %}{% trans "Logged out" %}{% endblock %}
 {% block sections %}
-Successfully logged out!
+    <section>
+        <div class="alert alert-success">
+            <button type="button" class="close" data-dismiss="alert">&times;</button>
+            {% trans "Successfully logged out!" %}
+        </div>
+    </section>
+    <section class="centeredbutton">
+        <a class="btn btn-large" href="{% url home %}">{% trans "Back to Home" %}</a>
+    </section>
 {% endblock %}
