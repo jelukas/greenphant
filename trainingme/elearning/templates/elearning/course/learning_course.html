@@ -15,7 +15,7 @@
                             {% thumbnail course.image "300x200" as im %}
                                 <img src="{{ im.url }}" class="image_course_description">
                             {% endthumbnail %}
-                            {{ course.large_description|safe }}
+                            {{ course.large_description|removetags:"script div section"|safe }}
                             <div class="clearfix"></div>
                         </div>
                         {% load elearning_extras %}

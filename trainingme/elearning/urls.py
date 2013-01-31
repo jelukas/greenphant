@@ -17,7 +17,7 @@ urlpatterns = patterns('',
     url(r'^course/lesson/delete/(\d+)/$','elearning.views.delete_lesson', name='delete_lesson' ),
     #Video
     url(r'^course/video/add/(\d+)/$','elearning.views.add_video', name='add_video' ),
-    #url(r'^course/video/edit/(\d+)/$','elearning.views.edit_video', name='edit_video' ),
+    url(r'^course/video/free/(\d+)/$','elearning.views.free_video', name='free_video' ),
     url(r'^course/video/delete/(\d+)/$','elearning.views.delete_video', name='delete_video' ),
     #Attach
     url(r'^course/attach/add/(\d+)/$','elearning.views.add_attach', name='add_attach' ),

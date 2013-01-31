@@ -15,7 +15,7 @@
                             {% thumbnail course.image "300x200" as im %}
                                 <img src="{{ im.url }}" class="image_course_description">
                             {% endthumbnail %}
-                            {{ course.large_description|safe }}
+                            {{ course.large_description|removetags:"script div section"|safe }}
                             <div class="clearfix"></div>
                         </div>
                     </div>
@@ -42,6 +42,8 @@
                                                     {% endif %}
                                                     {% if lesson.video.original_video_file.url %}
                                                         <div class="btnVideo"></div>
+                                                        {% if lesson.is_preview %}<span class="pull-right"><a href="#freeVideo" data-remote="{% url free_video lesson.video.id %}" data-toggle="modal">{% trans 'View FREE Now' %}</a>
+                                                        </span>{% endif %}
                                                     {% endif %}
                                                 </div>
                                             {% endfor %}
@@ -54,6 +56,10 @@
                 </section>
             </div>
             <div class="span2">
+                <div class="course_price">
+                    <p class="price">{{ course.price|floatformat:2 }} &euro;</p>
+                    <p class="social_amount">{% trans 'Social Amount' %} {{ course.social_amount|floatformat:2 }} &euro;</p>
+                </div>
                 <div class="enrroled_data">
                     {% if enrrolled %}
                         {% trans 'You are enrrolled' %}: <a href="{% url learning_course course.id %}" title="Acceder">{% trans 'Access' %}</a>
@@ -70,6 +76,15 @@
                     {{ course.user.get_profile.description|safe }}
                 </section>
             </div>
+        </div>
+    </div>
+    <!-- Modal -->
+    <div id="freeVideo" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="WatchfreeVideo" aria-hidden="true">
+        <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+            <h3 id="WatchfreeVideo">{% trans 'Free Video' %}</h3>
+        </div>
+        <div class="modal-body">
         </div>
     </div>
 {% endblock %}

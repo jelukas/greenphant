@@ -10,6 +10,7 @@ from django.contrib import messages
 from django.utils.translation import ugettext as _
 from django.views.decorators.csrf import csrf_exempt
 from django.views.decorators.http import require_POST
+from elearning.decorators import ajax_required
 from django.http import HttpResponseNotFound, Http404
 from django.core.exceptions import ObjectDoesNotExist
 from datetime import datetime
@@ -262,6 +263,11 @@ def delete_video(request,video_id):
     messages.success(request,_('Video deleted successfully'))
     return HttpResponseRedirect(reverse('elearning.views.building_course', args=(course.id,))) # Redirect after POST
 
+#NO login Required:
+@ajax_required
+def free_video(request,video_id):
+    video = get_object_or_404(Video,pk=video_id)
+    return render_to_response('elearning/free_video.html',{'video':video},context_instance = RequestContext(request))
 
 @login_required()
 @owner_required(Video)

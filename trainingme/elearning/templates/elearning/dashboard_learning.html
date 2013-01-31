@@ -15,10 +15,13 @@
                     {% for enrrolment in enrollments %}
                         <div class="span3 cursoBox">
                             <a href="{% url learning_course enrrolment.course.id %}">
-                                {% thumbnail enrrolment.course.image "238x135" as im %}
-                                    <div class="boxTitleBG" style="background-image: url({{ im.url }});background-size:100% 100%;">
-                                    </div>
-                                {% endthumbnail %}
+                                {% if course.image %}
+                                    {% thumbnail course.image "238x135" as im %}
+                                        <div class="boxTitleBG" style="background-image: url({{ im.url }});background-size:100% 100%;"></div>
+                                    {% endthumbnail %}
+                                {% else %}
+                                    <div class="boxTitleBG" style="background-image: url('{{ STATIC_URL }}/img/dafault_image_course.gif');background-size:100% 100%;"></div>
+                                {% endif %}
                             </a>
                             <div class="boxTitle" >
                                 <a href="{% url learning_course enrrolment.course.id %}">{{ enrrolment.course.title }}</a>

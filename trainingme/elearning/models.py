@@ -6,6 +6,7 @@ from django.db.models import Avg
 from django.utils.translation import ugettext as _
 from django.core.files.storage import default_storage
 from validatedfile import ValidatedFileField
+from decimal import Decimal
 
 #Category of the Courses Model
 class Category(models.Model):
@@ -36,7 +37,7 @@ class Course(models.Model):
     user = models.ForeignKey(User,related_name='courses')
     created_at = models.DateTimeField(blank=False,auto_now_add=True)
     price = models.DecimalField(_('price'),blank=False,max_digits=20,decimal_places=2)
-    title = models.CharField(_('title'),blank=False,max_length=80)
+    title = models.CharField(_('title'),blank=False,max_length=40)
     LANGUAGE_CHOICES = (
         ('es-es','spanish (Spain)'),
         ('es-la','spanish (Latin)'),
@@ -84,6 +85,11 @@ class Course(models.Model):
     def get_scoring(self):
         score = self.votes.all().aggregate(Avg('rating'))
         return score['rating__avg']
+
+    @property
+    def social_amount(self):
+        amount = (self.price*10)/100
+        return  amount
 
     def rate(self,user_id,points):
         if self.id:
