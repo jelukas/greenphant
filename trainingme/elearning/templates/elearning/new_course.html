@@ -2,12 +2,12 @@
 {% load i18n %}{% load widget_tweaks %}
 {% block sections %}
     <section>
-        <div class="container MainTitle">
+        <div class="MainTitle">
             <h3>{% trans "You are Creating a New Course" %}</h3>
         </div>
     </section>
     <section class="formContent">
-        <div class="container">
+        <div>
             <form class="form-horizontal fixedContent" method='post' action='' id="creating_course_form" enctype="multipart/form-data">{% csrf_token %}
                 <div class="control-group">
                     <label class="control-label">{% trans "Course Title" %}</label>
