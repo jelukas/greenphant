@@ -1,5 +1,5 @@
 from django.contrib import admin
-from elearning.models import Category,Course,Status,Subject,Attach,Video,Lesson,Enrollment,Vote,Comment
+from elearning.models import Category,Course,Status,Subject,Attach,Video,Lesson,Enrollment,Vote,Comment, Course_Vote
 
 
 class CommentAdmin(admin.ModelAdmin):
@@ -13,7 +13,7 @@ class CourseAdmin(admin.ModelAdmin):
     class Media:
         js = ('js/tiny_mce/tiny_mce.js',
               'js/tiny_mce/basic_config.js',
-            )
+        )
 
 admin.site.register(Category)
 admin.site.register(Course,CourseAdmin)
@@ -24,4 +24,5 @@ admin.site.register(Video)
 admin.site.register(Lesson)
 admin.site.register(Enrollment,EnrollmentAdmin)
 admin.site.register(Vote)
+admin.site.register(Course_Vote)
 admin.site.register(Comment,CommentAdmin)

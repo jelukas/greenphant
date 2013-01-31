@@ -68,13 +68,32 @@ class Course(models.Model):
     def get_absolute_url(self):
         return "/elearning/course/%s/" % self.slug
 
+
+    def user_had_vote_course(self,user_id):
+        if self.id:
+            try:
+                vote = self.votes.get(user_id=user_id)
+            except Course_Vote.DoesNotExist:
+                return False
+            else:
+                return True
+        else:
+            return False
+
     @property
     def get_scoring(self):
-        from django.db import connection
-        cursor = connection.cursor()
-        cursor.execute("SELECT AVG(points) FROM elearning_vote WHERE lesson_id IN (SELECT id FROM elearning_lesson WHERE subject_id IN (SELECT id FROM elearning_subject WHERE course_id = %s))",[self.id,])
-        score = cursor.fetchone()[0]
-        return score
+        score = self.votes.all().aggregate(Avg('rating'))
+        return score['rating__avg']
+
+    def rate(self,user_id,points):
+        if self.id:
+            from datetime import datetime
+            if not self.user_had_vote_course(user_id):
+                course_vote = Course_Vote(user_id = user_id, rating = points,created_at = datetime.now(),course_id = self.id)
+                course_vote.save()
+                return True
+            else:
+                return False
 
         """
     def save(self):
@@ -287,7 +306,21 @@ class Vote(models.Model):
         return self.user.id
 
     def __str__(self):
-        return unicode(self.user.username) + '--' + str(self.points)
+        return unicode(self.user.username) + '--' + str(self.points)#Lessons votes
+
+
+#Votes of Courses
+class Course_Vote(models.Model):
+    user = models.ForeignKey(User,verbose_name=_('User'),related_name='course_votes')
+    course = models.ForeignKey(Course,verbose_name=_('Course'),related_name='votes')
+    created_at = models.DateTimeField(blank=False,auto_now_add=True)
+    rating = models.DecimalField(verbose_name=_('Rating'),max_digits=5,decimal_places=2)
+
+    def get_owner_id(self):
+        return self.user.id
+
+    def __str__(self):
+        return unicode(self.user.username) + '--' + str(self.rating)
 
 
 #Lesson comments

@@ -17,7 +17,7 @@ from django.template.defaultfilters import slugify
 from django.db import IntegrityError
 from django.db.models import Q
 
-
+""" BUILD COURSE ZONE """
 @login_required()
 def new_course(request):
     if request.method == 'POST': # If the form has been submitted...
@@ -84,7 +84,7 @@ def change_checking_status(request,course_id):
     messages.success(request,_('Course sent to Checking process'))
     return HttpResponseRedirect(reverse('elearning.views.teaching'))
 
-
+""" SUBJECT ZONE """
 @login_required()
 @owner_required(Course)
 def add_subject(request,course_id):
@@ -167,7 +167,7 @@ def down_order_subject(request,subject_id):
     return_dict = (reverse('elearning.views.building_course', args=(course.id,))) # Redirect
     return HttpResponseRedirect(return_dict) # Redirect
 
-
+""" Lesson Zone """
 @login_required()
 @owner_required(Subject)
 def add_lesson(request,subject_id):
@@ -232,7 +232,7 @@ def delete_lesson(request,lesson_id):
     messages.success(request,_('Lesson deleted successfully'))
     return HttpResponseRedirect(reverse('elearning.views.building_course', args=(course.id,))) # Redirect after POST
 
-
+""" Video """
 @login_required()
 @owner_required(Lesson)
 def add_video(request,lesson_id):
@@ -314,7 +314,7 @@ def dashboard(request):
 
 @login_required()
 def learning(request):
-    enrollments = Enrollment.objects.filter(user_id=request.user.id,course__status__name='published')
+    enrollments = Enrollment.objects.filter(Q(user_id=request.user.id),Q(course__status__name="published") | Q(course__status__name="evaluation period"))
     return render_to_response('elearning/dashboard_learning.html',{'enrollments':enrollments},context_instance = RequestContext(request))
 
 @login_required()
@@ -335,7 +335,7 @@ def view_course(request,slug):
     from paypal.standard.forms import PayPalEncryptedPaymentsForm
     from django.conf import settings
 
-    course = get_object_or_404(Course,slug=slug,status = Status.objects.get(name="published"))
+    course = get_object_or_404(Course,Q(slug=slug),Q(status__name="published")|Q(status__name="evaluation period"))
 
     if request.user.is_authenticated():
         enrrollment = course.enrollments.filter(user_id=request.user.id)
@@ -367,7 +367,7 @@ Vista de los contenidos del Curso una vez matriculado
 """
 @login_required()
 def learning_course(request,course_id):
-    course = get_object_or_404(Course,pk=course_id,status = Status.objects.get(name="published"))
+    course = get_object_or_404(Course,Q(pk=course_id),Q(status__name="published") | Q(status__name="evaluation period"))
     enrrollment = course.enrollments.filter(user_id=request.user.id)
     if not enrrollment:
         return HttpResponseRedirect(reverse('elearning.views.view_course', args=(course.id,)))
@@ -381,7 +381,7 @@ Vista de la Leccion una vez matriculado
 """
 @login_required()
 def learning_lesson(request,lesson_id):
-    lesson = get_object_or_404(Lesson,pk=lesson_id,subject__course__status = Status.objects.get(name="published"))
+    lesson = get_object_or_404(Lesson,Q(pk=lesson_id),Q(subject__course__status__name="published") | Q(subject__course__status__name="evaluation period"))
     enrrollment = lesson.subject.course.enrollments.filter(user_id=request.user.id)
     if not enrrollment:
         messages.warning(request,_('You are not enrroled in that course: ')+lesson.subject.course.title)
@@ -429,7 +429,7 @@ def buy_course(request):
             messages.error(request,_('Duplicated Transaction'))
             return HttpResponseRedirect(reverse('elearning.views.home'))
         if post_data['payment_status'] == 'Completed':
-            course = get_object_or_404(Course,pk=request.POST['item_number'])
+            course = get_object_or_404(Course,pk=request.POST['item_number'],status__name="published")
             if float(post_data['mc_gross']) == float(course.price) :
                 # Create the Order
                 from financial.models import Order
@@ -457,14 +457,14 @@ def exists_paypal_txn_order(course_id,txn_id):
 """
 VOTAMOS una LECCION:
 Para votar la leccion debemos:
-1- El curso debe estar en estado published
+1- El curso debe estar en estado published o evaluation period
 2- Estar matriculados en el curso de la leccion
 3- No haberla votado antes
 """
 @login_required()
 def vote_lesson(request,lesson_id,points):
     lesson = get_object_or_404(Lesson,pk=lesson_id)
-    if lesson.subject.course.status.name != 'published':
+    if lesson.subject.course.status.name != 'published' and lesson.subject.course.status.name != 'evaluation period' :
         messages.error(request,_('This Course is not Published: ')+lesson.subject.course.title)
         return HttpResponseRedirect(reverse('elearning.views.learning',))
     else:
@@ -479,16 +479,33 @@ def vote_lesson(request,lesson_id,points):
         back = request.META.get('HTTP_REFERER',None)
         return HttpResponseRedirect(back)
 
+
+"""
+VOTAMOS un CURSO
+"""
+@login_required()
+def vote_course(request,course_id,points):
+    course = Course.objects.get(Q(id=course_id),Q(status__name="published") | Q(status__name="evaluation period"))
+    enrollment = get_object_or_404(Enrollment,course_id=course_id,user_id=request.user.id) # you can't vote if you re not enrroled in the course
+    if not points or points < 0:
+        points = 0
+
+    if not course.rate(request.user.id,points):
+        messages.error(request,_('You can not vote twice this course: ')+course.title)
+    else:
+        messages.success(request,_('You have Rated the course with ' + points + ' points'))
+    back = request.META.get('HTTP_REFERER',None)
+    return HttpResponseRedirect(back)
+
 """
 HOME PAGE
 """
 
 def home(request):
-    status = Status.objects.get(name="published")
     if request.POST:
-        courses = Course.objects.filter(Q(short_description__icontains=request.POST['query']) | Q(title__icontains=request.POST['query']),status_id = status.id)
+        courses = Course.objects.filter(Q(short_description__icontains=request.POST['query']) | Q(title__icontains=request.POST['query']),Q(status__name="published") | Q(status__name="evaluation period"))
     else:
-        courses = Course.objects.filter(status_id = status.id)
+        courses = Course.objects.filter(Q(status__name="published") | Q(status__name="evaluation period"))
     context = {'courses' : courses}
     return render_to_response('elearning/home.html',context,context_instance = RequestContext(request))
 

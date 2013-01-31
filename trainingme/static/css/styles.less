@@ -1,8 +1,18 @@
 
+@font-face {
+  font-family: Myriadpro;
+  src: url('MYRIADPRO-REGULAR.OTF');
+}
+@font-face {
+  font-family: Myriadpro;
+  font-weight: bold; src: url('MYRIADPRO-SEMIBOLD.OTF');
+}
+
 @font-size	: 	12px;
 @line-height: 	15px;	
 @color: 		#444;
-@font-family: 	"Helvetica Neue",Helvetica,Arial;
+@font-family: 	Myriadpro,"Helvetica Neue",Helvetica,Arial;
+
 @font-weight: 	normal;
 @error-color:	#F96060;
 
@@ -16,6 +26,7 @@
 @input-search-labelcolor: #c5c4c4;
 
 @splash-form-linecolor:#199bcd;
+@blue: #005580 ;
 
 @import url('bootstrap.css');
 @import url('bootstrap-responsive.css');
@@ -25,10 +36,11 @@ body{
 	margin:0px;
 	padding:0px;
 	color:@color;
+    font-family: Myriadpro;
 }
 
 body.gradientGB{
-	background-color: #dcdcdc;
+	background-color: #cccccc;
 }
 
 
@@ -338,7 +350,7 @@ section.cursosResultado{
 		
 		.boxTitle{
 			height: 26px;
-			background-color: #199BCD;
+			background-color: #005580;
 			color: white;
 			text-align: center;
 			font-weight: bold;
@@ -1349,3 +1361,9 @@ dl#profile-details {
    padding: 20px;
    border: 1px solid #ddd;
  }
+.navbar-inner {
+  border: 0;
+  -webkit-border-radius: 0;
+  -moz-border-radius: 0;
+  border-radius: 0;
+}

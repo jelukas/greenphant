@@ -18,6 +18,12 @@
                             {{ course.large_description|safe }}
                             <div class="clearfix"></div>
                         </div>
+                        {% load elearning_extras %}
+                        {% if not course|user_had_vote_course:user.id %}
+                            <div id="lesson-{{ course.id }}" data-rating="{{ course.get_scoring }}" class="star_course leftSide"></div>
+                        {% else %}
+                            <div id="lesson-{{ course.id }}" data-rating="{{ course.get_scoring }}" class="star_course_rated leftSide"></div>
+                        {% endif %}
                     </div>
                 </section>
                 <section class="formContent">
@@ -69,11 +75,32 @@
 {% block footerscripts %}
     {{ block.super }}
     <script type="text/javascript">
-        $('.star').raty({
-            readOnly: true,
-            half: true,
+        $('.star_course').raty({
+            readOnly: false,
+            half: false,
             score: function() {
                 return $(this).attr('data-rating');
+            },
+            size: 24,
+            starHalf  : 'star-half-big.png',
+            starOff   : 'star-off-big.png',
+            starOn    : 'star-on-big.png',
+            click: function(score, evt) {
+                window.location.href = "{% url vote_course course.id %}" + score;
+            }
+        });
+        $('.star_course_rated').raty({
+            readOnly: true,
+            half: true,
+            size : 24,
+            starHalf  : 'star-half-big.png',
+            starOff   : 'star-off-big.png',
+            starOn    : 'star-on-big.png',
+            score: function() {
+                return $(this).attr('data-rating');
+            },
+            click: function(score, evt) {
+                window.location.href = "{% url vote_course course.id %}" + score;
             }
         });
     </script>

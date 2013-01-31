@@ -64,9 +64,9 @@
                     {% for course in courses %}
                     <div class="span3 cursoBox">
                         <a href="{% url "view_course" course.slug %}">
-                            {% thumbnail course.image "238x135" as im %}
-                            <div class="boxTitleBG" style="background-image: url({{ im.url }});background-size: contain;">
-                            </div>
+                            {% thumbnail course.image "238x135"  as im  %}
+                                <div class="boxTitleBG" style="background-image: url({{ im.url }});background-size:100% 100%;">
+                                </div>
                             {% endthumbnail %}
                         </a>
                         <div class="boxTitle" >
