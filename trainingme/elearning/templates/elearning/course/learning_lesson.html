@@ -26,7 +26,7 @@
                                 </video>
                             {% endif %}
                             {% if lesson.attach %}
-                                <p>{% trans 'Extra Content' %}: <a href="{{ lesson.attach.file.url }}">{% trans '' %}</a></p>
+                                <p>{% trans 'Extra Content' %}: <a href="{{ lesson.attach.file.url }}">{% trans 'File' %}</a></p>
                             {% endif %}
                             {% load elearning_extras %}
                             {% if not lesson|user_had_vote_lesson:user.id %}

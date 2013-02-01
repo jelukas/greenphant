@@ -20,14 +20,13 @@
                         <div class="accordion-inner">
                             <h3>{% trans 'Lesson' %} {{  lesson.order }} - {{ lesson.title }}</h3>
                             {% if lesson.video.converted_video_file_mp4 %}
-                                <video id="video_course" class="video-js vjs-default-skin" controls preload="auto" width="100%" height="auto"
-                                       data-setup="{}">
+                                <video id="video_course" class="video-js vjs-default-skin" controls preload="auto" width="100%" height="auto" data-setup="{}">
                                     <source type='video/mp4' src="{{ lesson.video.converted_video_file_mp4.url }}">
                                     <source type='video/webm' src="{{ lesson.video.converted_video_file_webm.url }}">
                                 </video>
                             {% endif %}
                             {% if lesson.attach %}
-                                <p>{% trans 'Extra Content' %}: <a href="{{ lesson.attach.file.url }}">{% trans '' %}</a></p>
+                                <p>{% trans 'Extra Content' %}: <a href="{{ lesson.attach.file.url }}">{% trans 'File' %}</a></p>
                             {% endif %}
                             {% load elearning_extras %}
                             {% if not lesson|user_had_vote_lesson:user.id %}

@@ -1,4 +1,4 @@
-{% extends "base_gradient.html" %}{% load i18n %}
+{% extends "base_gradient.html" %}{% load i18n %}{% load thumbnail %}
 {% block title %}{% trans "Mi Perfil" %}{% endblock %}
 {% block body-class %}class="gradientGB"{% endblock %}
 {% block content %}
@@ -17,8 +17,10 @@
                     <dt>{% trans 'Profile Image' %}</dt>
                     <dd>
                         {% if profile.image %}
-                        <img src="{{ profile.image.url }}" alt="{{ user.username }}" />
-                    {% endif %}
+                            {% thumbnail profile.image "100x100" as im %}
+                                <img src="{{ im.url }}" alt="{{ user.username }}" />
+                            {% endthumbnail %}
+                        {% endif %}
                     </dd>
                     <dt>{% trans 'Username' %}</dt>
                     <dd>{{ user.username }}</dd>
