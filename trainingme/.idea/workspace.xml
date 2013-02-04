@@ -34,7 +34,6 @@
   <component name="IdeDocumentHistory">
     <option name="changedFiles">
       <list>
-        <option value="$PROJECT_DIR$/elearning/templates/elearning/free_video.html" />
         <option value="$PROJECT_DIR$/elearning/templates/elearning/course/learning_lesson.html" />
         <option value="$PROJECT_DIR$/elearning/templates/elearning/course/preview_lesson.html" />
         <option value="$PROJECT_DIR$/templates/base.html" />
@@ -50,6 +49,7 @@
         <option value="$PROJECT_DIR$/elearning/management/commands/convert.py" />
         <option value="$PROJECT_DIR$/help.txt" />
         <option value="$PROJECT_DIR$/trainingme/settings.py" />
+        <option value="$PROJECT_DIR$/trainingme/dev.py" />
       </list>
     </option>
   </component>
@@ -369,13 +369,6 @@
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/templates/base.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="2" column="40" selection-start="54" selection-end="54" vertical-scroll-proportion="0.03640777">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/trainingme/wsgi.py">
       <provider selected="true" editor-type-id="text-editor">
         <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" />
@@ -480,10 +473,17 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/trainingme/settings.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="125" column="17" selection-start="4289" selection-end="4289" vertical-scroll-proportion="0.017688679">
+        <state line="7" column="0" selection-start="177" selection-end="323" vertical-scroll-proportion="0.12382075">
           <folding>
             <element signature="e#42#66#0" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/trainingme/dev.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="8" column="23" selection-start="153" selection-end="153" vertical-scroll-proportion="0.14150943">
+          <folding />
         </state>
       </provider>
     </entry>
