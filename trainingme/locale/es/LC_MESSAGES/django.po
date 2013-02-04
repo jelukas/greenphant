@@ -724,7 +724,7 @@ msgstr "Número de identificación para facturar"
 
 #: financial/templates/financial/view_billing.html:20
 msgid "Withdraws"
-msgstr "Retiraradas"
+msgstr "Retiradas"
 
 #: financial/templates/financial/view_billing.html:24
 #: financial/templates/financial/view_billing.html:41

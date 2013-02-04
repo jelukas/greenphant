@@ -2,7 +2,7 @@
 {% load url from future %}{% load thumbnail %}{% load i18n %}
 {% block sections %}
     {% if not user.is_authenticated %}
-        <section class="bodyGradient">
+        <section class="bodyGradient new-gradient">
             <div class="row-fluid">
                 <div class="span6 center">
                 </div>
@@ -48,9 +48,9 @@
             <div class="span12 center">
                 <!-- linea divisora -->
                 <form class="form-search" method="post" action="">{% csrf_token %}
-                    <div class="span12 input-append">
-                        <input name="query" type="text" class="span8 search-query" placeholder="{% trans "Search courses...." %}" />
-                        <button type="submit" class="btn btn-primary"><i class="icon-search icon-white"></i> {% trans "Search Course" %}</button>
+                    <div class="input-append">
+                        <input name="query" type="text"class="span12" id="appendedInputButtons" placeholder="{% trans "Search courses...." %}" />
+                        <button type="submit" class="btn btn-primary search-button"><i class="icon-search icon-white"></i> {% trans "Search Course" %}</button>
                     </div>
                 </form>
             </div>
