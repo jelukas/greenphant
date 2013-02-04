@@ -70,7 +70,9 @@
                 {% for message in messages %}
                     <div class="fade display-block in alert alert-{% if message.tags %}{{ message.tags }}{% endif %} hide">
                         <button type="button" class="close" data-dismiss="alert">&times;</button>
-                        <strong>{% if message.tags %}{{ message.tags|upper }}{% endif %}:</strong> {{ message }}.
+                        <strong>
+                            {% if message.tags %}{{ message.tags|upper }}{% endif %}:
+                        </strong> {{ message }}.
                     </div>
                 {% endfor %}
             {% endif %}

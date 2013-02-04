@@ -3,12 +3,12 @@
 # This file is distributed under the same license as the PACKAGE package.
 # FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
 #
-#, fuzzy
+
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2013-02-01 13:02+0100\n"
+"POT-Creation-Date: 2013-02-04 13:05+0100\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -44,7 +44,7 @@ msgstr "titulo"
 
 #: elearning/models.py:54
 msgid "Featured Image"
-msgstr "Imágen Destacada"
+msgstr "Imagen Destacada"
 
 #: elearning/models.py:55 elearning/templates/elearning/edit_course.html:33
 #: elearning/templates/elearning/new_course.html:33
@@ -106,13 +106,13 @@ msgstr "Fecha de Inicio"
 msgid "Lesson"
 msgstr "Lección"
 
-#: elearning/models.py:309 elearning/templates/elearning/home.html:87
+#: elearning/models.py:309 elearning/templates/elearning/home.html:86
 msgid "Points"
 msgstr "Valoración"
 
 #: elearning/models.py:323
 msgid "Rating"
-msgstr ""
+msgstr "Valoración"
 
 #: elearning/models.py:337
 msgid "Message"
@@ -167,7 +167,7 @@ msgid "Course is not in Building Status"
 msgstr "Este curso no está en fase de construcción"
 
 #: elearning/views.py:154 elearning/views.py:167
-#, fuzzy
+
 msgid "Subject order changed successfully"
 msgstr "Tema actualizado correctamente"
 
@@ -232,9 +232,9 @@ msgid "You had been enrolled into the Course "
 msgstr "Has sido matriculado en el curso"
 
 #: elearning/views.py:449
-#, fuzzy
-msgid "Failed Transaction "
-msgstr "Transacción duplicada"
+
+msgid "Failed Transaction"
+msgstr "Transacción fallida"
 
 #: elearning/views.py:474
 msgid "This Course is not Published: "
@@ -245,12 +245,12 @@ msgid "You can not vote twice this lesson: "
 msgstr "No puedes votar dos veces esta lección: "
 
 #: elearning/views.py:484
-#, fuzzy
+
 msgid "You have Rated the lesson with "
 msgstr "No puedes votar dos veces esta lección: "
 
 #: elearning/views.py:500
-#, fuzzy
+
 msgid "You can not vote twice this course: "
 msgstr "No puedes votar dos veces esta lección: "
 
@@ -264,6 +264,10 @@ msgid "One of Your video is ready"
 msgstr "Uno de sus vídeos está listo"
 
 #: elearning/management/commands/convert.py:17
+
+msgid "Your video is Ready"
+msgstr "Tu vídeo está listo"
+
 #: elearning/management/commands/prueba.py:24
 msgid "You video is Ready"
 msgstr "Tu vídeo está listo"
@@ -283,18 +287,18 @@ msgstr "Añadir Archivo"
 #: elearning/templates/elearning/edit_lesson.html:50
 #: elearning/templates/elearning/edit_subject.html:30
 #: elearning/templates/elearning/course/learning_lesson.html:44
-#, fuzzy
+
 msgid "Back to Course"
 msgstr "Crear Curso"
 
 #: elearning/templates/elearning/add_lesson.html:6
-#, fuzzy
+
 msgid "You are Adding a Lesson"
 msgstr "Añadir Lección"
 
 #: elearning/templates/elearning/add_lesson.html:13
 #: elearning/templates/elearning/edit_lesson.html:13
-#, fuzzy
+
 msgid "Lesson Title"
 msgstr "Lección"
 
@@ -324,7 +328,7 @@ msgstr "Tu estás añadiendo un nuevo tema"
 
 #: elearning/templates/elearning/add_subject.html:13
 #: elearning/templates/elearning/edit_subject.html:13
-#, fuzzy
+
 msgid "Subject Title"
 msgstr "Tema"
 
@@ -345,19 +349,19 @@ msgid "Add Video"
 msgstr "Añadir Vídeo"
 
 #: elearning/templates/elearning/building_course.html:6
-#, fuzzy
+
 msgid "Edit Course Details"
 msgstr "Editar Curso"
 
 #: elearning/templates/elearning/building_course.html:17
-#, fuzzy
+
 msgid "Up Subject"
-msgstr "Tema"
+msgstr "Subir"
 
 #: elearning/templates/elearning/building_course.html:20
-#, fuzzy
+
 msgid "Down Subject"
-msgstr "Tema"
+msgstr "Bajar"
 
 #: elearning/templates/elearning/building_course.html:22
 msgid "Delete Subject"
@@ -400,7 +404,7 @@ msgid "Send to Checking"
 msgstr "Enviar al proceso de pre-evaluación"
 
 #: elearning/templates/elearning/dashboard.html:5
-#, fuzzy
+
 msgid "Your Dashboard"
 msgstr "Tu escritorio"
 
@@ -417,7 +421,7 @@ msgid "Teaching"
 msgstr "Enseñando"
 
 #: elearning/templates/elearning/dashboard_learning.html:4
-#, fuzzy
+
 msgid "Learning Courses"
 msgstr "Encontrar Cursos"
 
@@ -426,7 +430,7 @@ msgid "Enter"
 msgstr "Entrar"
 
 #: elearning/templates/elearning/dashboard_teaching.html:4
-#, fuzzy
+
 msgid "Teaching Courses"
 msgstr "Encontrar Cursos"
 
@@ -439,7 +443,7 @@ msgid "Continue Building"
 msgstr "Continúa la construcción"
 
 #: elearning/templates/elearning/dashboard_teaching.html:46
-#, fuzzy
+
 msgid "Create a New Course"
 msgstr "Crear Nuevo Curso"
 
@@ -449,12 +453,12 @@ msgstr "Tú estás editando: "
 
 #: elearning/templates/elearning/edit_course.html:13
 #: elearning/templates/elearning/new_course.html:13
-#, fuzzy
+
 msgid "Course Title"
 msgstr "Título del curso"
 
 #: elearning/templates/elearning/edit_course.html:23
-#: elearning/templates/elearning/home.html:86
+#: elearning/templates/elearning/home.html:85
 #: elearning/templates/elearning/new_course.html:23
 msgid "Price"
 msgstr "Precio"
@@ -481,91 +485,94 @@ msgstr "Idioma"
 
 #: elearning/templates/elearning/edit_course.html:83
 #: elearning/templates/elearning/new_course.html:83
-#, fuzzy
+
 msgid "Allow Download Videos"
 msgstr "Permitir descarga de vídeos"
 
 #: elearning/templates/elearning/edit_course.html:91
-#, fuzzy
+
 msgid "Update Course"
 msgstr "Crear Curso"
 
 #: elearning/templates/elearning/edit_lesson.html:6
 msgid "You are Updating the Lesson"
-msgstr ""
+msgstr "Estas actualizando la lección"
 
 #: elearning/templates/elearning/edit_lesson.html:44
-#, fuzzy
+
 msgid "Update Lesson"
 msgstr "Guardar Lección"
 
 #: elearning/templates/elearning/edit_subject.html:6
-#, fuzzy
+
 msgid "You are Editing the Subject"
 msgstr "Editar Tema"
 
 #: elearning/templates/elearning/edit_subject.html:24
-#, fuzzy
+
 msgid "Update Subject"
 msgstr "Guardar Tema"
 
-#: elearning/templates/elearning/home.html:24
+#: elearning/templates/elearning/home.html:23
 msgid "Sign in"
 msgstr "Regístrate"
 
-#: elearning/templates/elearning/home.html:26
+#: elearning/templates/elearning/home.html:25
 #: templates/registration/login.html:13
 msgid "login-fb-en.png"
 msgstr "login-fb-es.png"
 
-#: elearning/templates/elearning/home.html:27
+#: elearning/templates/elearning/home.html:26
 #: templates/registration/login.html:16
 msgid "login-tw-en.png"
 msgstr "login-tw-es.png"
 
-#: elearning/templates/elearning/home.html:28
+#: elearning/templates/elearning/home.html:27
 #: templates/registration/login.html:19
-#, fuzzy
 msgid "login-gl-en.png"
 msgstr "login-fb-es.png"
 
-#: elearning/templates/elearning/home.html:31
+#: elearning/templates/elearning/home.html:30
 msgid "or sign in with"
 msgstr "o regístrate con"
 
-#: elearning/templates/elearning/home.html:32
+#: elearning/templates/elearning/home.html:31
 msgid "your email address"
 msgstr "tu dirección de email"
 
-#: elearning/templates/elearning/home.html:37
+#: elearning/templates/elearning/home.html:36
 msgid "already have account?"
 msgstr "¿Ya tienes una cuenta?"
 
-#: elearning/templates/elearning/home.html:38
+#: elearning/templates/elearning/home.html:37
 msgid "Log In"
 msgstr "Iniciar Sesión"
 
-#: elearning/templates/elearning/home.html:53
-#, fuzzy
+#: elearning/templates/elearning/home.html:52
 msgid "Search courses...."
 msgstr "Encontrar Cursos"
 
-#: elearning/templates/elearning/home.html:54
-#, fuzzy
+#: elearning/templates/elearning/home.html:53
 msgid "Search Course"
-msgstr "Encontrar Cursos"
+msgstr "Encontrar Curso"
 
-#: elearning/templates/elearning/home.html:85
+#: elearning/templates/elearning/home.html:84
 msgid "Enrolls"
 msgstr "Matriculados"
 
+#: elearning/templates/elearning/home.html:103 templates/base.html:37
+msgid "Terms of Use"
+msgstr "Terminos de Uso"
+
+#: elearning/templates/elearning/home.html:104 templates/base.html:38
+msgid "Privacy Policy"
+msgstr "Política de Privacidad"
+
 #: elearning/templates/elearning/new_course.html:6
-#, fuzzy
 msgid "You are Creating a New Course"
 msgstr "Crear Nuevo Curso"
 
 #: elearning/templates/elearning/new_course.html:94
-#, fuzzy
 msgid "Create Course Yeah!"
 msgstr "Crear Curso"
 
@@ -587,7 +594,7 @@ msgid "View FREE Now"
 msgstr "Ver gratis ahora"
 
 #: elearning/templates/elearning/course/view_course.html:61
-#, fuzzy
+
 msgid "Social Amount"
 msgstr "Cantidad"
 
@@ -600,7 +607,7 @@ msgid "Access"
 msgstr "Acceso"
 
 #: elearning/templates/elearning/course/view_course.html:85
-#, fuzzy
+
 msgid "Free Video"
 msgstr "Video de Promoción"
 
@@ -643,7 +650,7 @@ msgid "You are Editing your Financial Details"
 msgstr "Estás editando los detalles de facturación"
 
 #: financial/templates/financial/edit_billing.html:13
-#, fuzzy
+
 msgid "Paypal Account Email"
 msgstr "Mi cuenta"
 
@@ -717,7 +724,7 @@ msgstr "Número de identificación para facturar"
 
 #: financial/templates/financial/view_billing.html:20
 msgid "Withdraws"
-msgstr "Retirar"
+msgstr "Retiraradas"
 
 #: financial/templates/financial/view_billing.html:24
 #: financial/templates/financial/view_billing.html:41
@@ -754,12 +761,12 @@ msgid "Change your description"
 msgstr "Cambiar tu descripción"
 
 #: personal/views.py:22
-#, fuzzy
+
 msgid "Email Address updated sucessfully"
 msgstr "Curso actualizado correctamente"
 
 #: personal/views.py:24
-#, fuzzy
+
 msgid "Error updating Email Address"
 msgstr "tu dirección de email"
 
@@ -781,25 +788,25 @@ msgstr "Necesitas especificar tu dirección de email"
 
 #: personal/templates/personal/edit_profile.html:35
 #: personal/templates/personal/view_profile.html:31
-#, fuzzy
+
 msgid "Subtitle"
-msgstr "titulo"
+msgstr "Subtítulo"
 
 #: personal/templates/personal/edit_profile.html:45
 #: personal/templates/personal/view_profile.html:17
-#, fuzzy
+
 msgid "Profile Image"
-msgstr "Mi Perfil"
+msgstr "Imágen del Perfil"
 
 #: personal/templates/personal/edit_profile.html:55
 #: personal/templates/personal/view_profile.html:33
-#, fuzzy
+
 msgid "Country"
 msgstr "Cantidad"
 
 #: personal/templates/personal/edit_profile.html:65
 #: personal/templates/personal/view_profile.html:35
-#, fuzzy
+
 msgid "State"
 msgstr "Estado"
 
@@ -843,17 +850,17 @@ msgid "Linkedin Public Url"
 msgstr "Perfil Linkedin"
 
 #: personal/templates/personal/edit_profile.html:148
-#, fuzzy
+
 msgid "Update Profile"
-msgstr "Mi Perfil"
+msgstr "Actualizar Perfil"
 
 #: personal/templates/personal/view_profile.html:2
-#: personal/templates/personal/view_profile.html:9 templates/base.html:37
+#: personal/templates/personal/view_profile.html:9 templates/base.html:45
 msgid "My Profile"
 msgstr "Mi Perfil"
 
 #: personal/templates/personal/view_profile.html:10
-#, fuzzy
+
 msgid "Edit your Profile"
 msgstr "Editar tu Perfil"
 
@@ -862,12 +869,12 @@ msgid "Change Password"
 msgstr "Cambiar contraseña"
 
 #: personal/templates/personal/view_profile.html:25
-#, fuzzy
+
 msgid "Username"
 msgstr "Usuario"
 
 #: personal/templates/personal/view_profile.html:27
-#, fuzzy
+
 msgid "Your Email Address"
 msgstr "tu dirección de email"
 
@@ -884,24 +891,32 @@ msgid "Search Courses"
 msgstr "Encontrar Cursos"
 
 #: templates/base.html:35
-msgid "My Account"
-msgstr "Mi cuenta"
+msgid "Help"
+msgstr "Ayuda"
 
-#: templates/base.html:38
-msgid "Earnings"
+#: templates/base.html:39
+msgid "Feedback"
 msgstr ""
 
 #: templates/base.html:43
+msgid "My Account"
+msgstr "Mi cuenta"
+
+#: templates/base.html:46
+msgid "Earnings"
+msgstr "Ganancias"
+
+#: templates/base.html:51
 msgid "Welcome"
 msgstr "Bienvenido"
 
-#: templates/base.html:47
+#: templates/base.html:55
 msgid "Logout"
 msgstr "Cerrar Sesión"
 
 #: templates/registration/activate.html:2
 #: templates/registration/activation_complete.html:3
-#, fuzzy
+
 msgid "Activation complete"
 msgstr "Gracias, la ha activación ha sido completada! Ahora debes"
 
@@ -914,7 +929,7 @@ msgid "Thanks"
 msgstr "Gracias"
 
 #: templates/registration/activate.html:8
-#, fuzzy
+
 msgid "activation complete!"
 msgstr "Gracias, la ha activación ha sido completada! Ahora debes"
 
@@ -932,7 +947,7 @@ msgstr "iniciar sesión"
 #: templates/registration/activation_complete.html:9
 msgid "using the username and password you set at registration."
 msgstr ""
-"usando el usuario y contraseña que tu establecistes cuando te registrastes"
+"usando el usuario y contraseña que tu establecistes cuando te registrastes."
 
 #: templates/registration/activate.html:14
 msgid ""
@@ -1023,12 +1038,12 @@ msgstr "Contraseña satisfactoriamente creada"
 
 #: templates/registration/password_change_form.html:2
 #: templates/registration/password_change_form.html:9
-#, fuzzy
+
 msgid "Change password"
 msgstr "Cambiar contraseña"
 
 #: templates/registration/password_change_form.html:15
-#, fuzzy
+
 msgid "Back to Profile"
 msgstr "Volver a Mi Perfil"
 
@@ -1041,13 +1056,13 @@ msgid "Your password has been reset!"
 msgstr "Tu contraseña ha sido cambiada!"
 
 #: templates/registration/password_reset_complete.html:7
-#, fuzzy
+
 msgid "log in"
 msgstr "Iniciar Sesión"
 
 #: templates/registration/password_reset_confirm.html:6
 msgid "Enter your new password below to reset your password:"
-msgstr "Entrar "
+msgstr "Introduce tu nuevo password"
 
 #: templates/registration/password_reset_done.html:2
 msgid "Password reset"
@@ -1063,7 +1078,7 @@ msgstr ""
 
 #: templates/registration/password_reset_form.html:2
 #: templates/registration/password_reset_form.html:14
-#, fuzzy
+
 msgid "Reset password"
 msgstr "Cambiar contraseña"
 
@@ -1076,7 +1091,7 @@ msgstr ""
 "instrucciones para crear una nueva."
 
 #: templates/registration/registration_complete.html:3
-#, fuzzy
+
 msgid "Activation email sent"
 msgstr "Gracias, la ha activación ha sido completada! Ahora debes"
 
@@ -1085,7 +1100,7 @@ msgid "Info!"
 msgstr "Info!"
 
 #: templates/registration/registration_complete.html:9
-#, fuzzy
+
 msgid ""
 "An activation email has been sent.  Please check your email and click on the "
 "link to activate your account."
@@ -1122,9 +1137,6 @@ msgid ""
 "Please keep the total uploaded files under %(total_size)s. With this file, "
 "the total would be %(exceed_size)s."
 msgstr ""
-
-#~ msgid "Error on Transaction "
-#~ msgstr "Error en la transacción"
 
 #~ msgid "Mi Perfil"
 #~ msgstr "Mi Perfil"
