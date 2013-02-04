@@ -3,7 +3,7 @@ from unipath import Path
 import os
 
 SITE_ROOT = os.path.dirname(os.path.realpath(__file__))
-PROJECT_ROOT = Path(__file__).ancestor(3)
+PROJECT_ROOT = Path(__file__).ancestor(2)
 
 SITE_NAME = "beta.trainingme.net"
 SITE_URL = 'http://beta.trainingme.net'
