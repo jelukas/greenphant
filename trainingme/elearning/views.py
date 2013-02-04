@@ -341,7 +341,7 @@ def view_course(request,slug):
     from paypal.standard.forms import PayPalEncryptedPaymentsForm
     from django.conf import settings
 
-    course = get_object_or_404(Course,Q(slug=slug),Q(status__name="published")|Q(status__name="evaluation period"))
+    course = get_object_or_404(Course,Q(slug=slug),Q(status__name="published")|Q(status__name="evaluation period")|Q(status__name="building"))
 
     if request.user.is_authenticated():
         enrrollment = course.enrollments.filter(user_id=request.user.id)
@@ -446,7 +446,7 @@ def buy_course(request):
                 enrollment.save()
                 messages.success(request,_('You had been enrolled into the Course ')+course.title)
                 return HttpResponseRedirect(reverse('elearning.views.view_course', args=(course.slug,)))
-    messages.error(request,_('Failed Transaction '))
+    messages.error(request,_('Error on Transaction '))
     return HttpResponseRedirect(reverse('elearning.views.home'))
 
 
@@ -509,9 +509,9 @@ HOME PAGE
 
 def home(request):
     if request.POST:
-        courses = Course.objects.filter(Q(short_description__icontains=request.POST['query']) | Q(title__icontains=request.POST['query']),Q(status__name="published") | Q(status__name="evaluation period"))
+        courses = Course.objects.filter(Q(short_description__icontains=request.POST['query']) | Q(title__icontains=request.POST['query']),Q(status__name="published") | Q(status__name="evaluation period") | Q(status__name="building"))
     else:
-        courses = Course.objects.filter(Q(status__name="published") | Q(status__name="evaluation period"))
+        courses = Course.objects.filter(Q(status__name="published") | Q(status__name="evaluation period") | Q(status__name="building"))
     context = {'courses' : courses}
     return render_to_response('elearning/home.html',context,context_instance = RequestContext(request))
 
@@ -537,7 +537,7 @@ def paypal(request):
         "notify_url": "%s%s" % (settings.SITE_NAME, reverse('paypal-ipn')),
         "return_url": "http://www.google.es",
         "cancel_return": "http://www.marca.com",
-    }
+        }
 
     # Create the instance.
     form = PayPalEncryptedPaymentsForm(initial=paypal_dict)

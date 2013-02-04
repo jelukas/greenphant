@@ -28,7 +28,7 @@
                         </p>
                         <h3 class="center">
                             <span>{% trans "or sign in with" %}</span>
-                            <a href="{% url "registration_register" %}"> {% trans "your email address" %} </a>
+                            <a href="{% url "registration_register" %}"> {% trans "your email address"%} </a>
                         </h3>
                         <div class="row-fluid registration-line" >
                             <div class="span12">
@@ -61,52 +61,60 @@
             <div class="row-fluid">
                 <div class="boxLine">
                     {% for course in courses %}
-                    <div class="span3 cursoBox">
-                        <a href="{% url "view_course" course.slug %}">
-                            {% if course.image %}
-                                {% thumbnail course.image "238x135" as im %}
-                                    <div class="boxTitleBG" style="background-image: url({{ im.url }});background-size:100% 100%;"></div>
-                                {% endthumbnail %}
-                            {% else %}
-                                <div class="boxTitleBG" style="background-image: url('{{ STATIC_URL }}/img/dafault_image_course.gif');background-size:100% 100%;"></div>
-                            {% endif %}
-                        </a>
-                        <div class="boxTitle" >
-                            <a href="{% url "view_course" course.slug %}">{{ course.title }}</a>
-                        </div>
-                        <div class="boxDescription">
-                            <p>
-                                {{ course.short_description|truncatewords:14 }}
-                            </p>
-                        </div>
-                        <div class="boxInfoFooter">
-                            <div class="headerTitle">
-                                <div class="leftSide">{% trans "Enrolls" %}</div>
-                                <div class="middleSide">{% trans "Price" %}</div>
-                                <div class="rightSide">{% trans "Points" %}</div>
+                        <div class="span3 cursoBox">
+                            <a href="{% url "view_course" course.slug %}">
+                                {% if course.image %}
+                                    {% thumbnail course.image "238x135" as im %}
+                                        <div class="boxTitleBG" style="background-image: url({{ im.url }});background-size:100% 100%;"></div>
+                                    {% endthumbnail %}
+                                {% else %}
+                                    <div class="boxTitleBG" style="background-image: url('{{ STATIC_URL }}/img/dafault_image_course.gif');background-size:100% 100%;"></div>
+                                {% endif %}
+                            </a>
+                            <div class="boxTitle" >
+                                <a href="{% url "view_course" course.slug %}">{{ course.title }}</a>
                             </div>
-                            <div class="footerInfo">
-                                <div class="leftSide">{{ course.enrollments.count }}</div>
-                                <div class="middleSide">{{ course.price }} &euro;</div>
-                                <div id="curso-{{ course.id }}"  data-rating="{{ course.get_scoring }}" class="star rightSide"></div>
+                            <div class="boxDescription">
+                                <p>
+                                    {{ course.short_description|truncatewords:14 }}
+                                </p>
+                            </div>
+                            <div class="boxInfoFooter">
+                                <div class="headerTitle">
+                                    <div class="leftSide">{% trans "Enrolls" %}</div>
+                                    <div class="middleSide">{% trans "Price" %}</div>
+                                    <div class="rightSide">{% trans "Points" %}</div>
+                                </div>
+                                <div class="footerInfo">
+                                    <div class="leftSide">{{ course.enrollments.count }}</div>
+                                    <div class="middleSide">{{ course.price }} &euro;</div>
+                                    <div id="curso-{{ course.id }}"  data-rating="{{ course.get_scoring }}" class="star rightSide"></div>
+                                </div>
                             </div>
                         </div>
-                    </div>
                     {% endfor %}
                 </div>
             </div>
         </div>
     </section>
 {% endblock sections %}
+{% block footer %}
+    <ul class="inline">
+        <li><a href="/pages/terms_and_conditions/">{% trans "Terms of Use" %}</a></li>
+        <li><a href="/pages/privacy_policy/">{% trans "Privacy Policy" %}</a></li>
+        <li><a href="mailto:trainingme@trainingme.net">Feedback</a></li>
+        <li>&copy; Copyright Trainingme.Net 2013</li>
+    </ul>
+{% endblock footer %}
 {% block footerscripts %}
     {{ block.super }}
-<script type="text/javascript">
-    $('.star').raty({
-        readOnly: true,
-        half: true,
-        score: function() {
-            return $(this).attr('data-rating');
-        }
-    });
-</script>
+    <script type="text/javascript">
+        $('.star').raty({
+            readOnly: true,
+            half: true,
+            score: function() {
+                return $(this).attr('data-rating');
+            }
+        });
+    </script>
 {% endblock footerscripts %}
