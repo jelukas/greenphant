@@ -1,6 +1,6 @@
-<html>{% load url from future %}
+<html>
 <head>
-    <title>TrainingMe.Net - Beta</title>
+    <title>TrainingMe.Net - Nuevo Portal</title>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="{{ STATIC_URL }}css/styles.css" rel="stylesheet">
@@ -28,14 +28,22 @@
                     <div class="nav-collapse collapse MenuBarResponsiveFirst">
                         <div class="nav-collapse collapse navbar-inverse-collapse MenuBarResponsiveSecond">
                             <ul class="nav">
-                                <li><a href="{% url 'learning' %}">{% trans "My Courses" %}</a></li>
-                                <li><a href="{% url 'new_course' %}">{% trans "Create New Course" %}</a></li>
-                                <li><a href="{% url 'home' %}">{% trans "Search Courses" %}</a></li>
+                                <li><a href="{% url learning %}">{% trans "My Courses" %}</a></li>
+                                <li><a href="{% url new_course %}">{% trans "Create New Course" %}</a></li>
+                                <li><a href="{% url home %}">{% trans "Search Courses" %}</a></li>
+                                <li class="dropdown">
+                                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">{% trans "Help" %}<b class="caret"></b></a>
+                                    <ul class="dropdown-menu">
+                                        <li><a href="/pages/terms_and_conditions/">{% trans "Terms of Use" %}</a></li>
+                                        <li><a href="/pages/privacy_policy/">{% trans "Privacy Policy" %}</a></li>
+                                        <li><a href="mailto:trainingme@trainingme.net">{% trans "Feedback" %}</a></li>
+                                    </ul>
+                                </li>
                                 <li class="dropdown">
                                     <a href="#" class="dropdown-toggle" data-toggle="dropdown">{% trans "My Account" %}<b class="caret"></b></a>
                                     <ul class="dropdown-menu">
-                                        <li><a href="{% url 'view_profile' %}">{% trans "My Profile" %}</a></li>
-                                        <li><a href="{% url 'view_billing' %}">{% trans "Earnings" %}</a></li>
+                                        <li><a href="{% url view_profile %}">{% trans "My Profile" %}</a></li>
+                                        <li><a href="{% url view_billing %}">{% trans "Earnings" %}</a></li>
                                     </ul>
                                 </li>
                             </ul>
@@ -44,7 +52,7 @@
                                 <li class="dropdown">
                                     <a href="#" class="dropdown-toggle" data-toggle="dropdown"> {{ user.username }} <b class="caret"></b></a>
                                     <ul class="dropdown-menu">
-                                        <li><a href="{% url 'logout' %}">{% trans "Logout" %}</a></li>
+                                        <li><a href="{% url logout %}">{% trans "Logout" %}</a></li>
                                     </ul>
                                 </li>
                             </ul>
@@ -77,14 +85,14 @@
     {% endblock footer %}
 </footer>
 {% block footerscripts %}
-<script>
-    /*$(function(){
-        function showAlert(){
-            $(".alert").addClass("display-block in");
-        }
-        window.setTimeout(showAlert,800);
-    });*/
-</script>
+    <script>
+        /*$(function(){
+         function showAlert(){
+         $(".alert").addClass("display-block in");
+         }
+         window.setTimeout(showAlert,800);
+         });*/
+    </script>
 {% endblock footerscripts %}
 </body>
 </html>

@@ -49,3 +49,10 @@ Para los clears:
 
 25 6    * * *   root /home/luks/Escritorio/django/estable/greenphant/trainingme/clear_amounts.sh
 
+
+
+Para las variables de entorno:
+
+Deben estar ene el archivo del sitio de apache.
+SetEnv para setearlas
+activar el mod_env
