@@ -446,7 +446,7 @@ def buy_course(request):
                 enrollment.save()
                 messages.success(request,_('You had been enrolled into the Course ')+course.title)
                 return HttpResponseRedirect(reverse('elearning.views.view_course', args=(course.slug,)))
-    messages.error(request,_('Error on Transaction '))
+    messages.error(request,_('Failed Transaction '))
     return HttpResponseRedirect(reverse('elearning.views.home'))
 
 

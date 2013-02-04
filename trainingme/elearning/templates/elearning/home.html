@@ -2,47 +2,46 @@
 {% load url from future %}{% load thumbnail %}{% load i18n %}
 {% block sections %}
     {% if not user.is_authenticated %}
-    <section class="bodyGradient">
-        <div class="row-fluid">
-            <div class="span6 center">
-                <a href="#" >
-                    <img  class="main-logo" src="{{ STATIC_URL }}img/TrainingMe-logo.png" alt="Training Me Cursos">
-                </a>
+        <section class="bodyGradient">
+            <div class="row-fluid">
+                <div class="span6 center">
+                </div>
+                <div class="span6">
+                </div>
             </div>
-            <div class="span6">
-                <a href="#" >
-                    <img class="fraseheader" src="{{ STATIC_URL }}img/disfruta-aprendiendo-ensenando.png" alt="Disfruta aprendiendo, Disfruta ense&ntilde;ando">
-                </a>
-            </div>
-        </div>
-        <div class="row-fluid mainSplash">
-            <div class="span6 center screensplash">
-                <iframe style="margin-top: 20px;" width="432" height="250" src="http://www.youtube.com/embed/Zgvc95VXFnQ?rel=0" frameborder="0" allowfullscreen></iframe>
-            </div>
-            <div class="span6">
-                <fieldset class="prettyprint">
-                    <p class="formTitle">{% trans "Sign in" %}</p>
-                    <p class="social-login">
-                        <a href="{% url "socialauth_begin" "facebook" %}"><img src="{{ STATIC_URL }}img/{% trans "login-fb-en.png" %}"/></a>
-                        <a href="{% url "socialauth_begin" "twitter" %}"><img src="{{ STATIC_URL }}img/{% trans "login-tw-en.png" %}"/></a>
-                        <a href="{% url "socialauth_begin" "google-oauth2" %}"><img src="{{ STATIC_URL }}img/{% trans "login-gl-en.png" %}"/></a>
-                    </p>
-                    <h3 class="center">
-                        <span>{% trans "or sign in with" %}</span>
-                        <a href="{% url "registration_register" %}"> {% trans "your email address"%} </a>
-                    </h3>
-                    <div class="row-fluid registration-line" >
-                        <div class="span12">
-                            <h4 class="center">
-                                <span>{% trans "already have account?" %}</span>
-                                <a href="/accounts/login/" >{% trans "Log In" %}</a>
-                            </h4>
+            <div class="row-fluid mainSplash">
+                <div class="span6 center">
+                    <p class="title-home"><a href="/pages/enjoy-learning/">DISFRUTA APRENDIENDO</a></p>
+                    <p class="subtitle-home">Aprende todo aquello que siempre quisites</p>
+                    <p class="title-home"><a href="/pages/enjoy-teaching/">DISFRUTA ENSEÑANDO</a></p>
+                    <p class="subtitle-home">Llega a todas esas personas que necesitan saber lo que tu sabes</p>
+                    <p class="title-home"><a href="/pages/enjoy-helping/">DISFRUTA AYUDANDO</a></p>
+                    <p class="subtitle-home">Un 10% de cada matriculación se destina a proyectos sociales de Educación</p>
+                </div>
+                <div class="span6">
+                    <fieldset class="prettyprint">
+                        <p class="formTitle">{% trans "Sign in" %}</p>
+                        <p class="social-login">
+                            <a href="{% url "socialauth_begin" "facebook" %}"><img src="{{ STATIC_URL }}img/{% trans "login-fb-en.png" %}"/></a>
+                            <a href="{% url "socialauth_begin" "twitter" %}"><img src="{{ STATIC_URL }}img/{% trans "login-tw-en.png" %}"/></a>
+                            <a href="{% url "socialauth_begin" "google-oauth2" %}"><img src="{{ STATIC_URL }}img/{% trans "login-gl-en.png" %}"/></a>
+                        </p>
+                        <h3 class="center">
+                            <span>{% trans "or sign in with" %}</span>
+                            <a href="{% url "registration_register" %}"> {% trans "your email address" %} </a>
+                        </h3>
+                        <div class="row-fluid registration-line" >
+                            <div class="span12">
+                                <h4 class="center">
+                                    <span>{% trans "already have account?" %}</span>
+                                    <a href="/accounts/login/" >{% trans "Log In" %}</a>
+                                </h4>
+                            </div>
                         </div>
-                    </div>
-                </fieldset>
+                    </fieldset>
+                </div>
             </div>
-        </div>
-    </section>
+        </section>
     {% endif %}
     <section>
         <div class="row-fluid searchBar">

@@ -23,6 +23,7 @@ django-validated-file==0.0.1
 django-widget-tweaks==1.1.2
 python-magic==0.4.3
 wsgiref==0.1.2
+Unipath==0.2.1
 
 
 Necesitamos dos Videos para que funcione en todos los navegadores:

@@ -1,12 +1,12 @@
 {% extends "base_gradient.html" %}{% load i18n %}{% load thumbnail %}
-{% block title %}{% trans "Mi Perfil" %}{% endblock %}
+{% block title %}{% trans "My Profile" %}{% endblock %}
 {% block body-class %}class="gradientGB"{% endblock %}
 {% block content %}
     <!-- Inicia Contenido -->
     <div class="bodyGradient mainContent">
         <section>
             <div class="container MainTitle">
-                <h3>{% trans "Mi Perfil" %}</h3>
+                <h3>{% trans "My Profile" %}</h3>
                 <a href="{% url edit_profile %}" class="btn btn-info">{% trans "Edit your Profile" %}</a>
                 <a href="{% url auth_password_change %}" class="btn btn-warning">{% trans "Change Password" %}</a>
             </div>

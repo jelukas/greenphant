@@ -10,8 +10,9 @@ from django.contrib.auth import logout
 
 @login_required
 def edit(request):
-    context = {}
     profile = request.user.get_profile()
+    profile_form = ProfileForm(instance=profile) # An unbound form
+    context = {'profile_form':profile_form}
     if request.method == 'POST': # If the form has been submitted...
         profile_form = ProfileForm(request.POST,request.FILES,instance=profile) # A form bound to the POST data
         if request.user.email=='':

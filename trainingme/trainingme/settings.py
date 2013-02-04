@@ -1,13 +1,17 @@
 # Django settings for trainingme project.
-
+from unipath import Path
 import os
 
 SITE_ROOT = os.path.dirname(os.path.realpath(__file__))
-SITE_NAME = "trainingme.net"
-SITE_URL = 'http://192.168.1.222'
+PROJECT_ROOT = Path(__file__).ancestor(3)
 
-DEBUG = True
+SITE_NAME = "beta.trainingme.net"
+SITE_URL = 'http://beta.trainingme.net'
+
+#Debugging
+DEBUG = False
 TEMPLATE_DEBUG = DEBUG
+THUMBNAIL_DEBUG = False
 
 ADMINS = (
     # ('Your Name', 'your_email@example.com'),
@@ -17,12 +21,12 @@ MANAGERS = ADMINS
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3', # Add 'postgresql_psycopg2', 'mysql', 'sqlite3' or 'oracle'.
-        'NAME': '/home/luks/Escritorio/django/estable/greenphant/trainingme/dbtrainingme',                      # Or path to database file if using sqlite3.
-        'USER': '',                      # Not used with sqlite3.
-        'PASSWORD': '',                  # Not used with sqlite3.
-        'HOST': '',                      # Set to empty string for localhost. Not used with sqlite3.
-        'PORT': '',                      # Set to empty string for default. Not used with sqlite3.
+        'ENGINE': 'django.db.backends.mysql', # Add 'postgresql_psycopg2', 'mysql', 'sqlite3' or 'oracle'.
+        'NAME': 'trainingmenet',                      # Or path to database file if using sqlite3.
+        'USER': 'trainingme',                      # Not used with sqlite3.
+        'PASSWORD': os.environ['TRAININGME_DBPASS'],                  # Not used with sqlite3.
+        'HOST': 'localhost',                      # Set to empty string for localhost. Not used with sqlite3.
+        'PORT': '3306',                      # Set to empty string for default. Not used with sqlite3.
     }
 }
 
@@ -51,7 +55,7 @@ USE_TZ = True
 
 # Absolute filesystem path to the directory that will hold user-uploaded files.
 # Example: "/home/media/media.lawrence.com/media/"
-MEDIA_ROOT = '/home/luks/Escritorio/django/estable/greenphant/trainingme/media/'
+MEDIA_ROOT = PROJECT_ROOT.child('media')
 
 # URL that handles the media served from MEDIA_ROOT. Make sure to use a
 # trailing slash.
@@ -62,7 +66,7 @@ MEDIA_URL = '/media/'
 # Don't put anything in this directory yourself; store your static files
 # in apps' "static/" subdirectories and in STATICFILES_DIRS.
 # Example: "/home/media/media.lawrence.com/static/"
-STATIC_ROOT = '/home/luks/Escritorio/django/estable/greenphant/trainingme/static/'
+STATIC_ROOT = PROJECT_ROOT.child('static')
 
 # URL prefix for static files.
 # Example: "http://media.lawrence.com/static/"
@@ -95,7 +99,7 @@ TEMPLATE_LOADERS = (
 
 #Locale Path
 LOCALE_PATHS = (
-    '/home/luks/Escritorio/django/estable/greenphant/trainingme/locale',
+    PROJECT_ROOT.child('locale'),
 )
 
 #Localizacion
@@ -122,7 +126,7 @@ ROOT_URLCONF = 'trainingme.urls'
 WSGI_APPLICATION = 'trainingme.wsgi.application'
 
 TEMPLATE_DIRS = (
-    '/home/luks/Escritorio/django/estable/greenphant/trainingme/templates',
+    PROJECT_ROOT.child('templates'),
     # Put strings here, like "/home/html/django_templates" or "C:/www/django/templates".
     # Always use forward slashes, even on Windows.
     # Don't forget to use absolute paths, not relative paths.
@@ -191,13 +195,13 @@ AUTHENTICATION_BACKENDS = (
     'django.contrib.auth.backends.ModelBackend',
     )
 
-TWITTER_CONSUMER_KEY         = 'YyLFIRiVZv1ksLGW1aw'
-TWITTER_CONSUMER_SECRET      = 'c8Gwdwd3hdM31Eyjii0IAkA1MOY4sWkgjK88GsCI'
+TWITTER_CONSUMER_KEY         = 'OERf2zfuitATG6AEjMFjzQ'
+TWITTER_CONSUMER_SECRET      = 'mkVylRgZ7TKOwgGm2XHUPvQxKns3YSc7Lkjyozgokw'
 FACEBOOK_APP_ID              = '560302190653717'
 FACEBOOK_API_SECRET          = '5a7a46d0f6c60d83b37e356fe8f7d323'
 FACEBOOK_EXTENDED_PERMISSIONS = ['email']
-GOOGLE_OAUTH2_CLIENT_ID      = '903944638666.apps.googleusercontent.com'
-GOOGLE_OAUTH2_CLIENT_SECRET  = 'oOzZscdWb_tu4RqWsyB1UAIR'
+GOOGLE_OAUTH2_CLIENT_ID      = '277302341821.apps.googleusercontent.com'
+GOOGLE_OAUTH2_CLIENT_SECRET  = 'k0iLwz3ksT_llM4dSeTPx_kq'
 SOCIAL_AUTH_PROTECTED_USER_FIELDS = ['email',]
 
 LOGIN_URL          = '/accounts/login/'
@@ -228,13 +232,14 @@ SOCIAL_AUTH_EXPIRATION = 'expires'
 ACCOUNT_ACTIVATION_DAYS=7
 
 
-
-#Email
+"""
+Email Configuration
+"""
 
 EMAIL_HOST = 'smtp.gmail.com'
 EMAIL_PORT = 587
 EMAIL_HOST_USER ='guadaluxfoundation@gmail.com'
-EMAIL_HOST_PASSWORD = 'g74d4l7x'
+EMAIL_HOST_PASSWORD = os.environ['EMAIL_HOST_PASSWORD']
 EMAIL_USE_TLS = True
 
 """
@@ -256,6 +261,8 @@ PAYPAL_CERT = SITE_ROOT + '/certs/paypal_cert.pem'
 PAYPAL_CERT_ID = 'PXKA9Y3MH3RHJ'
 
 
-"Cargamos por defecto el tag i18n"
+"""
+Cargamos por defecto el tag i18n
+"""
 from django import template
 template.add_to_builtins('django.templatetags.i18n')
