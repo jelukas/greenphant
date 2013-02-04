@@ -324,7 +324,7 @@ msgstr "Añadir Lección"
 
 #: elearning/templates/elearning/add_subject.html:6
 msgid "You are Adding a New Subject"
-msgstr "Tu estás añadiendo un nuevo tema"
+msgstr "Estás añadiendo un nuevo tema"
 
 #: elearning/templates/elearning/add_subject.html:13
 #: elearning/templates/elearning/edit_subject.html:13
@@ -947,7 +947,7 @@ msgstr "iniciar sesión"
 #: templates/registration/activation_complete.html:9
 msgid "using the username and password you set at registration."
 msgstr ""
-"usando el usuario y contraseña que tu establecistes cuando te registrastes."
+"usando el usuario y contraseña que establecistes cuando te registrastes."
 
 #: templates/registration/activate.html:14
 msgid ""
