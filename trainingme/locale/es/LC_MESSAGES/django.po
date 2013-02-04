@@ -530,7 +530,7 @@ msgstr "login-tw-es.png"
 #: elearning/templates/elearning/home.html:27
 #: templates/registration/login.html:19
 msgid "login-gl-en.png"
-msgstr "login-fb-es.png"
+msgstr "login-gl-es.png"
 
 #: elearning/templates/elearning/home.html:30
 msgid "or sign in with"

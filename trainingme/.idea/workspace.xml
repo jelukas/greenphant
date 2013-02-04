@@ -25,30 +25,10 @@
   <component name="ExecutionTargetManager" SELECTED_TARGET="default_target" />
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="views.py" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/personal/views.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="32" column="27" selection-start="1627" selection-end="1627" vertical-scroll-proportion="0.0">
-              <folding>
-                <element signature="e#0#44#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="base.html" pinned="false" current="true" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/templates/base.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="74" column="46" selection-start="4326" selection-end="4326" vertical-scroll-proportion="0.7463592">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="django.po" pinned="false" current="false" current-in-tab="false">
+      <file leaf-file-name="django.po" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/locale/es/LC_MESSAGES/django.po">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="1116" column="0" selection-start="31253" selection-end="31297" vertical-scroll-proportion="0.0">
+            <state line="532" column="16" selection-start="14657" selection-end="14657" vertical-scroll-proportion="0.5342298">
               <folding />
             </state>
           </provider>
@@ -78,8 +58,8 @@
         <option value="$PROJECT_DIR$/help.txt" />
         <option value="$PROJECT_DIR$/elearning/templates/elearning/home.html" />
         <option value="$PROJECT_DIR$/elearning/views.py" />
-        <option value="$PROJECT_DIR$/locale/es/LC_MESSAGES/django.po" />
         <option value="$PROJECT_DIR$/templates/base.html" />
+        <option value="$PROJECT_DIR$/locale/es/LC_MESSAGES/django.po" />
       </list>
     </option>
   </component>
@@ -524,13 +504,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/locale/es/LC_MESSAGES/django.po">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="1116" column="0" selection-start="31253" selection-end="31297" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/personal/views.py">
       <provider selected="true" editor-type-id="text-editor">
         <state line="32" column="27" selection-start="1627" selection-end="1627" vertical-scroll-proportion="0.0">
@@ -543,6 +516,13 @@
     <entry file="file://$PROJECT_DIR$/templates/base.html">
       <provider selected="true" editor-type-id="text-editor">
         <state line="74" column="46" selection-start="4326" selection-end="4326" vertical-scroll-proportion="0.7463592">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/locale/es/LC_MESSAGES/django.po">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="532" column="16" selection-start="14657" selection-end="14657" vertical-scroll-proportion="0.5342298">
           <folding />
         </state>
       </provider>
