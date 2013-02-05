@@ -1,4 +1,5 @@
 *.mp4
+*.log
 *.webm
 *.avi
 *.flv
@@ -9,3 +10,12 @@
 *.doc
 *.pyc
 .idea
+#Folders
+*/media/cache/
+*/media/converted_lesson_videos/*
+*/media/course_images/*
+*/media/lesson_attaches/*
+*/media/new_lesson_videos/*
+*/media/original_lesson_videos/*
+*/media/profile_images/*
+
