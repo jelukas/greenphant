@@ -19,7 +19,7 @@
                         {% if not forloop.last %}
                             <a href="{% url down_order_subject subject.id %}" title="{% trans "Down Subject" %}"><img src="{{ STATIC_URL }}img/down_arrow.png" class="subject-icon"/></a>
                         {% endif %}
-                        <a href="{% url delete_subject subject.id %}" title="{% trans "Delete Subject" %}"><img src="{{ STATIC_URL }}img/delete-icon.png" class="subject-icon"/></a>
+                        <a class="delete-subject" href="{% url delete_subject subject.id %}" title="{% trans "Delete Subject" %}"><img src="{{ STATIC_URL }}img/delete-icon.png" class="subject-icon"/></a>
                         <a href="{% url edit_subject subject.id %}" title="{% trans "Edit Subject" %}"><img src="{{ STATIC_URL }}img/edit.png" class="subject-icon"/></a>
                         <a class="accordion-toggle" data-toggle="collapse" data-parent="#AccordionCurso" href="#collapse{{ forloop.counter|apnumber }}">
                             {% trans 'Subject' %} {{ forloop.counter }} - {{ subject.title }}
@@ -35,7 +35,7 @@
                                 {% else %}
                                     <a href="{% url add_attach lesson.id %}" title="{% trans "Attach file" %}"><img src="{{ STATIC_URL }}img/attach.png" class="lesson-icon"/></a>
                                 {% endif %}
-                                <a href="{% url delete_lesson lesson.id %}" title="{% trans "Delete Lesson" %}"><img src="{{ STATIC_URL }}img/delete-icon.png" class="lesson-icon"/></a>
+                                <a class="delete-lesson" href="{% url delete_lesson lesson.id %}" title="{% trans "Delete Lesson" %}"><img src="{{ STATIC_URL }}img/delete-icon.png" class="lesson-icon"/></a>
                                 <a href="{% url edit_lesson lesson.id %}" title="{% trans "Edit Lesson" %}"><img src="{{ STATIC_URL }}img/edit.png" class="lesson-icon"/></a>
                                 {% trans 'Lesson' %} {{ forloop.counter }} - {{ lesson.title }}
                                 {% if lesson.attach %}
@@ -63,3 +63,24 @@
         </div>
     </section>
 {% endblock %}
+
+{% block footerscripts %}
+    <script type="text/javascript">
+
+        function confirm_delete_subject()
+        {
+            if(!confirm('{% trans 'Are you sure to delete this subject?' %}'))
+            {
+                return false;
+            }
+        }
+        function confirm_delete_lesson()
+        {
+            if(!confirm('{% trans 'Are you sure to delete this lesson?' %}'))
+            {
+                return false;
+            }
+        }
+    </script>
+    <script type="text/javascript" src="{{ STATIC_URL }}js/confirms.js"></script>
+{% endblock footerscripts %}

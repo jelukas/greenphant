@@ -289,7 +289,7 @@ msgstr "Añadir Archivo"
 #: elearning/templates/elearning/course/learning_lesson.html:44
 
 msgid "Back to Course"
-msgstr "Crear Curso"
+msgstr "Volver al Curso"
 
 #: elearning/templates/elearning/add_lesson.html:6
 
@@ -492,7 +492,7 @@ msgstr "Permitir descarga de vídeos"
 #: elearning/templates/elearning/edit_course.html:91
 
 msgid "Update Course"
-msgstr "Crear Curso"
+msgstr "Actualizar Curso"
 
 #: elearning/templates/elearning/edit_lesson.html:6
 msgid "You are Updating the Lesson"
@@ -574,7 +574,7 @@ msgstr "Crear Nuevo Curso"
 
 #: elearning/templates/elearning/new_course.html:94
 msgid "Create Course Yeah!"
-msgstr "Crear Curso"
+msgstr "Crear Curso! :)"
 
 #: elearning/templates/elearning/new_course.html:98
 msgid "Back to Dashboard"

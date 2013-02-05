@@ -154,6 +154,7 @@ INSTALLED_APPS = (
     'personal',
     'financial',
     'elearning',
+    'django_cleanup',
 )
 
 # A sample logging configuration. The only tangible logging

@@ -8,6 +8,8 @@ from django.core.files.storage import default_storage
 from validatedfile import ValidatedFileField
 from decimal import Decimal
 
+
+
 #Category of the Courses Model
 class Category(models.Model):
     name = models.CharField(_('Name'),blank=False,max_length=245)
@@ -248,7 +250,6 @@ class Lesson(models.Model):
 #Lesson's Videos
 class Video(models.Model):
     lesson = models.OneToOneField(Lesson,unique=True,related_name='video')
-    #original_video_file = models.FileField(_('Video'),upload_to='original_lesson_videos',max_length=245)
     original_video_file = ValidatedFileField(_('Video'),upload_to='new_lesson_videos',max_length=245,content_types = ['video/mp4','video/x-ms-asf','video/x-msvideo','video/x-flv','video/quicktime','video/mpeg','video/x-ms-wmv','video/webm',])
     converted_video_file_mp4 = models.FileField(upload_to='converted_lesson_videos',max_length=245,blank=True,null=True)
     converted_video_file_webm = models.FileField(upload_to='converted_lesson_videos',max_length=245,blank=True,null=True)
@@ -260,16 +261,16 @@ class Video(models.Model):
         return self.lesson.subject.course.user.id
 
     #Delete the file when deleting the record
-    def delete(self):
-        import os.path
-        video = Video.objects.get(pk = self.id)
-        if(os.path.isfile(video.original_video_file.path)):
-            default_storage.delete(video.original_video_file.path)
-        if(os.path.isfile(video.converted_video_file_mp4.path)):
-            default_storage.delete(video.converted_video_file_mp4.path)
-        if(os.path.isfile(video.converted_video_file_webm.path)):
-            default_storage.delete(video.converted_video_file_webm.path)
-        super(Video,self).delete()
+#    def delete(self):
+#        import os.path
+#        video = Video.objects.get(pk = self.id)
+#        if os.path.isfile(video.original_video_file.path):
+#            default_storage.delete(video.original_video_file.path)
+#        if os.path.isfile(video.converted_video_file_mp4.path):
+#            default_storage.delete(video.converted_video_file_mp4.path)
+#        if os.path.isfile(video.converted_video_file_webm.path):
+#            default_storage.delete(video.converted_video_file_webm.path)
+#        super(Video,self).delete()
 
 
 #Lesson's Attach
@@ -281,13 +282,13 @@ class Attach(models.Model):
         return self.lesson.subject.course.user.id
 
     #Delete the file when deleting the record
-    def delete(self):
-        import os.path
-        if self.id:
-            attach = Attach.objects.get(pk = self.id)
-            if(os.path.isfile(attach.file.path)):
-                default_storage.delete(attach.file.path)
-        super(Attach,self).delete()
+#    def delete(self):
+#        import os.path
+#        if self.id:
+#            attach = Attach.objects.get(pk = self.id)
+#            if(os.path.isfile(attach.file.path)):
+#                default_storage.delete(attach.file.path)
+#        super(Attach,self).delete()
 
 
 #Courses Enrrollment's
