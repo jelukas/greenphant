@@ -1,3 +1,5 @@
+import os
+from django.db.models.signals import post_save
 from django.db import models
 from django.contrib.auth.models import User
 from django.db.models import Max
@@ -342,3 +344,18 @@ class Comment(models.Model):
 
     def __unicode__(self):
         return unicode(self.created_at) + '--' + unicode(self.lesson.title) + '--' + unicode(self.user) + '--' + unicode(self.message)
+
+
+# -------- Signals -----------
+
+# Create the user profile when create the User is created.
+def delete_video_files(sender, instance, created, **kwargs):
+    if not created:
+        if os.path.isfile(instance.original_video_file.path):
+            default_storage.delete(instance.original_video_file.path)
+        if os.path.isfile(instance.converted_video_file_mp4.path):
+            default_storage.delete(instance.converted_video_file_mp4.path)
+        if os.path.isfile(instance.converted_video_file_webm.path):
+            default_storage.delete(instance.converted_video_file_webm.path)
+
+post_save.connect(delete_video_files, sender=Video, dispatch_uid='video-delete-files-signal')
