@@ -1,5 +1,5 @@
 import os
-from django.db.models.signals import post_save
+from django.db.models.signals import pre_save
 from django.db import models
 from django.contrib.auth.models import User
 from django.db.models import Max
@@ -8,8 +8,6 @@ from django.db.models import Avg
 from django.utils.translation import ugettext as _
 from django.core.files.storage import default_storage
 from validatedfile import ValidatedFileField
-from decimal import Decimal
-
 
 
 #Category of the Courses Model
@@ -349,13 +347,18 @@ class Comment(models.Model):
 # -------- Signals -----------
 
 # Create the user profile when create the User is created.
-def delete_video_files(sender, instance, created, **kwargs):
-    if not created:
-        if os.path.isfile(instance.original_video_file.path):
-            default_storage.delete(instance.original_video_file.path)
-        if os.path.isfile(instance.converted_video_file_mp4.path):
-            default_storage.delete(instance.converted_video_file_mp4.path)
-        if os.path.isfile(instance.converted_video_file_webm.path):
-            default_storage.delete(instance.converted_video_file_webm.path)
+def delete_video_files(sender, instance, raw, **kwargs):
+    if instance.id:
+        old_video = Video.objects.get(pk=instance.id)
+        if old_video.original_video_file != instance.original_video_file:
+            if old_video.original_video_file:
+                if os.path.isfile(old_video.original_video_file.path):
+                    default_storage.delete(old_video.original_video_file.path)
+            if old_video.converted_video_file_mp4:
+                if os.path.isfile(old_video.converted_video_file_mp4.path):
+                    default_storage.delete(old_video.converted_video_file_mp4.path)
+            if old_video.converted_video_file_webm:
+                if os.path.isfile(old_video.converted_video_file_webm.path):
+                    default_storage.delete(old_video.converted_video_file_webm.path)
 
-post_save.connect(delete_video_files, sender=Video, dispatch_uid='video-delete-files-signal')
+pre_save.connect(delete_video_files, sender=Video, dispatch_uid='video-delete-files-signal')

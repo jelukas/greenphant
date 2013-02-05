@@ -9,7 +9,7 @@ SITE_NAME = "beta.trainingme.net"
 SITE_URL = 'http://beta.trainingme.net'
 
 #Debugging
-DEBUG = False
+DEBUG = True
 TEMPLATE_DEBUG = DEBUG
 THUMBNAIL_DEBUG = False
 

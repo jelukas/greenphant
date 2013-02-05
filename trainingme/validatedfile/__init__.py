@@ -23,8 +23,11 @@ class ValidatedFileField(models.FileField):
             mg = magic.Magic(mime = True)
             content_type_magic = mg.from_buffer(file.read(1024))
             file.seek(0)
+            print content_type_headers
+            print self.content_types
+            print content_type_magic
 
-            if not content_type_headers in self.content_types or not content_type_magic in self.content_types:
+            if not content_type_headers in self.content_types and not content_type_magic in self.content_types:
                 raise forms.ValidationError(_('Files of type %(type)s are not supported.') % {'type': content_type_magic})
 
         if self.max_upload_size:

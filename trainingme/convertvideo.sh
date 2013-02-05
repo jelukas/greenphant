@@ -7,11 +7,11 @@ dir_original_videos=/home/luks/Escritorio/django/estable/greenphant/trainingme/m
 servicio=ffmpeg
 
 
-
 stamp=`date +%s`
 file=/tmp/controlvideo
 if [ -f  $file ]
 then
+    echo paco
 	exit 0
 else
 	touch $file
