@@ -1,84 +1,84 @@
-{% extends 'base_gradient.html' %}
+{% extends 'base.html' %}
 {% load i18n %}{% load humanize %}{% load thumbnail %}
-{% block content %}
-    <div class="container-fluid">
-        <div class="row-fluid">
-            <div class="span10">
-                <section>
-                    <div class="container MainTitle">
-                        <h3>{{ course.title }}</h3>
-                    </div>
-                </section>
-                <section class="formContent">
-                    <div class="container">
-                        <div class="presentation">
-                            {% thumbnail course.image "300x200" as im %}
-                                <img src="{{ im.url }}" class="image_course_description">
-                            {% endthumbnail %}
-                            {{ course.large_description|removetags:"script div section"|safe }}
-                            <div class="clearfix"></div>
-                        </div>
-                    </div>
-                </section>
-                <section class="formContent">
-                    <div class="container">
-                        <div class="accordion" id="AccordionCurso">
-                            {% for subject in course.subjects.all %}
-                                <div class="accordion-group">
-                                    <div class="accordion-heading">
-                                        <a class="accordion-toggle" data-toggle="collapse" data-parent="#AccordionCurso" href="#collapse{{ forloop.counter|apnumber }}">
-                                            {% trans 'Subject' %} {{ forloop.counter }} - {{ subject.title }}
-                                        </a>
-                                        <div  class="arrowAccordion"  data-toggle="collapse" data-parent="#AccordionCurso" href="#collapse{{ forloop.counter|apnumber }}"></div>
-                                    </div>
-                                    <div id="collapse{{ forloop.counter|apnumber }}" class="accordion-body collapse in">
-                                        <div class="accordion-inner">
-                                            {% for lesson in subject.lessons.all %}
-                                                <div class="accordionLine">
-                                                    {% trans 'Lesson' %} {{ forloop.counter }} - {{ lesson.title }}
-                                                    <div id="lesson-{{ lesson.id }}"  data-rating="{{ lesson.get_scoring }}" class="star lesson-start"></div>
-                                                    {% if lesson.attach.url %}
-                                                        <div class="btnDownload"></div>
-                                                    {% endif %}
-                                                    {% if lesson.video.original_video_file.url %}
-                                                        <div class="btnVideo"></div>
-                                                        {% if lesson.is_preview %}<span class="pull-right"><a href="#freeVideo" data-remote="{% url free_video lesson.video.id %}" data-toggle="modal">{% trans 'View FREE Now' %}</a>
-                                                        </span>{% endif %}
-                                                    {% endif %}
-                                                </div>
-                                            {% endfor %}
-                                        </div>
-                                    </div>
-                                </div>
-                            {% endfor %}
-                        </div>
-                    </div>
-                </section>
-            </div>
-            <div class="span2">
-                <div class="course_price">
-                    <p class="price">{{ course.price|floatformat:2 }} &euro;</p>
-                    <p class="social_amount">{% trans 'Social Amount' %} {{ course.social_amount|floatformat:2 }} &euro;</p>
+{% block sections %}
+    <section class="view_course_head new-gradient">
+        <div class="container">
+            <div class="row">
+                <div class="image_view_course span4">
+                    <img src="{{ course.image.url }}" alt="{{ course.slug }}" />
                 </div>
-                <div class="enrroled_data">
-                    {% if enrrolled %}
-                        {% trans 'You are enrrolled' %}: <a href="{% url learning_course course.id %}" title="Acceder">{% trans 'Access' %}</a>
-                    {% elif user.is_authenticated %}
-                        {{ paypal_button }}
-                    {% endif %}
+                <div class="course_details_view_course span8" >
+                    <h1>{{ course.title }}</h1>
+                    <h2>{{ course.short_description }}</h2>
+                    <a class="buy_now btn btn-large btn-primary">Matriculate Ahora!!<br/> Por sólo {{ course.price|floatformat:2 }} &euro;</a>
+                    <p class="social_reminder">Reuerda que se destinaran {{ course.social_amount|floatformat:2 }} &euro; <br/> a proyectos sociales de educacion</p>
                 </div>
-                <h4>{{ course.user.first_name }} {{ course.user.last_name }}</h4>
-                <h5>{{ course.user.get_profile.subtitle }}</h5>
-                <section class="teacher_profile_course">
-                    {% if course.user.get_profile.image %}
-                        <img src="{{ course.user.get_profile.image.url }}" />
-                    {% endif %}
-                    {{ course.user.get_profile.description|safe }}
-                </section>
             </div>
         </div>
-    </div>
-    <!-- Modal -->
+    </section>
+
+    <section class="view_course_content">
+        <div class="container">
+            <div class="row">
+                <div class="description span8">
+                    <p>
+                        {% thumbnail course.image "238x135" as im %}
+                            <img src="{{ course.image.url }}" />
+                        {% endthumbnail %}
+                        {{ course.large_description }}
+                    </p>
+                </div>
+                <div class="teacher span3 offset1">
+                    {% thumbnail course.image "110x80" as im %}
+                        <img src="{{ course.user.get_profile.image.url }}"  class="img-polaroid" />
+                    {% endthumbnail %}
+                    <h4>{{ course.user.first_name }} {{ course.user.last_name }}</h4>
+                    <h5>{{ course.user.get_profile.subtitle }}</h5>
+                    <p class="teacher_description">{{ course.user.get_profile.description }}</p>
+                    <ul class="inline">
+                        {% if course.user.get_profile.twitter_user %}<li><a href="http://twitter.com/{{ course.user.get_profile.twitter_user }}" target="_blank"><img src="{{ STATIC_URL }}img/twitter-2.png"/></a></li>{% endif %}
+                        {% if course.user.get_profile.facebook_url %}<li><a href="{{ course.user.get_profile.facebook_url }}" target="_blank"><img src="{{ STATIC_URL }}img/facebook.png"/></a></li>{% endif %}
+                        {% if course.user.get_profile.linkedin_url %}<li><a href="{{ course.user.get_profile.linkedin_url }}" target="_blank"><img src="{{ STATIC_URL }}img/linkedin.png"/></a></li>{% endif %}
+                        {% if course.user.get_profile.googleplus_url %}<li><a href="{{ course.user.get_profile.googleplus_url }}" target="_blank"><img src="{{ STATIC_URL }}img/google-plus.png"/></a></li>{% endif %}
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="formContent view_course_content">
+        <div class="container">
+            <div class="row">
+                {% for subject in course.subjects.all %}
+                    <div class="accordion-group span8">
+                        <div class="accordion-heading">
+                            <a class="accordion-toggle" data-toggle="collapse" data-parent="#AccordionCurso" href="#collapse{{ forloop.counter|apnumber }}">
+                                {% trans 'Subject' %} {{ forloop.counter }} - {{ subject.title }}
+                            </a>
+                            <div  class="arrowAccordion"  data-toggle="collapse" data-parent="#AccordionCurso" href="#collapse{{ forloop.counter|apnumber }}"></div>
+                        </div>
+                        <div id="collapse{{ forloop.counter|apnumber }}" class="accordion-body collapse in">
+                            <div class="accordion-inner">
+                                {% for lesson in subject.lessons.all %}
+                                    <div class="accordionLine">
+                                        {% trans 'Lesson' %} {{ forloop.counter }} - {{ lesson.title }}
+                                        <div id="lesson-{{ lesson.id }}"  data-rating="{{ lesson.get_scoring }}" class="star lesson-start"></div>
+                                        {% if lesson.attach.url %}
+                                            <div class="btnDownload"></div>
+                                        {% endif %}
+                                        {% if lesson.video.original_video_file.url %}
+                                            <div class="btnVideo"></div>
+                                            {% if lesson.is_preview %}<span class="pull-right"><a href="#freeVideo" data-remote="{% url free_video lesson.video.id %}" data-toggle="modal">{% trans 'View FREE Now' %}</a>
+                                                </span>{% endif %}
+                                        {% endif %}
+                                    </div>
+                                {% endfor %}
+                            </div>
+                        </div>
+                    </div>
+                {% endfor %}
+            </div>
+        </div>
+    </section>
     <div id="freeVideo" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="WatchfreeVideo" aria-hidden="true">
         <div class="modal-header">
             <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
