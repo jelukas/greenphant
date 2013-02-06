@@ -20,13 +20,45 @@
     <section class="view_course_content">
         <div class="container">
             <div class="row">
-                <div class="description span8">
-                    <p>
-                        {% thumbnail course.image "238x135" as im %}
-                            <img src="{{ course.image.url }}" />
-                        {% endthumbnail %}
-                        {{ course.large_description }}
-                    </p>
+                <div class="span8">
+                    <div class="description" >
+                        <p>
+                            {% thumbnail course.image "238x135" as im %}
+                                <img src="{{ course.image.url }}" />
+                            {% endthumbnail %}
+                            {{ course.large_description }}
+                        </p>
+                    </div>
+                    <section class="formContent view_course_content">
+                        {% for subject in course.subjects.all %}
+                            <div class="accordion-group">
+                                <div class="accordion-heading">
+                                    <a class="accordion-toggle" data-toggle="collapse" data-parent="#AccordionCurso" href="#collapse{{ forloop.counter|apnumber }}">
+                                        {% trans 'Subject' %} {{ forloop.counter }} - {{ subject.title }}
+                                    </a>
+                                    <div  class="arrowAccordion"  data-toggle="collapse" data-parent="#AccordionCurso" href="#collapse{{ forloop.counter|apnumber }}"></div>
+                                </div>
+                                <div id="collapse{{ forloop.counter|apnumber }}" class="accordion-body collapse in">
+                                    <div class="accordion-inner">
+                                        {% for lesson in subject.lessons.all %}
+                                            <div class="accordionLine">
+                                                {% trans 'Lesson' %} {{ forloop.counter }} - {{ lesson.title }}
+                                                <div id="lesson-{{ lesson.id }}"  data-rating="{{ lesson.get_scoring }}" class="star lesson-start"></div>
+                                                {% if lesson.attach.url %}
+                                                    <div class="btnDownload"></div>
+                                                {% endif %}
+                                                {% if lesson.video.original_video_file.url %}
+                                                    <div class="btnVideo"></div>
+                                                    {% if lesson.is_preview %}<span class="pull-right"><a href="#freeVideo" data-remote="{% url free_video lesson.video.id %}" data-toggle="modal">{% trans 'View FREE Now' %}</a>
+                                                        </span>{% endif %}
+                                                {% endif %}
+                                            </div>
+                                        {% endfor %}
+                                    </div>
+                                </div>
+                            </div>
+                        {% endfor %}
+                    </section>
                 </div>
                 <div class="teacher span3 offset1">
                     {% thumbnail course.user.get_profile.image "x200" as im %}
@@ -42,40 +74,6 @@
                         {% if course.user.get_profile.googleplus_url %}<li><a href="{{ course.user.get_profile.googleplus_url }}" target="_blank"><img src="{{ STATIC_URL }}img/google-plus.png"/></a></li>{% endif %}
                     </ul>
                 </div>
-            </div>
-        </div>
-    </section>
-    <section class="formContent view_course_content">
-        <div class="container">
-            <div class="row">
-                {% for subject in course.subjects.all %}
-                    <div class="accordion-group span8">
-                        <div class="accordion-heading">
-                            <a class="accordion-toggle" data-toggle="collapse" data-parent="#AccordionCurso" href="#collapse{{ forloop.counter|apnumber }}">
-                                {% trans 'Subject' %} {{ forloop.counter }} - {{ subject.title }}
-                            </a>
-                            <div  class="arrowAccordion"  data-toggle="collapse" data-parent="#AccordionCurso" href="#collapse{{ forloop.counter|apnumber }}"></div>
-                        </div>
-                        <div id="collapse{{ forloop.counter|apnumber }}" class="accordion-body collapse in">
-                            <div class="accordion-inner">
-                                {% for lesson in subject.lessons.all %}
-                                    <div class="accordionLine">
-                                        {% trans 'Lesson' %} {{ forloop.counter }} - {{ lesson.title }}
-                                        <div id="lesson-{{ lesson.id }}"  data-rating="{{ lesson.get_scoring }}" class="star lesson-start"></div>
-                                        {% if lesson.attach.url %}
-                                            <div class="btnDownload"></div>
-                                        {% endif %}
-                                        {% if lesson.video.original_video_file.url %}
-                                            <div class="btnVideo"></div>
-                                            {% if lesson.is_preview %}<span class="pull-right"><a href="#freeVideo" data-remote="{% url free_video lesson.video.id %}" data-toggle="modal">{% trans 'View FREE Now' %}</a>
-                                                </span>{% endif %}
-                                        {% endif %}
-                                    </div>
-                                {% endfor %}
-                            </div>
-                        </div>
-                    </div>
-                {% endfor %}
             </div>
         </div>
     </section>

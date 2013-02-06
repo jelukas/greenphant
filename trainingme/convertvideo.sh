@@ -11,7 +11,6 @@ stamp=`date +%s`
 file=/tmp/controlvideo
 if [ -f  $file ]
 then
-    echo paco
 	exit 0
 else
 	touch $file

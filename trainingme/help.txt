@@ -57,3 +57,5 @@ Para las variables de entorno:
 Deben estar ene el archivo del sitio de apache.
 SetEnv para setearlas
 activar el mod_env
+
+Las variables de entorno tambien deben estar en el CRONTAB!!!

@@ -19,6 +19,6 @@ class Command(BaseCommand):
 #       video.original_video_file = args[0]
 #       video.converted_video_file = args[1]
 #       video.save()
-        self.stdout.write('prueba')
+        self.stdout.write('Esto es una pruebaaaa')
 #        user = User.objects.get(pk=3)
 #        user.email_user(_('One of Your video is ready'), _('You video is Ready'), from_email='trainingme@trainingme.net')
