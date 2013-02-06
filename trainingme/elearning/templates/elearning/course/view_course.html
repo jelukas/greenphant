@@ -29,8 +29,8 @@
                     </p>
                 </div>
                 <div class="teacher span3 offset1">
-                    {% thumbnail course.image "110x80" as im %}
-                        <img src="{{ course.user.get_profile.image.url }}"  class="img-polaroid" />
+                    {% thumbnail course.user.get_profile.image "x200" as im %}
+                        <img src="{{ im.url }}"  class="img-polaroid" />
                     {% endthumbnail %}
                     <h4>{{ course.user.first_name }} {{ course.user.last_name }}</h4>
                     <h5>{{ course.user.get_profile.subtitle }}</h5>
