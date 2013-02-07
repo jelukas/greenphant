@@ -56,9 +56,13 @@
                     </section>
                 </div>
                 <div class="teacher span3 offset1">
-                    {% thumbnail course.user.get_profile.image "x200" as im %}
-                        <img src="{{ im.url }}"  class="img-polaroid" />
-                    {% endthumbnail %}
+                    {% if course.user.get_profile.image %}
+                        {% thumbnail course.user.get_profile.image "x200" as im %}
+                            <img class="img-polaroid" src="{{ im.url }}" alt="{{ user.username }}" />
+                        {% endthumbnail %}
+                    {% else %}
+                        <img src="{{ STATIC_URL }}img/default_profile.png" alt="{{ user.username }}"  class="img-polaroid"/>
+                    {% endif %}
                     <h4>{{ course.user.first_name }} {{ course.user.last_name }}</h4>
                     <h5>{{ course.user.get_profile.subtitle }}</h5>
                     <p class="teacher_description">{{ course.user.get_profile.description }}</p>
