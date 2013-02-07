@@ -1,6 +1,6 @@
-{% extends "base_gradient.html" %}
+{% extends "base.html" %}
 {% load i18n %}{% load widget_tweaks %}
-{% block content %}
+{% block sections %}
     <section>
         <div class="container MainTitle">
             <h3>{% trans "You are editing your Profile" %}</h3>
@@ -141,11 +141,9 @@
                         <span class="help-inline">&nbsp;</span>
                     </div>
                 </div>
+                <p class="center"><button type="submit" form="edit_profile_form" class="btn btn-primary">{% trans "Update Profile" %}</button></p>
             </form>
         </div>
-    </section>
-    <section class="centeredbutton">
-        <button type="submit" form="edit_profile_form" class="btn btn-primary">{% trans "Update Profile" %}</button>
     </section>
 {% endblock %}
 {% block footerscripts %}

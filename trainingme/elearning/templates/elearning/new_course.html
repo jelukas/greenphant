@@ -86,14 +86,10 @@
                     {% endfor %}
                     {{ course_form.download_allowed|add_class:"fixedtype" }}
                 </div>
+                <p class="center"><button type="submit" form="creating_course_form" class="btn btn-primary">{% trans "Create Course Yeah!" %}</button></p>
             </form>
         </div>
     </section>
-
-    <section class="centeredbutton">
-        <button type="submit" form="creating_course_form" class="btn btn-primary">{% trans "Create Course Yeah!" %}</button>
-    </section>
-
     <section class="centeredbutton">
         <a class="btn btn-large" href="{% url teaching %}">{% trans "Back to Dashboard" %}</a>
     </section>

@@ -12,7 +12,6 @@ from django.contrib.auth import logout
 def edit(request):
     profile = request.user.get_profile()
     profile_form = ProfileForm(instance=profile) # An unbound form
-    context = {'profile_form':profile_form}
     if request.method == 'POST': # If the form has been submitted...
         profile_form = ProfileForm(request.POST,request.FILES,instance=profile) # A form bound to the POST data
         if request.user.email=='':
@@ -30,6 +29,7 @@ def edit(request):
             messages.success(request,_('Profile updated sucessfully'))
             return HttpResponseRedirect(reverse('personal.views.view_profile')) # Redirect after POST
         else:
+            context = {'profile_form':profile_form}
             messages.error(request,_('Profile failed to update'))
     else:
         profile_form = ProfileForm(instance=profile) # An unbound form
@@ -37,6 +37,7 @@ def edit(request):
         if not request.user.email:
             user_form = UserForm(instance=request.user) # An unbound form
             context = {'profile_form':profile_form,'user_form':user_form}
+
     return render_to_response('personal/edit_profile.html',context,context_instance = RequestContext(request))
 
 @login_required

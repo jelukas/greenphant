@@ -1,56 +1,62 @@
-{% extends "base_gradient.html" %}{% load i18n %}{% load thumbnail %}
+{% extends "base.html" %}{% load i18n %}{% load thumbnail %}
 {% block title %}{% trans "My Profile" %}{% endblock %}
-{% block body-class %}class="gradientGB"{% endblock %}
-{% block content %}
+{% block sections %}
     <!-- Inicia Contenido -->
-    <div class="bodyGradient mainContent">
-        <section>
-            <div class="container MainTitle">
-                <h3>{% trans "My Profile" %}</h3>
-                <a href="{% url edit_profile %}" class="btn btn-info">{% trans "Edit your Profile" %}</a>
-                <a href="{% url auth_password_change %}" class="btn btn-warning">{% trans "Change Password" %}</a>
+    <section>
+        <div class="container MainTitle">
+            <h3>{% trans "My Profile" %}</h3>
+            <a href="{% url edit_profile %}" class="btn btn-info">{% trans "Edit your Profile" %}</a>
+            <a href="{% url auth_password_change %}" class="btn btn-warning">{% trans "Change Password" %}</a>
+        </div>
+    </section>
+
+    <section class="teacher_private_profile">
+        <div class="container">
+            <div class="row">
+                <div class="span3">
+                    <h5>{% trans 'Profile Image' %}</h5>
+                    {% if profile.image %}
+                        {% thumbnail profile.image "x150" as im %}
+                            <img class="img-polaroid" src="{{ im.url }}" alt="{{ user.username }}" />
+                        {% endthumbnail %}
+                    {% else %}
+                        <img src="{{ STATIC_URL }}img/default_profile.png" alt="{{ user.username }}"  class="img-polaroid"/>
+                    {% endif %}
+                    <h5>{% trans 'Subtitle' %}</h5>
+                    <p>{{ profile.subtitle }}</p>
+                    <h5>{% trans 'Social Networks' %}</h5>
+                    <ul class="inline">
+                        {% if profile.twitter_user %}<li><a href="http://twitter.com/{{ profile.twitter_user }}" target="_blank"><img src="{{ STATIC_URL }}img/24px/twitter-2.png"/></a></li>{% endif %}
+                        {% if profile.facebook_url %}<li><a href="{{ profile.facebook_url }}" target="_blank"><img src="{{ STATIC_URL }}img/24px/facebook.png"/></a></li>{% endif %}
+                        {% if profile.linkedin_url %}<li><a href="{{ profile.linkedin_url }}" target="_blank"><img src="{{ STATIC_URL }}img/24px/linkedin.png"/></a></li>{% endif %}
+                        {% if profile.googleplus_url %}<li><a href="{{ profile.googleplus_url }}" target="_blank"><img src="{{ STATIC_URL }}img/24px/google-plus.png"/></a></li>{% endif %}
+                    </ul>
+                    <h5>{% trans 'Personal Details' %}</h5>
+                    <dl>
+                        <dt>{% trans 'Username' %}</dt>
+                        <dd>{{ user.username }}</dd>
+                        <dt>{% trans 'Email' %}</dt>
+                        <dd>{{ user.email }}</dd>
+                        <dt>{% trans 'Country' %}</dt>
+                        <dd>{{ profile.country.name }}</dd>
+                        <dt>{% trans 'State' %}</dt>
+                        <dd>{{ profile.state }}</dd>
+                        <dt>{% trans 'Address' %}</dt>
+                        <dd>{{ profile.address }}</dd>
+                        <dt>{% trans 'Phone Number' %}</dt>
+                        <dd>{{ profile.phone_number }}</dd>
+                        <dt>{% trans 'Personal Website' %}</dt>
+                        <dd>{{ profile.website}}</dd>
+                    </dl>
+                </div>
+                <div class="span9">
+                    <dl>
+                        <dt>{% trans 'Presentation' %}</dt>
+                        <dd>{{ profile.description|safe }} </dd>
+                    </dl>
+                </div>
             </div>
-        </section>
-        <section>
-                <div class="container">
-                <dl id="profile-details" class="dl-horizontal">
-                    <dt>{% trans 'Profile Image' %}</dt>
-                    <dd>
-                        {% if profile.image %}
-                            {% thumbnail profile.image "100x100" as im %}
-                                <img src="{{ im.url }}" alt="{{ user.username }}" />
-                            {% endthumbnail %}
-                        {% endif %}
-                    </dd>
-                    <dt>{% trans 'Username' %}</dt>
-                    <dd>{{ user.username }}</dd>
-                    <dt>{% trans 'Your Email Address' %}</dt>
-                    <dd>{{ user.email }}</dd>
-                    <dt>{% trans 'Presentation' %}</dt>
-                    <dd>{{ profile.description|safe }} </dd>
-                    <dt>{% trans 'Subtitle' %}</dt>
-                    <dd>{{ profile.subtitle }}</dd>
-                    <dt>{% trans 'Country' %}</dt>
-                    <dd>{{ user.country }}</dd>
-                    <dt>{% trans 'State' %}</dt>
-                    <dd>{{ user.state }}</dd>
-                    <dt>{% trans 'Address' %}</dt>
-                    <dd>{{ user.address }}</dd>
-                    <dt>{% trans 'Phone Number' %}</dt>
-                    <dd>{{ user.phone_number }}</dd>
-                    <dt>{% trans 'Personal Website' %}</dt>
-                    <dd>{{ user.website }}</dd>
-                    <dt>{% trans "Twitter User" %}</dt>
-                    <dd>{{ user.twitter_user }}</dd>
-                    <dt>{% trans "Facebook Url" %}</dt>
-                    <dd>{{ user.facebook_url }}</dd>
-                    <dt>{% trans "Google Plus Url" %}</dt>
-                    <dd>{{ user.googleplus_url }}</dd>
-                    <dt>{% trans "Linkedin Public Url" %}</dt>
-                    <dd>{{ user.linkedin_url }}</dd>
-                </dl>
-            </div>
-        </section>
-    </div>
+        </div>
+    </section>
     <!-- Fin Contenido -->
-{% endblock content %}
+{% endblock sections %}
