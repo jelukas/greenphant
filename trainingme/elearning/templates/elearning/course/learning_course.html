@@ -21,7 +21,7 @@
             <div class="row">
                 <div class="span8">
                     <div class="description" >
-                        <p>{% if course.image %}{% thumbnail course.image "238x135" as im %}<img src="{{ course.image.url }}" />{% endthumbnail %}{% else %}<img src="{{ STATIC_URL }}img/dafault_image_course.gif" />{% endif %}{{ course.large_description }}</p>
+                        <p>{% if course.image %}{% thumbnail course.image "238x135" as im %}<img src="{{ im.url }}" />{% endthumbnail %}{% else %}<img src="{{ STATIC_URL }}img/dafault_image_course.gif" />{% endif %}{{ course.large_description }}</p>
                     </div>
                     <section class="formContent view_course_content">
                         {% for subject in course.subjects.all %}
