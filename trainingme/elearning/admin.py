@@ -10,10 +10,7 @@ class EnrollmentAdmin(admin.ModelAdmin):
     list_display = ('user','course','start_date',)
 
 class CourseAdmin(admin.ModelAdmin):
-    class Media:
-        js = ('js/tiny_mce/tiny_mce.js',
-              'js/tiny_mce/basic_config.js',
-        )
+    pass
 
 admin.site.register(Category)
 admin.site.register(Course,CourseAdmin)

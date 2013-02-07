@@ -1397,7 +1397,7 @@ dl#profile-details {
   background: -ms-linear-gradient(top, rgba(67,161,239,1) 0%,rgba(6,101,173,1) 100%); /* IE10+ */
   background: linear-gradient(to bottom, rgba(67,161,239,1) 0%,rgba(6,101,173,1) 100%); /* W3C */
   filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#43a1ef', endColorstr='#0665ad',GradientType=0 ); /* IE6-8 */
-  min-height: 370px;
+  min-height: 280px;
 }
 h3 {
   color: #0d6bb3;
@@ -1425,7 +1425,7 @@ section.view_course_head .container .row{
   margin-top: 40px;
 }
 section.view_course_head .image_view_course img{
-  height: 290px;
+  height: 210px;
 }
 section.view_course_head .course_details_view_course {
   color: #fafafa;
@@ -1455,8 +1455,10 @@ div.description,div.teacher{
   -webkit-border-radius: 10px;
   box-shadow: 5px 5px 10px #a5a5a5;
   margin-top: 15px;
+  overflow: hidden;
 }
 div.description p{
+  overflow: hidden;
   padding: 15px;
 }
 div.description p img{
@@ -1470,7 +1472,9 @@ div.description p img{
 .view_course_content {
   margin-top: 20px;
 }
-
+div.teacher p,div.description p,.course_details_view_course h2 {
+  white-space: pre-line;
+}
 /*Teacher Profile in course view*/
 div.teacher {
   padding-top: 10px;
