@@ -1,20 +1,19 @@
-{% extends 'base_gradient.html' %}
-{% load i18n %}{% load humanize %}
-{% block content %}
+{% extends 'base.html' %}
+{% load i18n %}{% load humanize %}{% load elearning_extras %}
+{% block sections %}
     <section class="formContent">
-        <section>
+        <section class="title-course">
             <div class="container MainTitle">
-                <h3>{{ lesson.subject.course.title }}</h3>
+                <h1>{{ lesson.subject.course.title }}</h1>
             </div>
         </section>
         <div class="container">
             <div class="accordion" id="AccordionCurso">
                 <div class="accordion-group">
                     <div class="accordion-heading">
-                        <a class="accordion-toggle" data-toggle="collapse" data-parent="#AccordionCurso" href="#collapseOne">
+                        <a class="accordion-toggle" href="#?">
                             {% trans 'Subject' %} {{  lesson.subject.order }} - {{ lesson.subject.title }}
                         </a>
-                        <div  class="arrowAccordion"  data-toggle="collapse" data-parent="#AccordionCurso" href="#collapseOne"></div>
                     </div>
                     <div id="collapseOne" class="accordion-body collapse in">
                         <div class="accordion-inner">
@@ -25,15 +24,24 @@
                                     <source type='video/webm' src="{{ lesson.video.converted_video_file_webm.url }}">
                                 </video>
                             {% endif %}
-                            {% if lesson.attach %}
-                                <p>{% trans 'Extra Content' %}: <a href="{{ lesson.attach.file.url }}">{% trans 'File' %}</a></p>
-                            {% endif %}
-                            {% load elearning_extras %}
-                            {% if not lesson|user_had_vote_lesson:user.id %}
-                                <div id="lesson-{{ lesson.id }}"  data-rating="{{ lesson.get_scoring }}" class="star leftSide"></div>
-                            {% else %}
-                                <div id="lesson-{{ lesson.id }}"  data-rating="{{ lesson.get_scoring }}" class="star-rated leftSide"></div>
-                            {% endif %}
+                            <div class="lesson-extras">
+                                {% if lesson.attach %}
+                                    <div class="pull-right">
+                                        <p><a href="{{ lesson.attach.file.url }}"><img src="{{ STATIC_URL }}img/download_attachment.png" alt="{% trans 'Download Attachment' %}"> {% trans 'Download Attachment' %}</a></p>
+                                    </div>
+                                {% endif %}
+                                {% if not lesson|user_had_vote_lesson:user.id %}
+                                    <div class="pull-left">
+                                        <p style="color: #fff;">{% trans 'Rate this lesson' %}</p>
+                                        <div id="lesson-{{ lesson.id }}"  data-rating="{{ lesson.get_scoring }}" class="star leftSide"></div>
+                                    </div>
+                                {% else %}
+                                    <div class="pull-left">
+                                        <p style="color: #fff;">{% trans 'Rating' %}</p>
+                                        <div id="lesson-{{ lesson.id }}"  data-rating="{{ lesson.get_scoring }}" class="star-rated leftSide"></div>
+                                    </div>
+                                {% endif %}
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -41,7 +49,7 @@
         </div>
     </section>
     <section class="centeredbutton">
-        <a class="btn btn-large" href="{% url learning_course lesson.subject.course_id %}">{% trans "Back to Course" %}</a>
+        <a class="btn btn-large" href="{% url building_course lesson.subject.course_id %}">{% trans "Back to Builder" %}</a>
     </section>
 {% endblock %}
 {% block footerscripts %}
