@@ -11,10 +11,10 @@
        }
     </style>
     <![endif]-->
+    <link href="http://vjs.zencdn.net/c/video-js.css" rel="stylesheet">
     <script type="text/javascript" src="{{ STATIC_URL }}js/jquery-1.8.3.min.js"></script>
     <script type="text/javascript" src="{{ STATIC_URL }}js/bootstrap.min.js"></script>
     <script type="text/javascript" src="{{ STATIC_URL }}js/jquery.raty.min.js"></script>
-
     {% block morescripts %}
 
     {% endblock morescripts %}
@@ -39,6 +39,7 @@
                                 <li><a href="{% url learning %}">{% trans "My Courses" %}</a></li>
                                 <li><a href="{% url new_course %}">{% trans "Create New Course" %}</a></li>
                                 <li><a href="{% url home %}">{% trans "Search Courses" %}</a></li>
+                                <li><a href="/pages/social-projects/">{% trans "Social Project" %}</a></li>
                                 <li class="dropdown">
                                     <a href="#" class="dropdown-toggle" data-toggle="dropdown">{% trans "Help" %}<b class="caret"></b></a>
                                     <ul class="dropdown-menu">
@@ -96,6 +97,7 @@
             <ul class="inline">
                 <li><a href="/pages/terms_and_conditions/">{% trans "Terms of Use" %}</a></li>
                 <li><a href="/pages/privacy_policy/">{% trans "Privacy Policy" %}</a></li>
+                <li><a href="/pages/social-projects/">{% trans "Social Project" %}</a></li>
                 <li><a href="mailto:trainingme@trainingme.net">Feedback</a></li>
                 <li>&copy; Copyright Trainingme.Net 2013 - BETA</li>
             </ul>
@@ -103,7 +105,8 @@
     {% endblock footer %}
 </footer>
 {% block footerscripts %}
-
+    <script src="http://vjs.zencdn.net/c/video.js"></script>
+    <script type="text/javascript" src="{{ STATIC_URL }}js/main.js"></script>
 {% endblock footerscripts %}
 </body>
 </html>

@@ -38,6 +38,8 @@ MP4 (contenedor) y H.264 (video) + AAC (audio) - esta fórmula la promueve apple
   <source src="mejorandola.webm" type='video/webm; codecs="vp8,vorbis"'>
 </video>
 
+Hace falta que el apache sirva este tipo de arhicvos  video/mp4 video/webm
+
 
 Lineas de CRON:
 
