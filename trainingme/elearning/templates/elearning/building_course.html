@@ -14,19 +14,19 @@
                 <div class="accordion-group">
                     <div class="accordion-heading">
                         {% if not forloop.first %}
-                        <a href="{% url up_order_subject subject.id %}" title="{% trans "Up Subject" %}"><img src="{{ STATIC_URL }}img/up_arrow.png" class="subject-icon"/></a>
+                            <a href="{% url up_order_subject subject.id %}" title="{% trans "Up Subject" %}"><img src="{{ STATIC_URL }}img/up_arrow.png" class="subject-icon"/></a>
                         {% endif %}
                         {% if not forloop.last %}
                             <a href="{% url down_order_subject subject.id %}" title="{% trans "Down Subject" %}"><img src="{{ STATIC_URL }}img/down_arrow.png" class="subject-icon"/></a>
                         {% endif %}
                         <a class="delete-subject" href="{% url delete_subject subject.id %}" title="{% trans "Delete Subject" %}"><img src="{{ STATIC_URL }}img/delete-icon.png" class="subject-icon"/></a>
                         <a href="{% url edit_subject subject.id %}" title="{% trans "Edit Subject" %}"><img src="{{ STATIC_URL }}img/edit.png" class="subject-icon"/></a>
-                        <a class="accordion-toggle" data-toggle="collapse" data-parent="#AccordionCurso" href="#collapse{{ forloop.counter|apnumber }}">
+                        <a class="accordion-toggle" data-toggle="collapse" data-parent="#AccordionCurso" href="#?">
                             {% trans 'Subject' %} {{ forloop.counter }} - {{ subject.title }}
                         </a>
                         <div  class="arrowAccordion"  data-toggle="collapse" data-parent="#AccordionCurso" href="#collapse{{ forloop.counter|apnumber }}"></div>
                     </div>
-                    <div id="collapse{{ forloop.counter|apnumber }}" class="accordion-body collapse">
+                    <div id="collapse{{ forloop.counter|apnumber }}" class="accordion-body">
                         <div class="accordion-inner">
                             {% for lesson in subject.lessons.all %}
                             <div class="accordionLine">

@@ -19,6 +19,6 @@ _V_("video_course").ready(function(){
 
 function document_ready(){
     $('#freeVideo').on('hidden', function () {
-        myPlayer.pause()
-    })
+        myPlayer.pause();
+    });
 }
