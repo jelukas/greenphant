@@ -1,0 +1,52 @@
+{% extends "base.html" %}
+{% block sections  %}
+    <section>
+        <div class="container MainTitle">
+            <h1>Proyectos Sociales de Educación</h1>
+        </div>
+    </section>
+    <section id="social-projects">
+        <div class="container">
+            <img class="social-now img-polaroid" src="{{ STATIC_URL }}img/social-school-image.jpg" title="Social Projects" alt="Social Projects"/>
+            <div class="row">
+                <div class="title-now-project span4">
+                    <span>Escuelas en Costa de Marfil</span>
+                </div>
+                <div class="image-logo span8">
+                    <img class="pull-right" src="{{ STATIC_URL }}img/save-the-children.png">
+                </div>
+            </div>
+            <div class="progress-project">
+                <div class="progress">
+                    <div class="bar" style="width: 60%;"></div>
+                </div>
+                <span class="pull-left">0 &euro;</span>
+                <span class="pull-right">3000 &euro;</span>
+            </div>
+            <div class="description-project">
+                <h4>Descripción del Proyecto</h4>
+                <p>
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                    Aenean sagittis orci eu dolor congue convallis. Donec ut lorem massa. Cum sociis natoque penatibus
+                    et magnis dis parturient montes, nascetur ridiculus mus. Etiam at purus mi. Nullam ut volutpat nisi. Ut mauris mag
+                    na, commodo et molestie eu, tristique non sapien. Suspendisse pulvinar euismod ligula, mattis pellentesque ipsum euismod a. Aliquam erat volutpat. In dapibus sapien ut nibh luctus ut consequat ipsum gravida. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Nunc faucibus molestie sem, quis molestie quam aliquam id. Duis enim mauris, pellentesque quis volutpat vel, tempus sed enim. Aenean in nulla ligula. Quisque sed lectus urna, in scelerisque felis.
+                </p>
+                <p>Para más información sobre este proyecto pinche <a href="{{ STATIC_URL }}pdf/proyectos-sociales.pdf" target="_blank">aquí</a></p>
+            </div>
+            <div class="now-project-info row">
+                <div class="span4">
+                    <div class="obtenido">Obtenido</div>
+                    <p>1800 &euro;</p>
+                </div>
+                <div class="span4">
+                    <div class="percent">Porcentaje</div>
+                    <p>60 &percnt;</p>
+                </div>
+                <div class="span4">
+                    <div class="enrrolments">Matriculaciones</div>
+                    <p>72</p>
+                </div>
+            </div>
+        </div>
+    </section>
+{% endblock sections %}

@@ -25,6 +25,7 @@ urlpatterns = patterns('',
     (r'^pages/enjoy-learning/$',TemplateView.as_view(template_name="pages/aprendiendo.html")),
     (r'^pages/enjoy-teaching/$',TemplateView.as_view(template_name="pages/ensenando.html")),
     (r'^pages/enjoy-helping/$',TemplateView.as_view(template_name="pages/ayudando.html")),
+    (r'^pages/social-projects/$',TemplateView.as_view(template_name="pages/social_projects.html")),
 
     #For Paypal
     (r'^paypal/paymeny/23pok420osijos/danoentrain/', include('paypal.standard.ipn.urls')),

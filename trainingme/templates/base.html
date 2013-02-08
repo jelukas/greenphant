@@ -92,6 +92,14 @@
 {% endblock sections %}
 <footer>
     {% block footer %}
+        <div class="container">
+            <ul class="inline">
+                <li><a href="/pages/terms_and_conditions/">{% trans "Terms of Use" %}</a></li>
+                <li><a href="/pages/privacy_policy/">{% trans "Privacy Policy" %}</a></li>
+                <li><a href="mailto:trainingme@trainingme.net">Feedback</a></li>
+                <li>&copy; Copyright Trainingme.Net 2013 - BETA</li>
+            </ul>
+        </div>
     {% endblock footer %}
 </footer>
 {% block footerscripts %}
