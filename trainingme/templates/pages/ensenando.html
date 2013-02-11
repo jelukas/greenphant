@@ -1,25 +1,25 @@
 {% extends "base.html" %}
 {% block sections  %}
-    <section>
-        <div class="container MainTitle">
-            <h1>DISFRUTA ENSEÑANDO</h1>
-        </div>
-    </section>
-    <section>
-        <div class="container page">
-            <div class="row">
+    <section class="ensenando-page-head">
+        <div class="container">
+            <div class="row-fluid">
+                <div class="span7">
+                    <img src="{{ STATIC_URL }}img/disfrutaensenando.png" alt="Disfruta Enseñando" title="Disfruta Enseñando"/>
+                </div>
                 <div class="span5">
                     <iframe id="teach_player" type="text/html" width="100%" height="300px"  autoplay="" src="https://www.youtube.com/embed/8LqLCLHDACs?autoplay=1&amp;controls=0&amp;rel=0&amp;showinfo=0&amp;autohide=1" frameborder="0" allowfullscreen="">Tu navegador no soporta Iframes</iframe>
                 </div>
-                <div class="span7 page-description-justify">
-                    <h5>¿Eres experto en alguna materia?, ayuda a más personas a adquirir los conocimientos que tú posees y mejore así sus competencias profesionales.</h5>
-                    <p>Estamos en un momento en el que la formación es imprescindible pero no está al alcance de todas las personas. Mediante esta plataforma queremos aglutinar a un gran número de alumnos con necesidades formativas similares de modo que impartiendo un videocurso a un precio inferior sea altamente rentable por el número de alumnos.</p>
-                    <p>Con nuestra herramienta no sólo podrás vender tus cursos online, sino que además podrás crear tu perfil como docente y darte a conocer mediante las distintas redes sociales. Si eres un buen docente tendrás alumnos que te sigan y que puedan ver todos los cursos que tienes disponible.</p>
-                    <p>Recuerda, no se trata de producir muchos cursos sino de realizar cursos de calidad, ya que la valoración media de cada curso influirá en la valoración media de tu perfil.</p>
-                    <p>Dicho esto, puedes comenzar a crear tus cursos ahora mismo, de forma sencilla y sin costes.</p>
-                    <p>Finalmente, recordarte que es importante que nos ayudes a difundir este proyecto, ya que cuantas más personas estén inscritas a la plataforma, mayor será el número de alumnos que puedan suscribirse a tus cursos.</p>
-                </div>
             </div>
+        </div>
+    </section>
+    <section>
+        <div class="container page-description-justify">
+            <h5>¿Eres experto en alguna materia?, ayuda a más personas a adquirir los conocimientos que tú posees y mejore así sus competencias profesionales.</h5>
+            <p>Estamos en un momento en el que la formación es imprescindible pero no está al alcance de todas las personas. Mediante esta plataforma queremos aglutinar a un gran número de alumnos con necesidades formativas similares de modo que impartiendo un videocurso a un precio inferior sea altamente rentable por el número de alumnos.</p>
+            <p>Con nuestra herramienta no sólo podrás vender tus cursos online, sino que además podrás crear tu perfil como docente y darte a conocer mediante las distintas redes sociales. Si eres un buen docente tendrás alumnos que te sigan y que puedan ver todos los cursos que tienes disponible.</p>
+            <p>Recuerda, no se trata de producir muchos cursos sino de realizar cursos de calidad, ya que la valoración media de cada curso influirá en la valoración media de tu perfil.</p>
+            <p>Dicho esto, puedes comenzar a crear tus cursos ahora mismo, de forma sencilla y sin costes.</p>
+            <p>Finalmente, recordarte que es importante que nos ayudes a difundir este proyecto, ya que cuantas más personas estén inscritas a la plataforma, mayor será el número de alumnos que puedan suscribirse a tus cursos.</p>
         </div>
     </section>
 {% endblock sections %}
