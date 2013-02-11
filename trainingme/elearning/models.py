@@ -56,7 +56,7 @@ class Course(models.Model):
     image = models.ImageField(_('Featured Image'),upload_to='course_images',blank=True)
     short_description = models.TextField(_('Short Description'),blank=False,max_length=160)
     large_description = models.TextField(_('Presentation'),blank=False)
-    video = models.ImageField(_('Featured Video'),upload_to='course_promo_videos',blank=True)
+    video = models.CharField(max_length=50,blank=True) #Youtube video URL
     published_at = models.DateTimeField(null=True,blank=True)
     download_allowed = models.BooleanField(_('Download Allowed'))
     status = models.ForeignKey(Status,related_name='courses')

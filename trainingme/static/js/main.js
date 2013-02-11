@@ -21,4 +21,10 @@ function document_ready(){
     $('#freeVideo').on('hidden', function () {
         myPlayer.pause();
     });
+
+    // Remove the options form modal to allow call another data-remote url
+    $('body').on('hidden', '.modal', function () {
+        $(this).removeData('modal');
+    });
 }
+

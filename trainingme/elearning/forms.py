@@ -8,7 +8,7 @@ from django.utils.translation import ugettext as _
 class CourseForm(ModelForm):
     class Meta:
         model = Course
-        exclude = ('user','published_at','status','slug','video',)
+        exclude = ('user','published_at','status','slug',)
 
     def clean_price(self):
         data = self.cleaned_data['price']

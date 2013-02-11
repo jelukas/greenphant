@@ -5,7 +5,11 @@
         <div class="container">
             <div class="row">
                 <div class="image_view_course span4">
-                    <img src="{{ STATIC_URL }}img/default_video_image_es.jpg" />
+                    {% if course.video %}
+                        <iframe id="ytplayer_learn" type="text/html" width="370" height="210" autoplay="1" src="https://www.youtube.com/embed/{{ course.video }}?autoplay=1&amp;controls=0&amp;rel=0&amp;showinfo=0&amp;autohide=1" frameborder="0" allowfullscreen="">Tu navegador no soporta Iframes</iframe>
+                    {% else %}
+                        <img src="{{ STATIC_URL }}img/default_video_image_es.jpg" />
+                    {% endif %}
                 </div>
                 <div class="course_details_view_course span8" >
                     <h1>{{ course.title }}</h1>
@@ -43,7 +47,7 @@
                                                 {% endif %}
                                                 {% if lesson.video.original_video_file.url %}
                                                     <div class="btnVideo"></div>
-                                                    {% if lesson.is_preview %}<span class="pull-right"><a href="#freeVideo" data-remote="{% url free_video lesson.video.id %}" data-toggle="modal">{% trans 'View FREE Now' %}</a>
+                                                    {% if lesson.is_preview %}<span class="pull-right"><a data-toggle="modal" href="{% url free_video lesson.video.id %}" data-target="#freeVideo" >{% trans 'View FREE Now' %}</a>
                                                         </span>{% endif %}
                                                 {% endif %}
                                             </div>
@@ -75,7 +79,7 @@
             </div>
         </div>
     </section>
-    <div id="freeVideo" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="WatchfreeVideo" aria-hidden="true">
+    <div id="freeVideo" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="WatchfreeVideo" aria-hidden="true" >
         <div class="modal-header">
             <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
             <h3 id="WatchfreeVideo">{% trans 'Free Video' %}</h3>

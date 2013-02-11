@@ -50,6 +50,16 @@
                     </div>
                 </div>
                 <div class="control-group">
+                    <label class="control-label" >{% trans "Promo Video" %}</label>
+                    <div class="controls">
+                        {% for error in course_form.video.errors %}
+                            <span class="text-error">{{ error }}</span>
+                        {% endfor %}
+                        {{ course_form.video|add_class:"fixedtype" }}
+                        <span class="help-inline">{% trans 'Youtube Promo Video ID' %}</span>
+                    </div>
+                </div>
+                <div class="control-group">
                     <label class="control-label">{% trans "Category" %}</label>
                     <div class="controls">
                         {% for error in course_form.category.errors %}
