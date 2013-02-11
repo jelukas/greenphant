@@ -32,6 +32,8 @@
 @import url('bootstrap-responsive.css');
 
 body{
+    background-image: url(../img/patron-body.png);
+    background-repeat: repeat-x;
 	background-color: #ffffff;
     color:@color;
     font-family: Myriadpro;
@@ -208,10 +210,6 @@ img.fraseheader{
 	margin: 50px 0px;
 }
 
-div.row-fluid.mainSplash{
-	padding-bottom: 20px;
-}
-
 div.screensplash{
 	background-image: url(../img/screen-splash.png);
 	background-repeat: no-repeat;
@@ -313,6 +311,7 @@ fieldset .panelPizarra{
 	}
 	
 }
+
 
 section.cursosResultado{
 	padding: 20px;
@@ -1626,11 +1625,13 @@ div.description-project p {
 
 footer {
   background-image: url(../img/patron-footer.png);
+  background-repeat: repeat;
   color: #fcfcfc;
   margin-top: 1em;
-  padding: 1em;
+  min-height: 196px;
 
   div ul{
+    margin: 1em;
     text-align: center;
   }
 }
@@ -1648,4 +1649,13 @@ footer a,footer a:hover {
   position: static !important;
   width: 100% !important;
   height: 100% !important;
+}
+
+/* Carrusel */
+
+.item img{
+  margin: 0 auto;
+}
+.carousel-control{
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
 }
