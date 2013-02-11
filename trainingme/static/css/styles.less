@@ -1,17 +1,7 @@
-
-@font-face {
-  font-family: Myriadpro;
-  src: url('MYRIADPRO-REGULAR.OTF');
-}
-@font-face {
-  font-family: Myriadpro;
-  font-weight: bold; src: url('MYRIADPRO-SEMIBOLD.OTF');
-}
-
 @font-size	: 	12px;
 @line-height: 	15px;	
 @color: 		#444;
-@font-family: 	Myriadpro,"Helvetica Neue",Helvetica,Arial;
+@font-family: 	"Open Sans","Helvetica Neue",Helvetica,Arial;
 
 @font-weight: 	normal;
 @error-color:	#F96060;
@@ -36,7 +26,7 @@ body{
     background-repeat: repeat-x;
 	background-color: #ffffff;
     color:@color;
-    font-family: Myriadpro;
+    font-family: @font-family;
     height: 100%;
 	margin:0px;
 	padding:0px;
@@ -1425,6 +1415,7 @@ section.view_course_head .course_details_view_course {
 }
 section.view_course_head .course_details_view_course h1{
   font-size: 4em;
+  font-family: 'Delius Unicase', cursive;
 }
 section.view_course_head .course_details_view_course h2{
   font-size: 1.5em;
@@ -1440,12 +1431,7 @@ section.view_course_head .course_details_view_course p.social_reminder{
    padding-top: 20px;
  }
 /*Contenido del curso*/
-div.description,div.teacher{
-  background-color: #fcfcfc;
-  border-radius: 10px;
-  --moz-border-radius: 10px;
-  -webkit-border-radius: 10px;
-  box-shadow: 5px 5px 10px #a5a5a5;
+div.description {
   margin-top: 15px;
   overflow: hidden;
 }
@@ -1467,15 +1453,6 @@ div.description p img{
 div.teacher p,div.description p,.course_details_view_course h2 {
   white-space: pre-line;
 }
-/*Teacher Profile in course view*/
-div.teacher {
-  padding-top: 10px;
-  text-align: center;
-}
-div.teacher p, div.teacher h4, div.teacher h5 {
-  text-align: justify;
-  padding: 0 10px;
-}
 
 /* Teacher Private Profile */
 textarea.fixedtype{
@@ -1496,14 +1473,14 @@ section.teacher_private_profile{
     box-shadow: 5px 5px 10px #a5a5a5;
     margin-top: 2em;
 
-    .row .span3{
+    .row .span3 {
       text-align: center;
       overflow: hidden;
     }
     .row .span9 dl {
       margin-right: 2em;
     }
-    .row .span9 dl dd{
+    .row .span9 dl dd {
       margin-top: 2em;
       white-space: pre-line;
       text-align: justify;
@@ -1530,7 +1507,7 @@ div.lesson-extras{
 
 section.title-course div h1 {
   color: #005096;
-  font-family: Myriadpro;
+  font-family: @font-family;
   font-size: 3em;
   font-weight: bold;
   text-align: center;
@@ -1546,6 +1523,11 @@ div.page {
   box-shadow: 5px 5px 10px #a5a5a5;
   padding: 20px;
   text-align: center;
+}
+
+
+.imagen-head {
+  margin-top: 10%;
 }
 
 .ensenando-page-head {
@@ -1678,3 +1660,55 @@ footer a,footer a:hover {
   font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
 }
 
+/*
+ Efecto Sombra
+ */
+
+/*Teacher Profile in course view*/
+div.teacher {
+  padding-top: 10px;
+  text-align: center;
+  background-color: #fcfcfc;
+  position: relative;
+}
+div.teacher p, div.teacher h4, div.teacher h5 {
+  text-align: justify;
+  padding: 0 10px;
+}
+.teacher:before, .teacher:after{
+/* Posiciona la sobora por detras del color de la caja*/
+  z-index: -1;
+  position: absolute;
+/* no aplico ningún contenidos HTML */
+  content: "";
+/* posiciona la sombra con respecto al borde inferior, izquierdo y superior */
+  bottom: 15px;
+  left: 10px;
+  top: 80%;
+/* configura el ancho */
+  width: 50%;
+/* color de fondo */
+  background: #777;
+/* definicion de la sombra estandar para box-shadow */
+  -webkit-box-shadow: 0 15px 10px #777;
+  -moz-box-shadow: 0 15px 10px #777;
+  box-shadow: 0 15px 10px #777;
+/* rotacion de la sombra */
+  -webkit-transform: rotate(-3deg);
+  -moz-transform: rotate(-3deg);
+  -o-transform: rotate(-3deg);
+  -ms-transform: rotate(-3deg);
+  transform: rotate(-3deg);
+}
+.teacher:after
+{
+/* rotacion de la sombra */
+  -webkit-transform: rotate(3deg);
+  -moz-transform: rotate(3deg);
+  -o-transform: rotate(3deg);
+  -ms-transform: rotate(3deg);
+  transform: rotate(3deg);
+/* posiciona la sombra con respecto al borde izquierdo y derecho */
+  right: 10px;
+  left: auto;
+}
