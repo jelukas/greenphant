@@ -56,7 +56,7 @@
                             <span class="text-error">{{ error }}</span>
                         {% endfor %}
                         {{ course_form.video|add_class:"fixedtype" }}
-                        <span class="help-inline">{% trans 'Youtube Promo Video ID' %}</span>
+                        <span class="help-inline">{% trans 'Youtube Promo Video ID' %} <a href="#youtube-help" data-toggle="modal"><i class="icon-question-sign"></i></a></span>
                     </div>
                 </div>
                 <div class="control-group">
@@ -103,6 +103,17 @@
     <section class="centeredbutton">
         <a class="btn btn-large" href="{% url teaching %}">{% trans "Back to Dashboard" %}</a>
     </section>
+
+    <!-- Modal -->
+    <div id="youtube-help" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+        <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+            <h3 id="myModalLabel">Youtube ID</h3>
+        </div>
+        <div class="modal-body">
+            <img src="{{ STATIC_URL }}img/youtube-help.jpg" alt="Youtube Help"/>
+        </div>
+    </div>
 {% endblock %}
 {% block footerscripts %}
     {{ block.super }}
