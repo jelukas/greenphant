@@ -238,7 +238,7 @@ ACCOUNT_ACTIVATION_DAYS=7
 Email Configuration
 """
 
-EMAIL_HOST = 'trainingme.net'
+iEMAIL_HOST = 'mail.guadalux.org'
 EMAIL_PORT = 25
 EMAIL_HOST_USER ='trainingme@trainingme.net'
 EMAIL_HOST_PASSWORD = os.environ['EMAIL_HOST_PASSWORD']
