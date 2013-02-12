@@ -9,3 +9,6 @@ http://{{site.domain}}/accounts/activate/{{ activation_key }}
 
 {% trans 'Sincerely' %},
 {{ site.name }} {% trans 'Management' %}
+
+Trainingme.Net Team
+www.trainingme.net

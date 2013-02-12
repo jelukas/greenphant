@@ -4,14 +4,14 @@
     <section class="view_course_head new-gradient">
         <div class="container">
             <div class="row">
-                <div class="image_view_course span4">
+                <div class="image_view_course span5">
                     {% if course.video %}
-                        <iframe id="ytplayer_learn" type="text/html" width="370" height="210" autoplay="" src="https://www.youtube.com/embed/{{ course.video }}?autoplay=1&amp;controls=0&amp;rel=0&amp;showinfo=0&amp;autohide=1" frameborder="0" allowfullscreen="">Tu navegador no soporta Iframes</iframe>
+                        <iframe id="ytplayer_learn" type="text/html" width="470" height="310" autoplay="" src="https://www.youtube.com/embed/{{ course.video }}?autoplay=1&amp;controls=0&amp;rel=0&amp;showinfo=0&amp;autohide=1" frameborder="0" allowfullscreen="">Tu navegador no soporta Iframes</iframe>
                     {% else %}
                         <img src="{{ STATIC_URL }}img/default_video_image_es.jpg" />
                     {% endif %}
                 </div>
-                <div class="course_details_view_course span8" >
+                <div class="course_details_view_course span7" >
                     <h1>{{ course.title }}</h1>
                     <h2>{{ course.short_description }}</h2>
                     <a class="buy_now btn btn-large btn-primary">Matricúlate Ahora!!<br/> Por sólo {{ course.price|floatformat:2 }} &euro;</a>

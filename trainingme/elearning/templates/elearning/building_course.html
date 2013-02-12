@@ -57,7 +57,7 @@
                 {% endfor %}
             </div>
             <div style="text-align: center;">
-                <a class="btn btn-success btn-small" href="{% url change_checking_status course.id %}">{% trans "Send to Checking" %}</a>
+                <a class="btn btn-success btn-small" href="#?" onclick="alert('{% trans 'Available Soon...' %}'); return false;">{% trans "Send to Checking" %}</a>
                 <a href="{% url add_subject course.id %}" class="btn btn-small btn-warning ">{% trans "Add Subject" %}</a>
             </div>
         </div>
