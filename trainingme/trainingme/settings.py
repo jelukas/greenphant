@@ -5,11 +5,11 @@ import os
 SITE_ROOT = os.path.dirname(os.path.realpath(__file__))
 PROJECT_ROOT = Path(__file__).ancestor(2)
 
-SITE_NAME = "beta.trainingme.net"
-SITE_URL = 'http://beta.trainingme.net'
+SITE_NAME = "trainingme.net"
+SITE_URL = 'http://trainingme.net'
 
 #Debugging
-DEBUG = True
+DEBUG = False
 TEMPLATE_DEBUG = DEBUG
 THUMBNAIL_DEBUG = False
 
@@ -237,12 +237,12 @@ ACCOUNT_ACTIVATION_DAYS=7
 """
 Email Configuration
 """
-EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
+DEFAULT_FROM_EMAIL = 'trainingme@traningme.net'
+EMAIL_BACKEND = 'django_smtp_ssl.SSLEmailBackend'
 EMAIL_HOST = 'mail.trainingme.net'
-EMAIL_PORT = 25
+EMAIL_PORT = 465
 EMAIL_HOST_USER ='trainingme@trainingme.net'
 EMAIL_HOST_PASSWORD = os.environ['EMAIL_HOST_PASSWORD']
-EMAIL_USE_TLS = False
 
 """
 Para indicar que este modelo es el modelo de
