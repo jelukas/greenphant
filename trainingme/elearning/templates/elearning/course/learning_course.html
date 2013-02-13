@@ -1,5 +1,8 @@
 {% extends 'base.html' %}
 {% load i18n %}{% load humanize %}{% load thumbnail %}
+{% block title %}
+    {% trans 'Course of ' %}{{ course.title }} #{{ course.category.name|slugify }} v @trainingmenet
+{% endblock %}
 {% block sections %}
     <section class="view_course_head new-gradient">
         <div class="container">
@@ -14,8 +17,6 @@
                 <div class="course_details_view_course span7" >
                     <h1>{{ course.title }}</h1>
                     <h2>{{ course.short_description }}</h2>
-                    <a class="buy_now btn btn-large btn-primary">Matricúlate Ahora!!<br/> Por sólo {{ course.price|floatformat:2 }} &euro;</a>
-                    <p class="social_reminder">Recuerda que se destinarán {{ course.social_amount|floatformat:2 }} &euro; <br/> a proyectos sociales de educación</p>
                 </div>
             </div>
         </div>
@@ -24,6 +25,12 @@
         <div class="container">
             <div class="row">
                 <div class="span8">
+                    <span class='st_facebook_hcount' displayText='Facebook'></span>
+                    <span class='st_twitter_hcount' displayText='Tweet'></span>
+                    <span class='st_googleplus_hcount' displayText='Google +'></span>
+                    <span class='st_linkedin_hcount' displayText='LinkedIn'></span>
+                    <span class='st_pinterest_hcount' displayText='Pinterest'></span>
+                    <span class='st_email_hcount' displayText='Email'></span>
                     <div class="description" >
                         <p>{% if course.image %}{% thumbnail course.image "238x135" as im %}<img src="{{ im.url }}" />{% endthumbnail %}{% else %}<img src="{{ STATIC_URL }}img/dafault_image_course.gif" />{% endif %}{{ course.large_description }}</p>
                     </div>
@@ -118,4 +125,7 @@
             }
         });
     </script>
+    <script type="text/javascript">var switchTo5x=true;</script>
+    <script type="text/javascript" src="http://w.sharethis.com/button/buttons.js"></script>
+    <script type="text/javascript">stLight.options({publisher: "ed0a3f0d-cd8f-457c-9d3e-a6e8f495b772", doNotHash: false, doNotCopy: false, hashAddressBar: false});</script>
 {% endblock footerscripts %}

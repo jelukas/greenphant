@@ -1065,6 +1065,7 @@ section.formContent,div.formContent{
 		padding: none;
 		margin: none;
 	}
+
 }
 
 @media (max-width: 320px) {
@@ -1205,6 +1206,7 @@ section.formContent,div.formContent{
 			}
 		}
 	}
+
 }
 
 @media (max-width: 240px) {
@@ -1657,14 +1659,21 @@ div.description-project p {
 
 footer {
   background-image: url(../img/patron-footer.png);
-  background-repeat: repeat;
+  background-repeat: repeat-x;
+  background-size: contain;
   color: #fcfcfc;
   margin-top: 1em;
   min-height: 196px;
-
-  div ul{
-    margin: 1em;
-    text-align: center;
+  text-align: center;
+  h4 {
+    text-align: right;
+    margin-top: 1em;
+    margin-right: 20%;
+  }
+  ul li {
+    text-align: right;
+    line-height: 2em;
+    margin-right: 20%;
   }
 }
 footer a,footer a:hover {
@@ -1694,7 +1703,7 @@ footer a,footer a:hover {
 
 /*
  Efecto Sombra
- */
+*/
 
 /*Teacher Profile in course view*/
 div.teacher {
@@ -1703,7 +1712,7 @@ div.teacher {
   background-color: #fcfcfc;
   position: relative;
 }
-div.teacher h4{
+div.teacher h4 {
   text-align: center;
   padding: 0 10px;
 }
@@ -1711,7 +1720,7 @@ div.teacher p,  div.teacher h5 {
   text-align: justify;
   padding: 0 10px;
 }
-.teacher:before, .teacher:after{
+.teacher:before, .teacher:after {
 /* Posiciona la sobora por detras del color de la caja*/
   z-index: -1;
   position: absolute;
@@ -1736,8 +1745,7 @@ div.teacher p,  div.teacher h5 {
   -ms-transform: rotate(-3deg);
   transform: rotate(-3deg);
 }
-.teacher:after
-{
+.teacher:after {
 /* rotacion de la sombra */
   -webkit-transform: rotate(3deg);
   -moz-transform: rotate(3deg);

@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>TrainingMe.Net - Nuevo Portal</title>
+    <title>{% block title %}{% trans 'TrainingMe.Net - New Elearning Plataform' %}{% endblock %}</title>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href='http://fonts.googleapis.com/css?family=Delius+Unicase:700' rel='stylesheet' type='text/css'>
@@ -96,15 +96,42 @@
 {% endblock sections %}
 <footer>
     {% block footer %}
-        <div class="container">
-            <ul class="inline">
-                <li><a href="/pages/terms_and_conditions/">{% trans "Terms of Use" %}</a></li>
-                <li><a href="/pages/privacy_policy/">{% trans "Privacy Policy" %}</a></li>
-                <li><a href="/pages/social-projects/">{% trans "Social Project" %}</a></li>
-                <li><a href="mailto:trainingme@trainingme.net">Feedback</a></li>
-                <li>&copy; Copyright Trainingme.Net 2013 - BETA</li>
-            </ul>
+        <div class="row-fluid">
+            <div class="span2">
+                <h4>Sobre TrainingMe.Net</h4>
+                <ul class="unstyled">
+                    <li><a href="/pages/mission/">Misión, Visión y Valores</a></li>
+                    <li><a href="/pages/team/">Equipo</a></li>
+                    <li><a href="#">Blog</a></li>
+                </ul>
+            </div>
+            <div class="span2">
+                <h4>+ Info</h4>
+                <ul class="unstyled">
+                    <li><a href="/pages/faqs/">FAQ</a></li>
+                    <li><a href="/pages/terms_and_conditions/">{% trans "Terms of Use" %}</a></a></li>
+                    <li><a href="/pages/privacy_policy/">{% trans "Privacy Policy" %}</a></a></li>
+                    <li><a href="mailto:trainingme@trainingme.net">Contacto</a></li>
+                </ul>
+            </div>
+            <div class="span2">
+                <h4>Disfruta...</h4>
+                <ul class="unstyled">
+                    <li><a href="/pages/enjoy-learning/">Aprendiendo</a></li>
+                    <li><a href="/pages/enjoy-teaching/">Enseñando</a></li>
+                    <li><a href="/pages/enjoy-helping/">Ayudando</a></li>
+                </ul>
+            </div>
+            <div class="span3  offset3">
+                <h4>Síguenos</h4>
+                <ul class="inline">
+                    <li><a href="https://twitter.com/trainingmenet" target="_blank"><img src="{{ STATIC_URL }}img/social/social-twitter.png" /></a></li>
+                    <li><a href="http://www.facebook.com/TrainingMenet" target="_blank"><img src="{{ STATIC_URL }}img/social/social-facebook.png" /></a></li>
+                    <li><a href="https://plus.google.com/106145359331233752450/" target="_blank"><img src="{{ STATIC_URL }}img/social/social-googleplus.png" /></a></li>
+                </ul>
+            </div>
         </div>
+        &copy; Copyright Trainingme.Net 2013 - BETA
     {% endblock footer %}
 </footer>
 {% block footerscripts %}
