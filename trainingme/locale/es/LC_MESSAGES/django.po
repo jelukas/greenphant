@@ -1075,7 +1075,7 @@ msgid ""
 "link to activate your account."
 msgstr ""
 "Te Hemos enviado un email. Por favor comprueba tu email y haz clic en el "
-"enlace para activar tu cuanto."
+"enlace para activar tu cuenta."
 
 #: templates/registration/registration_form.html:4
 msgid "Create a new Account"
