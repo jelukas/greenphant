@@ -25,10 +25,28 @@
   <component name="ExecutionTargetManager" SELECTED_TARGET="default_target" />
   <component name="FileEditorManager">
     <leaf>
+      <file leaf-file-name="add_lesson.html" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/elearning/templates/elearning/add_lesson.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="52" column="2" selection-start="2627" selection-end="3133" vertical-scroll-proportion="-22.458334">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="edit_lesson.html" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/elearning/templates/elearning/edit_lesson.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="64" column="14" selection-start="3199" selection-end="3199" vertical-scroll-proportion="-40.0">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
       <file leaf-file-name="styles.less" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/static/css/styles.less">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="1449" column="17" selection-start="25305" selection-end="25305" vertical-scroll-proportion="0.7151277">
+            <state line="1753" column="1" selection-start="31185" selection-end="31185" vertical-scroll-proportion="0.92814374">
               <folding />
             </state>
           </provider>
@@ -44,8 +62,6 @@
   <component name="IdeDocumentHistory">
     <option name="changedFiles">
       <list>
-        <option value="$PROJECT_DIR$/elearning/templates/elearning/home.html" />
-        <option value="$PROJECT_DIR$/templates/pages/ensenando.html" />
         <option value="$PROJECT_DIR$/templates/pages/aprendiendo.html" />
         <option value="$PROJECT_DIR$/templates/pages/ayudando.html" />
         <option value="$PROJECT_DIR$/elearning/templates/elearning/building_course.html" />
@@ -59,6 +75,8 @@
         <option value="$PROJECT_DIR$/trainingme/settings.py" />
         <option value="$PROJECT_DIR$/help.txt" />
         <option value="$PROJECT_DIR$/locale/es/LC_MESSAGES/django.po" />
+        <option value="$PROJECT_DIR$/elearning/templates/elearning/add_lesson.html" />
+        <option value="$PROJECT_DIR$/elearning/templates/elearning/edit_lesson.html" />
         <option value="$PROJECT_DIR$/static/css/styles.less" />
       </list>
     </option>
@@ -142,6 +160,42 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="css" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="trainingme" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="trainingme" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="elearning" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="trainingme" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="trainingme" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="elearning" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="templates" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="elearning" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -344,7 +398,7 @@
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.15434083" sideWeight="0.66210043" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
-      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.33789954" sideWeight="0.5" order="9" side_tool="true" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33789954" sideWeight="0.5" order="9" side_tool="true" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
@@ -411,16 +465,6 @@
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/elearning/templates/elearning/course/learning_course.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="8" column="90" selection-start="402" selection-end="402" vertical-scroll-proportion="0.14796548" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/templates/registration/activation_email_subject.txt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" />
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/templates/registration/activation_email.txt">
       <provider selected="true" editor-type-id="text-editor">
         <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" />
@@ -438,22 +482,30 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/elearning/templates/elearning/new_course.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="106" column="4" selection-start="5837" selection-end="6320" vertical-scroll-proportion="0.6410579" />
+        <state line="106" column="4" selection-start="5837" selection-end="6320" vertical-scroll-proportion="0.6410579">
+          <folding />
+        </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/elearning/templates/elearning/edit_course.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="58" column="176" selection-start="3333" selection-end="3333" vertical-scroll-proportion="0.5631068" />
+        <state line="58" column="176" selection-start="3333" selection-end="3333" vertical-scroll-proportion="0.5631068">
+          <folding />
+        </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/templates/base.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="68" column="62" selection-start="3865" selection-end="3888" vertical-scroll-proportion="0.3725728" />
+        <state line="68" column="62" selection-start="3865" selection-end="3888" vertical-scroll-proportion="0.3725728">
+          <folding />
+        </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/templates/registration/login.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="34" column="150" selection-start="1517" selection-end="1550" vertical-scroll-proportion="0.61893207" />
+        <state line="34" column="150" selection-start="1517" selection-end="1550" vertical-scroll-proportion="0.61893207">
+          <folding />
+        </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/elearning/fixtures/initial_data.json">
@@ -463,7 +515,9 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/elearning/templates/elearning/course/view_course.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="107" column="27" selection-start="7297" selection-end="7297" vertical-scroll-proportion="0.7965475" />
+        <state line="107" column="27" selection-start="7297" selection-end="7297" vertical-scroll-proportion="0.7965475">
+          <folding />
+        </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/help.txt">
@@ -496,9 +550,23 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/elearning/templates/elearning/add_lesson.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="52" column="2" selection-start="2627" selection-end="3133" vertical-scroll-proportion="-22.458334">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/elearning/templates/elearning/edit_lesson.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="64" column="14" selection-start="3199" selection-end="3199" vertical-scroll-proportion="-40.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/static/css/styles.less">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="1449" column="17" selection-start="25305" selection-end="25305" vertical-scroll-proportion="0.7151277">
+        <state line="1753" column="1" selection-start="31185" selection-end="31185" vertical-scroll-proportion="0.92814374">
           <folding />
         </state>
       </provider>

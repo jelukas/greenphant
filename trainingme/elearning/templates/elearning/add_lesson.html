@@ -49,4 +49,18 @@
     <section class="centeredbutton">
         <a class="btn btn-large" href="{% url building_course subject.course_id %}">{% trans "Back to Course" %}</a>
     </section>
+
+    <!-- Modal -->
+    <div id="loading-modal" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+        <h2>{% trans 'Uploading Files...' %}</h2>
+        <img src="{{ STATIC_URL }}img/loading.gif" />
+    </div>
+{% endblock %}
+{% block footerscripts %}
+    <script type="text/javascript">
+        $('#lesson_course_form').submit(function() {
+            $('#loading-modal').modal('toogle')
+            return true;
+        });
+    </script>
 {% endblock %}
