@@ -56,11 +56,3 @@
         <img src="{{ STATIC_URL }}img/loading.gif" />
     </div>
 {% endblock %}
-{% block footerscripts %}
-    <script type="text/javascript">
-        $('#lesson_course_form').submit(function() {
-            $('#loading-modal').modal('toogle')
-            return true;
-        });
-    </script>
-{% endblock %}

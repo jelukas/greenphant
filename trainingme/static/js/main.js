@@ -26,5 +26,9 @@ function document_ready(){
     $('body').on('hidden', '.modal', function () {
         $(this).removeData('modal');
     });
-}
 
+    $('#lesson_course_form').submit(function(){
+        $('#loading-modal').modal('toggle');
+        return true;
+    });
+}
