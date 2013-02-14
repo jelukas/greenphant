@@ -1,4 +1,43 @@
 {% extends "base.html" %}
 {% block sections  %}
-    Comming Soon
+    <section id="team" class="container">
+        <div class="row-fluid">
+            <div class="span4 team-person">
+                <img class="team-image img-polaroid" src="{{ STATIC_URL }}img/team/manuelagudo.jpg" />
+                <div class="team-head-person">
+                    <h4>Manuel Agudo Blanquer</h4>
+                    <h5>Presidente Fundación Guadalux</h5>
+                </div>
+                <div class="clearfix"></div>
+                <ul class="inline team-social">
+                    <li><img src="{{ STATIC_URL }}img/24px/twitter-2.png"></li>
+                    <li><a href="http://es.linkedin.com/in/manuelagudo/" target="_blank"><img src="{{ STATIC_URL }}img/24px/linkedin.png"></a></li>
+                    <li><img src="{{ STATIC_URL }}img/24px/facebook.png"></li>
+                </ul>
+            </div>
+            <div class="span4 team-person">
+                <img class="team-image img-polaroid" src="{{ STATIC_URL }}img/team/ignaciofernandez.jpg" />
+                <div class="team-head-person">
+                    <h4>Ignacio Fernandez</h4>
+                    <h5>Administración y Finanzas</h5>
+                </div>
+                <div class="clearfix"></div>
+                <ul class="inline team-social">
+                    <li><a href="http://es.linkedin.com/pub/ignacio-fernández-villaplana-guil/40/879/55b/" target="_blank"><img src="{{ STATIC_URL }}img/24px/linkedin.png"></a></li>
+                </ul>
+            </div>
+            <div class="span4 team-person">
+                <img class="team-image img-polaroid" src="{{ STATIC_URL }}img/team/jesuslucas.jpg" />
+                <div class="team-head-person">
+                    <h4>Jesús Lucas Flores</h4>
+                    <h5>Desarrollador de TrainingMe.net</h5>
+                </div>
+                <div class="clearfix"></div>
+                <ul class="inline team-social">
+                    <li><a href="http://www.twitter.com/jelukas89" target="_blank"><img src="{{ STATIC_URL }}img/24px/twitter-2.png"></a></li>
+                    <li><a href="es.linkedin.com/pub/jesus-lucas-flores/22/35b/baa/" target="_blank"><img src="{{ STATIC_URL }}img/24px/linkedin.png"></a></li>
+                </ul>
+            </div>
+        </div>
+    </section>
 {% endblock sections %}
