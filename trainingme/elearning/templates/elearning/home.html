@@ -25,7 +25,7 @@
             <div class="row-fluid searchBar">
                 <div class="span12 center">
                     <!-- linea divisora -->
-                    <h3><a href="#enrroll-beta" role="button" data-toggle="modal">Estamos en fase BETA sólo para profesores. ¡Regístrate y crea tus cursos!</a></h3>
+                    <h3><a href="#enrroll-beta" role="button" data-toggle="modal">{% trans 'We are in beta only for teachers.Sign Up Now and create your courses!' %}</a></h3>
                     <hr/>
                     <form class="form-search" method="post" action="">{% csrf_token %}
                         <div class="input-append">
@@ -53,7 +53,7 @@
                             </div>
                             <div class="boxDescription">
                                 <p>
-                                    {{ course.short_description|truncatewords:14 }}
+                                    {{ course.short_description|truncatewords:13 }}
                                 </p>
                             </div>
                             <div class="boxInfoFooter">

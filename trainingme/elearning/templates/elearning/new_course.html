@@ -15,7 +15,7 @@
                         {% for error in course_form.title.errors %}
                             <span class="text-error">{{ error }}</span>
                         {% endfor %}
-                        {{ course_form.title|add_class:"fixedtype" }}
+                        {{ course_form.title|add_class:"fixedtype"|attr:"placeholder:Crea un título atractivo y descriptivo" }}
                         <span class="help-inline">{% trans "80 characters Maximum" %}</span>
                     </div>
                 </div>
@@ -35,7 +35,7 @@
                         {% for error in course_form.short_description.errors %}
                             <span class="text-error">{{ error }}</span>
                         {% endfor %}
-                        {{ course_form.short_description|add_class:"fixedtype" }}
+                        {{ course_form.short_description|add_class:"fixedtype"|attr:"placeholder:Describe en pocas palabras que se conseguirá con este curso" }}
                         <span class="help-inline">{% trans "160 characters Maximum" %}</span>
                     </div>
                 </div>
@@ -46,7 +46,7 @@
                             <span class="text-error">{{ error }}</span>
                         {% endfor %}
                         {{ course_form.image|add_class:"fixedtype" }}
-                        <span class="help-inline">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+                        <span class="help-inline">{% trans 'Upload a representative image with dimensions of 278 x 135 pixels.' %}</span>
                     </div>
                 </div>
                 <div class="control-group">
@@ -55,8 +55,8 @@
                         {% for error in course_form.video.errors %}
                             <span class="text-error">{{ error }}</span>
                         {% endfor %}
-                        {{ course_form.video|add_class:"fixedtype" }}
-                        <span class="help-inline">{% trans 'Youtube Promo Video ID' %} <a href="#youtube-help" data-toggle="modal"><i class="icon-question-sign"></i></a></span>
+                        {{ course_form.video|add_class:"fixedtype"|attr:"placeholder:ID de tu vídeo promocional en Youtube" }}
+                        <a href="#youtube-help" data-toggle="modal"><span class="help-inline">{% trans 'Youtube Promo Video ID' %}<i class="icon-question-sign"></i></a></span>
                     </div>
                 </div>
                 <div class="control-group">
@@ -85,7 +85,7 @@
                         {% for error in course_form.large_description.errors %}
                             <span class="text-error">{{ error }}</span>
                         {% endfor %}
-                        {{ course_form.large_description|add_class:"fixedtype" }}
+                        {{ course_form.large_description|add_class:"fixedtype"|attr:"placeholder:Explica que se consigue con este curso, debe ser un texto comercial que atraiga al alumno y despierte su interés" }}
                         <span class="help-inline">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
                     </div>
                 </div>

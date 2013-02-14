@@ -52,7 +52,6 @@
                                 </li>
                             </ul>
                             <ul class="nav pull-right">
-{#                                <li class="welcomeMenuItem">{% trans "Welcome" %}</li>#}
                                 <li class="dropdown">
                                     <a href="#" class="dropdown-toggle" data-toggle="dropdown"> {{ user.username }} <b class="caret"></b></a>
                                     <ul class="dropdown-menu">
@@ -98,37 +97,35 @@
     {% block footer %}
         <div class="row-fluid">
             <div class="span2">
-                <h4>Sobre TrainingMe.Net</h4>
+                <h4>{% trans 'About TrainingMe.Net' %}</h4>
                 <ul class="unstyled">
-                    <li><a href="/pages/mission/">Misión, Visión y Valores</a></li>
-                    <li><a href="/pages/team/">Equipo</a></li>
-                    <li><a href="#">Blog</a></li>
+                    <li><a href="/pages/mission/">{%  trans 'Mission, Vision and Values' %}</a></li>
+                    <li><a href="/pages/team/">{% trans 'Team' %}</a></li>
+                    <li><a href="#">{% trans 'Blog' %}</a></li>
                 </ul>
             </div>
             <div class="span2">
                 <h4>+ Info</h4>
                 <ul class="unstyled">
-                    <li><a href="/pages/faqs/">FAQ</a></li>
-                    <li><a href="/pages/terms_and_conditions/">{% trans "Terms of Use" %}</a></a></li>
-                    <li><a href="/pages/privacy_policy/">{% trans "Privacy Policy" %}</a></a></li>
-                    <li><a href="mailto:trainingme@trainingme.net">Contacto</a></li>
+                    <li><a href="/pages/faqs/">{%  trans 'FAQ' %}</a></li>
+                    <li><a href="/pages/terms_and_conditions/">{% trans "Terms of Use" %}</a></li>
+                    <li><a href="/pages/privacy_policy/">{% trans "Privacy Policy" %}</a></li>
+                    <li><a href="mailto:trainingme@trainingme.net">{% trans 'Contact' %}</a></li>
                 </ul>
             </div>
             <div class="span2">
-                <h4>Disfruta...</h4>
+                <h4>{% trans 'Enjoy'  %}...</h4>
                 <ul class="unstyled">
-                    <li><a href="/pages/enjoy-learning/">Aprendiendo</a></li>
-                    <li><a href="/pages/enjoy-teaching/">Enseñando</a></li>
-                    <li><a href="/pages/enjoy-helping/">Ayudando</a></li>
+                    <li><a href="/pages/enjoy-learning/">{% trans 'Learning' %}</a></li>
+                    <li><a href="/pages/enjoy-teaching/">{% trans 'Teaching' %}</a></li>
+                    <li><a href="/pages/enjoy-helping/">{% trans 'Helping' %}</a></li>
                 </ul>
             </div>
             <div class="span3  offset3">
-                <h4>Síguenos</h4>
-                <ul class="inline">
-                    <li><a href="https://twitter.com/trainingmenet" target="_blank"><img src="{{ STATIC_URL }}img/social/social-twitter.png" /></a></li>
-                    <li><a href="http://www.facebook.com/TrainingMenet" target="_blank"><img src="{{ STATIC_URL }}img/social/social-facebook.png" /></a></li>
-                    <li><a href="https://plus.google.com/106145359331233752450/" target="_blank"><img src="{{ STATIC_URL }}img/social/social-googleplus.png" /></a></li>
-                </ul>
+                <h4>{% trans 'Follow us'  %}</h4>
+                <a href="https://twitter.com/trainingmenet" target="_blank"><img src="{{ STATIC_URL }}img/social/social-twitter.png" /></a>
+                <a href="http://www.facebook.com/TrainingMenet" target="_blank"><img src="{{ STATIC_URL }}img/social/social-facebook.png" /></a>
+                <a href="https://plus.google.com/106145359331233752450/" target="_blank"><img src="{{ STATIC_URL }}img/social/social-googleplus.png" /></a>
             </div>
         </div>
         &copy; Copyright Trainingme.Net 2013 - BETA

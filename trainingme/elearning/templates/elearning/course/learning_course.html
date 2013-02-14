@@ -11,7 +11,7 @@
                     {% if course.video %}
                         <iframe id="ytplayer_learn" type="text/html" width="470" height="310" autoplay="" src="https://www.youtube.com/embed/{{ course.video }}?autoplay=1&amp;controls=0&amp;rel=0&amp;showinfo=0&amp;autohide=1" frameborder="0" allowfullscreen="">Tu navegador no soporta Iframes</iframe>
                     {% else %}
-                        <img src="{{ STATIC_URL }}img/default_video_image_es.jpg" />
+                        <img src="{{ STATIC_URL }}img/{% trans 'default_video_image_en.jpg' %}" />
                     {% endif %}
                 </div>
                 <div class="course_details_view_course span7" >

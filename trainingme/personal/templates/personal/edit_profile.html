@@ -9,138 +9,144 @@
     <section class="formContent">
         <div class="container">
             <form class="form-horizontal fixedContent" method='post' action='' id="edit_profile_form" enctype="multipart/form-data">{% csrf_token %}
-                {% if not user.email %}
-                <div class="control-group">
-                    <label class="control-label">{% trans "You need to Especify your Email Address" %}</label>
-                    <div class="controls">
-                        {% for error in user_form.email.errors %}
-                            <span class="text-error">{{ error }}</span>
-                        {% endfor %}
-                        {{ user_form.email|add_class:"fixedtype" }}
-                        <span class="help-inline">&nbsp;</span>
+                <fieldset>
+                    <legend>{% trans 'Public Information' %}</legend>
+                    {% if not user.email %}
+                    <div class="control-group">
+                        <label class="control-label">{% trans "You need to Especify your Email Address" %}</label>
+                        <div class="controls">
+                            {% for error in user_form.email.errors %}
+                                <span class="text-error">{{ error }}</span>
+                            {% endfor %}
+                            {{ user_form.email|add_class:"fixedtype"}}
+                            <span class="help-inline">&nbsp;</span>
+                        </div>
                     </div>
-                </div>
-                {% endif %}
-                <div class="control-group">
-                    <label class="control-label">{% trans "Presentation" %}</label>
-                    <div class="controls">
-                        {% for error in profile_form.description.errors %}
-                            <span class="text-error">{{ error }}</span>
-                        {% endfor %}
-                        {{ profile_form.description|add_class:"fixedtype" }}
-                        <span class="help-inline">&nbsp;</span>
+                    {% endif %}
+                    <div class="control-group">
+                        <label class="control-label">{% trans "Presentation" %}</label>
+                        <div class="controls">
+                            {% for error in profile_form.description.errors %}
+                                <span class="text-error">{{ error }}</span>
+                            {% endfor %}
+                            {{ profile_form.description|add_class:"fixedtype"|attr:"placeholder:Háblanos sobre tí" }}
+                            <span class="help-inline">&nbsp;</span>
+                        </div>
                     </div>
-                </div>
-                <div class="control-group">
-                    <label class="control-label">{% trans "Subtitle" %}</label>
-                    <div class="controls">
-                        {% for error in profile_form.subtitle.errors %}
-                            <span class="text-error">{{ error }}</span>
-                        {% endfor %}
-                        {{ profile_form.subtitle|add_class:"fixedtype" }}
-                        <span class="help-inline">Max 100 characters</span>
+                    <div class="control-group">
+                        <label class="control-label">{% trans "Subtitle" %}</label>
+                        <div class="controls">
+                            {% for error in profile_form.subtitle.errors %}
+                                <span class="text-error">{{ error }}</span>
+                            {% endfor %}
+                            {{ profile_form.subtitle|add_class:"fixedtype"|attr:"placeholder:Ejemplo: Profesor Universitario, Diseñador Gráfico y Emprendedor,..." }}
+                            <span class="help-inline">Max 100 characters</span>
+                        </div>
                     </div>
-                </div>
-                <div class="control-group">
-                    <label class="control-label">{% trans "Profile Image" %}</label>
-                    <div class="controls">
-                        {% for error in profile_form.image.errors %}
-                            <span class="text-error">{{ error }}</span>
-                        {% endfor %}
-                        {{ profile_form.image|add_class:"fixedtype" }}
-                        <span class="help-inline">&nbsp;</span>
+                    <div class="control-group">
+                        <label class="control-label">{% trans "Profile Image" %}</label>
+                        <div class="controls">
+                            {% for error in profile_form.image.errors %}
+                                <span class="text-error">{{ error }}</span>
+                            {% endfor %}
+                            {{ profile_form.image|add_class:"fixedtype" }}
+                            <span class="help-inline">&nbsp;</span>
+                        </div>
                     </div>
-                </div>
-                <div class="control-group">
-                    <label class="control-label">{% trans "Country" %}</label>
-                    <div class="controls">
-                        {% for error in profile_form.country.errors %}
-                            <span class="text-error">{{ error }}</span>
-                        {% endfor %}
-                        {{ profile_form.country|add_class:"fixedtype" }}
-                        <span class="help-inline">&nbsp;</span>
+                    <div class="control-group">
+                        <label class="control-label">{% trans "Personal Website" %}</label>
+                        <div class="controls">
+                            {% for error in profile_form.website.errors %}
+                                <span class="text-error">{{ error }}</span>
+                            {% endfor %}
+                            {{ profile_form.website|add_class:"fixedtype" }}
+                            <span class="help-inline">&nbsp;</span>
+                        </div>
                     </div>
-                </div>
-                <div class="control-group">
-                    <label class="control-label">{% trans "State" %}</label>
-                    <div class="controls">
-                        {% for error in profile_form.state.errors %}
-                            <span class="text-error">{{ error }}</span>
-                        {% endfor %}
-                        {{ profile_form.state|add_class:"fixedtype" }}
-                        <span class="help-inline">&nbsp;</span>
+                    <div class="control-group">
+                        <label class="control-label">{% trans "Twitter User" %}</label>
+                        <div class="controls">
+                            {% for error in profile_form.twitter_user.errors %}
+                                <span class="text-error">{{ error }}</span>
+                            {% endfor %}
+                            {{ profile_form.twitter_user|add_class:"fixedtype" }}
+                            <span class="help-inline">{% trans 'Without @' %}</span>
+                        </div>
                     </div>
-                </div>
-                <div class="control-group">
-                    <label class="control-label">{% trans "Address" %}</label>
-                    <div class="controls">
-                        {% for error in profile_form.address.errors %}
-                            <span class="text-error">{{ error }}</span>
-                        {% endfor %}
-                        {{ profile_form.address|add_class:"fixedtype" }}
-                        <span class="help-inline">&nbsp;</span>
+                    <div class="control-group">
+                        <label class="control-label">{% trans "Facebook Url" %}</label>
+                        <div class="controls">
+                            {% for error in profile_form.facebook_url.errors %}
+                                <span class="text-error">{{ error }}</span>
+                            {% endfor %}
+                            {{ profile_form.facebook_url|add_class:"fixedtype" }}
+                            <span class="help-inline">&nbsp;</span>
+                        </div>
                     </div>
-                </div>
-                <div class="control-group">
-                    <label class="control-label">{% trans "Phone Number" %}</label>
-                    <div class="controls">
-                        {% for error in profile_form.phone_number.errors %}
-                            <span class="text-error">{{ error }}</span>
-                        {% endfor %}
-                        {{ profile_form.phone_number|add_class:"fixedtype" }}
-                        <span class="help-inline">&nbsp;</span>
+                    <div class="control-group">
+                        <label class="control-label">{% trans "Google Plus Url" %}</label>
+                        <div class="controls">
+                            {% for error in profile_form.googleplus_url.errors %}
+                                <span class="text-error">{{ error }}</span>
+                            {% endfor %}
+                            {{ profile_form.googleplus_url|add_class:"fixedtype" }}
+                            <span class="help-inline">&nbsp;</span>
+                        </div>
                     </div>
-                </div>
-                <div class="control-group">
-                    <label class="control-label">{% trans "Personal Website" %}</label>
-                    <div class="controls">
-                        {% for error in profile_form.website.errors %}
-                            <span class="text-error">{{ error }}</span>
-                        {% endfor %}
-                        {{ profile_form.website|add_class:"fixedtype" }}
-                        <span class="help-inline">&nbsp;</span>
+                    <div class="control-group">
+                        <label class="control-label">{% trans "Linkedin Public Url" %}</label>
+                        <div class="controls">
+                            {% for error in profile_form.linkedin_url.errors %}
+                                <span class="text-error">{{ error }}</span>
+                            {% endfor %}
+                            {{ profile_form.linkedin_url|add_class:"fixedtype" }}
+                            <span class="help-inline">&nbsp;</span>
+                        </div>
                     </div>
-                </div>
-                <div class="control-group">
-                    <label class="control-label">{% trans "Twitter User" %}</label>
-                    <div class="controls">
-                        {% for error in profile_form.twitter_user.errors %}
-                            <span class="text-error">{{ error }}</span>
-                        {% endfor %}
-                        {{ profile_form.twitter_user|add_class:"fixedtype" }}
-                        <span class="help-inline">{% trans 'Without @' %}</span>
+                </fieldset>
+                <fieldset>
+                    <legend>{% trans 'Private Information' %}</legend>
+                    <div class="control-group">
+                        <label class="control-label">{% trans "Country" %}</label>
+                        <div class="controls">
+                            {% for error in profile_form.country.errors %}
+                                <span class="text-error">{{ error }}</span>
+                            {% endfor %}
+                            {{ profile_form.country|add_class:"fixedtype" }}
+                            <span class="help-inline">&nbsp;</span>
+                        </div>
                     </div>
-                </div>
-                <div class="control-group">
-                    <label class="control-label">{% trans "Facebook Url" %}</label>
-                    <div class="controls">
-                        {% for error in profile_form.facebook_url.errors %}
-                            <span class="text-error">{{ error }}</span>
-                        {% endfor %}
-                        {{ profile_form.facebook_url|add_class:"fixedtype" }}
-                        <span class="help-inline">&nbsp;</span>
+                    <div class="control-group">
+                        <label class="control-label">{% trans "State" %}</label>
+                        <div class="controls">
+                            {% for error in profile_form.state.errors %}
+                                <span class="text-error">{{ error }}</span>
+                            {% endfor %}
+                            {{ profile_form.state|add_class:"fixedtype" }}
+                            <span class="help-inline">&nbsp;</span>
+                        </div>
                     </div>
-                </div>
-                <div class="control-group">
-                    <label class="control-label">{% trans "Google Plus Url" %}</label>
-                    <div class="controls">
-                        {% for error in profile_form.googleplus_url.errors %}
-                            <span class="text-error">{{ error }}</span>
-                        {% endfor %}
-                        {{ profile_form.googleplus_url|add_class:"fixedtype" }}
-                        <span class="help-inline">&nbsp;</span>
+                    <div class="control-group">
+                        <label class="control-label">{% trans "Address" %}</label>
+                        <div class="controls">
+                            {% for error in profile_form.address.errors %}
+                                <span class="text-error">{{ error }}</span>
+                            {% endfor %}
+                            {{ profile_form.address|add_class:"fixedtype" }}
+                            <span class="help-inline">&nbsp;</span>
+                        </div>
                     </div>
-                </div>
-                <div class="control-group">
-                    <label class="control-label">{% trans "Linkedin Public Url" %}</label>
-                    <div class="controls">
-                        {% for error in profile_form.linkedin_url.errors %}
-                            <span class="text-error">{{ error }}</span>
-                        {% endfor %}
-                        {{ profile_form.linkedin_url|add_class:"fixedtype" }}
-                        <span class="help-inline">&nbsp;</span>
+                    <div class="control-group">
+                        <label class="control-label">{% trans "Phone Number" %}</label>
+                        <div class="controls">
+                            {% for error in profile_form.phone_number.errors %}
+                                <span class="text-error">{{ error }}</span>
+                            {% endfor %}
+                            {{ profile_form.phone_number|add_class:"fixedtype" }}
+                            <span class="help-inline">&nbsp;</span>
+                        </div>
                     </div>
-                </div>
+                </fieldset>
                 <p class="center"><button type="submit" form="edit_profile_form" class="btn btn-primary">{% trans "Update Profile" %}</button></p>
             </form>
         </div>
