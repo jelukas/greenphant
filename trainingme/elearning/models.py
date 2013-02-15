@@ -62,6 +62,9 @@ class Course(models.Model):
     status = models.ForeignKey(Status,related_name='courses')
     category = models.ForeignKey(Category,related_name='courses',verbose_name=_('Category'))
 
+    class Meta:
+        ordering = ['-created_at',]
+
     def __unicode__(self):
         return self.title
 
