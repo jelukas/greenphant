@@ -54,7 +54,7 @@
                                                 {% if lesson.attach.url %}
                                                     <div class="btnDownload"></div>
                                                 {% endif %}
-                                                {% if lesson.video.original_video_file.url %}
+                                                {% if lesson.video.converted_video_file_mp4.url %}
                                                     <div class="btnVideo"></div>
                                                     {% if lesson.is_preview %}<span class="pull-right"><a data-toggle="modal" href="{% url free_video lesson.video.id %}" data-target="#freeVideo" >{% trans 'View FREE Now' %}</a>
                                                         </span>{% endif %}
