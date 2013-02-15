@@ -2,6 +2,7 @@ from django.http import HttpResponseRedirect
 from django.shortcuts import render_to_response, get_object_or_404
 from django.template.context import  RequestContext
 from django.contrib.auth.decorators import login_required
+from django.contrib.auth.models import User
 from django.core.urlresolvers import reverse
 from elearning.models import Status, Course, Subject, Lesson, Video, Attach, Enrollment, Comment
 from elearning.forms import CourseForm, SubjectForm, LessonForm, VideoForm, AttachForm, CommentForm
@@ -508,11 +509,12 @@ HOME PAGE
 """
 
 def home(request):
+    users_count = User.objects.count()
     if request.POST:
         courses = Course.objects.filter(Q(short_description__icontains=request.POST['query']) | Q(title__icontains=request.POST['query']),Q(status__name="published") | Q(status__name="evaluation period") | Q(status__name="building"))
     else:
         courses = Course.objects.filter(Q(status__name="published") | Q(status__name="evaluation period") | Q(status__name="building"))
-    context = {'courses' : courses}
+    context = {'courses' : courses, 'users_count' : users_count}
     return render_to_response('elearning/home.html',context,context_instance = RequestContext(request))
 
 
