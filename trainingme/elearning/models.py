@@ -77,17 +77,6 @@ class Course(models.Model):
         return "/elearning/course/%s/" % self.slug
 
 
-    def user_had_vote_course(self,user_id):
-        if self.id:
-            try:
-                vote = self.votes.get(user_id=user_id)
-            except Course_Vote.DoesNotExist:
-                return False
-            else:
-                return True
-        else:
-            return False
-
     @property
     def get_scoring(self):
         score = self.votes.all().aggregate(Avg('rating'))
@@ -98,6 +87,13 @@ class Course(models.Model):
         amount = (self.price*10)/100
         return  amount
 
+    def enrroll_user(self,user_id):
+        try:
+            enrroll = Enrollment.objects.get(course_id = self.id,user_id = user_id)
+        except ObjectDoesNotExist:
+            enrroll = Enrollment.objects.create(user_id=user_id, course_id=self.id, start_date = datetime.now())
+            enrroll.save()
+
     def rate(self,user_id,points):
         if self.id:
             from datetime import datetime
@@ -107,6 +103,17 @@ class Course(models.Model):
                 return True
             else:
                 return False
+
+    def user_had_vote_course(self,user_id):
+        if self.id:
+            try:
+                vote = self.votes.get(user_id=user_id)
+            except Course_Vote.DoesNotExist:
+                return False
+            else:
+                return True
+        else:
+            return False
 
         """
     def save(self):
