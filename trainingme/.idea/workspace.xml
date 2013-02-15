@@ -28,25 +28,16 @@
       <file leaf-file-name="home.html" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/elearning/templates/elearning/home.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="28" column="42" selection-start="1724" selection-end="1724" vertical-scroll-proportion="-11.875">
+            <state line="28" column="119" selection-start="1801" selection-end="1801" vertical-scroll-proportion="-11.875">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="styles.less" pinned="false" current="false" current-in-tab="false">
+      <file leaf-file-name="styles.less" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/static/css/styles.less">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="1388" column="24" selection-start="23951" selection-end="23951" vertical-scroll-proportion="-10.933333">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="django.po" pinned="false" current="true" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/locale/es/LC_MESSAGES/django.po">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="510" column="10" selection-start="14864" selection-end="14864" vertical-scroll-proportion="0.35085574">
+            <state line="1408" column="4" selection-start="24298" selection-end="24299" vertical-scroll-proportion="0.78012425">
               <folding />
             </state>
           </provider>
@@ -86,9 +77,9 @@
         <option value="$PROJECT_DIR$/elearning/management/commands/prueba.py" />
         <option value="$PROJECT_DIR$/elearning/management/commands/autoenrrollall.py" />
         <option value="$PROJECT_DIR$/elearning/views.py" />
+        <option value="$PROJECT_DIR$/locale/es/LC_MESSAGES/django.po" />
         <option value="$PROJECT_DIR$/elearning/templates/elearning/home.html" />
         <option value="$PROJECT_DIR$/static/css/styles.less" />
-        <option value="$PROJECT_DIR$/locale/es/LC_MESSAGES/django.po" />
       </list>
     </option>
   </component>
@@ -568,23 +559,23 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/locale/es/LC_MESSAGES/django.po">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="510" column="10" selection-start="14864" selection-end="14864" vertical-scroll-proportion="0.35085574">
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/elearning/templates/elearning/home.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="28" column="42" selection-start="1724" selection-end="1724" vertical-scroll-proportion="-11.875">
+        <state line="28" column="119" selection-start="1801" selection-end="1801" vertical-scroll-proportion="-11.875">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/static/css/styles.less">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="1388" column="24" selection-start="23951" selection-end="23951" vertical-scroll-proportion="-10.933333">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/locale/es/LC_MESSAGES/django.po">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="510" column="10" selection-start="14864" selection-end="14864" vertical-scroll-proportion="0.35085574">
+        <state line="1408" column="4" selection-start="24298" selection-end="24299" vertical-scroll-proportion="0.78012425">
           <folding />
         </state>
       </provider>
