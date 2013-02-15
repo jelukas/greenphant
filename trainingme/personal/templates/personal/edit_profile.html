@@ -11,7 +11,6 @@
             <form class="form-horizontal fixedContent" method='post' action='' id="edit_profile_form" enctype="multipart/form-data">{% csrf_token %}
                 <fieldset>
                     <legend>{% trans 'Public Information' %}</legend>
-                    {% if not user.email %}
                     <div class="control-group">
                         <label class="control-label">{% trans "You need to Especify your Email Address" %}</label>
                         <div class="controls">
@@ -22,14 +21,23 @@
                             <span class="help-inline">&nbsp;</span>
                         </div>
                     </div>
-                    {% endif %}
                     <div class="control-group">
-                        <label class="control-label">{% trans "Presentation" %}</label>
+                        <label class="control-label">{% trans "First name" %}</label>
                         <div class="controls">
-                            {% for error in profile_form.description.errors %}
+                            {% for error in user_form.first_name.errors %}
                                 <span class="text-error">{{ error }}</span>
                             {% endfor %}
-                            {{ profile_form.description|add_class:"fixedtype"|attr:"placeholder:Háblanos sobre tí" }}
+                            {{ user_form.first_name|add_class:"fixedtype"}}
+                            <span class="help-inline">&nbsp;</span>
+                        </div>
+                    </div>
+                    <div class="control-group">
+                        <label class="control-label">{% trans "Last name" %}</label>
+                        <div class="controls">
+                            {% for error in user_form.last_name.errors %}
+                                <span class="text-error">{{ error }}</span>
+                            {% endfor %}
+                            {{ user_form.last_name|add_class:"fixedtype"}}
                             <span class="help-inline">&nbsp;</span>
                         </div>
                     </div>
@@ -41,6 +49,16 @@
                             {% endfor %}
                             {{ profile_form.subtitle|add_class:"fixedtype"|attr:"placeholder:Ejemplo: Profesor Universitario, Diseñador Gráfico y Emprendedor,..." }}
                             <span class="help-inline">Max 100 characters</span>
+                        </div>
+                    </div>
+                    <div class="control-group">
+                        <label class="control-label">{% trans "Presentation" %}</label>
+                        <div class="controls">
+                            {% for error in profile_form.description.errors %}
+                                <span class="text-error">{{ error }}</span>
+                            {% endfor %}
+                            {{ profile_form.description|add_class:"fixedtype"|attr:"placeholder:Háblanos sobre tí" }}
+                            <span class="help-inline">&nbsp;</span>
                         </div>
                     </div>
                     <div class="control-group">

@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2013-02-14 10:47+0100\n"
+"POT-Creation-Date: 2013-02-15 09:40+0100\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -52,7 +52,7 @@ msgstr "Descripción Corta"
 
 #: elearning/models.py:58 elearning/templates/elearning/edit_course.html:83
 #: elearning/templates/elearning/new_course.html:83
-#: personal/templates/personal/edit_profile.html:27
+#: personal/templates/personal/edit_profile.html:55
 #: personal/templates/personal/view_profile.html:54
 msgid "Presentation"
 msgstr "Presentación"
@@ -522,7 +522,8 @@ msgstr "Estás creando un Nuevo Curso"
 
 #: elearning/templates/elearning/new_course.html:49
 msgid "Upload a representative image with dimensions of 278 x 135 pixels."
-msgstr "Sube una imagen representativa con unas dimensiones de 278 x 135 pixeles."
+msgstr ""
+"Sube una imagen representativa con unas dimensiones de 278 x 135 pixeles."
 
 #: elearning/templates/elearning/new_course.html:99
 msgid "Create Course Yeah!"
@@ -740,19 +741,15 @@ msgstr "España"
 msgid "Change your description"
 msgstr "Cambiar tu descripción"
 
-#: personal/views.py:21
-msgid "Email Address updated sucessfully"
-msgstr "Curso actualizado correctamente"
-
-#: personal/views.py:23
+#: personal/views.py:22
 msgid "Error updating Email Address"
 msgstr "tu dirección de email"
 
-#: personal/views.py:29
+#: personal/views.py:28
 msgid "Profile updated sucessfully"
 msgstr "Perfil actualizado correctamente"
 
-#: personal/views.py:33
+#: personal/views.py:32
 msgid "Profile failed to update"
 msgstr "Error al actualizar el Perfil"
 
@@ -764,70 +761,79 @@ msgstr "Estás editando tu Perfil"
 msgid "Public Information"
 msgstr "Información Pública"
 
-#: personal/templates/personal/edit_profile.html:16
+#: personal/templates/personal/edit_profile.html:15
 msgid "You need to Especify your Email Address"
 msgstr "Necesitas especificar tu dirección de email"
 
-#: personal/templates/personal/edit_profile.html:37
+#: personal/templates/personal/edit_profile.html:25
+#, fuzzy
+msgid "First name"
+msgstr "Nombre"
+
+#: personal/templates/personal/edit_profile.html:35
+msgid "Last name"
+msgstr "Apellidos"
+
+#: personal/templates/personal/edit_profile.html:45
 #: personal/templates/personal/view_profile.html:25
 msgid "Subtitle"
 msgstr "Subtítulo"
 
-#: personal/templates/personal/edit_profile.html:47
+#: personal/templates/personal/edit_profile.html:65
 #: personal/templates/personal/view_profile.html:17
 msgid "Profile Image"
 msgstr "Imágen del Perfil"
 
-#: personal/templates/personal/edit_profile.html:57
+#: personal/templates/personal/edit_profile.html:75
 #: personal/templates/personal/view_profile.html:48
 msgid "Personal Website"
 msgstr "Web personal"
 
-#: personal/templates/personal/edit_profile.html:67
+#: personal/templates/personal/edit_profile.html:85
 msgid "Twitter User"
 msgstr "Perfil de Twitter"
 
-#: personal/templates/personal/edit_profile.html:73
+#: personal/templates/personal/edit_profile.html:91
 msgid "Without @"
 msgstr "Sin @"
 
-#: personal/templates/personal/edit_profile.html:77
+#: personal/templates/personal/edit_profile.html:95
 msgid "Facebook Url"
 msgstr "URL Perfil Facebook"
 
-#: personal/templates/personal/edit_profile.html:87
+#: personal/templates/personal/edit_profile.html:105
 msgid "Google Plus Url"
 msgstr "URL Perfil Google Plus"
 
-#: personal/templates/personal/edit_profile.html:97
+#: personal/templates/personal/edit_profile.html:115
 msgid "Linkedin Public Url"
 msgstr "URL Perfil Linkedin"
 
-#: personal/templates/personal/edit_profile.html:108
+#: personal/templates/personal/edit_profile.html:126
 msgid "Private Information"
 msgstr "Información Privada"
 
-#: personal/templates/personal/edit_profile.html:110
+#: personal/templates/personal/edit_profile.html:128
 #: personal/templates/personal/view_profile.html:40
 msgid "Country"
 msgstr "Pais"
 
-#: personal/templates/personal/edit_profile.html:120
+#: personal/templates/personal/edit_profile.html:138
 #: personal/templates/personal/view_profile.html:42
 msgid "State"
 msgstr "Estado o Provincia"
 
-#: personal/templates/personal/edit_profile.html:130
+#: personal/templates/personal/edit_profile.html:148
 #: personal/templates/personal/view_profile.html:44
 msgid "Address"
 msgstr "Dirección"
 
-#: personal/templates/personal/edit_profile.html:140
+#: personal/templates/personal/edit_profile.html:158
 #: personal/templates/personal/view_profile.html:46
 msgid "Phone Number"
 msgstr "Número de teléfono"
 
-#: personal/templates/personal/edit_profile.html:150
+#: personal/templates/personal/edit_profile.html:168
 msgid "Update Profile"
 msgstr "Actualizar Perfil"
 
@@ -934,7 +940,6 @@ msgid "Enjoy"
 msgstr "Disfruta"
 
 #: templates/base.html:121
-#, fuzzy
 msgid "Helping"
 msgstr "Ayudando"
 
@@ -972,7 +977,8 @@ msgstr "iniciar sesión"
 #: templates/registration/activate.html:8
 #: templates/registration/activation_complete.html:9
 msgid "using the username and password you set at registration."
-msgstr "usando el usuario y contraseña que establecistes cuando te registrastes."
+msgstr ""
+"usando el usuario y contraseña que establecistes cuando te registrastes."
 
 #: templates/registration/activate.html:14
 msgid ""
@@ -999,7 +1005,8 @@ msgid "Thanks, activation complete!  You may now"
 msgstr "Gracias, la ha activación ha sido completada! Ahora debes"
 
 #: templates/registration/activation_email.txt:1
-msgid "You (or someone pretending to be you) have asked to register an account at"
+msgid ""
+"You (or someone pretending to be you) have asked to register an account at"
 msgstr "Tú (o alguien haciéndose pasar por tí) quiere registrar una cuenta en"
 
 #: templates/registration/activation_email.txt:5
@@ -1025,7 +1032,8 @@ msgstr "Cuenta registrada para"
 
 #: templates/registration/login.html:9
 msgid "Your username and password didn't match. Please try again."
-msgstr "Tu usuario y contraseña no se ha encontrado. Por favor inténtelo de nuevo"
+msgstr ""
+"Tu usuario y contraseña no se ha encontrado. Por favor inténtelo de nuevo"
 
 #: templates/registration/login.html:13
 msgid "login-fb-en.png"
@@ -1186,6 +1194,9 @@ msgid ""
 "Please keep the total uploaded files under %(total_size)s. With this file, "
 "the total would be %(exceed_size)s."
 msgstr ""
+
+#~ msgid "Email Address updated sucessfully"
+#~ msgstr "Curso actualizado correctamente"
 
 #~ msgid "Featured Video"
 #~ msgstr "Video de Promoción"
