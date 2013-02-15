@@ -1,10 +1,12 @@
 import os
-from django.db.models.signals import pre_save
+from datetime import datetime
+from django.db.models.signals import pre_save, post_save
 from django.db import models
-from django.contrib.auth.models import User
 from django.db.models import Max
 from django.db.models import F
 from django.db.models import Avg
+from django.core.exceptions import ObjectDoesNotExist
+from django.contrib.auth.models import User
 from django.utils.translation import ugettext as _
 from django.core.files.storage import default_storage
 from validatedfile import ValidatedFileField
@@ -348,6 +350,17 @@ class Comment(models.Model):
 
 
 # -------- Signals -----------
+
+# Enrroll automatic in the course when the user is created
+def auto_enrroll(sender, instance, created, **kwargs):
+    if created:
+        try:
+            c = Course.objects.get(pk=23)
+            e = Enrollment.objects.create(user=instance,course=c, start_date = datetime.now())
+        except ObjectDoesNotExist:
+            pass
+
+post_save.connect(auto_enrroll, sender=User, dispatch_uid="auto-enrroll-when-register-signal")
 
 # Create the user profile when create the User is created.
 def delete_video_files(sender, instance, raw, **kwargs):
