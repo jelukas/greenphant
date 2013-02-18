@@ -2,12 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="803322ab-07dd-4770-9226-930aa474d2e4" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/trainingme/static/img/team/antonio-dominguez.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/trainingme/static/img/team/david-munoz.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/trainingme/static/img/team/jose-manuel-holgado.jpg" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/misc.xml" afterPath="$PROJECT_DIR$/.idea/misc.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/trainingme/.idea/workspace.xml" afterPath="$PROJECT_DIR$/trainingme/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/trainingme/static/css/styles.css" afterPath="$PROJECT_DIR$/trainingme/static/css/styles.css" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/trainingme/static/css/styles.less" afterPath="$PROJECT_DIR$/trainingme/static/css/styles.less" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/trainingme/templates/pages/team.html" afterPath="$PROJECT_DIR$/trainingme/templates/pages/team.html" />
@@ -30,19 +25,19 @@
   <component name="ExecutionTargetManager" SELECTED_TARGET="default_target" />
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="styles.less" pinned="false" current="true" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/trainingme/static/css/styles.less">
+      <file leaf-file-name="team.html" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/trainingme/templates/pages/team.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="1773" column="12" selection-start="31483" selection-end="31483" vertical-scroll-proportion="0.5530393">
+            <state line="44" column="29" selection-start="2582" selection-end="2594" vertical-scroll-proportion="-7.625">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="team.html" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/trainingme/templates/pages/team.html">
+      <file leaf-file-name="styles.less" pinned="false" current="true" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/trainingme/static/css/styles.less">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="38" column="44" selection-start="2340" selection-end="2340" vertical-scroll-proportion="-12.625">
+            <state line="1813" column="18" selection-start="32151" selection-end="32151" vertical-scroll-proportion="0.74970204">
               <folding />
             </state>
           </provider>
@@ -146,6 +141,28 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="static" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="greenphant" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="greenphant" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="trainingme" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="static" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="css" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -277,14 +294,14 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/trainingme/templates/pages/team.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="38" column="44" selection-start="2340" selection-end="2340" vertical-scroll-proportion="-12.625">
+        <state line="44" column="29" selection-start="2582" selection-end="2594" vertical-scroll-proportion="-7.625">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/trainingme/static/css/styles.less">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="1773" column="12" selection-start="31483" selection-end="31483" vertical-scroll-proportion="0.5530393">
+        <state line="1813" column="18" selection-start="32151" selection-end="32151" vertical-scroll-proportion="0.74970204">
           <folding />
         </state>
       </provider>
