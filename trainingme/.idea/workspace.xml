@@ -25,19 +25,19 @@
   <component name="ExecutionTargetManager" SELECTED_TARGET="default_target" />
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="home.html" pinned="false" current="false" current-in-tab="false">
+      <file leaf-file-name="home.html" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/elearning/templates/elearning/home.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="28" column="119" selection-start="1801" selection-end="1801" vertical-scroll-proportion="-11.875">
+            <state line="36" column="22" selection-start="2363" selection-end="2363" vertical-scroll-proportion="0.3329223">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="styles.less" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="styles.less" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/static/css/styles.less">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="1408" column="4" selection-start="24298" selection-end="24299" vertical-scroll-proportion="0.78012425">
+            <state line="1408" column="4" selection-start="24298" selection-end="24299" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
@@ -47,9 +47,7 @@
         <entry file="file://$PROJECT_DIR$/elearning/views.py">
           <provider selected="true" editor-type-id="text-editor">
             <state line="516" column="63" selection-start="24178" selection-end="24178" vertical-scroll-proportion="0.0">
-              <folding>
-                <element signature="e#0#44#0" expanded="true" />
-              </folding>
+              <folding />
             </state>
           </provider>
         </entry>
@@ -78,8 +76,8 @@
         <option value="$PROJECT_DIR$/elearning/management/commands/autoenrrollall.py" />
         <option value="$PROJECT_DIR$/elearning/views.py" />
         <option value="$PROJECT_DIR$/locale/es/LC_MESSAGES/django.po" />
-        <option value="$PROJECT_DIR$/elearning/templates/elearning/home.html" />
         <option value="$PROJECT_DIR$/static/css/styles.less" />
+        <option value="$PROJECT_DIR$/elearning/templates/elearning/home.html" />
       </list>
     </option>
   </component>
@@ -114,7 +112,6 @@
       <sortByType />
     </navigator>
     <panes>
-      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -181,17 +178,18 @@
           </PATH>
         </subPane>
       </pane>
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
     <property name="options.splitter.main.proportions" value="0.3" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="recentsLimit" value="5" />
     <property name="options.lastSelected" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
+    <property name="recentsLimit" value="5" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="DefaultHtmlFileTemplate" value="Html5" />
-    <property name="options.splitter.details.proportions" value="0.2" />
     <property name="options.searchVisible" value="true" />
+    <property name="options.splitter.details.proportions" value="0.2" />
   </component>
   <component name="PyConsoleOptionsProvider">
     <option name="myPythonConsoleState">
@@ -250,6 +248,25 @@
       <option name="MULTIPROCESS" value="false" />
       <method />
     </configuration>
+    <configuration default="true" type="tests" factoryName="Unittests">
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs />
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="" />
+      <option name="IS_MODULE_SDK" value="false" />
+      <module name="trainingme" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" enabled="false" sample_coverage="true" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="" />
+      <option name="CLASS_NAME" value="" />
+      <option name="METHOD_NAME" value="" />
+      <option name="FOLDER_NAME" value="" />
+      <option name="TEST_TYPE" value="TEST_SCRIPT" />
+      <option name="PATTERN" value="" />
+      <option name="USE_PATTERN" value="false" />
+      <option name="PUREUNITTEST" value="true" />
+      <method />
+    </configuration>
     <configuration default="true" type="Python.DjangoServer" factoryName="Django server">
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -269,25 +286,6 @@
       <option name="runNoReload" value="false" />
       <option name="useCustomRunCommand" value="false" />
       <option name="customRunCommand" value="" />
-      <method />
-    </configuration>
-    <configuration default="true" type="tests" factoryName="Unittests">
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs />
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="" />
-      <option name="IS_MODULE_SDK" value="false" />
-      <module name="trainingme" />
-      <EXTENSION ID="PythonCoverageRunConfigurationExtension" enabled="false" sample_coverage="true" runner="coverage.py" />
-      <option name="SCRIPT_NAME" value="" />
-      <option name="CLASS_NAME" value="" />
-      <option name="METHOD_NAME" value="" />
-      <option name="FOLDER_NAME" value="" />
-      <option name="TEST_TYPE" value="TEST_SCRIPT" />
-      <option name="PATTERN" value="" />
-      <option name="USE_PATTERN" value="false" />
-      <option name="PUREUNITTEST" value="true" />
       <method />
     </configuration>
     <configuration default="true" type="tests" factoryName="Doctests">
@@ -374,8 +372,8 @@
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3297587" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.15541264" sideWeight="0.33561644" order="1" side_tool="true" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.15541264" sideWeight="0.6563927" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.15702036" sideWeight="0.3413242" order="1" side_tool="true" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.15702036" sideWeight="0.65068495" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33789954" sideWeight="0.5" order="9" side_tool="true" content_ui="tabs" />
@@ -461,9 +459,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/../../lib/python2.6/site-packages/django/contrib/auth/models.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="224" column="6" selection-start="7935" selection-end="7935" vertical-scroll-proportion="0.33254716">
-          <folding />
-        </state>
+        <state line="224" column="6" selection-start="7935" selection-end="7935" vertical-scroll-proportion="0.33254716" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/personal/views.py">
@@ -477,11 +473,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/personal/forms.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="14" column="37" selection-start="324" selection-end="334" vertical-scroll-proportion="0.2476415">
-          <folding>
-            <element signature="e#0#34#0" expanded="true" />
-          </folding>
-        </state>
+        <state line="14" column="37" selection-start="324" selection-end="334" vertical-scroll-proportion="0.2476415" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/personal/templates/personal/edit_profile.html">
@@ -507,38 +499,22 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/personal/models.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="44" column="110" selection-start="1869" selection-end="1869" vertical-scroll-proportion="0.7783019">
-          <folding>
-            <element signature="e#0#28#0" expanded="true" />
-          </folding>
-        </state>
+        <state line="44" column="110" selection-start="1869" selection-end="1869" vertical-scroll-proportion="0.7783019" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/financial/models.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="67" column="45" selection-start="2630" selection-end="2644" vertical-scroll-proportion="0.6639151">
-          <folding>
-            <element signature="e#0#28#0" expanded="true" />
-          </folding>
-        </state>
+        <state line="67" column="45" selection-start="2630" selection-end="2644" vertical-scroll-proportion="0.6639151" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/elearning/management/commands/convert.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="11" column="43" selection-start="535" selection-end="542" vertical-scroll-proportion="0.19457547">
-          <folding>
-            <element signature="e#0#65#0" expanded="true" />
-          </folding>
-        </state>
+        <state line="11" column="43" selection-start="535" selection-end="542" vertical-scroll-proportion="0.19457547" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/elearning/management/commands/autoenrrollall.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="6" column="20" selection-start="220" selection-end="220" vertical-scroll-proportion="0.106132075">
-          <folding>
-            <element signature="e#0#65#0" expanded="true" />
-          </folding>
-        </state>
+        <state line="6" column="20" selection-start="220" selection-end="220" vertical-scroll-proportion="0.106132075" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/elearning/models.py">
@@ -553,29 +529,25 @@
     <entry file="file://$PROJECT_DIR$/elearning/views.py">
       <provider selected="true" editor-type-id="text-editor">
         <state line="516" column="63" selection-start="24178" selection-end="24178" vertical-scroll-proportion="0.0">
-          <folding>
-            <element signature="e#0#44#0" expanded="true" />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/locale/es/LC_MESSAGES/django.po">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="510" column="10" selection-start="14864" selection-end="14864" vertical-scroll-proportion="0.35085574">
+        <state line="510" column="10" selection-start="14864" selection-end="14864" vertical-scroll-proportion="0.35085574" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/static/css/styles.less">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="1408" column="4" selection-start="24298" selection-end="24299" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/elearning/templates/elearning/home.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="28" column="119" selection-start="1801" selection-end="1801" vertical-scroll-proportion="-11.875">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/static/css/styles.less">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="1408" column="4" selection-start="24298" selection-end="24299" vertical-scroll-proportion="0.78012425">
+        <state line="36" column="22" selection-start="2363" selection-end="2363" vertical-scroll-proportion="0.3329223">
           <folding />
         </state>
       </provider>
