@@ -33,6 +33,9 @@ urlpatterns = patterns('',
     #For Paypal
     (r'^paypal/paymeny/23pok420osijos/danoentrain/', include('paypal.standard.ipn.urls')),
 
+    #Internationalization
+    (r'^i18n/', include('django.conf.urls.i18n')),
+
     # Uncomment the next line to enable the admin:
     url(r'^admin/', include(admin.site.urls)),
 )
