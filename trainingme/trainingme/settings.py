@@ -6,7 +6,7 @@ SITE_ROOT = os.path.dirname(os.path.realpath(__file__))
 PROJECT_ROOT = Path(__file__).ancestor(2)
 
 SITE_NAME = "trainingme.net"
-SITE_URL = 'http://trainingme.net'
+SITE_URL = 'http://testing.guadalux.org'
 
 #Debugging
 DEBUG = False
@@ -139,22 +139,28 @@ INSTALLED_APPS = (
     'django.contrib.sites',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+
     # Uncomment the next line to enable the admin:
     'django.contrib.admin',
     # Uncomment the next line to enable admin documentation:
     # 'django.contrib.admindocs',
     'django.contrib.humanize',
+    #Paypal
+    'paypal.standard.ipn',
+    'paypal.standard',
+    'paypal.pro',
+    #Others
     'south',
     'sorl.thumbnail',
     'registration',
     'social_auth',
     'widget_tweaks',
     'django_countries',
-    'paypal.standard.ipn',
     'validatedfile', #Requires python-magic
     'personal',
     'financial',
     'elearning',
+    'shop',
     'django_cleanup',
 )
 
@@ -261,7 +267,11 @@ PAYPAL_PRIVATE_CERT = SITE_ROOT + '/certs/paypal.pem'
 PAYPAL_PUBLIC_CERT = SITE_ROOT + '/certs/pubpaypal.pem'
 PAYPAL_CERT = SITE_ROOT + '/certs/paypal_cert.pem'
 PAYPAL_CERT_ID = 'PXKA9Y3MH3RHJ'
-
+# Paypal
+PAYPAL_TEST = True           # Testing mode on
+PAYPAL_WPP_USER = "turico_1350147627_biz_api1.gmail.com"      # Get from PayPal
+PAYPAL_WPP_PASSWORD = "1350147651"
+PAYPAL_WPP_SIGNATURE = "AFcWxV21C7fd0v3bYYYRCpSSRl31AUmLDz5MVEZeELoUIq04UfrAt-r7"
 
 """
 Cargamos por defecto el tag i18n

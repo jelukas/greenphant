@@ -423,43 +423,6 @@ def preview_lesson(request,lesson_id):
         context = {'lesson':lesson,'enrrolled':True}
     return render_to_response('elearning/course/preview_lesson.html',context,context_instance = RequestContext(request))
 
-"""
-COMPRA DEL CURSO
-"""
-@require_POST
-@login_required()
-@csrf_exempt
-def buy_course(request):
-    if request.method == 'POST':
-        post_data = request.POST
-        if exists_paypal_txn_order(request.POST['item_number'],request.POST['txn_id']):
-            messages.error(request,_('Duplicated Transaction'))
-            return HttpResponseRedirect(reverse('elearning.views.home'))
-        if post_data['payment_status'] == 'Completed':
-            course = get_object_or_404(Course,pk=request.POST['item_number'],status__name="published")
-            if float(post_data['mc_gross']) == float(course.price) :
-                # Create the Order
-                from financial.models import Order
-                order = Order(user=request.user,course = course,created_at = datetime.now(),amount = post_data['mc_gross'],is_refund = False, paypal_txn_id = post_data['txn_id'])
-                order.save()
-                #All OK so Enrroll the Student into the Course
-                enrollment = Enrollment(user = request.user, course = course, start_date = datetime.now())
-                enrollment.save()
-                messages.success(request,_('You had been enrolled into the Course ')+course.title)
-                return HttpResponseRedirect(reverse('elearning.views.view_course', args=(course.slug,)))
-    messages.error(request,_('Failed Transaction'))
-    return HttpResponseRedirect(reverse('elearning.views.home'))
-
-
-def exists_paypal_txn_order(course_id,txn_id):
-    from financial.models import Order
-    try:
-        order = Order.objects.get(course_id=course_id,paypal_txn_id=txn_id)
-        return_value = True
-    except ObjectDoesNotExist:
-        return_value = False
-    return return_value
-
 
 """
 VOTAMOS una LECCION:
@@ -516,31 +479,3 @@ def home(request):
         courses = Course.objects.filter(Q(status__name="published") | Q(status__name="evaluation period") | Q(status__name="building"))
     context = {'courses' : courses, 'users_count' : users_count}
     return render_to_response('elearning/home.html',context,context_instance = RequestContext(request))
-
-
-"""
----------------------------------------
-PAYPAL TESTING
----------------------------------------
-"""
-
-from paypal.standard.forms import PayPalEncryptedPaymentsForm
-from django.conf import settings
-
-def paypal(request):
-
-    # What you want the button to do.
-
-    paypal_dict = {
-        "business": settings.PAYPAL_RECEIVER_EMAIL,
-        "amount": "10.00",
-        "item_name": "Curso de Algo",
-        "invoice": "unique-invoice-id",
-        "notify_url": "%s%s" % (settings.SITE_NAME, reverse('paypal-ipn')),
-        "return_url": "http://www.google.es",
-        "cancel_return": "http://www.marca.com",
-        }
-
-    # Create the instance.
-    form = PayPalEncryptedPaymentsForm(initial=paypal_dict)
-    return render_to_response('elearning/tests/paypal.html',{"form": form.sandbox()},context_instance = RequestContext(request))

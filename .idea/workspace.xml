@@ -1,7 +1,64 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="803322ab-07dd-4770-9226-930aa474d2e4" name="Default" comment="" />
+    <list default="true" id="803322ab-07dd-4770-9226-930aa474d2e4" name="Default" comment="">
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/trainingme/paypal/__init__.py" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/trainingme/paypal/pro/__init__.py" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/trainingme/paypal/pro/admin.py" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/trainingme/paypal/pro/creditcard.py" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/trainingme/paypal/pro/exceptions.py" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/trainingme/paypal/pro/fields.py" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/trainingme/paypal/pro/forms.py" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/trainingme/paypal/pro/helpers.py" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/trainingme/paypal/pro/models.py" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/trainingme/paypal/pro/signals.py" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/trainingme/paypal/pro/templates/pro/confirm.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/trainingme/paypal/pro/templates/pro/payment.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/trainingme/paypal/pro/tests.py" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/trainingme/paypal/pro/views.py" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/trainingme/paypal/standard/__init__.py" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/trainingme/paypal/standard/conf.py" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/trainingme/paypal/standard/forms.py" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/trainingme/paypal/standard/helpers.py" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/trainingme/paypal/standard/ipn/__init__.py" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/trainingme/paypal/standard/ipn/admin.py" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/trainingme/paypal/standard/ipn/forms.py" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/trainingme/paypal/standard/ipn/migrations/0001_first_migration.py" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/trainingme/paypal/standard/ipn/migrations/__init__.py" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/trainingme/paypal/standard/ipn/models.py" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/trainingme/paypal/standard/ipn/signals.py" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/trainingme/paypal/standard/ipn/templates/ipn/ipn.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/trainingme/paypal/standard/ipn/templates/ipn/ipn_test.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/trainingme/paypal/standard/ipn/templates/ipn/paypal.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/trainingme/paypal/standard/ipn/tests/__init__.py" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/trainingme/paypal/standard/ipn/tests/test_ipn.py" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/trainingme/paypal/standard/ipn/tests/test_urls.py" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/trainingme/paypal/standard/ipn/urls.py" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/trainingme/paypal/standard/ipn/views.py" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/trainingme/paypal/standard/models.py" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/trainingme/paypal/standard/pdt/__init__.py" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/trainingme/paypal/standard/pdt/admin.py" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/trainingme/paypal/standard/pdt/forms.py" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/trainingme/paypal/standard/pdt/migrations/0001_first_migration.py" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/trainingme/paypal/standard/pdt/migrations/__init__.py" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/trainingme/paypal/standard/pdt/models.py" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/trainingme/paypal/standard/pdt/signals.py" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/trainingme/paypal/standard/pdt/templates/pdt/pdt.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/trainingme/paypal/standard/pdt/templates/pdt/test_pdt_response.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/trainingme/paypal/standard/pdt/tests/__init__.py" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/trainingme/paypal/standard/pdt/tests/templates/pdt/pdt.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/trainingme/paypal/standard/pdt/tests/test_pdt.py" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/trainingme/paypal/standard/pdt/tests/test_urls.py" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/trainingme/paypal/standard/pdt/urls.py" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/trainingme/paypal/standard/pdt/views.py" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/trainingme/paypal/standard/widgets.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/greenphant.iml" afterPath="$PROJECT_DIR$/.idea/greenphant.iml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/misc.xml" afterPath="$PROJECT_DIR$/.idea/misc.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/trainingme/.idea/workspace.xml" afterPath="$PROJECT_DIR$/trainingme/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/trainingme/elearning/views.py" afterPath="$PROJECT_DIR$/trainingme/elearning/views.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/trainingme/financial/views.py" afterPath="$PROJECT_DIR$/trainingme/financial/views.py" />
+    </list>
     <ignored path="greenphant.iws" />
     <ignored path=".idea/workspace.xml" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -20,19 +77,10 @@
   <component name="ExecutionTargetManager" SELECTED_TARGET="default_target" />
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="team.html" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/trainingme/templates/pages/team.html">
+      <file leaf-file-name="views.py" pinned="false" current="true" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/trainingme/financial/views.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="44" column="29" selection-start="2582" selection-end="2594" vertical-scroll-proportion="-7.625">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="styles.less" pinned="false" current="true" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/trainingme/static/css/styles.less">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="1813" column="18" selection-start="32151" selection-end="32151" vertical-scroll-proportion="0.74970204">
+            <state line="5" column="6" selection-start="273" selection-end="273" vertical-scroll-proportion="0.088339224">
               <folding />
             </state>
           </provider>
@@ -53,14 +101,17 @@
       <list>
         <option value="$PROJECT_DIR$/trainingme/templates/pages/team.html" />
         <option value="$PROJECT_DIR$/trainingme/static/css/styles.less" />
+        <option value="$PROJECT_DIR$/trainingme/trainingme/settings.py" />
+        <option value="$PROJECT_DIR$/trainingme/trainingme/dev.py" />
+        <option value="$PROJECT_DIR$/trainingme/elearning/views.py" />
+        <option value="$PROJECT_DIR$/trainingme/financial/views.py" />
       </list>
     </option>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="-4" />
     <option name="y" value="25" />
-    <option name="width" value="1928" />
-    <option name="height" value="1033" />
+    <option name="width" value="1920" />
+    <option name="height" value="1030" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="false">
     <OptionsSetting value="true" id="Add" />
@@ -88,7 +139,6 @@
       <sortByType />
     </navigator>
     <panes>
-      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -107,69 +157,31 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="greenphant" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="greenphant" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="trainingme" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="greenphant" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="greenphant" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="trainingme" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="static" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="greenphant" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="greenphant" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="trainingme" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="static" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="css" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
         </subPane>
       </pane>
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
+    <property name="options.splitter.main.proportions" value="0.3" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/trainingme" />
+    <property name="options.lastSelected" value="com.jetbrains.python.configuration.PythonSdkConfigurable" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="options.searchVisible" value="true" />
+    <property name="options.splitter.details.proportions" value="0.2" />
+  </component>
+  <component name="PyConsoleOptionsProvider">
+    <option name="myPythonConsoleState">
+      <PyConsoleSettings />
+    </option>
+    <option name="myDjangoConsoleState">
+      <PyConsoleSettings />
+    </option>
   </component>
   <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/trainingme" />
+    </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/trainingme/static/img/team" />
     </key>
@@ -196,6 +208,24 @@
     <list size="0" />
   </component>
   <component name="ShelveChangesManager" show_recycled="false" />
+  <component name="SvnConfiguration" maxAnnotateRevisions="500" myUseAcceleration="nothing" myAutoUpdateAfterCommit="false" cleanupOnStartRun="false">
+    <option name="USER" value="" />
+    <option name="PASSWORD" value="" />
+    <option name="mySSHConnectionTimeout" value="30000" />
+    <option name="mySSHReadTimeout" value="30000" />
+    <option name="LAST_MERGED_REVISION" />
+    <option name="MERGE_DRY_RUN" value="false" />
+    <option name="MERGE_DIFF_USE_ANCESTRY" value="true" />
+    <option name="UPDATE_LOCK_ON_DEMAND" value="false" />
+    <option name="IGNORE_SPACES_IN_MERGE" value="false" />
+    <option name="DETECT_NESTED_COPIES" value="true" />
+    <option name="CHECK_NESTED_FOR_QUICK_MERGE" value="false" />
+    <option name="IGNORE_SPACES_IN_ANNOTATE" value="true" />
+    <option name="SHOW_MERGE_SOURCES_IN_ANNOTATE" value="true" />
+    <option name="FORCE_UPDATE" value="false" />
+    <option name="IGNORE_EXTERNALS" value="false" />
+    <myIsUseDefaultProxy>false</myIsUseDefaultProxy>
+  </component>
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
       <changelist id="803322ab-07dd-4770-9226-930aa474d2e4" name="Default" comment="" />
@@ -205,14 +235,14 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-4" y="25" width="1928" height="1033" extended-state="6" />
+    <frame x="0" y="25" width="1920" height="1030" extended-state="0" />
     <editor active="false" />
     <layout>
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="true" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.15208112" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.15380493" sideWeight="0.4960091" order="1" side_tool="true" content_ui="tabs" />
+      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.15380493" sideWeight="0.4960091" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
@@ -280,6 +310,20 @@
     <breakpoint-manager />
   </component>
   <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/trainingme/templates/pages/team.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="44" column="29" selection-start="2582" selection-end="2594" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/trainingme/static/css/styles.less">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="1813" column="6" selection-start="32084" selection-end="32084" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/trainingme/static/css/styles.css">
       <provider selected="true" editor-type-id="text-editor">
         <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
@@ -287,16 +331,60 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/trainingme/templates/pages/team.html">
+    <entry file="file://$PROJECT_DIR$/trainingme/static/css/styles.less">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="44" column="29" selection-start="2582" selection-end="2594" vertical-scroll-proportion="-7.625">
+        <state line="1813" column="6" selection-start="32084" selection-end="32084" vertical-scroll-proportion="0.65311">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/trainingme/static/css/styles.less">
+    <entry file="file://$PROJECT_DIR$/trainingme/templates/pages/team.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="1813" column="18" selection-start="32151" selection-end="32151" vertical-scroll-proportion="0.74970204">
+        <state line="74" column="22" selection-start="4246" selection-end="4246" vertical-scroll-proportion="0.56363636">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/trainingme/trainingme/dev.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="9" column="0" selection-start="154" selection-end="154" vertical-scroll-proportion="0.16383494">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/trainingme/trainingme/settings.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="68" column="14" selection-start="2475" selection-end="2503" vertical-scroll-proportion="0.29126215">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/trainingme/paypal/pro/templates/pro/payment.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="8" column="11" selection-start="89" selection-end="89" vertical-scroll-proportion="0.14545454">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/trainingme/paypal/pro/templates/pro/confirm.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/trainingme/elearning/views.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="480" column="103" selection-start="22565" selection-end="22565" vertical-scroll-proportion="0.88902587">
+          <folding>
+            <element signature="e#0#44#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/trainingme/financial/views.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="5" column="6" selection-start="273" selection-end="273" vertical-scroll-proportion="0.088339224">
           <folding />
         </state>
       </provider>

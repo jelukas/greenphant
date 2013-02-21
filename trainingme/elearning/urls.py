@@ -30,12 +30,8 @@ urlpatterns = patterns('',
     url(r'^dashboard/learning/$','elearning.views.learning', name='learning' ),
     url(r'^dashboard/teaching/$','elearning.views.teaching', name='teaching' ),
 
-    # Paypal
-    url(r'^paypal/$','elearning.views.paypal', name='paypal' ),
-
     #Course
 
-    url(r'^course/buy/$','elearning.views.buy_course', name='buy_course' ),
     url(r'^course/learning/(\d+)/$','elearning.views.learning_course', name='learning_course' ),
     url(r'^course/(?P<slug>[-\w]+)/$','elearning.views.view_course', name='view_course' ),
     url(r'^course/(\d+)/(\d+)?$','elearning.views.vote_course', name='vote_course' ),

@@ -1,7 +1,7 @@
 from .settings import *
 
-SITE_NAME = "beta.trainingme.net"
-SITE_URL = '127.0.0.1'
+SITE_NAME = "testing.guadalux.org"
+SITE_URL = 'http://testing.guadalux.org'
 
 #Debugging
 DEBUG = True

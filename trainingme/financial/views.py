@@ -2,9 +2,8 @@ from django.http import HttpResponseRedirect
 from django.shortcuts import render_to_response, get_object_or_404
 from django.template.context import  RequestContext
 from django.contrib.auth.decorators import login_required
-from django.core.urlresolvers import reverse
-from personal.decorators import owner_required
 from django.contrib import messages
+from django.core.urlresolvers import reverse
 from django.utils.translation import ugettext as _
 from financial.models import Withdraw,Billing,Order
 from financial.forms import BillingForm
@@ -26,6 +25,7 @@ def view_billing(request):
     purchases = Order.objects.filter(user_id=request.user.id)#Your pruchases
     sells = Order.objects.filter(course__user_id=request.user.id)#Your sells
     return render_to_response('financial/view_billing.html',{'billing':billing, 'withdraws':withdraws, 'purchases':purchases,'sells':sells},context_instance = RequestContext(request))
+
 
 @login_required()
 def edit_billing(request):
