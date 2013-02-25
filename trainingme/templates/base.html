@@ -120,8 +120,8 @@
 {% endblock %}
 {% block sections %}
 {% endblock sections %}
+{% block footer %}
 <footer>
-    {% block footer %}
         <div class="row-fluid">
             <div class="span2">
                 <h4>{% trans 'About TrainingMe.Net' %}</h4>
@@ -159,8 +159,8 @@
             </div>
         </div>
         &copy; Copyright Trainingme.Net 2013 - BETA
-    {% endblock footer %}
 </footer>
+{% endblock footer %}
 {% block footerscripts %}
     <script src="http://vjs.zencdn.net/c/video.js"></script>
     <script type="text/javascript" src="{{ STATIC_URL }}js/main.js"></script>
