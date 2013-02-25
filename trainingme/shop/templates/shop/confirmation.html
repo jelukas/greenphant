@@ -1,0 +1,28 @@
+{% extends "base.html" %}{% load i18n %}{% load thumbnail %}
+{% block title %}{% trans "Confirm your Order" %}{% endblock %}
+{% block sections %}
+    <!-- Inicia Contenido -->
+    <section class="confirm_order">
+        <div class="container">
+            <h3>{% trans 'Are you sure you want to buy this course?' %}</h3>
+            <table class="table table-striped">
+                <tr>
+                    <th>{% trans 'Course Title' %}</th>
+                    <th>{% trans 'Price' %}</th>
+                </tr>
+                <tr>
+                    <td>{{ course.title }}</td>
+                    <td><strong>{{ course.price }}</strong></td>
+                </tr>
+            </table>
+            <form method="post" action="">
+                {{ form }}
+                <p class="centeredbutton">
+                    <button type="submit" class="btn btn-primary" value="{% trans 'Yes I am' %}"><i class="icon-shopping-cart icon-white"></i> {% trans 'Yes I am' %}</button>
+                    <a href="{% url home %}" class="btn"><i class="icon-thumbs-down"></i> {% trans 'No and Go Home' %}</a>
+                </p>
+            </form>
+        </div>
+    </section>
+    <!-- Fin Contenido -->
+{% endblock sections %}

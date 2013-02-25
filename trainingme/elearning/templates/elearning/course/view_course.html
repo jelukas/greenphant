@@ -17,8 +17,11 @@
                 <div class="course_details_view_course span7" >
                     <h1>{{ course.title }}</h1>
                     <h2>{{ course.short_description }}</h2>
-{#                    <a role="button" data-toggle="modal" href="#enrroll-beta" class="buy_now btn btn-large btn-primary">Matricúlate Ahora!!<br/> Por sólo {{ course.price|floatformat:2 }} &euro;</a>#}
-                    <a href="{% url buy_course course.id %}" class="buy_now btn btn-large btn-primary">Matricúlate Ahora!!<br/> Por sólo {{ course.price|floatformat:2 }} &euro;</a>
+                    {% if not user.is_authenticated %}
+                        <a role="button" data-toggle="modal" href="#enrroll-beta" class="buy_now btn btn-large btn-primary">Matricúlate Ahora!!<br/> Por sólo {{ course.price|floatformat:2 }} &euro;</a>
+                    {% else %}
+                        <a href="{% url buy_course course.id %}?express" class="buy_now btn btn-large btn-primary">Matricúlate Ahora!!<br/> Por sólo {{ course.price|floatformat:2 }} &euro;</a>
+                    {% endif %}
                     <p class="social_reminder">Recuerda que se destinarán {{ course.social_amount|floatformat:2 }} &euro; <br/> a proyectos sociales de educación</p>
                 </div>
             </div>

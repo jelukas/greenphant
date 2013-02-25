@@ -348,19 +348,7 @@ def view_course(request,slug):
         enrrollment = course.enrollments.filter(user_id=request.user.id)
 
         if not enrrollment:
-            paypal_dict = {
-                "business": settings.PAYPAL_RECEIVER_EMAIL,
-                "amount": course.price,
-                "currency_code": "EUR",
-                "item_name": course.title,
-                "item_number": course.id,
-                "invoice": "unique-invoice-id",
-                "notify_url": "%s%s" % (settings.SITE_NAME, reverse('paypal-ipn')),
-                "return_url": "%s%s" % (settings.SITE_URL, reverse('elearning.views.buy_course',)),
-                "cancel_return": "http://www.trainingme.net",
-                }
-            paypal_button = PayPalEncryptedPaymentsForm(initial=paypal_dict)
-            context = {'course':course,'paypal_button':paypal_button.sandbox()}
+            context = {'course':course}
         else:
             context = {'course':course,'enrrolled':True}
             return HttpResponseRedirect(reverse('elearning.views.learning_course', args=(course.id,)))

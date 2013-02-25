@@ -7,3 +7,9 @@ SITE_URL = 'http://testing.guadalux.org'
 DEBUG = True
 TEMPLATE_DEBUG = DEBUG
 THUMBNAIL_DEBUG = False
+
+STATIC_ROOT = ''
+
+STATICFILES_DIRS = (
+    PROJECT_ROOT.child('media'),
+)

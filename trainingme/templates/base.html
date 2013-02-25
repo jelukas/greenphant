@@ -119,7 +119,6 @@
     </section>
 {% endblock %}
 {% block sections %}
-
 {% endblock sections %}
 <footer>
     {% block footer %}
@@ -152,6 +151,7 @@
             <div class="span3  offset3">
                 <h4>{% trans 'Follow us'  %}</h4>
                 <a href="https://twitter.com/trainingmenet" target="_blank"><img src="{{ STATIC_URL }}img/social/social-twitter.png" /></a>
+                <a href="http://www.youtube.com/trainingmenet" target="_blank"><img src="{{ STATIC_URL }}img/social/social-youtube.png" /></a>
                 <a href="http://www.facebook.com/TrainingMenet" target="_blank"><img src="{{ STATIC_URL }}img/social/social-facebook.png" /></a>
                 <a href="https://plus.google.com/106145359331233752450/" target="_blank"><img src="{{ STATIC_URL }}img/social/social-googleplus.png" /></a>
                 <h4 class="colaborate">Colaboramos con</h4>
@@ -182,7 +182,6 @@
             ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
             var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
         })();
-
     </script>
 {% endblock footerscripts %}
 </body>
