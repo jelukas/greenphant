@@ -70,6 +70,9 @@ class Course(models.Model):
     def __unicode__(self):
         return self.title
 
+    def get_owner_email(self):
+        return self.user.email
+
     def get_owner_id(self):
         return self.user.id
 

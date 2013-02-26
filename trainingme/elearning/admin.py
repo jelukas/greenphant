@@ -10,7 +10,7 @@ class EnrollmentAdmin(admin.ModelAdmin):
     list_display = ('user','course','start_date',)
 
 class CourseAdmin(admin.ModelAdmin):
-    pass
+    list_display = ('title','user','get_owner_email','price','status','category','created_at','published_at')
 
 admin.site.register(Category)
 admin.site.register(Course,CourseAdmin)
