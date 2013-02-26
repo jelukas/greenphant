@@ -24,7 +24,17 @@
   </component>
   <component name="ExecutionTargetManager" SELECTED_TARGET="default_target" />
   <component name="FileEditorManager">
-    <leaf />
+    <leaf>
+      <file leaf-file-name="views.py" pinned="false" current="true" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/elearning/views.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="461" column="3" selection-start="21256" selection-end="21256" vertical-scroll-proportion="0.71257484">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+    </leaf>
   </component>
   <component name="FindManager">
     <FindUsagesManager>
@@ -47,9 +57,9 @@
         <option value="$PROJECT_DIR$/elearning/templates/elearning/dashboard_teaching.html" />
         <option value="$PROJECT_DIR$/shop/templates/shop/confirmation.html" />
         <option value="$PROJECT_DIR$/elearning/templates/elearning/course/learning_lesson.html" />
-        <option value="$PROJECT_DIR$/elearning/views.py" />
         <option value="$PROJECT_DIR$/static/css/styles.less" />
         <option value="$PROJECT_DIR$/templates/base.html" />
+        <option value="$PROJECT_DIR$/elearning/views.py" />
       </list>
     </option>
   </component>
@@ -99,6 +109,20 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="trainingme" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="trainingme" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="trainingme" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="elearning" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -293,13 +317,13 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="26" width="1920" height="1029" extended-state="0" />
-    <editor active="false" />
+    <editor active="true" />
     <layout>
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3297587" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.1688103" sideWeight="0.37557077" order="1" side_tool="true" content_ui="tabs" />
-      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.1688103" sideWeight="0.6164383" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.1688103" sideWeight="0.6164383" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33789954" sideWeight="0.5" order="9" side_tool="true" content_ui="tabs" />
@@ -454,23 +478,6 @@
         <state line="23" column="9" selection-start="897" selection-end="902" vertical-scroll-proportion="0.4068396" />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/elearning/templates/elearning/course/learning_lesson.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="58" column="18" selection-start="3724" selection-end="3724" vertical-scroll-proportion="-18.75">
-          <folding>
-            <element signature="e#2272#2292#0" expanded="true" />
-            <element signature="e#2659#2679#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/elearning/views.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="464" column="13" selection-start="21290" selection-end="21290" vertical-scroll-proportion="0.78443116">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/templates/base.html">
       <provider selected="true" editor-type-id="text-editor">
         <state line="155" column="21" selection-start="9622" selection-end="9622" vertical-scroll-proportion="0.6115906">
@@ -481,6 +488,20 @@
     <entry file="file://$PROJECT_DIR$/static/css/styles.less">
       <provider selected="true" editor-type-id="text-editor">
         <state line="1853" column="12" selection-start="32644" selection-end="32644" vertical-scroll-proportion="0.88819873">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/elearning/templates/elearning/course/learning_lesson.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="58" column="18" selection-start="3724" selection-end="3724" vertical-scroll-proportion="0.018495684">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/elearning/views.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="461" column="3" selection-start="21256" selection-end="21256" vertical-scroll-proportion="0.71257484">
           <folding />
         </state>
       </provider>

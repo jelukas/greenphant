@@ -462,7 +462,7 @@ HOME PAGE
 """
 
 def home(request):
-    cursos_de_prueba = [51,48,47,20]
+    cursos_de_prueba = [51,48,47,20,22]
     users_count = User.objects.count()
     if request.POST:
         courses = Course.objects.filter(Q(short_description__icontains=request.POST['query']) | Q(title__icontains=request.POST['query']),Q(status__name="published") | Q(status__name="evaluation period") | Q(status__name="building")).exclude(id__in = cursos_de_prueba)
