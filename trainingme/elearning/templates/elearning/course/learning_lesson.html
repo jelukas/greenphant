@@ -48,11 +48,44 @@
                     </div>
                 </div>
             </div>
+{#            <div id="lesson_comments">#}
+{#                <a href="#add_comment_popup" role="button" class="btn btn-warning" data-toggle="modal">{% trans "Add Comment" %}</a>#}
+{#                <ul class="media-list">#}
+{#                    {% for comment in comments %}#}
+{#                    <li class="media">#}
+{#                        <a class="pull-left" href="#">#}
+{#                            <img class="media-object img-polaroid" src="{% if comment.user.get_profile.image %}{{ comment.user.get_profile.image.url}}{% else %}{{ STATIC_URL }}img/default_profile.png{% endif %}"/>#}
+{#                        </a>#}
+{#                        <div class="media-body">#}
+{#                            <h4 class="media-heading">{{ comment.user.username }}</h4>#}
+{#                            <h6>{{ comment.created_at }}</h6>#}
+{#                            <div class="comment-message">{{ comment.message }}</div>#}
+{#                        </div>#}
+{#                    </li>#}
+{#                    {% endfor %}#}
+{#                </ul>#}
+{#            </div>#}
         </div>
     </section>
     <section class="centeredbutton">
         <a class="btn btn-large" href="{% url learning_course lesson.subject.course_id %}">{% trans "Back to Course" %}</a>
     </section>
+    <!-- Modal -->
+    <div id="add_comment_popup" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+        <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+            <h3 id="myModalLabel">{% trans "New Comment" %}</h3>
+        </div>
+        <form method="post" action="">{% csrf_token %}
+        <div class="modal-body">
+            {{ comment_form.as_p }}
+        </div>
+        <div class="modal-footer">
+            <button class="btn" data-dismiss="modal" aria-hidden="true">{% trans "Cancel" %}</button>
+            <button type="submit" class="btn btn-primary">{% trans "Add Comment" %}</button>
+        </div>
+        </form>
+    </div>
 {% endblock %}
 {% block footerscripts %}
     {{ block.super }}

@@ -398,6 +398,8 @@ def learning_lesson(request,lesson_id):
         context = {'lesson':lesson,'comments':comments,'comment_form':comment_form,'enrrolled':True}
     return render_to_response('elearning/course/learning_lesson.html',context,context_instance = RequestContext(request))
 
+
+
 """
 Vista Previa de la Leccion con el curso en estado Bulding
 """
@@ -460,10 +462,11 @@ HOME PAGE
 """
 
 def home(request):
+    cursos_de_prueba = [51,48,47,20]
     users_count = User.objects.count()
     if request.POST:
-        courses = Course.objects.filter(Q(short_description__icontains=request.POST['query']) | Q(title__icontains=request.POST['query']),Q(status__name="published") | Q(status__name="evaluation period") | Q(status__name="building"))
+        courses = Course.objects.filter(Q(short_description__icontains=request.POST['query']) | Q(title__icontains=request.POST['query']),Q(status__name="published") | Q(status__name="evaluation period") | Q(status__name="building")).exclude(id__in = cursos_de_prueba)
     else:
-        courses = Course.objects.filter(Q(status__name="published") | Q(status__name="evaluation period") | Q(status__name="building"))
+        courses = Course.objects.filter(Q(status__name="published") | Q(status__name="evaluation period") | Q(status__name="building")).exclude(id__in = cursos_de_prueba)
     context = {'courses' : courses, 'users_count' : users_count}
     return render_to_response('elearning/home.html',context,context_instance = RequestContext(request))
