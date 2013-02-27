@@ -32,7 +32,7 @@
                                         <p><a href="{{ lesson.attach.file.url }}"><img src="{{ STATIC_URL }}img/download_attachment.png" alt="{% trans 'Download Attachment' %}"> {% trans 'Download Attachment' %}</a></p>
                                     </div>
                                 {% endif %}
-                                {% if not lesson|user_had_vote_lesson:user.id %}
+                                {% if not lesson|user_had_vote_lesson:user.id and not is_teacher %}
                                     <div class="pull-left">
                                         <p style="color: #fff;">{% trans 'Rate this lesson' %}</p>
                                         <div id="lesson-{{ lesson.id }}"  data-rating="{{ lesson.get_scoring }}" class="star leftSide"></div>

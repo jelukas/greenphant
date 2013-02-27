@@ -370,7 +370,7 @@ def learning_course(request,course_id):
     else:
         context = {'course':course,'enrrolled':True}
         if course.get_owner_id() == request.user.id:
-            context = {'course':course,'enrrolled':False}
+            context = {'course':course,'enrrolled':False,'is_teacher':True}
     return render_to_response('elearning/course/learning_course.html',context,context_instance = RequestContext(request))
 
 
@@ -399,6 +399,8 @@ def learning_lesson(request,lesson_id):
         else:
             comment_form = CommentForm()
         context = {'lesson':lesson,'comments':comments,'comment_form':comment_form,'enrrolled':True}
+        if lesson.subject.course.get_owner_id() == request.user.id:
+            context = {'lesson':lesson,'comments':comments,'comment_form':comment_form,'enrrolled':False,'is_teacher':True}
     return render_to_response('elearning/course/learning_lesson.html',context,context_instance = RequestContext(request))
 
 """

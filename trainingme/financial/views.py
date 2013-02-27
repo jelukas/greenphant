@@ -24,7 +24,8 @@ def view_billing(request):
     withdraws = Withdraw.objects.filter(user_id=request.user.id)
     purchases = Order.objects.filter(user_id=request.user.id)#Your pruchases
     sells = Order.objects.filter(course__user_id=request.user.id)#Your sells
-    return render_to_response('financial/view_billing.html',{'billing':billing, 'withdraws':withdraws, 'purchases':purchases,'sells':sells},context_instance = RequestContext(request))
+    waiting_clear_amount = Order.get_waiting_clear_amount(request.user.id)
+    return render_to_response('financial/view_billing.html',{'billing':billing, 'withdraws':withdraws, 'purchases':purchases,'sells':sells,'waiting_clear_amount':waiting_clear_amount},context_instance = RequestContext(request))
 
 
 @login_required()

@@ -4,6 +4,7 @@ from elearning.models import Course
 from django.db.models.signals import post_save
 from django.utils.translation import ugettext as _
 from datetime import datetime
+from django.db.models.aggregates import Sum
 
 #Billing where save the financial details of the user
 class Billing(models.Model):
@@ -38,6 +39,13 @@ class Order(models.Model):
     datetime_cleared = models.DateTimeField(blank=True,null=True)
     #Paypal Transaction ID
     paypal_txn_id = models.CharField(max_length=255)
+
+
+    @staticmethod
+    def get_waiting_clear_amount(user_id):
+        # There's actually more to it than this
+        amount = Order.objects.filter(course__user_id=user_id,datetime_cleared = None).aggregate(Sum('amount'))['amount__sum'] or 0
+        return str(float(amount)*float(0.7))
 
     def get_seller(self):
         return self.course.user
