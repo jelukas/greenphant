@@ -1,0 +1,6 @@
+{% load i18n %}
+<form method="post" action="{% url reply_comment lesson_id parent_comment_id %}">{% csrf_token %}
+    {{ reply_form.as_p }}
+    <button class="btn" data-dismiss="modal" aria-hidden="true">{% trans "Cancel" %}</button>
+    <button type="submit" class="btn btn-primary">{% trans "Reply" %}</button>
+</form>

@@ -401,6 +401,33 @@ def learning_lesson(request,lesson_id):
         context = {'lesson':lesson,'comments':comments,'comment_form':comment_form,'enrrolled':True}
     return render_to_response('elearning/course/learning_lesson.html',context,context_instance = RequestContext(request))
 
+"""
+Responder a un comentario
+"""
+@login_required()
+def reply_comment(request,lesson_id,parent_comment_id):
+    lesson = get_object_or_404(Lesson,pk=lesson_id,subject__course__status__name__in=["published","evaluation period","building"])
+    enrrollment = lesson.subject.course.enrollments.filter(user_id=request.user.id)
+    if not enrrollment and lesson.subject.course.get_owner_id() != request.user.id:
+        messages.warning(request,_('You are not enrroled in that course: ')+lesson.subject.course.title)
+        return HttpResponseRedirect(reverse('elearning.views.view_course', args=(lesson.subject.course.id,)))
+    else:
+        if request.POST:
+            comment_form = CommentForm(request.POST)
+            if comment_form.is_valid():
+                comment = comment_form.save(commit=False)
+                comment.user_id = request.user.id
+                comment.created_at = datetime.now()
+                comment.parent_comment_id = parent_comment_id
+                comment.lesson_id = lesson_id
+                comment.save()
+                messages.success(request,_('Reply sucesfully'))
+                return HttpResponseRedirect(reverse('elearning.views.learning_lesson', args=(lesson_id,)))
+        else:
+            reply_form = CommentForm()
+        context = {'reply_form':reply_form,'lesson_id':lesson_id,'parent_comment_id':parent_comment_id}
+    return render_to_response('elearning/course/comments/reply_form.html',context,context_instance = RequestContext(request))
+
 
 
 """
