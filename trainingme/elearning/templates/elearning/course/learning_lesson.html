@@ -48,23 +48,37 @@
                     </div>
                 </div>
             </div>
-{#            <div id="lesson_comments">#}
-{#                <a href="#add_comment_popup" role="button" class="btn btn-warning" data-toggle="modal">{% trans "Add Comment" %}</a>#}
-{#                <ul class="media-list">#}
-{#                    {% for comment in comments %}#}
-{#                    <li class="media">#}
-{#                        <a class="pull-left" href="#">#}
-{#                            <img class="media-object img-polaroid" src="{% if comment.user.get_profile.image %}{{ comment.user.get_profile.image.url}}{% else %}{{ STATIC_URL }}img/default_profile.png{% endif %}"/>#}
-{#                        </a>#}
-{#                        <div class="media-body">#}
-{#                            <h4 class="media-heading">{{ comment.user.username }}</h4>#}
-{#                            <h6>{{ comment.created_at }}</h6>#}
-{#                            <div class="comment-message">{{ comment.message }}</div>#}
-{#                        </div>#}
-{#                    </li>#}
-{#                    {% endfor %}#}
-{#                </ul>#}
-{#            </div>#}
+            <div id="lesson_comments">
+                <a href="#add_comment_popup" role="button" class="btn btn-warning" data-toggle="modal">{% trans "Add Comment" %}</a>
+                <ul class="media-list">
+                    {% for comment in comments %}
+                    <li class="media">
+                        <a class="pull-left" href="#">
+                            <img class="media-object img-polaroid" src="{% if comment.user.get_profile.image %}{{ comment.user.get_profile.image.url}}{% else %}{{ STATIC_URL }}img/default_profile.png{% endif %}"/>
+                        </a>
+                        <div class="media-body">
+                            <h4 class="media-heading">{{ comment.user.username }}</h4>
+                            <h6>{{ comment.created_at }}</h6>
+                            <div class="comment-message">{{ comment.message }}</div>
+                            <ul class="media-list">
+                                {% for reply in comment.replies.all %}
+                                    <li class="media">
+                                        <a class="pull-left" href="#">
+                                            <img class="media-object img-polaroid" src="{% if reply.user.get_profile.image %}{{ reply.user.get_profile.image.url}}{% else %}{{ STATIC_URL }}img/default_profile.png{% endif %}"/>
+                                        </a>
+                                        <div class="media-body">
+                                            <h4 class="media-heading">{{ reply.user.username }}</h4>
+                                            <h6>{{ reply.created_at }}</h6>
+                                            <div class="comment-message">{{ reply.message }}</div>
+                                        </div>
+                                    </li>
+                                    {% endfor %}
+                                </ul>
+                        </div>
+                    </li>
+                    {% endfor %}
+                </ul>
+            </div>
         </div>
     </section>
     <section class="centeredbutton">

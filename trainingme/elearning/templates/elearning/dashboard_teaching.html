@@ -33,6 +33,9 @@
                                 <i class="icon-eye-open"></i> {% trans "Status" %}: <span class="label label-{% if course.status.name == 'published' %}success{% elif course.status.name == 'evaluation period' %}info{% elif course.status.name == 'checking' %}warning{% elif course.status.name == 'frozen' %}inverse{% endif %}">{% trans course.status.name %}</span>
                                 {% if course.status.name == "building" %}
                                     <a class="btn btn-info" href="{% url building_course course.id %}">{% trans "Continue Building" %}</a>
+                                    <a class="btn btn-warning" href="{% url learning_course course.id %}">{% trans "Preview Your Course" %}</a>
+                                {% elif course.status.name == "evaluation period" or course.status.name == "published" %}
+                                    <a class="btn btn-success" href="{% url learning_course course.id %}">{% trans "View Your Course" %}</a>
                                 {% endif %}
                             </div>
                         </div>

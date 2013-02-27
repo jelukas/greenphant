@@ -358,16 +358,19 @@ def view_course(request,slug):
 
 
 """
-Vista de los contenidos del Curso una vez matriculado
+Vista de los contenidos del Curso una vez matriculado y Vista del Profesor
 """
 @login_required()
 def learning_course(request,course_id):
-    course = get_object_or_404(Course,Q(pk=course_id),Q(status__name="published") | Q(status__name="evaluation period"))
+    course = get_object_or_404(Course,pk=course_id,status__name__in=["published","evaluation period","building"])
     enrrollment = course.enrollments.filter(user_id=request.user.id)
-    if not enrrollment:
-        return HttpResponseRedirect(reverse('elearning.views.view_course', args=(course.id,)))
+    if not enrrollment and course.get_owner_id() != request.user.id:
+        messages.error(request,_('You are not enrrolled in this course'))
+        return HttpResponseRedirect(reverse('elearning.views.view_course', args=(course.slug,)))
     else:
         context = {'course':course,'enrrolled':True}
+        if course.get_owner_id() == request.user.id:
+            context = {'course':course,'enrrolled':False}
     return render_to_response('elearning/course/learning_course.html',context,context_instance = RequestContext(request))
 
 
@@ -376,13 +379,13 @@ Vista de la Leccion una vez matriculado
 """
 @login_required()
 def learning_lesson(request,lesson_id):
-    lesson = get_object_or_404(Lesson,Q(pk=lesson_id),Q(subject__course__status__name="published") | Q(subject__course__status__name="evaluation period"))
+    lesson = get_object_or_404(Lesson,pk=lesson_id,subject__course__status__name__in=["published","evaluation period","building"])
     enrrollment = lesson.subject.course.enrollments.filter(user_id=request.user.id)
-    if not enrrollment:
+    if not enrrollment and lesson.subject.course.get_owner_id() != request.user.id:
         messages.warning(request,_('You are not enrroled in that course: ')+lesson.subject.course.title)
         return HttpResponseRedirect(reverse('elearning.views.view_course', args=(lesson.subject.course.id,)))
     else:
-        comments = Comment.objects.filter(lesson_id=lesson.id).order_by('-created_at')
+        comments = Comment.objects.filter(lesson_id=lesson.id,parent_comment=None).order_by('-created_at')
         if request.POST:
             comment_form = CommentForm(request.POST)
             if comment_form.is_valid():

@@ -27,7 +27,7 @@ class SubjectForm(ModelForm):
 class CommentForm(ModelForm):
     class Meta:
         model = Comment
-        exclude = ('created_at','user','lesson')
+        exclude = ('created_at','user','lesson','parent_comment')
 
 
 class LessonForm(ModelForm):

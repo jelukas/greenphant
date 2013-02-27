@@ -150,7 +150,7 @@ INSTALLED_APPS = (
     'paypal.standard',
     'paypal.pro',
     #Others
-    'south',
+#    'south',
     'sorl.thumbnail',
     'registration',
     'social_auth',
