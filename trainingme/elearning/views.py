@@ -503,5 +503,5 @@ def home(request):
     else:
         featured = Course.objects.filter(id__in=cursos_destacados)
         courses = Course.objects.filter(Q(status__name="published") | Q(status__name="evaluation period") | Q(status__name="building")).exclude(id__in = cursos_de_prueba)
-    context = {'courses' : courses, 'users_count' : users_count}
+    context = {'courses' : courses, 'users_count' : users_count,'featured': featured}
     return render_to_response('elearning/home.html',context,context_instance = RequestContext(request))
