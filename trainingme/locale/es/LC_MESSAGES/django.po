@@ -527,7 +527,6 @@ msgid "Search courses...."
 msgstr "Encontrar Cursos"
 
 #: elearning/templates/elearning/home.html:34
-#, fuzzy
 msgid "Search"
 msgstr "Encontrar Curso"
 
@@ -2275,84 +2274,3 @@ msgid ""
 "Please keep the total uploaded files under %(total_size)s. With this file, "
 "the total would be %(exceed_size)s."
 msgstr ""
-
-#~ msgid "Duplicated Transaction"
-#~ msgstr "Transacción duplicada"
-
-#~ msgid "Failed Transaction"
-#~ msgstr "Transacción fallida"
-
-#~ msgid "We are already %(users_count)s Users!!"
-#~ msgstr "¡¡Ya somos %(users_count)s Usuarios!!"
-
-#~ msgid "You should set your Surname for Invoices"
-#~ msgstr "Debes rellenar tu apellido para las facturas"
-
-#~ msgid "Email Address updated sucessfully"
-#~ msgstr "Curso actualizado correctamente"
-
-#~ msgid "Featured Video"
-#~ msgstr "Video de Promoción"
-
-#~ msgid "You video is Ready"
-#~ msgstr "Tu vídeo está listo"
-
-#~ msgid "Your Dashboard"
-#~ msgstr "Tu escritorio"
-
-#~ msgid "Learning Courses"
-#~ msgstr "Encontrar Cursos"
-
-#~ msgid "Teaching Courses"
-#~ msgstr "Encontrar Cursos"
-
-#~ msgid "Sign in"
-#~ msgstr "Regístrate"
-
-#~ msgid "or sign in with"
-#~ msgstr "o regístrate con"
-
-#~ msgid "your email address"
-#~ msgstr "tu dirección de email"
-
-#~ msgid "already have account?"
-#~ msgstr "¿Ya tienes una cuenta?"
-
-#~ msgid "Log In"
-#~ msgstr "Iniciar Sesión"
-
-#~ msgid "Extra Content"
-#~ msgstr "Contenido extra"
-
-#~ msgid "You are enrrolled"
-#~ msgstr "Tu estás matriculado"
-
-#~ msgid "Access"
-#~ msgstr "Acceso"
-
-#~ msgid "Your Email Address"
-#~ msgstr "tu dirección de email"
-
-#~ msgid "Welcome"
-#~ msgstr "Bienvenido"
-
-#~ msgid "Mi Perfil"
-#~ msgstr "Mi Perfil"
-
-#~ msgid "Correo eléctronico de Activación enviado"
-#~ msgstr "Correo eléctronico de Activación enviado"
-
-#~ msgid "Delete"
-#~ msgstr "Borrar"
-
-#~ msgid "View"
-#~ msgstr "Ver"
-
-#~ msgid "Edit"
-#~ msgstr "Editar"
-
-#~ msgid "Stars"
-#~ msgstr "Estrellas"
-
-#~ msgid "Log Out"
-#~ msgstr "Cerrar Sesión"

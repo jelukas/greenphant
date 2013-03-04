@@ -39,7 +39,7 @@
       <file leaf-file-name="django.po" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/locale/es/LC_MESSAGES/django.po">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="529" column="8" selection-start="15393" selection-end="15393" vertical-scroll-proportion="0.07511737">
+            <state line="2275" column="9" selection-start="51214" selection-end="51214" vertical-scroll-proportion="0.8943662">
               <folding />
             </state>
           </provider>
@@ -539,7 +539,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/locale/es/LC_MESSAGES/django.po">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="529" column="8" selection-start="15393" selection-end="15393" vertical-scroll-proportion="0.07511737">
+        <state line="2275" column="9" selection-start="51214" selection-end="51214" vertical-scroll-proportion="0.8943662">
           <folding />
         </state>
       </provider>
