@@ -4,11 +4,9 @@
     <br></div><div><br></div><div><br></div><div><br></div><div><br></div><d=iv><br>
 <br>
 
-{% blocktrans  %}
-    The User {{ student.get_full_name }}
-    with email {{ student.email }}
-    has purchased your course: {{ course.title }}
-{% endblocktrans %}
+    {% trans 'The User' %} {{ student.get_full_name }}
+    {% trans 'with email' %} {{ student.email }}
+    {% trans 'has purchased your course:' %} {{ course.title }}
 
 <hr color="#000066" width="100%">
 <table width="34%" border="0">

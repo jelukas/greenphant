@@ -37,6 +37,45 @@
                 </div>
             </div>
             <div class="row-fluid">
+                <h3>{% trans 'Featured Courses' %}</h3>
+                <hr/>
+                <div class="boxLine">
+                    {% for course in featured %}
+                        <div class="span3 cursoBox">
+                            <a href="{% url "view_course" course.slug %}">
+                                {% if course.image %}
+                                    {% thumbnail course.image "238x135" as im %}
+                                        <div class="boxTitleBG" style="background-image: url({{ im.url }});background-size:100% 100%;"></div>
+                                    {% endthumbnail %}
+                                {% else %}
+                                    <div class="boxTitleBG" style="background-image: url('{{ STATIC_URL }}/img/dafault_image_course.gif');background-size:100% 100%;"></div>
+                                {% endif %}
+                            </a>
+                            <div class="boxTitle" >
+                                <a href="{% url "view_course" course.slug %}">{{ course.title }}</a>
+                            </div>
+                            <div class="boxDescription">
+                                <p>
+                                    {{ course.short_description|truncatewords:13 }}
+                                </p>
+                            </div>
+                            <div class="boxInfoFooter">
+                                <div class="headerTitle">
+                                    <div class="leftSide">{% trans "Enrolls" %}</div>
+                                    <div class="middleSide">{% trans "Price" %}</div>
+                                    <div class="rightSide">{% trans "Points" %}</div>
+                                </div>
+                                <div class="footerInfo">
+                                    <div class="leftSide">{{ course.enrollments.count }}</div>
+                                    <div class="middleSide">{{ course.price }} &euro;</div>
+                                    <div id="curso-{{ course.id }}"  data-rating="{{ course.get_scoring }}" class="star rightSide"></div>
+                                </div>
+                            </div>
+                        </div>
+                    {% endfor %}
+                </div>
+                <h3>{% trans 'More Courses' %}</h3>
+                <hr/>
                 <div class="boxLine">
                     {% for course in courses %}
                         <div class="span3 cursoBox">
