@@ -532,7 +532,6 @@ msgid "Search"
 msgstr "Encontrar Curso"
 
 #: elearning/templates/elearning/home.html:40
-#, fuzzy
 msgid "Featured Courses"
 msgstr "Cursos Destacados"
 
@@ -542,7 +541,6 @@ msgid "Enrolls"
 msgstr "Matriculados"
 
 #: elearning/templates/elearning/home.html:77
-#, fuzzy
 msgid "More Courses"
 msgstr "Más Cursos"
 
