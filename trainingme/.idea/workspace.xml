@@ -25,11 +25,13 @@
   <component name="ExecutionTargetManager" SELECTED_TARGET="default_target" />
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="view_course.html" pinned="false" current="true" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/elearning/templates/elearning/course/view_course.html">
+      <file leaf-file-name="models.py" pinned="false" current="true" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/elearning/models.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="24" column="22" selection-start="1818" selection-end="1818" vertical-scroll-proportion="0.4417178">
-              <folding />
+            <state line="312" column="40" selection-start="11120" selection-end="11120" vertical-scroll-proportion="0.38617402">
+              <folding>
+                <element signature="e#0#9#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -44,7 +46,6 @@
   <component name="IdeDocumentHistory">
     <option name="changedFiles">
       <list>
-        <option value="$PROJECT_DIR$/elearning/templates/elearning/course/learning_lesson.html" />
         <option value="$PROJECT_DIR$/financial/models.py" />
         <option value="$PROJECT_DIR$/financial/templates/financial/view_billing.html" />
         <option value="$PROJECT_DIR$/financial/views.py" />
@@ -60,6 +61,7 @@
         <option value="$PROJECT_DIR$/financial/management/commands/clear_amounts.py" />
         <option value="$PROJECT_DIR$/financial/templates/financial/clear_amount_email.html" />
         <option value="$PROJECT_DIR$/elearning/templates/elearning/course/view_course.html" />
+        <option value="$PROJECT_DIR$/elearning/models.py" />
       </list>
     </option>
   </component>
@@ -124,69 +126,7 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="trainingme" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="trainingme" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="trainingme" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
               <option name="myItemId" value="elearning" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="trainingme" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="trainingme" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="elearning" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="templates" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="elearning" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="trainingme" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="trainingme" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="elearning" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="templates" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="elearning" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="course" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -483,15 +423,6 @@
         <state line="2273" column="0" selection-start="51089" selection-end="51089" vertical-scroll-proportion="0.85915494" />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/elearning/views.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="491" column="3" selection-start="23258" selection-end="23258" vertical-scroll-proportion="0.624553">
-          <folding>
-            <element signature="e#0#44#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/elearning/templates/elearning/home.html">
       <provider selected="true" editor-type-id="text-editor">
         <state line="47" column="40" selection-start="2887" selection-end="2887" vertical-scroll-proportion="0.16564417">
@@ -545,19 +476,28 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/elearning/models.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="309" column="6" selection-start="10850" selection-end="10850" vertical-scroll-proportion="0.33253872">
-          <folding>
-            <element signature="e#0#9#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/elearning/templates/elearning/course/view_course.html">
       <provider selected="true" editor-type-id="text-editor">
         <state line="24" column="22" selection-start="1818" selection-end="1818" vertical-scroll-proportion="0.4417178">
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/elearning/views.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="174" column="4" selection-start="8283" selection-end="8283" vertical-scroll-proportion="0.33253872">
+          <folding>
+            <element signature="e#0#44#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/elearning/models.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="312" column="40" selection-start="11120" selection-end="11120" vertical-scroll-proportion="0.38617402">
+          <folding>
+            <element signature="e#0#9#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
