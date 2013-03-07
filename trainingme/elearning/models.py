@@ -352,7 +352,7 @@ class Comment(models.Model):
     lesson = models.ForeignKey(Lesson,verbose_name=_('Lesson'),related_name='comments')
     created_at = models.DateTimeField(blank=False,auto_now_add=True)
     message = models.TextField(_('Message'),max_length=1000)
-    parent_comment = models.ForeignKey('self',verbose_name=_('Comment'),related_name='replies',null=True)
+    parent_comment = models.ForeignKey('self',verbose_name=_('Comment'),related_name='replies',null=True, blank=True)
 
     def get_owner_id(self):
         return self.user.id

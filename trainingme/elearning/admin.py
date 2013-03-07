@@ -7,7 +7,7 @@ class CommentAdmin(admin.ModelAdmin):
 
 
 class EnrollmentAdmin(admin.ModelAdmin):
-    list_display = ('user','course','start_date',)
+    list_display = ('user','course','start_date','tester',)
 
 class CourseAdmin(admin.ModelAdmin):
     list_display = ('title','user','get_owner_email','price','status','category','created_at','published_at')

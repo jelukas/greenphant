@@ -13,8 +13,8 @@ class Command(BaseCommand):
 
     def handle(self, *args, **options):
         now = datetime.now()
-        orders = Order.objects.filter(datetime_cleared=None)
-#        orders = Order.objects.filter(created_at__lte= now - timedelta(days=30),datetime_cleared=None)
+        #orders = Order.objects.filter(datetime_cleared=None)
+        orders = Order.objects.filter(created_at__lte= now - timedelta(days=30),datetime_cleared=None)
         teachers = {}
         if orders.count() > 0:
             for order in orders:

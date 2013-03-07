@@ -35,6 +35,8 @@ urlpatterns = patterns('',
     url(r'^course/learning/(\d+)/$','elearning.views.learning_course', name='learning_course' ),
     url(r'^course/(?P<slug>[-\w]+)/$','elearning.views.view_course', name='view_course' ),
     url(r'^course/(\d+)/(\d+)?$','elearning.views.vote_course', name='vote_course' ),
+    url(r'^course/enrroll-tester/(\d+)/$','elearning.views.enrroll_tester', name='enrroll_tester'),
+
     #url(r'^course/(\d+)/$','elearning.views.view_course', name='view_course' ),
 
     #Lesson

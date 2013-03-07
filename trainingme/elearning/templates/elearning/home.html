@@ -60,6 +60,21 @@
                                 </p>
                             </div>
                             <div class="boxInfoFooter">
+                                <ul class="unstyled course-teacher">
+                                    <li class="avatar">
+                                        {% if course.user.get_profile.image %}
+                                            <img src="{{ course.user.get_profile.image.url }}"  class="img-rounded" width="50px"/>
+                                        {% else %}
+                                            <img src="{{ STATIC_URL }}img/default_profile.png" alt="{{ course.user.get_full_name }}"  class="img-rounded" width="50px"/>
+                                        {% endif %}
+                                    </li>
+                                    <li class="teaching">
+                                        <p class="teacher-fullname">{{ course.user.get_full_name }}</p>
+                                        <p class="teacher-subtitle">{{ course.user.get_profile.subtitle }}</p>
+                                    </li>
+                                </ul>
+                            </div>
+                            <div class="boxInfoFooter">
                                 <div class="headerTitle">
                                     <div class="leftSide">{% trans "Enrolls" %}</div>
                                     <div class="middleSide">{% trans "Price" %}</div>
@@ -95,6 +110,21 @@
                                 <p>
                                     {{ course.short_description|truncatewords:13 }}
                                 </p>
+                            </div>
+                            <div class="boxInfoFooter">
+                                <ul class="unstyled course-teacher">
+                                    <li class="avatar">
+                                        {% if course.user.get_profile.image %}
+                                            <img src="{{ course.user.get_profile.image.url }}"  class="img-rounded" width="50px"/>
+                                        {% else %}
+                                            <img src="{{ STATIC_URL }}img/default_profile.png" alt="{{ course.user.get_full_name }}"  class="img-rounded" width="50px"/>
+                                        {% endif %}
+                                    </li>
+                                    <li class="teaching">
+                                        <p class="teacher-fullname">{{ course.user.get_full_name }}</p>
+                                        <p class="teacher-subtitle">{{ course.user.get_profile.subtitle }}</p>
+                                    </li>
+                                </ul>
                             </div>
                             <div class="boxInfoFooter">
                                 <div class="headerTitle">

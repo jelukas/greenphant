@@ -1,5 +1,5 @@
 {% extends 'base.html' %}
-{% load i18n %}{% load humanize %}{% load thumbnail %}
+{% load i18n %}{% load humanize %}{% load thumbnail %}{% load elearning_extras %}
 {% block title %}
     {% trans 'Course of ' %}{{ course.title }} #{{ course.category.name|slugify }} v @trainingmenet
 {% endblock %}
@@ -31,6 +31,11 @@
                     <span class='st_linkedin_hcount' displayText='LinkedIn'></span>
                     <span class='st_pinterest_hcount' displayText='Pinterest'></span>
                     <span class='st_email_hcount' displayText='Email'></span>
+                    {% if not course|user_had_vote_course:user.id and not is_teacher %}
+                            <p>{% trans 'Rate this course ' %}<div id="rate-course"  data-rating="{{ course.get_scoring }}" class="star_course leftSide"></div></p>
+                    {% else %}
+                            <p>{% trans 'Rating ' %}<div id="rated-course"  data-rating="{{ course.get_scoring }}" class="star_course_rated leftSide"></div></p>
+                    {% endif %}
                     <div class="description" >
                         <p>{% if course.image %}{% thumbnail course.image "238x135" as im %}<img src="{{ im.url }}" />{% endthumbnail %}{% else %}<img src="{{ STATIC_URL }}img/dafault_image_course.gif" />{% endif %}{{ course.large_description }}</p>
                     </div>

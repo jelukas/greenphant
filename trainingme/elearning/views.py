@@ -1,5 +1,5 @@
 from django.http import HttpResponseRedirect
-from django.shortcuts import render_to_response, get_object_or_404
+from django.shortcuts import render_to_response, get_object_or_404, redirect
 from django.template.context import  RequestContext
 from django.contrib.auth.decorators import login_required
 from django.contrib.auth.models import User
@@ -18,6 +18,8 @@ from datetime import datetime
 from django.template.defaultfilters import slugify
 from django.db import IntegrityError
 from django.db.models import Q
+
+
 
 """ BUILD COURSE ZONE """
 @login_required()
@@ -85,6 +87,7 @@ def change_checking_status(request,course_id):
     course.save()
     messages.success(request,_('Course sent to Checking process'))
     return HttpResponseRedirect(reverse('elearning.views.teaching'))
+
 
 """ SUBJECT ZONE """
 @login_required()
@@ -234,6 +237,7 @@ def delete_lesson(request,lesson_id):
     messages.success(request,_('Lesson deleted successfully'))
     return HttpResponseRedirect(reverse('elearning.views.building_course', args=(course.id,))) # Redirect after POST
 
+
 """ Video """
 @login_required()
 @owner_required(Lesson)
@@ -264,11 +268,13 @@ def delete_video(request,video_id):
     messages.success(request,_('Video deleted successfully'))
     return HttpResponseRedirect(reverse('elearning.views.building_course', args=(course.id,))) # Redirect after POST
 
+
 #NO login Required:
 @ajax_required
 def free_video(request,video_id):
     video = get_object_or_404(Video,pk=video_id)
     return render_to_response('elearning/free_video.html',{'video':video},context_instance = RequestContext(request))
+
 
 @login_required()
 @owner_required(Video)
@@ -403,6 +409,7 @@ def learning_lesson(request,lesson_id):
             context = {'lesson':lesson,'comments':comments,'comment_form':comment_form,'enrrolled':False,'is_teacher':True}
     return render_to_response('elearning/course/learning_lesson.html',context,context_instance = RequestContext(request))
 
+
 """
 Responder a un comentario
 """
@@ -489,10 +496,28 @@ def vote_course(request,course_id,points):
     back = request.META.get('HTTP_REFERER',None)
     return HttpResponseRedirect(back)
 
+
+"""
+Enrroll as Tester
+"""
+@login_required()
+def enrroll_tester(request,course_id):
+    course = get_object_or_404(Course,pk=course_id,status__name="evaluation period")
+    testers_number = Enrollment.objects.filter(course_id = course_id,tester = True).count()
+    if testers_number < 5:
+        enrollment = Enrollment(user_id=request.user.id, course_id=course_id, start_date=datetime.now(), tester=True)
+        enrollment.save()
+        if testers_number == 4:
+            course.status = Status.objects.get(name='published')
+            course.save()
+        messages.success(request,_('Now you are Tester of the Course ')+course.title)
+    else:
+        messages.error(request,_('You can\'t be tester on that Course'))
+    return redirect(reverse('elearning.views.view_course', args=(course.slug,)))
+
 """
 HOME PAGE
 """
-
 def home(request):
     cursos_de_prueba = [51,48,47,20,22]
     cursos_destacados = [54,13,25,23]
