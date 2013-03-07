@@ -25,16 +25,25 @@
   <component name="ExecutionTargetManager" SELECTED_TARGET="default_target" />
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="home.html" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="home.html" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/elearning/templates/elearning/home.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="117" column="137" selection-start="7568" selection-end="7568" vertical-scroll-proportion="0.5030675">
+            <state line="119" column="154" selection-start="7754" selection-end="7754" vertical-scroll-proportion="-18.333334">
               <folding>
                 <element signature="e#2911#2981#0" expanded="true" />
                 <element signature="e#3147#3252#0" expanded="true" />
                 <element signature="e#6308#6378#0" expanded="true" />
                 <element signature="e#6544#6649#0" expanded="true" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="styles.less" pinned="false" current="true" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/static/css/styles.less">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="1409" column="19" selection-start="24264" selection-end="24264" vertical-scroll-proportion="0.5172825">
+              <folding />
             </state>
           </provider>
         </entry>
@@ -63,8 +72,8 @@
         <option value="$PROJECT_DIR$/shop/templates/shop/enrroled_email.html" />
         <option value="$PROJECT_DIR$/financial/templates/financial/clear_amount_email.html" />
         <option value="$PROJECT_DIR$/templates/pages/team.html" />
-        <option value="$PROJECT_DIR$/static/css/styles.less" />
         <option value="$PROJECT_DIR$/elearning/templates/elearning/home.html" />
+        <option value="$PROJECT_DIR$/static/css/styles.less" />
       </list>
     </option>
   </component>
@@ -129,6 +138,24 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="static" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="trainingme" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="trainingme" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="static" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="css" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -544,13 +571,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/static/css/styles.less">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="1399" column="14" selection-start="24107" selection-end="24107" vertical-scroll-proportion="0.48084053">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/elearning/templates/elearning/course/view_course.html">
       <provider selected="true" editor-type-id="text-editor">
         <state line="85" column="31" selection-start="5968" selection-end="6423" vertical-scroll-proportion="0.5705522">
@@ -560,13 +580,20 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/elearning/templates/elearning/home.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="117" column="137" selection-start="7568" selection-end="7568" vertical-scroll-proportion="0.5030675">
+        <state line="119" column="154" selection-start="7754" selection-end="7754" vertical-scroll-proportion="-18.333334">
           <folding>
             <element signature="e#2911#2981#0" expanded="true" />
             <element signature="e#3147#3252#0" expanded="true" />
             <element signature="e#6308#6378#0" expanded="true" />
             <element signature="e#6544#6649#0" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/static/css/styles.less">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="1409" column="19" selection-start="24264" selection-end="24264" vertical-scroll-proportion="0.5172825">
+          <folding />
         </state>
       </provider>
     </entry>
