@@ -520,7 +520,7 @@ HOME PAGE
 """
 def home(request):
     cursos_de_prueba = [51,48,47,20,22]
-    cursos_destacados = [54,13,25,23]
+    cursos_destacados = [54,13,29,23]
     users_count = User.objects.count()
     if request.POST:
         featured = Course.objects.filter(id__in=cursos_destacados)
