@@ -9,7 +9,7 @@ class UserAdmin(UserAdmin):
 
 class ProfileAdmin(admin.ModelAdmin):
     list_display = ('user','subtitle','phone_number','linkedin_url',)
-    
+
 
 admin.site.unregister(User)
 admin.site.register(User,UserAdmin)
