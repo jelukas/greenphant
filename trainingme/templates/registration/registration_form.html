@@ -11,5 +11,9 @@
                 <tr><td></td><td><input class="btn btn-large btn-primary" type="submit" value="{% trans "Create Account" %}" /></td>
             </form>
         </table>
+        <hr/>
+        <p>{% blocktrans %}
+            By clicking Create Account you agree to the <a href="{{ STATIC_URL }}pdf/Terminos-y-condiciones-TrainingMe.net.pdf">Terms of Service</a> and <a href="{{ STATIC_URL }}pdf/Terminos-y-condiciones-TrainingMe.net.pdf">Privacy policies</a>.
+            {% endblocktrans %}</p>
     </section>
 {% endblock sections %}
