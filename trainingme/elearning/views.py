@@ -345,9 +345,6 @@ COURSE
 #@login_required() # No es necesario que este logueado para ver los detalles del curso , Si para comprarlo
 
 def view_course(request,slug):
-    from paypal.standard.forms import PayPalEncryptedPaymentsForm
-    from django.conf import settings
-
     course = get_object_or_404(Course,Q(slug=slug),Q(status__name="published")|Q(status__name="evaluation period")|Q(status__name="building"))
 
     if request.user.is_authenticated():
@@ -370,7 +367,7 @@ Vista de los contenidos del Curso una vez matriculado y Vista del Profesor
 def learning_course(request,course_id):
     course = get_object_or_404(Course,pk=course_id,status__name__in=["published","evaluation period","building"])
     enrrollment = course.enrollments.filter(user_id=request.user.id)
-    if not enrrollment and course.get_owner_id() != request.user.id:
+    if not enrrollment and course.get_owner_id() != request.user.id and not request.user.is_staff:
         messages.error(request,_('You are not enrrolled in this course'))
         return HttpResponseRedirect(reverse('elearning.views.view_course', args=(course.slug,)))
     else:
@@ -387,9 +384,9 @@ Vista de la Leccion una vez matriculado
 def learning_lesson(request,lesson_id):
     lesson = get_object_or_404(Lesson,pk=lesson_id,subject__course__status__name__in=["published","evaluation period","building"])
     enrrollment = lesson.subject.course.enrollments.filter(user_id=request.user.id)
-    if not enrrollment and lesson.subject.course.get_owner_id() != request.user.id:
+    if not enrrollment and lesson.subject.course.get_owner_id() != request.user.id and not request.user.is_staff:
         messages.warning(request,_('You are not enrroled in that course: ')+lesson.subject.course.title)
-        return HttpResponseRedirect(reverse('elearning.views.view_course', args=(lesson.subject.course.id,)))
+        return HttpResponseRedirect(reverse('elearning.views.view_course', args=(lesson.subject.course.slug,)))
     else:
         comments = Comment.objects.filter(lesson_id=lesson.id,parent_comment=None).order_by('-created_at')
         if request.POST:
@@ -419,7 +416,7 @@ def reply_comment(request,lesson_id,parent_comment_id):
     enrrollment = lesson.subject.course.enrollments.filter(user_id=request.user.id)
     if not enrrollment and lesson.subject.course.get_owner_id() != request.user.id:
         messages.warning(request,_('You are not enrroled in that course: ')+lesson.subject.course.title)
-        return HttpResponseRedirect(reverse('elearning.views.view_course', args=(lesson.subject.course.id,)))
+        return HttpResponseRedirect(reverse('elearning.views.view_course', args=(lesson.subject.course.slug,)))
     else:
         if request.POST:
             comment_form = CommentForm(request.POST)

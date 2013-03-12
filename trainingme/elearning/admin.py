@@ -10,8 +10,16 @@ class CommentAdmin(admin.ModelAdmin):
 class EnrollmentAdmin(admin.ModelAdmin):
     list_display = ('user','course','start_date','tester',)
 
+
 class CourseAdmin(admin.ModelAdmin):
-    list_display = ('title','user','get_owner_email','price','status','category','created_at','published_at')
+    list_display = ('title','user','get_owner_email','price','status','category','created_at','published_at','learning_course')
+
+    def learning_course(self,object):
+        url = reverse('elearning.views.learning_course', args=(object.id,))
+        return u'<a href="%s">%s</a>' %(url, 'View In Site')
+    learning_course.short_description = 'View In Site'
+    learning_course.allow_tags = True
+
 
 class VideoAdmin(admin.ModelAdmin):
     list_display = ('original_video_file','lesson','get_course',)

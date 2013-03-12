@@ -25,30 +25,12 @@
   <component name="ExecutionTargetManager" SELECTED_TARGET="default_target" />
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="translation.py" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/elearning/translation.py">
+      <file leaf-file-name="admin.py" pinned="false" current="true" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/elearning/admin.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="5" column="26" selection-start="204" selection-end="204" vertical-scroll-proportion="0.0">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="settings.py" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/trainingme/settings.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="278" column="0" selection-start="9054" selection-end="9054" vertical-scroll-proportion="0.0">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="models.py" pinned="false" current="true" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/elearning/models.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="35" column="39" selection-start="1106" selection-end="1106" vertical-scroll-proportion="-0.66150177">
+            <state line="14" column="125" selection-start="553" selection-end="553" vertical-scroll-proportion="0.24647887">
               <folding>
-                <element signature="e#0#9#0" expanded="true" />
+                <element signature="e#0#32#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -64,8 +46,6 @@
   <component name="IdeDocumentHistory">
     <option name="changedFiles">
       <list>
-        <option value="$PROJECT_DIR$/templates/pages/ensenando.html" />
-        <option value="$PROJECT_DIR$/templates/registration/registration_form.html" />
         <option value="$PROJECT_DIR$/statistics/admin.py" />
         <option value="$PROJECT_DIR$/statistics/models.py" />
         <option value="$PROJECT_DIR$/statistics/templates/statistics/form.html" />
@@ -80,6 +60,8 @@
         <option value="$PROJECT_DIR$/elearning/translation.py" />
         <option value="$PROJECT_DIR$/trainingme/settings.py" />
         <option value="$PROJECT_DIR$/elearning/models.py" />
+        <option value="$PROJECT_DIR$/elearning/views.py" />
+        <option value="$PROJECT_DIR$/elearning/admin.py" />
       </list>
     </option>
   </component>
@@ -159,24 +141,6 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="elearning" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="trainingme" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="trainingme" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="elearning" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="fixtures" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -446,31 +410,6 @@
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/statistics/admin.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="5" column="29" selection-start="94" selection-end="94" vertical-scroll-proportion="0.0" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/statistics/views.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="23" column="87" selection-start="905" selection-end="905" vertical-scroll-proportion="0.6216216" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/statistics/urls.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="3" column="55" selection-start="135" selection-end="135" vertical-scroll-proportion="0.08108108" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/financial/forms.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/financial/views.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="6" column="0" selection-start="303" selection-end="353" vertical-scroll-proportion="0.16605166" />
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/statistics/forms.py">
       <provider selected="true" editor-type-id="text-editor">
         <state line="5" column="121" selection-start="264" selection-end="264" vertical-scroll-proportion="0.13513513" />
@@ -511,25 +450,66 @@
         <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/elearning/translation.py">
+    <entry file="file://$PROJECT_DIR$/trainingme/settings.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="5" column="26" selection-start="204" selection-end="204" vertical-scroll-proportion="0.0">
+        <state line="278" column="0" selection-start="9054" selection-end="9054" vertical-scroll-proportion="0.8239437">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/trainingme/settings.py">
+    <entry file="file://$PROJECT_DIR$/elearning/translation.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="278" column="0" selection-start="9054" selection-end="9054" vertical-scroll-proportion="0.0">
+        <state line="5" column="26" selection-start="204" selection-end="204" vertical-scroll-proportion="0.07042254">
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/elearning/templates/elearning/course/view_course.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../../lib/python2.6/site-packages/django/contrib/auth/__init__.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="74" column="16" selection-start="3004" selection-end="3004" vertical-scroll-proportion="1.2992958">
+          <folding>
+            <element signature="e#0#25#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/elearning/models.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="35" column="39" selection-start="1106" selection-end="1106" vertical-scroll-proportion="-0.66150177">
+        <state line="41" column="31" selection-start="1237" selection-end="1237" vertical-scroll-proportion="0.0">
           <folding>
             <element signature="e#0#9#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../../lib/python2.6/site-packages/django/contrib/auth/models.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="238" column="12" selection-start="8606" selection-end="8614" vertical-scroll-proportion="0.4741784">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/elearning/views.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="417" column="76" selection-start="19772" selection-end="19772" vertical-scroll-proportion="0.5562423">
+          <folding>
+            <element signature="e#0#44#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/elearning/admin.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="14" column="125" selection-start="553" selection-end="553" vertical-scroll-proportion="0.24647887">
+          <folding>
+            <element signature="e#0#32#0" expanded="true" />
           </folding>
         </state>
       </provider>
