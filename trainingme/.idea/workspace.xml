@@ -28,9 +28,20 @@
       <file leaf-file-name="admin.py" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/elearning/admin.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="14" column="125" selection-start="553" selection-end="553" vertical-scroll-proportion="0.24647887">
+            <state line="38" column="29" selection-start="1618" selection-end="1618" vertical-scroll-proportion="0.6690141">
               <folding>
                 <element signature="e#0#32#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="models.py" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/elearning/models.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="292" column="6" selection-start="10346" selection-end="10346" vertical-scroll-proportion="0.0">
+              <folding>
+                <element signature="e#0#9#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -480,15 +491,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/elearning/models.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="41" column="31" selection-start="1237" selection-end="1237" vertical-scroll-proportion="0.0">
-          <folding>
-            <element signature="e#0#9#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/../../lib/python2.6/site-packages/django/contrib/auth/models.py">
       <provider selected="true" editor-type-id="text-editor">
         <state line="238" column="12" selection-start="8606" selection-end="8614" vertical-scroll-proportion="0.4741784">
@@ -505,9 +507,18 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/elearning/models.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="292" column="6" selection-start="10346" selection-end="10346" vertical-scroll-proportion="0.0">
+          <folding>
+            <element signature="e#0#9#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/elearning/admin.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="14" column="125" selection-start="553" selection-end="553" vertical-scroll-proportion="0.24647887">
+        <state line="38" column="29" selection-start="1618" selection-end="1618" vertical-scroll-proportion="0.6690141">
           <folding>
             <element signature="e#0#32#0" expanded="true" />
           </folding>

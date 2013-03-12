@@ -3,6 +3,16 @@ from elearning.models import Category,Course,Status,Subject,Attach,Video,Lesson,
 from django.core.urlresolvers import reverse
 
 
+class AttachAdmin(admin.ModelAdmin):
+    list_display = ('lesson','file','get_course')
+
+    def get_course(self,object):
+        url = reverse('admin:%s_%s_change' %( object.subject.course._meta.app_label,   object.subject.course._meta.module_name),  args=[ object.subject.course.id] )
+        return u'<a href="%s">%s</a>' %(url,  object.subject.course.title)
+    get_course.short_description = 'Course'
+    get_course.allow_tags = True
+
+
 class CommentAdmin(admin.ModelAdmin):
     list_display = ('created_at','user','lesson',)
 
@@ -34,7 +44,7 @@ admin.site.register(Category)
 admin.site.register(Course,CourseAdmin)
 admin.site.register(Status)
 admin.site.register(Subject)
-admin.site.register(Attach)
+admin.site.register(Attach,AttachAdmin)
 admin.site.register(Video,VideoAdmin)
 admin.site.register(Lesson)
 admin.site.register(Enrollment,EnrollmentAdmin)
