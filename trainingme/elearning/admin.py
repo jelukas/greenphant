@@ -4,11 +4,11 @@ from django.core.urlresolvers import reverse
 
 
 class AttachAdmin(admin.ModelAdmin):
-    list_display = ('lesson','file','get_course')
+    list_display = ('lesson','file','get_course',)
 
     def get_course(self,object):
-        url = reverse('admin:%s_%s_change' %( object.subject.course._meta.app_label,   object.subject.course._meta.module_name),  args=[ object.subject.course.id] )
-        return u'<a href="%s">%s</a>' %(url,  object.subject.course.title)
+        url = reverse('admin:%s_%s_change' %( object.lesson.subject.course._meta.app_label,   object.lesson.subject.course._meta.module_name),  args=[ object.lesson.subject.course.id] )
+        return u'<a href="%s">%s</a>' %(url,  object.lesson.subject.course.title)
     get_course.short_description = 'Course'
     get_course.allow_tags = True
 
