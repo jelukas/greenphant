@@ -6,6 +6,7 @@ from django_countries import CountryField
 import os
 from django.utils.translation import ugettext as _
 from django_countries.countries import COUNTRIES
+from statistics.models import Interest
 
 # We add the most used countries first
 COUNTRIES = list(COUNTRIES)
@@ -35,6 +36,12 @@ class Profile(models.Model):
 
     def __unicode__(self):
         return "%s's profile" % self.user
+
+    def had_filled_poll(self):
+        filled = False
+        if Interest.objects.filter(user_id=self.user.id).count():
+            filled = True
+        return filled
 
 
 # -------- Signals -----------

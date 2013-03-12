@@ -161,6 +161,9 @@ INSTALLED_APPS = (
     'financial',
     'elearning',
     'shop',
+    'statistics',
+    'rosetta',
+    'modeltranslation',
     'django_cleanup',
 )
 
@@ -273,8 +276,10 @@ PAYPAL_WPP_USER = "turico_1350147627_biz_api1.gmail.com"      # Get from PayPal
 PAYPAL_WPP_PASSWORD = "1350147651"
 PAYPAL_WPP_SIGNATURE = "AFcWxV21C7fd0v3bYYYRCpSSRl31AUmLDz5MVEZeELoUIq04UfrAt-r7"
 
+
 """
 Cargamos por defecto el tag i18n
 """
 from django import template
 template.add_to_builtins('django.templatetags.i18n')
+

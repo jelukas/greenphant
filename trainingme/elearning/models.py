@@ -5,6 +5,7 @@ from django.db import models
 from django.db.models import Max
 from django.db.models import F
 from django.db.models import Avg
+from django.utils.encoding import smart_unicode
 from django.core.exceptions import ObjectDoesNotExist
 from django.contrib.auth.models import User
 from django.utils.translation import ugettext as _
@@ -19,8 +20,8 @@ class Category(models.Model):
     class Meta:
         verbose_name_plural = 'categories'
 
-    def __unicode__(self):
-        return self.name
+    def __str__(self):
+        return self.name.encode('utf8')
 
 
 #Status of the Courses Model
@@ -32,7 +33,7 @@ class Status(models.Model):
         verbose_name_plural = _('statuses')
 
     def __unicode__(self):
-        return self.name
+        return self.name.encode('utf8')
 
 
 #Course model

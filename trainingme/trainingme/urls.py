@@ -15,6 +15,7 @@ urlpatterns = patterns('',
     url(r'^elearning/', include('elearning.urls')),
     url(r'^financial/', include('financial.urls')),
     url(r'^shop/', include('shop.urls')),
+    url(r'^statistics/', include('statistics.urls')),
 
 
     # Uncomment the admin/doc line below to enable admin documentation:
@@ -37,6 +38,12 @@ urlpatterns = patterns('',
     # Uncomment the next line to enable the admin:
     url(r'^admin/', include(admin.site.urls)),
 )
+
+if 'rosetta' in settings.INSTALLED_APPS:
+    urlpatterns += patterns('',
+        url(r'^rosetta/', include('rosetta.urls')),
+    )
+
 
 urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT,show_indexes=False)
 urlpatterns += static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
