@@ -28,12 +28,12 @@
       <file leaf-file-name="home.html" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/elearning/templates/elearning/home.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="136" column="190" selection-start="9120" selection-end="9120" vertical-scroll-proportion="0.84662575">
+            <state line="29" column="119" selection-start="1934" selection-end="1934" vertical-scroll-proportion="0.5337423">
               <folding>
-                <element signature="e#2911#2981#0" expanded="true" />
-                <element signature="e#3147#3252#0" expanded="true" />
-                <element signature="e#6412#6482#0" expanded="true" />
-                <element signature="e#6648#6753#0" expanded="true" />
+                <element signature="e#3119#3189#0" expanded="true" />
+                <element signature="e#3355#3460#0" expanded="true" />
+                <element signature="e#6620#6690#0" expanded="true" />
+                <element signature="e#6856#6961#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -115,6 +115,20 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="trainingme" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="trainingme" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="trainingme" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="templates" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -421,16 +435,6 @@
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/elearning/migrations/__init__.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/elearning/fixtures/initial_data.json">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" />
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/elearning/translation.py">
       <provider selected="true" editor-type-id="text-editor">
         <state line="5" column="26" selection-start="204" selection-end="204" vertical-scroll-proportion="0.07042254" />
@@ -520,14 +524,28 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/convertvideo_prod.sh">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/base.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="95" column="63" selection-start="6481" selection-end="6508" vertical-scroll-proportion="0.75460124">
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/elearning/templates/elearning/home.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="136" column="190" selection-start="9120" selection-end="9120" vertical-scroll-proportion="0.84662575">
+        <state line="29" column="119" selection-start="1934" selection-end="1934" vertical-scroll-proportion="0.5337423">
           <folding>
-            <element signature="e#2911#2981#0" expanded="true" />
-            <element signature="e#3147#3252#0" expanded="true" />
-            <element signature="e#6412#6482#0" expanded="true" />
-            <element signature="e#6648#6753#0" expanded="true" />
+            <element signature="e#3119#3189#0" expanded="true" />
+            <element signature="e#3355#3460#0" expanded="true" />
+            <element signature="e#6620#6690#0" expanded="true" />
+            <element signature="e#6856#6961#0" expanded="true" />
           </folding>
         </state>
       </provider>

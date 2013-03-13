@@ -25,8 +25,9 @@
             <div class="row-fluid searchBar">
                 <div class="span12 center">
                     <!-- linea divisora -->
-                    <h3><a href="#enrroll-beta" role="button" data-toggle="modal">{% trans 'We are in beta only for teachers.Sign Up Now and create your courses!' %}</a></h3>
+{#                    <h3><a href="#enrroll-beta" role="button" data-toggle="modal">{% trans 'We are in beta only for teachers.Sign Up Now and create your courses!' %}</a></h3>#}
 {#                    <h4 class="users_count">{% blocktrans %}We are already {{ users_count }} Users!!{% endblocktrans %}</h4>#}
+                    <h3><a href="/accounts/login/">{% trans 'The first five entries of each course are free' %}</a>  <a href="/accounts/login/" class="btn btn-warning">{% trans 'Sign up Now!' %}</a></h3>
                     <hr/>
                     <form class="form-search" method="post" action="">{% csrf_token %}
                         <div class="input-append">
