@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2013-03-13 13:01+0100\n"
-"PO-Revision-Date: 2013-03-13 13:01+0100\n"
+"POT-Creation-Date: 2013-03-13 14:03+0100\n"
+"PO-Revision-Date: 2013-03-13 14:04+0100\n"
 "Last-Translator: Jennifer Garcia Perez <jlucas@guadalux.org>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "MIME-Version: 1.0\n"
@@ -94,10 +94,10 @@ msgstr "Fecha de Inicio"
 
 #: elearning/models.py:325 elearning/models.py:353
 #: elearning/templates/elearning/building_course.html:40
-#: elearning/templates/elearning/course/learning_course.html:55
+#: elearning/templates/elearning/course/learning_course.html:50
 #: elearning/templates/elearning/course/learning_lesson.html:20
 #: elearning/templates/elearning/course/preview_lesson.html:20
-#: elearning/templates/elearning/course/view_course.html:62
+#: elearning/templates/elearning/course/view_course.html:68
 msgid "Lesson"
 msgstr "Lección"
 
@@ -384,10 +384,10 @@ msgid "Edit Subject"
 msgstr "Editar Tema"
 
 #: elearning/templates/elearning/building_course.html:25
-#: elearning/templates/elearning/course/learning_course.html:47
+#: elearning/templates/elearning/course/learning_course.html:42
 #: elearning/templates/elearning/course/learning_lesson.html:15
 #: elearning/templates/elearning/course/preview_lesson.html:15
-#: elearning/templates/elearning/course/view_course.html:54
+#: elearning/templates/elearning/course/view_course.html:60
 msgid "Subject"
 msgstr "Tema"
 
@@ -607,18 +607,18 @@ msgstr "Curso"
 msgid "default_video_image_en.jpg"
 msgstr "default_video_image_es.jpg"
 
-#: elearning/templates/elearning/course/learning_course.html:35
+#: elearning/templates/elearning/course/learning_course.html:69
 #, fuzzy
 msgid "Rate this course "
 msgstr "Guardar Lección"
 
-#: elearning/templates/elearning/course/learning_course.html:37
+#: elearning/templates/elearning/course/learning_course.html:75
 #, fuzzy
-msgid "Rating "
-msgstr "Valoración"
+msgid "Course Rating "
+msgstr "Curso"
 
-#: elearning/templates/elearning/course/learning_course.html:95
-#: elearning/templates/elearning/course/view_course.html:104
+#: elearning/templates/elearning/course/learning_course.html:103
+#: elearning/templates/elearning/course/view_course.html:110
 msgid "Free Video"
 msgstr "Video de Promoción"
 
@@ -661,32 +661,40 @@ msgstr "Responder Comentario"
 msgid "Back to Builder"
 msgstr "Volver al Constructor "
 
-#: elearning/templates/elearning/course/view_course.html:69
+#: elearning/templates/elearning/course/view_course.html:36
+msgid "30 Day Money Back Guarantee"
+msgstr "Garantía de 30 días de Reembolso de tu dinero"
+
+#: elearning/templates/elearning/course/view_course.html:37
+msgid "Lifetime Access - No Limits"
+msgstr "Acceso de por Vida – Sin Límites"
+
+#: elearning/templates/elearning/course/view_course.html:75
 msgid "View FREE Now"
 msgstr "Ver gratis ahora"
 
-#: elearning/templates/elearning/course/view_course.html:118
+#: elearning/templates/elearning/course/view_course.html:124
 msgid "You need an account"
 msgstr "Necesitas una cuenta"
 
-#: elearning/templates/elearning/course/view_course.html:119
+#: elearning/templates/elearning/course/view_course.html:125
 msgid "Sign Up Now!"
 msgstr "Regístrate Ahora!"
 
-#: elearning/templates/elearning/course/view_course.html:121
+#: elearning/templates/elearning/course/view_course.html:127
 msgid "This course is under construction. Will be available soon."
 msgstr "Este curso está en proceso de construcción. Pronto estará disponible."
 
-#: elearning/templates/elearning/course/view_course.html:135
+#: elearning/templates/elearning/course/view_course.html:141
 #, fuzzy
 msgid "Create An Account Now!"
 msgstr "Crear Cuenta"
 
-#: elearning/templates/elearning/course/view_course.html:138
+#: elearning/templates/elearning/course/view_course.html:144
 msgid "Congratulations!!"
 msgstr ""
 
-#: elearning/templates/elearning/course/view_course.html:139
+#: elearning/templates/elearning/course/view_course.html:145
 msgid ""
 "This course is in Evaluation period. You can enroll in this course for FREE "
 "for evaluate it! "
@@ -694,7 +702,7 @@ msgstr ""
 "Este curso esta en periodo de Evaluación. Usted puede inscribirse en este "
 "curso GRATIS para evaluarlo."
 
-#: elearning/templates/elearning/course/view_course.html:140
+#: elearning/templates/elearning/course/view_course.html:146
 msgid ""
 "Remember: You have 30 days to evaluate the course. If you not evaluate the "
 "course during 30 days you will be unenrolled  from the course."
@@ -702,7 +710,7 @@ msgstr ""
 "Recuerde: Usted tiene 30 días para evaluar el curso. Si no se evalúa el "
 "curso en 30 días serás desmatriculado del mismo"
 
-#: elearning/templates/elearning/course/view_course.html:141
+#: elearning/templates/elearning/course/view_course.html:147
 msgid "Evaluate Now!"
 msgstr "Evaluar ahora!"
 
@@ -2417,6 +2425,9 @@ msgid ""
 "Please keep the total uploaded files under %(total_size)s. With this file, "
 "the total would be %(exceed_size)s."
 msgstr ""
+
+#~ msgid "Rating "
+#~ msgstr "Valoración"
 
 #~ msgid "Test Now!"
 #~ msgstr "Evaluar Ahora!"
