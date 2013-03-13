@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2013-03-13 11:56+0100\n"
-"PO-Revision-Date: 2013-03-13 12:03+0100\n"
+"POT-Creation-Date: 2013-03-13 13:01+0100\n"
+"PO-Revision-Date: 2013-03-13 13:01+0100\n"
 "Last-Translator: Jennifer Garcia Perez <jlucas@guadalux.org>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "MIME-Version: 1.0\n"
@@ -97,7 +97,7 @@ msgstr "Fecha de Inicio"
 #: elearning/templates/elearning/course/learning_course.html:55
 #: elearning/templates/elearning/course/learning_lesson.html:20
 #: elearning/templates/elearning/course/preview_lesson.html:20
-#: elearning/templates/elearning/course/view_course.html:61
+#: elearning/templates/elearning/course/view_course.html:62
 msgid "Lesson"
 msgstr "Lección"
 
@@ -387,7 +387,7 @@ msgstr "Editar Tema"
 #: elearning/templates/elearning/course/learning_course.html:47
 #: elearning/templates/elearning/course/learning_lesson.html:15
 #: elearning/templates/elearning/course/preview_lesson.html:15
-#: elearning/templates/elearning/course/view_course.html:53
+#: elearning/templates/elearning/course/view_course.html:54
 msgid "Subject"
 msgstr "Tema"
 
@@ -618,7 +618,7 @@ msgid "Rating "
 msgstr "Valoración"
 
 #: elearning/templates/elearning/course/learning_course.html:95
-#: elearning/templates/elearning/course/view_course.html:103
+#: elearning/templates/elearning/course/view_course.html:104
 msgid "Free Video"
 msgstr "Video de Promoción"
 
@@ -661,19 +661,50 @@ msgstr "Responder Comentario"
 msgid "Back to Builder"
 msgstr "Volver al Constructor "
 
-#: elearning/templates/elearning/course/view_course.html:68
+#: elearning/templates/elearning/course/view_course.html:69
 msgid "View FREE Now"
 msgstr "Ver gratis ahora"
 
-#: elearning/templates/elearning/course/view_course.html:117
+#: elearning/templates/elearning/course/view_course.html:118
+msgid "You need an account"
+msgstr "Necesitas una cuenta"
+
+#: elearning/templates/elearning/course/view_course.html:119
+msgid "Sign Up Now!"
+msgstr "Regístrate Ahora!"
+
+#: elearning/templates/elearning/course/view_course.html:121
+msgid "This course is under construction. Will be available soon."
+msgstr "Este curso está en proceso de construcción. Pronto estará disponible."
+
+#: elearning/templates/elearning/course/view_course.html:135
 #, fuzzy
 msgid "Create An Account Now!"
 msgstr "Crear Cuenta"
 
-#: elearning/templates/elearning/course/view_course.html:130
-msgid ""
-"Recuerda! Si no votas el curso antes de 30 días serás dado de baja del mismo"
+#: elearning/templates/elearning/course/view_course.html:138
+msgid "Congratulations!!"
 msgstr ""
+
+#: elearning/templates/elearning/course/view_course.html:139
+msgid ""
+"This course is in Evaluation period. You can enroll in this course for FREE "
+"for evaluate it! "
+msgstr ""
+"Este curso esta en periodo de Evaluación. Usted puede inscribirse en este "
+"curso GRATIS para evaluarlo."
+
+#: elearning/templates/elearning/course/view_course.html:140
+msgid ""
+"Remember: You have 30 days to evaluate the course. If you not evaluate the "
+"course during 30 days you will be unenrolled  from the course."
+msgstr ""
+"Recuerde: Usted tiene 30 días para evaluar el curso. Si no se evalúa el "
+"curso en 30 días serás desmatriculado del mismo"
+
+#: elearning/templates/elearning/course/view_course.html:141
+msgid "Evaluate Now!"
+msgstr "Evaluar ahora!"
 
 #: elearning/templates/elearning/email/unenroll_bad_tester.html:7
 msgid "Hola,"
@@ -1609,7 +1640,7 @@ msgstr ""
 
 #: paypal/pro/fields.py:285
 msgid "Singapore"
-msgstr ""
+msgstr "Singapore"
 
 #: paypal/pro/fields.py:286
 msgid "Slovakia"
@@ -2386,6 +2417,12 @@ msgid ""
 "Please keep the total uploaded files under %(total_size)s. With this file, "
 "the total would be %(exceed_size)s."
 msgstr ""
+
+#~ msgid "Test Now!"
+#~ msgstr "Evaluar Ahora!"
+
+#~ msgid "Sing Up Now!"
+#~ msgstr "Regístrate Ahora!"
 
 #~ msgid "Available Soon..."
 #~ msgstr "Pronto estará disponible"

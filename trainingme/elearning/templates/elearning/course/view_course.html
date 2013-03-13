@@ -20,12 +20,13 @@
                     {% if not user.is_authenticated %}
                         <a role="button" data-toggle="modal" href="#enrroll-beta" class="buy_now btn btn-large btn-primary">Matricúlate Ahora!!<br/> Por sólo {{ course.price|floatformat:2 }} &euro;</a>
                     {% else %}
-                        <a role="button" data-toggle="modal" href="#enrroll-beta" class="buy_now btn btn-large btn-primary">Matricúlate Ahora!!<br/> Por sólo {{ course.price|floatformat:2 }} &euro;</a>
-{#                        {% if course.status.name == 'evaluation period' %}#}
-{#                            <a role="button" data-toggle="modal" href="#enrroll-tester" class="buy_now btn btn-large btn-primary">Matricúlate Ahora!!<br/> Por sólo {{ course.price|floatformat:2 }} &euro;</a>#}
-{#                        {% else %}#}
-{#                            <a href="{% url buy_course course.id %}?express" class="buy_now btn btn-large btn-primary">Matricúlate Ahora!!<br/> Por sólo {{ course.price|floatformat:2 }} &euro;</a>#}
-{#                        {% endif %}#}
+                        {% if course.status.name == 'evaluation period' %}
+                            <a role="button" data-toggle="modal" href="#enrroll-tester" class="buy_now btn btn-large btn-primary">Matricúlate Ahora!!<br/> Por sólo {{ course.price|floatformat:2 }} &euro;</a>
+                        {% elif course.status.name == 'published' %}
+                            <a href="{% url buy_course course.id %}?express" class="buy_now btn btn-large btn-primary">Matricúlate Ahora!!<br/> Por sólo {{ course.price|floatformat:2 }} &euro;</a>
+                        {% else %}
+                            <a role="button" data-toggle="modal" href="#enrroll-beta" class="buy_now btn btn-large btn-primary">Matricúlate Ahora!!<br/> Por sólo {{ course.price|floatformat:2 }} &euro;</a>
+                        {% endif %}
                     {% endif %}
                     <p class="social_reminder">Recuerda que se destinarán {{ course.social_amount|floatformat:2 }} &euro; <br/> a proyectos sociales de educación</p>
                 </div>
@@ -112,9 +113,12 @@
             <h3>Info</h3>
         </div>
         <div class="modal-body">
-            <img src="{{ STATIC_URL }}img/upps-beta.png" alt="Trainingme.Net Beta Elearning"/>
+            <img src="{{ STATIC_URL }}img/emaillogo.png" alt="Trainingme.Net Beta Elearning"/>
             {% if not user.is_authenticated %}
-                <a class="btn btn-warning" href="/accounts/login/">{% trans 'Create An Account Now!' %}</a>
+                <h3>{% trans 'You need an account' %}</h3>
+                <a class="btn btn-warning btn-large" href="/accounts/login/">{% trans 'Sign Up Now!' %}</a>
+            {% else %}
+                <h4>{% trans 'This course is under construction. Will be available soon.' %}</h4>
             {% endif %}
         </div>
     </div>
@@ -127,8 +131,15 @@
         </div>
         <div class="modal-body">
             <img src="{{ STATIC_URL }}img/emaillogo.png" alt="Trainingme.Net Beta Elearning"/>
-            <p>{% trans 'Recuerda! Si no votas el curso antes de 30 días serás dado de baja del mismo' %}</p>
-            {% if course.status.name == 'evaluation period' %}<a href="{% url enrroll_tester course.id %}" class="buy_now btn btn-large btn-warning">Testear Ahora!!</a>{% endif %}
+            {% if not user.is_authenticated %}
+                <a class="btn btn-warning btn-large" href="/accounts/login/">{% trans 'Create An Account Now!' %}</a>
+            {% else %}
+                <hr/>
+                <h3>{% trans 'Congratulations!!' %}</h3>
+                <p>{% trans 'This course is in Evaluation period. You can enroll in this course for FREE for evaluate it! ' %}</p>
+                <p>{% trans 'Remember: You have 30 days to evaluate the course. If you not evaluate the course during 30 days you will be unenrolled  from the course.' %}</p>
+                {% if course.status.name == 'evaluation period' %}<a href="{% url enrroll_tester course.id %}" class="buy_now btn btn-large btn-warning">{% trans 'Evaluate Now!' %}</a>{% endif %}
+            {% endif %}
         </div>
     </div>
     <!-- End Modal TESTER -->
