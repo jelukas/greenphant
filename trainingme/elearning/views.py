@@ -1,9 +1,11 @@
 from django.http import HttpResponseRedirect
 from django.shortcuts import render_to_response, get_object_or_404, redirect
+from django.template.loader import render_to_string
 from django.template.context import  RequestContext
 from django.contrib.auth.decorators import login_required
 from django.contrib.auth.models import User
 from django.core.urlresolvers import reverse
+from django.core.mail import EmailMessage
 from elearning.models import Status, Course, Subject, Lesson, Video, Attach, Enrollment, Comment
 from elearning.forms import CourseForm, SubjectForm, LessonForm, VideoForm, AttachForm, CommentForm
 from personal.decorators import owner_required
@@ -18,6 +20,7 @@ from datetime import datetime
 from django.template.defaultfilters import slugify
 from django.db import IntegrityError
 from django.db.models import Q
+from django.conf import settings
 
 
 
@@ -85,7 +88,14 @@ def change_checking_status(request,course_id):
     course = get_object_or_404(Course,pk=course_id)
     course.status = Status.objects.get(name="checking")
     course.save()
-    messages.success(request,_('Course sent to Checking process'))
+    messages.success(request,_('Course sent to Checking process. We will contact you soon via Email when your course is published.'))
+    #Send Email to the Admin
+    ctx_dict = {'course': course}
+    message = render_to_string('elearning/email/new_checking.html',ctx_dict)
+    subject = _('A new Course is in Checking Process: ')+course.title
+    msg = EmailMessage(subject, message, settings.DEFAULT_FROM_EMAIL, ('trainingme@traningme.net',))
+    msg.content_subtype = "html"  # Main content is now text/html
+    msg.send()
     return HttpResponseRedirect(reverse('elearning.views.teaching'))
 
 

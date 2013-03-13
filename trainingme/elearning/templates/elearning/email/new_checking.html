@@ -1,0 +1,26 @@
+{% load url from future %}{% load i18n %}
+<div>
+    <img src="http://trainingme.net/static/img/trainingme_emaillogo.png" />
+</div>
+<br/><br/>
+
+<p>El curso {{ course.title }} ha sido enviado al proceso de revisión.</p>
+
+<p>Revísalo y comúnicale al profesor el resultado por email ( si tiene email ) .</p>
+
+
+<ul>
+    <li>Profesor Nombre: {{ course.user.get_full_name }}</li>
+    <li>Profesor Email:  {{ course.user.email }}</li>
+</ul>
+
+<br/><br/>
+<hr color="#000066" width="100%">
+<table width="34%" border="0">
+    <tbody>
+    <tr>
+        <td><i><b>Trainingme.Net Team</b></i></td></tr>
+    <tr>
+        <td><a href="http://www.trainingme.net" target="_blank">www.trainingme.net</a><br></td></tr></tbody></table></div></div></div>
+</br>
+</div>
