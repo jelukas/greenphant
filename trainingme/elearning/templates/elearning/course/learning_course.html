@@ -9,7 +9,7 @@
             <div class="row">
                 <div class="image_view_course span5">
                     {% if course.video %}
-                        <iframe id="ytplayer_learn" type="text/html" width="470" height="310" autoplay="" src="https://www.youtube.com/embed/{{ course.video }}?autoplay=1&amp;controls=0&amp;rel=0&amp;showinfo=0&amp;autohide=1" frameborder="0" allowfullscreen="">Tu navegador no soporta Iframes</iframe>
+                        <iframe id="ytplayer_learn" type="text/html" width="470" height="310" autoplay="" src="https://www.youtube.com/embed/{{ course.video }}?rel=0&amp;showinfo=0&amp;autohide=1" frameborder="0" allowfullscreen="">Tu navegador no soporta Iframes</iframe>
                     {% else %}
                         <img src="{{ STATIC_URL }}img/{% trans 'default_video_image_en.jpg' %}" />
                     {% endif %}
@@ -31,11 +31,6 @@
                     <span class='st_linkedin_hcount' displayText='LinkedIn'></span>
                     <span class='st_pinterest_hcount' displayText='Pinterest'></span>
                     <span class='st_email_hcount' displayText='Email'></span>
-                    {% if not course|user_had_vote_course:user.id and not is_teacher %}
-                            <p>{% trans 'Rate this course ' %}<div id="rate-course"  data-rating="{{ course.get_scoring }}" class="star_course leftSide"></div></p>
-                    {% else %}
-                            <p>{% trans 'Rating ' %}<div id="rated-course"  data-rating="{{ course.get_scoring }}" class="star_course_rated leftSide"></div></p>
-                    {% endif %}
                     <div class="description" >
                         <p>{% if course.image %}{% thumbnail course.image "238x135" as im %}<img src="{{ im.url }}" />{% endthumbnail %}{% else %}<img src="{{ STATIC_URL }}img/dafault_image_course.gif" />{% endif %}{{ course.large_description }}</p>
                     </div>
@@ -68,6 +63,19 @@
                         {% endfor %}
                     </section>
                 </div>
+                {% if not course|user_had_vote_course:user.id and not is_teacher %}
+                    <div class="span3 offset1">
+                        <div id="course-rating">
+                        {% trans 'Rate this course ' %}<p id="rate-course"  data-rating="{{ course.get_scoring }}" class="star_course leftSide"></p>
+                        </div>
+                    </div>
+                {% else %}
+                    <div class="span3 offset1">
+                        <div id="course-rating">
+                        {% trans 'Course Rating ' %}<p id="rated-course"  data-rating="{{ course.get_scoring }}" class="star_course_rated leftSide"></p>
+                        </div>
+                    </div>
+                {% endif %}
                 <div class="teacher span3 offset1">
                     {% if course.user.get_profile.image %}
                         {% thumbnail course.user.get_profile.image "x200" as im %}
