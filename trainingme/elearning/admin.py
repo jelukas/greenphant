@@ -24,6 +24,8 @@ class EnrollmentAdmin(admin.ModelAdmin):
 class CourseAdmin(admin.ModelAdmin):
     list_display = ('title','user','get_owner_email','price','status','category','created_at','published_at','learning_course')
     list_filter = ('status',)
+    search_fields = ['title','user__email']
+
 
     def learning_course(self,object):
         url = reverse('elearning.views.learning_course', args=(object.id,))
