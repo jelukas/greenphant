@@ -28,12 +28,12 @@
       <file leaf-file-name="home.html" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/elearning/templates/elearning/home.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="29" column="119" selection-start="1934" selection-end="1934" vertical-scroll-proportion="0.5337423">
+            <state line="32" column="28" selection-start="2128" selection-end="2128" vertical-scroll-proportion="0.5889571">
               <folding>
-                <element signature="e#3119#3189#0" expanded="true" />
-                <element signature="e#3355#3460#0" expanded="true" />
-                <element signature="e#6620#6690#0" expanded="true" />
-                <element signature="e#6856#6961#0" expanded="true" />
+                <element signature="e#3206#3276#0" expanded="true" />
+                <element signature="e#3442#3547#0" expanded="true" />
+                <element signature="e#6707#6777#0" expanded="true" />
+                <element signature="e#6943#7048#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -540,12 +540,12 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/elearning/templates/elearning/home.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="29" column="119" selection-start="1934" selection-end="1934" vertical-scroll-proportion="0.5337423">
+        <state line="32" column="28" selection-start="2128" selection-end="2128" vertical-scroll-proportion="0.5889571">
           <folding>
-            <element signature="e#3119#3189#0" expanded="true" />
-            <element signature="e#3355#3460#0" expanded="true" />
-            <element signature="e#6620#6690#0" expanded="true" />
-            <element signature="e#6856#6961#0" expanded="true" />
+            <element signature="e#3206#3276#0" expanded="true" />
+            <element signature="e#3442#3547#0" expanded="true" />
+            <element signature="e#6707#6777#0" expanded="true" />
+            <element signature="e#6943#7048#0" expanded="true" />
           </folding>
         </state>
       </provider>
