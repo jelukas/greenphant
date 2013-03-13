@@ -25,11 +25,13 @@
   <component name="ExecutionTargetManager" SELECTED_TARGET="default_target" />
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="dev.py" pinned="false" current="true" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/trainingme/dev.py">
+      <file leaf-file-name="admin.py" pinned="false" current="true" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/elearning/admin.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="17" column="26" selection-start="348" selection-end="348" vertical-scroll-proportion="0.29929578">
-              <folding />
+            <state line="25" column="28" selection-start="1053" selection-end="1053" vertical-scroll-proportion="0.44014084">
+              <folding>
+                <element signature="e#0#32#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -51,7 +53,6 @@
         <option value="$PROJECT_DIR$/trainingme/urls.py" />
         <option value="$PROJECT_DIR$/elearning/translation.py" />
         <option value="$PROJECT_DIR$/elearning/models.py" />
-        <option value="$PROJECT_DIR$/elearning/admin.py" />
         <option value="$PROJECT_DIR$/trainingme/settings.py" />
         <option value="$PROJECT_DIR$/elearning/templates/elearning/course/view_course.html" />
         <option value="$PROJECT_DIR$/statistics/forms.py" />
@@ -60,6 +61,7 @@
         <option value="$PROJECT_DIR$/elearning/templates/elearning/email/new_checking.html" />
         <option value="$PROJECT_DIR$/elearning/views.py" />
         <option value="$PROJECT_DIR$/trainingme/dev.py" />
+        <option value="$PROJECT_DIR$/elearning/admin.py" />
       </list>
     </option>
   </component>
@@ -123,7 +125,7 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="trainingme" />
+              <option name="myItemId" value="elearning" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -394,15 +396,6 @@
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/elearning/forms.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="8" column="0" selection-start="265" selection-end="639" vertical-scroll-proportion="0.14084508">
-          <folding>
-            <element signature="e#0#34#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/elearning/templates/elearning/course/view_course.html">
       <provider selected="true" editor-type-id="text-editor">
         <state line="116" column="103" selection-start="8617" selection-end="8653" vertical-scroll-proportion="0.5337423">
@@ -515,6 +508,15 @@
       <provider selected="true" editor-type-id="text-editor">
         <state line="17" column="26" selection-start="348" selection-end="348" vertical-scroll-proportion="0.29929578">
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/elearning/admin.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="25" column="28" selection-start="1053" selection-end="1053" vertical-scroll-proportion="0.44014084">
+          <folding>
+            <element signature="e#0#32#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
