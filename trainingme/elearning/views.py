@@ -93,7 +93,7 @@ def change_checking_status(request,course_id):
     ctx_dict = {'course': course}
     message = render_to_string('elearning/email/new_checking.html',ctx_dict)
     subject = _('A new Course is in Checking Process: ')+course.title
-    msg = EmailMessage(subject, message, settings.DEFAULT_FROM_EMAIL, ('trainingme@traningme.net',))
+    msg = EmailMessage(subject, message, settings.DEFAULT_FROM_EMAIL, ('magudoblanquer@gmail.com',))
     msg.content_subtype = "html"  # Main content is now text/html
     msg.send()
     return HttpResponseRedirect(reverse('elearning.views.teaching'))

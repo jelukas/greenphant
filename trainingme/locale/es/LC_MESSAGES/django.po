@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2013-03-13 10:20+0100\n"
-"PO-Revision-Date: 2013-03-13 10:31+0100\n"
+"POT-Creation-Date: 2013-03-13 11:56+0100\n"
+"PO-Revision-Date: 2013-03-13 12:01+0100\n"
 "Last-Translator: Jennifer Garcia Perez <jlucas@guadalux.org>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "MIME-Version: 1.0\n"
@@ -101,8 +101,8 @@ msgstr "Fecha de Inicio"
 msgid "Lesson"
 msgstr "Lección"
 
-#: elearning/models.py:327 elearning/templates/elearning/home.html:82
-#: elearning/templates/elearning/home.html:134
+#: elearning/models.py:327 elearning/templates/elearning/home.html:84
+#: elearning/templates/elearning/home.html:136
 msgid "Points"
 msgstr "Valoración"
 
@@ -120,146 +120,155 @@ msgstr "Mensaje"
 msgid "Comment"
 msgstr "Comentar"
 
-#: elearning/views.py:38 elearning/views.py:64
+#: elearning/views.py:41 elearning/views.py:67
 msgid "Course failed to create: Title exits"
 msgstr "No se ha podido crear el curso: Ya existe un curso con ese título"
 
-#: elearning/views.py:40
+#: elearning/views.py:43
 msgid "Course created successfully"
 msgstr "Curso creado correctamente"
 
-#: elearning/views.py:43
+#: elearning/views.py:46
 msgid "Course failed to create"
 msgstr "No se ha podido crear el curso"
 
-#: elearning/views.py:66
+#: elearning/views.py:69
 msgid "Course updated successfully"
 msgstr "Curso actualizado correctamente"
 
-#: elearning/views.py:69
+#: elearning/views.py:72
 msgid "Failed to update the course"
 msgstr "No se ha podido actualizar el curso"
 
-#: elearning/views.py:88
-msgid "Course sent to Checking process"
+#: elearning/views.py:91
+msgid ""
+"Course sent to Checking process. We will contact you soon via Email when "
+"your course is published."
+msgstr ""
+"El curso ha sido enviado al proceso de revisión. Pronto contactaremos "
+"contigo por email cuando tu curso este listo para ser publicado."
+
+#: elearning/views.py:95
+#, fuzzy
+msgid "A new Course is in Checking Process: "
 msgstr "Curso enviado al proceso de revisión"
 
-#: elearning/views.py:105
+#: elearning/views.py:115
 msgid "Subject added successfully"
 msgstr "Tema añadido correctamente"
 
-#: elearning/views.py:108
+#: elearning/views.py:118
 msgid "Failed to add the subject to the course"
 msgstr "No se ha podido añadir el Tema al curso"
 
-#: elearning/views.py:126
+#: elearning/views.py:136
 msgid "Subject updated successfully"
 msgstr "Tema actualizado correctamente"
 
-#: elearning/views.py:129
+#: elearning/views.py:139
 msgid "Failed to update the subject"
 msgstr "Error al actualizar el tema"
 
-#: elearning/views.py:142
+#: elearning/views.py:152
 msgid "Subject deleted successfully"
 msgstr "Tema borrado satisfactoriamente"
 
-#: elearning/views.py:145
+#: elearning/views.py:155
 msgid "Course is not in Building Status"
 msgstr "Este curso no está en fase de construcción"
 
-#: elearning/views.py:158 elearning/views.py:171
+#: elearning/views.py:168 elearning/views.py:181
 msgid "Subject order changed successfully"
 msgstr "Tema actualizado correctamente"
 
-#: elearning/views.py:192
+#: elearning/views.py:202
 msgid "Lesson added successfully"
 msgstr "Lección añadida correctamente"
 
-#: elearning/views.py:195
+#: elearning/views.py:205
 msgid "Failed to add the lesson"
 msgstr "Error al añadir lección"
 
-#: elearning/views.py:221
+#: elearning/views.py:231
 msgid "Lesson updated successfully"
 msgstr "Lección actualizada correctamente"
 
-#: elearning/views.py:224
+#: elearning/views.py:234
 msgid "Failed to updated the lesson"
 msgstr "Error al actualizar la lección"
 
-#: elearning/views.py:237
+#: elearning/views.py:247
 msgid "Lesson deleted successfully"
 msgstr "Lección borrada correctamente"
 
-#: elearning/views.py:252
+#: elearning/views.py:262
 msgid "Video added successfully"
 msgstr "Video añadido correctamente"
 
-#: elearning/views.py:255
+#: elearning/views.py:265
 msgid "Failed to add Video"
 msgstr "Error al añadir el video"
 
-#: elearning/views.py:268
+#: elearning/views.py:278
 msgid "Video deleted successfully"
 msgstr "Video borrado correctamente"
 
-#: elearning/views.py:297
+#: elearning/views.py:307
 msgid "File attached successfully"
 msgstr "Archivo adjuntado correctamente"
 
-#: elearning/views.py:300
+#: elearning/views.py:310
 msgid "Failed to attach File"
 msgstr "Error al adjuntar archivo"
 
-#: elearning/views.py:313
+#: elearning/views.py:323
 msgid "File attached deleted succesfully"
 msgstr "El archivo adjuntado se ha borrado correctamente"
 
-#: elearning/views.py:371
+#: elearning/views.py:381
 #, fuzzy
 msgid "You are not enrrolled in this course"
 msgstr "No estás matriculado en este curso: "
 
-#: elearning/views.py:388 elearning/views.py:418
+#: elearning/views.py:398 elearning/views.py:428
 msgid "You are not enrroled in that course: "
 msgstr "No estás matriculado en este curso: "
 
-#: elearning/views.py:400
+#: elearning/views.py:410
 msgid "Comment send sucesfully"
 msgstr "Comentario enviado correctamente"
 
-#: elearning/views.py:430
+#: elearning/views.py:440
 #, fuzzy
 msgid "Reply sucesfully"
 msgstr "Video borrado correctamente"
 
-#: elearning/views.py:464
+#: elearning/views.py:474
 msgid "This Course is not Published: "
 msgstr "Este curso no está publicado: "
 
-#: elearning/views.py:472
+#: elearning/views.py:482
 msgid "You can not vote twice this lesson: "
 msgstr "No puedes votar dos veces esta lección: "
 
-#: elearning/views.py:474
+#: elearning/views.py:484
 msgid "You have Rated the lesson with "
 msgstr "Has calificado esta lección con "
 
-#: elearning/views.py:490
+#: elearning/views.py:500
 msgid "You can not vote twice this course: "
 msgstr "No puedes votar dos veces este curso: "
 
-#: elearning/views.py:492
+#: elearning/views.py:502
 msgid "You have Rated the course with "
 msgstr "Has calificado el curso con"
 
-#: elearning/views.py:510
+#: elearning/views.py:520
 #, fuzzy
 msgid "Now you are Tester of the Course "
 msgstr "Estás creando un Nuevo Curso"
 
-#: elearning/views.py:512
+#: elearning/views.py:522
 #, fuzzy
 msgid "You can't be tester on that Course"
 msgstr "No estás matriculado en este curso: "
@@ -327,7 +336,7 @@ msgstr "Añadir Lección"
 #: elearning/templates/elearning/add_lesson.html:55
 #: elearning/templates/elearning/edit_lesson.html:54
 msgid "Uploading Files..."
-msgstr ""
+msgstr "SUbiendo archivos..."
 
 #: elearning/templates/elearning/add_subject.html:6
 msgid "You are Adding a New Subject"
@@ -403,10 +412,6 @@ msgid "Processing Video"
 msgstr "Procesando Vídeo"
 
 #: elearning/templates/elearning/building_course.html:60
-msgid "Available Soon..."
-msgstr "Pronto estará disponible"
-
-#: elearning/templates/elearning/building_course.html:60
 msgid "Send to Checking"
 msgstr "Enviar al proceso de pre-evaluación"
 
@@ -478,8 +483,8 @@ msgid "Course Title"
 msgstr "Título del curso"
 
 #: elearning/templates/elearning/edit_course.html:23
-#: elearning/templates/elearning/home.html:81
-#: elearning/templates/elearning/home.html:133
+#: elearning/templates/elearning/home.html:83
+#: elearning/templates/elearning/home.html:135
 #: elearning/templates/elearning/new_course.html:23
 #: shop/templates/shop/confirmation.html:11
 msgid "Price"
@@ -541,37 +546,37 @@ msgstr "Estás editando el Tema"
 msgid "Update Subject"
 msgstr "Guardar Tema"
 
-#: elearning/templates/elearning/home.html:30
+#: elearning/templates/elearning/home.html:31
 msgid "The first five entries of each course are free"
 msgstr "Las cinco primeras matriculaciones en cada curso son gratuitas"
 
-#: elearning/templates/elearning/home.html:30
+#: elearning/templates/elearning/home.html:31
 msgid "Sign up Now!"
 msgstr "Regístrate Ahora!"
 
-#: elearning/templates/elearning/home.html:34
+#: elearning/templates/elearning/home.html:36
 msgid "Search courses...."
 msgstr "Encontrar Cursos"
 
-#: elearning/templates/elearning/home.html:35
+#: elearning/templates/elearning/home.html:37
 msgid "Search"
 msgstr "Encontrar Curso"
 
-#: elearning/templates/elearning/home.html:41
+#: elearning/templates/elearning/home.html:43
 msgid "Featured Courses"
 msgstr "Cursos Destacados"
 
-#: elearning/templates/elearning/home.html:80
-#: elearning/templates/elearning/home.html:132
+#: elearning/templates/elearning/home.html:82
+#: elearning/templates/elearning/home.html:134
 msgid "Enrolls"
 msgstr "Matriculados"
 
-#: elearning/templates/elearning/home.html:86
-#: elearning/templates/elearning/home.html:138
+#: elearning/templates/elearning/home.html:88
+#: elearning/templates/elearning/home.html:140
 msgid "Free !"
 msgstr "Gratis !"
 
-#: elearning/templates/elearning/home.html:93
+#: elearning/templates/elearning/home.html:95
 msgid "More Courses"
 msgstr "Más Cursos"
 
@@ -632,7 +637,7 @@ msgstr "Guardar Lección"
 #: elearning/templates/elearning/course/learning_lesson.html:52
 #: elearning/templates/elearning/course/learning_lesson.html:92
 msgid "New Comment"
-msgstr ""
+msgstr "Nuevo Comentario"
 
 #: elearning/templates/elearning/course/learning_lesson.html:63
 #: elearning/templates/elearning/course/comments/reply_form.html:5
@@ -642,15 +647,15 @@ msgstr "Responder"
 #: elearning/templates/elearning/course/learning_lesson.html:99
 #: elearning/templates/elearning/course/comments/reply_form.html:4
 msgid "Cancel"
-msgstr ""
+msgstr "Cancelar"
 
 #: elearning/templates/elearning/course/learning_lesson.html:100
 msgid "Add Comment"
-msgstr ""
+msgstr "Nuevo Comentario"
 
 #: elearning/templates/elearning/course/learning_lesson.html:107
 msgid "Reply Comment"
-msgstr ""
+msgstr "Responder Comentario"
 
 #: elearning/templates/elearning/course/preview_lesson.html:54
 msgid "Back to Builder"
@@ -2378,6 +2383,9 @@ msgid ""
 "Please keep the total uploaded files under %(total_size)s. With this file, "
 "the total would be %(exceed_size)s."
 msgstr ""
+
+#~ msgid "Available Soon..."
+#~ msgstr "Pronto estará disponible"
 
 #~ msgid "We are in beta only for teachers.Sign Up Now and create your courses!"
 #~ msgstr ""

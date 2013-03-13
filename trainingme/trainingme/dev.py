@@ -15,7 +15,7 @@ STATICFILES_DIRS = (
 )
 
 MIDDLEWARE_CLASSES += 'debug_toolbar.middleware.DebugToolbarMiddleware',
-INTERNAL_IPS = ('127.0.0.1',)
+INTERNAL_IPS = ('127.0.0.2',)
 INSTALLED_APPS += 'debug_toolbar',
 DEBUG_TOOLBAR_PANELS = (
     'debug_toolbar.panels.version.VersionDebugPanel',
