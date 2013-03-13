@@ -2,97 +2,97 @@
 # Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
 # This file is distributed under the same license as the PACKAGE package.
 # FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
-# 
+#
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2013-03-11 13:26+0100\n"
+"POT-Creation-Date: 2013-03-13 08:59+0100\n"
 "PO-Revision-Date: 2013-03-11 13:43+0100\n"
 "Last-Translator: Jennifer Garcia Perez <jlucas@guadalux.org>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Language: \n"
 "X-Translated-Using: django-rosetta 0.7.1\n"
 
 #: elearning/forms.py:16
 msgid "The minimum price must be 10 EUR"
 msgstr "El precio mínimo debe ser de 10 €"
 
-#: elearning/models.py:17
+#: elearning/models.py:18
 msgid "Name"
 msgstr "Nombre"
 
-#: elearning/models.py:29
+#: elearning/models.py:30
 #: elearning/templates/elearning/dashboard_teaching.html:33
 #: financial/templates/financial/view_billing.html:65
 msgid "Status"
 msgstr "Estado"
 
-#: elearning/models.py:32
+#: elearning/models.py:33
 msgid "statuses"
 msgstr "estados"
 
-#: elearning/models.py:43
+#: elearning/models.py:44
 msgid "price"
 msgstr "precio"
 
-#: elearning/models.py:44
+#: elearning/models.py:45
 msgid "title"
 msgstr "titulo"
 
-#: elearning/models.py:58
+#: elearning/models.py:59
 msgid "Featured Image"
 msgstr "Imagen Destacada"
 
-#: elearning/models.py:59 elearning/templates/elearning/edit_course.html:33
+#: elearning/models.py:60 elearning/templates/elearning/edit_course.html:33
 #: elearning/templates/elearning/new_course.html:33
 msgid "Short Description"
 msgstr "Descripción Corta"
 
-#: elearning/models.py:60 elearning/templates/elearning/edit_course.html:83
+#: elearning/models.py:61 elearning/templates/elearning/edit_course.html:83
 #: elearning/templates/elearning/new_course.html:83
 #: personal/templates/personal/edit_profile.html:55
 #: personal/templates/personal/view_profile.html:54
 msgid "Presentation"
 msgstr "Presentación"
 
-#: elearning/models.py:63
+#: elearning/models.py:64
 msgid "Download Allowed"
 msgstr "Permitir Descargas"
 
-#: elearning/models.py:65 elearning/templates/elearning/edit_course.html:63
+#: elearning/models.py:66 elearning/templates/elearning/edit_course.html:63
 #: elearning/templates/elearning/new_course.html:63
 msgid "Category"
 msgstr "Categoría"
 
-#: elearning/models.py:268 elearning/templates/elearning/add_lesson.html:33
+#: elearning/models.py:269 elearning/templates/elearning/add_lesson.html:33
 #: elearning/templates/elearning/edit_lesson.html:33
 msgid "Video"
 msgstr "Vídeo"
 
-#: elearning/models.py:294 elearning/templates/elearning/add_attach.html:13
+#: elearning/models.py:295 elearning/templates/elearning/add_attach.html:13
 msgid "File"
 msgstr "Archivo"
 
-#: elearning/models.py:311 elearning/models.py:323 elearning/models.py:337
-#: elearning/models.py:351 financial/models.py:24 financial/models.py:33
+#: elearning/models.py:312 elearning/models.py:324 elearning/models.py:338
+#: elearning/models.py:352 financial/models.py:24 financial/models.py:33
 msgid "User"
 msgstr "Usuario"
 
-#: elearning/models.py:312 elearning/models.py:338 financial/models.py:34
+#: elearning/models.py:313 elearning/models.py:339 financial/models.py:34
 #: financial/templates/financial/view_billing.html:44
 #: financial/templates/financial/view_billing.html:61
 msgid "Course"
 msgstr "Curso"
 
-#: elearning/models.py:313
+#: elearning/models.py:314
 msgid "Start Date"
 msgstr "Fecha de Inicio"
 
-#: elearning/models.py:324 elearning/models.py:352
+#: elearning/models.py:325 elearning/models.py:353
 #: elearning/templates/elearning/building_course.html:40
 #: elearning/templates/elearning/course/learning_course.html:55
 #: elearning/templates/elearning/course/learning_lesson.html:20
@@ -101,22 +101,22 @@ msgstr "Fecha de Inicio"
 msgid "Lesson"
 msgstr "Lección"
 
-#: elearning/models.py:326 elearning/templates/elearning/home.html:81
+#: elearning/models.py:327 elearning/templates/elearning/home.html:81
 #: elearning/templates/elearning/home.html:133
 msgid "Points"
 msgstr "Valoración"
 
-#: elearning/models.py:340
+#: elearning/models.py:341
 #: elearning/templates/elearning/course/learning_lesson.html:42
 #: elearning/templates/elearning/course/preview_lesson.html:42
 msgid "Rating"
 msgstr "Valoración"
 
-#: elearning/models.py:354
+#: elearning/models.py:355
 msgid "Message"
 msgstr "Mensaje"
 
-#: elearning/models.py:355
+#: elearning/models.py:356
 msgid "Comment"
 msgstr "Comentar"
 
@@ -216,50 +216,50 @@ msgstr "Error al adjuntar archivo"
 msgid "File attached deleted succesfully"
 msgstr "El archivo adjuntado se ha borrado correctamente"
 
-#: elearning/views.py:374
+#: elearning/views.py:371
 #, fuzzy
 msgid "You are not enrrolled in this course"
 msgstr "No estás matriculado en este curso: "
 
-#: elearning/views.py:391 elearning/views.py:421
+#: elearning/views.py:388 elearning/views.py:418
 msgid "You are not enrroled in that course: "
 msgstr "No estás matriculado en este curso: "
 
-#: elearning/views.py:403
+#: elearning/views.py:400
 msgid "Comment send sucesfully"
 msgstr "Comentario enviado correctamente"
 
-#: elearning/views.py:433
+#: elearning/views.py:430
 #, fuzzy
 msgid "Reply sucesfully"
 msgstr "Video borrado correctamente"
 
-#: elearning/views.py:467
+#: elearning/views.py:464
 msgid "This Course is not Published: "
 msgstr "Este curso no está publicado: "
 
-#: elearning/views.py:475
+#: elearning/views.py:472
 msgid "You can not vote twice this lesson: "
 msgstr "No puedes votar dos veces esta lección: "
 
-#: elearning/views.py:477
+#: elearning/views.py:474
 msgid "You have Rated the lesson with "
 msgstr "Has calificado esta lección con "
 
-#: elearning/views.py:493
+#: elearning/views.py:490
 msgid "You can not vote twice this course: "
 msgstr "No puedes votar dos veces este curso: "
 
-#: elearning/views.py:495
+#: elearning/views.py:492
 msgid "You have Rated the course with "
 msgstr "Has calificado el curso con"
 
-#: elearning/views.py:513
+#: elearning/views.py:510
 #, fuzzy
 msgid "Now you are Tester of the Course "
 msgstr "Estás creando un Nuevo Curso"
 
-#: elearning/views.py:515
+#: elearning/views.py:512
 #, fuzzy
 msgid "You can't be tester on that Course"
 msgstr "No estás matriculado en este curso: "
@@ -564,6 +564,12 @@ msgstr "Cursos Destacados"
 msgid "Enrolls"
 msgstr "Matriculados"
 
+#: elearning/templates/elearning/home.html:85
+#: elearning/templates/elearning/home.html:137
+#, fuzzy
+msgid "Free !"
+msgstr "Video de Promoción"
+
 #: elearning/templates/elearning/home.html:92
 msgid "More Courses"
 msgstr "Más Cursos"
@@ -688,8 +694,7 @@ msgstr "Cantidad"
 #: financial/views.py:17
 #, fuzzy
 msgid "You can't receive payments because your Paypal Adress is not set"
-msgstr ""
-"No puedes recibir pagos porque su cuenta de Paypal no está establecida"
+msgstr "No puedes recibir pagos porque su cuenta de Paypal no está establecida"
 
 #: financial/views.py:19
 msgid "You should set your Name for Invoices"
@@ -2017,7 +2022,10 @@ msgid "Recuerda que tienes 30 días para devolver el curso"
 msgstr ""
 
 #: statistics/forms.py:6
-msgid "What type of courses interest you ?"
+msgid ""
+"Tell us what category of courses interest you and you will be notified when "
+"they are published. If you're one of the top 5 in enrolling in a course, you "
+"can do for free to evaluate it."
 msgstr ""
 
 #: templates/base.html:4
@@ -2148,8 +2156,8 @@ msgstr ""
 
 #: templates/registration/activate.html:14
 msgid ""
-"Oops &ndash; it seems that your activation key is invalid.  Please check the"
-" url again."
+"Oops &ndash; it seems that your activation key is invalid.  Please check the "
+"url again."
 msgstr ""
 "Uups &ndash; parece que la clave de activación no es válida. Por favor, "
 "compruebe la url de nuevo."
@@ -2325,8 +2333,8 @@ msgstr "Info!"
 
 #: templates/registration/registration_complete.html:9
 msgid ""
-"An activation email has been sent.  Please check your email and click on the"
-" link to activate your account."
+"An activation email has been sent.  Please check your email and click on the "
+"link to activate your account."
 msgstr ""
 "Te Hemos enviado un email. Por favor comprueba tu email y haz clic en el "
 "enlace para activar tu cuenta."
@@ -2344,7 +2352,10 @@ msgstr "Crear Cuenta"
 #, python-format
 msgid ""
 "\n"
-"            By clicking Create Account you agree to the <a href=\"%(STATIC_URL)spdf/Terminos-y-condiciones-TrainingMe.net.pdf\">Terms of Service</a> and <a href=\"%(STATIC_URL)spdf/Terminos-y-condiciones-TrainingMe.net.pdf\">Privacy policies</a>.\n"
+"            By clicking Create Account you agree to the <a href="
+"\"%(STATIC_URL)spdf/Terminos-y-condiciones-TrainingMe.net.pdf\">Terms of "
+"Service</a> and <a href=\"%(STATIC_URL)spdf/Terminos-y-condiciones-"
+"TrainingMe.net.pdf\">Privacy policies</a>.\n"
 "            "
 msgstr ""
 

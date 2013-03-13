@@ -82,7 +82,7 @@
                                 </div>
                                 <div class="footerInfo">
                                     <div class="leftSide">{{ course.enrollments.count }}</div>
-                                    <div class="middleSide">{{ course.price }} &euro;</div>
+                                    <div class="middleSide">{% if course.price == 0 %}<span class="label label-info">{% trans 'Free !' %}</span>{% else %}{{ course.price }} &euro;{% endif %}</div>
                                     <div id="curso-{{ course.id }}"  data-rating="{{ course.get_scoring }}" class="star rightSide"></div>
                                 </div>
                             </div>
@@ -134,7 +134,7 @@
                                 </div>
                                 <div class="footerInfo">
                                     <div class="leftSide">{{ course.enrollments.count }}</div>
-                                    <div class="middleSide">{{ course.price }} &euro;</div>
+                                    <div class="middleSide">{% if course.price == 0 %}<span class="label label-info">{% trans 'Free !' %}</span>{% else %}{{ course.price }} &euro;{% endif %}</div>
                                     <div id="curso-{{ course.id }}"  data-rating="{{ course.get_scoring }}" class="star rightSide"></div>
                                 </div>
                             </div>
