@@ -1,0 +1,5 @@
+{#<h3>{% trans 'If you want to receive our courses information to test them, please fill in the form bellow' %}</h3>#}
+<h3>{% trans 'In order to receive our courses information to test them, please fill in the form bellow' %}</h3>
+<form id="formulario_email" action="{% url update_email_form %}" method="post">{% csrf_token %}
+    {{ email_form.as_p }}
+</form>
