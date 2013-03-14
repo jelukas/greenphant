@@ -28,7 +28,7 @@
       <file leaf-file-name="home.html" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/elearning/templates/elearning/home.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="31" column="24" selection-start="2098" selection-end="2098" vertical-scroll-proportion="0.40690506">
+            <state line="31" column="171" selection-start="2245" selection-end="2245" vertical-scroll-proportion="0.40690506">
               <folding />
             </state>
           </provider>
@@ -532,7 +532,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/elearning/templates/elearning/home.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="31" column="24" selection-start="2098" selection-end="2098" vertical-scroll-proportion="0.40690506">
+        <state line="31" column="171" selection-start="2245" selection-end="2245" vertical-scroll-proportion="0.40690506">
           <folding />
         </state>
       </provider>
