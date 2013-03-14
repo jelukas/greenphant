@@ -70,7 +70,7 @@
                                                 {% endif %}
                                                 {% if lesson.video.original_video_file.url %}
                                                     <div class="btnVideo"></div>
-                                                    {% if lesson.is_preview and lesson.video.converted_video_file_mp4 %}<a data-toggle="modal" href="{% url free_video lesson.video.id %}" data-target="#freeVideo" >{% trans 'View FREE Now' %}</a>{% endif %}
+                                                    {% if lesson.is_preview and lesson.video.converted_video_file_mp4 %}<a data-toggle="modal" href="{% url free_video lesson.video.id %}" data-target="#freeVideo" >{% trans 'View FREE' %}</a>{% endif %}
                                                 {% endif %}
                                             </div>
                                         {% endfor %}
