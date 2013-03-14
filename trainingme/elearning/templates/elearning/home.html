@@ -28,8 +28,9 @@
 {#                    <h3><a href="#enrroll-beta" role="button" data-toggle="modal">{% trans 'We are in beta only for teachers.Sign Up Now and create your courses!' %}</a></h3>#}
 {#                    <h4 class="users_count">{% blocktrans %}We are already {{ users_count }} Users!!{% endblocktrans %}</h4>#}
                     {% if not user.is_authenticated %}
-                    <h3><a href="/accounts/login/">{% trans 'The first five entries of each course are free' %}</a>  <a href="/accounts/login/" class="btn btn-warning">{% trans 'Sign up Now!' %}</a></h3>
+                    <h3><a href="/accounts/login/">{% trans 'The first five entries of each course are free' %}</a></h3>
                     <h5>{% trans 'Regístrate y te avisaremos de los próximos lanzamientos, y si eres uno de los cinco primeros matriculados en un curso... ¡¡enhorabuena!!' %}</h5>
+                    <a href="/accounts/login/" class="btn btn-warning btn-large">{% trans 'Sign up Now!' %}</a>
                     <hr/>
                     {% endif %}
                     <form class="form-search" method="post" action="">{% csrf_token %}
