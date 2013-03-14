@@ -530,10 +530,12 @@ def home(request):
     cursos_destacados = [54,13,29,23]
     users_count = User.objects.count()
     if request.POST:
+        courses_published = Course.objects.filter(Q(short_description__icontains=request.POST['query']) | Q(title__icontains=request.POST['query']),Q(status__name="evaluation period") | Q(status__name="published"))
         featured = Course.objects.filter(id__in=cursos_destacados)
-        courses = Course.objects.filter(Q(short_description__icontains=request.POST['query']) | Q(title__icontains=request.POST['query']),Q(status__name="published") | Q(status__name="evaluation period") | Q(status__name="building")).exclude(id__in = cursos_de_prueba)
+        courses_building = Course.objects.filter(Q(short_description__icontains=request.POST['query']) | Q(title__icontains=request.POST['query']), Q(status__name="building")).exclude(id__in = cursos_de_prueba)
     else:
+        courses_published = Course.objects.filter(Q(status__name="evaluation period") | Q(status__name="published"))
         featured = Course.objects.filter(id__in=cursos_destacados)
-        courses = Course.objects.filter(Q(status__name="published") | Q(status__name="evaluation period") | Q(status__name="building")).exclude(id__in = cursos_de_prueba)
-    context = {'courses' : courses, 'users_count' : users_count,'featured': featured}
+        courses_building = Course.objects.filter(Q(status__name="building")).exclude(id__in = cursos_de_prueba)
+    context = {'courses_published' : courses_published,'courses_building' : courses_building, 'users_count' : users_count,'featured': featured}
     return render_to_response('elearning/home.html',context,context_instance = RequestContext(request))

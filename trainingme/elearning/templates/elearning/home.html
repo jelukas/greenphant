@@ -40,10 +40,10 @@
                 </div>
             </div>
             <div class="row-fluid">
-                <h3>{% trans 'Featured Courses' %}</h3>
+                <h3 class="span12">{% trans 'Published Courses' %}</h3>
                 <hr/>
                 <div class="boxLine">
-                    {% for course in featured %}
+                    {% for course in courses_published %}
                         <div class="span3 cursoBox">
                             <a href="{% url "view_course" course.slug %}">
                                 {% if course.image %}
@@ -92,10 +92,10 @@
                         </div>
                     {% endfor %}
                 </div>
-                <h3>{% trans 'More Courses' %}</h3>
+                <h3 class="span12">{% trans 'More Courses' %}</h3>
                 <hr/>
                 <div class="boxLine">
-                    {% for course in courses %}
+                    {% for course in courses_building %}
                         <div class="span3 cursoBox">
                             <a href="{% url "view_course" course.slug %}">
                                 {% if course.image %}

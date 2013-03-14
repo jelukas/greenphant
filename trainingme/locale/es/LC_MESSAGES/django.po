@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2013-03-13 14:03+0100\n"
-"PO-Revision-Date: 2013-03-13 14:04+0100\n"
+"POT-Creation-Date: 2013-03-14 10:27+0100\n"
+"PO-Revision-Date: 2013-03-14 10:38+0100\n"
 "Last-Translator: Jennifer Garcia Perez <jlucas@guadalux.org>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "MIME-Version: 1.0\n"
@@ -97,7 +97,7 @@ msgstr "Fecha de Inicio"
 #: elearning/templates/elearning/course/learning_course.html:50
 #: elearning/templates/elearning/course/learning_lesson.html:20
 #: elearning/templates/elearning/course/preview_lesson.html:20
-#: elearning/templates/elearning/course/view_course.html:68
+#: elearning/templates/elearning/course/view_course.html:66
 msgid "Lesson"
 msgstr "Lección"
 
@@ -149,7 +149,6 @@ msgstr ""
 "contigo por email cuando tu curso este listo para ser publicado."
 
 #: elearning/views.py:95
-#, fuzzy
 msgid "A new Course is in Checking Process: "
 msgstr "Curso enviado al proceso de revisión"
 
@@ -226,7 +225,6 @@ msgid "File attached deleted succesfully"
 msgstr "El archivo adjuntado se ha borrado correctamente"
 
 #: elearning/views.py:381
-#, fuzzy
 msgid "You are not enrrolled in this course"
 msgstr "No estás matriculado en este curso: "
 
@@ -239,9 +237,8 @@ msgid "Comment send sucesfully"
 msgstr "Comentario enviado correctamente"
 
 #: elearning/views.py:440
-#, fuzzy
 msgid "Reply sucesfully"
-msgstr "Video borrado correctamente"
+msgstr "Respuesta enviada"
 
 #: elearning/views.py:474
 msgid "This Course is not Published: "
@@ -264,27 +261,24 @@ msgid "You have Rated the course with "
 msgstr "Has calificado el curso con"
 
 #: elearning/views.py:520
-#, fuzzy
 msgid "Now you are Tester of the Course "
-msgstr "Estás creando un Nuevo Curso"
+msgstr "Ahora eres evaluador de este curso"
 
 #: elearning/views.py:522
-#, fuzzy
 msgid "You can't be tester on that Course"
-msgstr "No estás matriculado en este curso: "
+msgstr "No puedes ser evaluador de este curso"
 
-#: elearning/management/commands/convert.py:17
+#: elearning/management/commands/convert.py:18
 msgid "One of Your video is ready"
 msgstr "Uno de sus vídeos está listo"
 
-#: elearning/management/commands/convert.py:17
+#: elearning/management/commands/convert.py:18
 msgid "Your video is Ready"
 msgstr "Tu vídeo está listo"
 
 #: elearning/management/commands/testers_checking.py:32
-#, fuzzy
 msgid "TrainingMe.net - You have been unenrolled in the course"
-msgstr "No estás matriculado en este curso: "
+msgstr "TrainingMe.net - Has sido desmatriculado del curso."
 
 #: elearning/templates/elearning/add_attach.html:6
 msgid "You are Attching a File to the Lesson"
@@ -387,7 +381,7 @@ msgstr "Editar Tema"
 #: elearning/templates/elearning/course/learning_course.html:42
 #: elearning/templates/elearning/course/learning_lesson.html:15
 #: elearning/templates/elearning/course/preview_lesson.html:15
-#: elearning/templates/elearning/course/view_course.html:60
+#: elearning/templates/elearning/course/view_course.html:58
 msgid "Subject"
 msgstr "Tema"
 
@@ -442,9 +436,8 @@ msgid "Enter"
 msgstr "Entrar"
 
 #: elearning/templates/elearning/dashboard_learning.html:46
-#, fuzzy
 msgid "TrainingMe.net Poll"
-msgstr "Acerca de TrainingMe.net"
+msgstr "TrainingMe.net - Registra tu Interés!"
 
 #: elearning/templates/elearning/dashboard_learning.html:51
 msgid "I am Interested !!"
@@ -459,14 +452,12 @@ msgid "Continue Building"
 msgstr "Continúa la construcción"
 
 #: elearning/templates/elearning/dashboard_teaching.html:36
-#, fuzzy
 msgid "Preview Your Course"
-msgstr "Crear Nuevo Curso"
+msgstr "Previsualizar tu Curso"
 
 #: elearning/templates/elearning/dashboard_teaching.html:38
-#, fuzzy
 msgid "View Your Course"
-msgstr "Volver al Curso"
+msgstr "Ver tu Curso"
 
 #: elearning/templates/elearning/dashboard_teaching.html:48
 msgid "Create a New Course"
@@ -507,9 +498,8 @@ msgstr "Imágen"
 
 #: elearning/templates/elearning/edit_course.html:53
 #: elearning/templates/elearning/new_course.html:53
-#, fuzzy
 msgid "Promo Video"
-msgstr "Procesando Vídeo"
+msgstr "Vídeo Promocional"
 
 #: elearning/templates/elearning/edit_course.html:59
 #: elearning/templates/elearning/new_course.html:59
@@ -563,8 +553,8 @@ msgid "Search"
 msgstr "Encontrar Curso"
 
 #: elearning/templates/elearning/home.html:43
-msgid "Featured Courses"
-msgstr "Cursos Destacados"
+msgid "Published Courses"
+msgstr "Cursos Publicados"
 
 #: elearning/templates/elearning/home.html:82
 #: elearning/templates/elearning/home.html:134
@@ -599,7 +589,6 @@ msgstr "Volver a escritorio"
 
 #: elearning/templates/elearning/course/learning_course.html:4
 #: elearning/templates/elearning/course/view_course.html:4
-#, fuzzy
 msgid "Course of "
 msgstr "Curso"
 
@@ -608,31 +597,27 @@ msgid "default_video_image_en.jpg"
 msgstr "default_video_image_es.jpg"
 
 #: elearning/templates/elearning/course/learning_course.html:69
-#, fuzzy
 msgid "Rate this course "
-msgstr "Guardar Lección"
+msgstr "Valorar Curso"
 
 #: elearning/templates/elearning/course/learning_course.html:75
-#, fuzzy
 msgid "Course Rating "
-msgstr "Curso"
+msgstr "Valoración del Curso"
 
 #: elearning/templates/elearning/course/learning_course.html:103
-#: elearning/templates/elearning/course/view_course.html:110
+#: elearning/templates/elearning/course/view_course.html:108
 msgid "Free Video"
 msgstr "Video de Promoción"
 
 #: elearning/templates/elearning/course/learning_lesson.html:32
 #: elearning/templates/elearning/course/preview_lesson.html:32
-#, fuzzy
 msgid "Download Attachment"
-msgstr "Añadir Adjunto"
+msgstr "Descargar Adjunto"
 
 #: elearning/templates/elearning/course/learning_lesson.html:37
 #: elearning/templates/elearning/course/preview_lesson.html:37
-#, fuzzy
 msgid "Rate this lesson"
-msgstr "Guardar Lección"
+msgstr "Valorar esta Lección"
 
 #: elearning/templates/elearning/course/learning_lesson.html:52
 #: elearning/templates/elearning/course/learning_lesson.html:92
@@ -661,40 +646,39 @@ msgstr "Responder Comentario"
 msgid "Back to Builder"
 msgstr "Volver al Constructor "
 
-#: elearning/templates/elearning/course/view_course.html:36
+#: elearning/templates/elearning/course/view_course.html:17
 msgid "30 Day Money Back Guarantee"
 msgstr "Garantía de 30 días de Reembolso de tu dinero"
 
-#: elearning/templates/elearning/course/view_course.html:37
+#: elearning/templates/elearning/course/view_course.html:18
 msgid "Lifetime Access - No Limits"
 msgstr "Acceso de por Vida – Sin Límites"
 
-#: elearning/templates/elearning/course/view_course.html:75
+#: elearning/templates/elearning/course/view_course.html:73
 msgid "View FREE Now"
 msgstr "Ver gratis ahora"
 
-#: elearning/templates/elearning/course/view_course.html:124
+#: elearning/templates/elearning/course/view_course.html:122
 msgid "You need an account"
 msgstr "Necesitas una cuenta"
 
-#: elearning/templates/elearning/course/view_course.html:125
+#: elearning/templates/elearning/course/view_course.html:123
 msgid "Sign Up Now!"
 msgstr "Regístrate Ahora!"
 
-#: elearning/templates/elearning/course/view_course.html:127
+#: elearning/templates/elearning/course/view_course.html:125
 msgid "This course is under construction. Will be available soon."
 msgstr "Este curso está en proceso de construcción. Pronto estará disponible."
 
-#: elearning/templates/elearning/course/view_course.html:141
-#, fuzzy
+#: elearning/templates/elearning/course/view_course.html:139
 msgid "Create An Account Now!"
-msgstr "Crear Cuenta"
+msgstr "Crear una Cuanta Ahora!"
 
-#: elearning/templates/elearning/course/view_course.html:144
+#: elearning/templates/elearning/course/view_course.html:142
 msgid "Congratulations!!"
-msgstr ""
+msgstr "Enhorabuena!"
 
-#: elearning/templates/elearning/course/view_course.html:145
+#: elearning/templates/elearning/course/view_course.html:143
 msgid ""
 "This course is in Evaluation period. You can enroll in this course for FREE "
 "for evaluate it! "
@@ -702,7 +686,7 @@ msgstr ""
 "Este curso esta en periodo de Evaluación. Usted puede inscribirse en este "
 "curso GRATIS para evaluarlo."
 
-#: elearning/templates/elearning/course/view_course.html:146
+#: elearning/templates/elearning/course/view_course.html:144
 msgid ""
 "Remember: You have 30 days to evaluate the course. If you not evaluate the "
 "course during 30 days you will be unenrolled  from the course."
@@ -710,7 +694,7 @@ msgstr ""
 "Recuerde: Usted tiene 30 días para evaluar el curso. Si no se evalúa el "
 "curso en 30 días serás desmatriculado del mismo"
 
-#: elearning/templates/elearning/course/view_course.html:147
+#: elearning/templates/elearning/course/view_course.html:145
 msgid "Evaluate Now!"
 msgstr "Evaluar ahora!"
 
@@ -737,28 +721,25 @@ msgid "Amount"
 msgstr "Cantidad"
 
 #: financial/views.py:17
-#, fuzzy
 msgid "You can't receive payments because your Paypal Adress is not set"
 msgstr ""
-"No puedes recibir pagos porque su cuenta de Paypal no está establecida"
+"No puedes recibir pagos porque no nos has indicado tu cuenta de Paypal"
 
 #: financial/views.py:19
 msgid "You should set your Name for Invoices"
 msgstr "Debes rellenar tu Nombre para las facturas"
 
 #: financial/views.py:21
-#, fuzzy
 msgid "You should set your Lastname for Invoices"
-msgstr "Debes rellenar tu Nombre para las facturas"
+msgstr "Debes rellenar tus Apellidos para las facturas"
 
 #: financial/views.py:23
-#, fuzzy
 msgid ""
 "You must set your National ID number or Passport in order to receive "
 "payments from Trainingme.net"
 msgstr ""
-"Debes establecer tu número de documento nacional para recibir pagos de "
-"Trainingme.net"
+"Debes establecer tu número de documento nacional o número de pasaporte para "
+"recibir pagos de Trainingme.net"
 
 #: financial/views.py:41
 msgid "Billing details updated successfully"
@@ -835,9 +816,8 @@ msgstr "Saldo disponible"
 
 #: financial/templates/financial/view_billing.html:11
 #: financial/templates/financial/view_billing.html:75
-#, fuzzy
 msgid "Waiting Clear"
-msgstr "Fecha liquidación"
+msgstr "Esperando Liquidación"
 
 #: financial/templates/financial/view_billing.html:13
 msgid "Paypal Account"
@@ -897,12 +877,10 @@ msgid "Date Cleared"
 msgstr "Fecha liquidación"
 
 #: financial/templates/financial/view_billing.html:75
-#, fuzzy
 msgid "Cleared!"
-msgstr "Fecha liquidación"
+msgstr "Liquidado"
 
 #: paypal/pro/fields.py:99
-#, fuzzy
 msgid "United States of America"
 msgstr "Estados Unidos"
 
@@ -1703,9 +1681,8 @@ msgid "Sudan"
 msgstr ""
 
 #: paypal/pro/fields.py:299
-#, fuzzy
 msgid "Suriname"
-msgstr "Usuario"
+msgstr "Apellido"
 
 #: paypal/pro/fields.py:300
 msgid "Svalbard & Jan Mayen Islands"
@@ -1788,12 +1765,10 @@ msgid "Ukraine"
 msgstr ""
 
 #: paypal/pro/fields.py:320
-#, fuzzy
 msgid "United Arab Emirates"
-msgstr "Estados Unidos"
+msgstr "Emiratos Arábes"
 
 #: paypal/pro/fields.py:321
-#, fuzzy
 msgid "United Kingdom (Great Britain)"
 msgstr "Reino Unido"
 
@@ -1802,9 +1777,8 @@ msgid "United States Minor Outlying Islands"
 msgstr ""
 
 #: paypal/pro/fields.py:323
-#, fuzzy
 msgid "United States Virgin Islands"
-msgstr "Estados Unidos"
+msgstr "Estados Unidos - Islas Vírgenes"
 
 #: paypal/pro/fields.py:324
 msgid "Unknown or unspecified country"
@@ -1899,7 +1873,6 @@ msgid "You need to Especify your Email Address"
 msgstr "Necesitas especificar tu dirección de email"
 
 #: personal/templates/personal/edit_profile.html:25
-#, fuzzy
 msgid "First name"
 msgstr "Nombre"
 
@@ -1988,9 +1961,8 @@ msgid "Social Networks"
 msgstr "Redes Sociales"
 
 #: personal/templates/personal/view_profile.html:34
-#, fuzzy
 msgid "Personal Details"
-msgstr "Web personal"
+msgstr "Detalles Personales"
 
 #: personal/templates/personal/view_profile.html:36
 msgid "Username"
@@ -2005,7 +1977,6 @@ msgid "Someone has purchased your course: "
 msgstr ""
 
 #: shop/models.py:39
-#, fuzzy
 msgid "You has been enrrolled in "
 msgstr "Has sido matriculado en el curso"
 
@@ -2162,9 +2133,8 @@ msgid "Follow us"
 msgstr "Síguenos"
 
 #: templates/pages/team.html:5
-#, fuzzy
 msgid "Our Team"
-msgstr "Equipo"
+msgstr "Nuestro Equipo"
 
 #: templates/pages/team.html:46
 msgid "Contributors"
