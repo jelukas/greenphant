@@ -2,7 +2,7 @@ from django.http import HttpResponseRedirect
 from django.shortcuts import render_to_response
 from django.template.context import  RequestContext
 from django.contrib.auth.decorators import login_required
-from personal.forms import ProfileForm, UserForm
+from personal.forms import ProfileForm, UserForm, EmailForm
 from django.core.urlresolvers import reverse
 from django.contrib import messages
 from django.utils.translation import ugettext as _
@@ -35,10 +35,32 @@ def edit(request):
 
     return render_to_response('personal/edit_profile.html',context,context_instance = RequestContext(request))
 
+
 @login_required
 def view_profile(request):
     profile = request.user.get_profile()
     return render_to_response('personal/view_profile.html',{'profile':profile},context_instance = RequestContext(request))
+
+
+@login_required
+def update_email_form(request):
+    user = request.user
+    email_form = EmailForm(instance=user) # An unbound form
+    if request.method == 'POST': # If the form has been submitted...
+        email_form = EmailForm(request.POST,request.FILES,instance=user) # A form bound to the POST data
+        if email_form.is_valid():
+            email_form.save()
+            return HttpResponseRedirect(reverse('home'))
+        else:
+            messages.error(request,_('Error updating Email Address'))
+            context = {'email_form':email_form,}
+            return render_to_response('personal/update_email_form.html',context,context_instance = RequestContext(request))
+
+    else:
+        context = {'email_form':email_form,}
+        return render_to_response('personal/update_email_form.html',context,context_instance = RequestContext(request))
+
+
 
 def logout_view(request):
     logout(request)

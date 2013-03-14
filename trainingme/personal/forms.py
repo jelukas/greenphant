@@ -13,3 +13,8 @@ class UserForm(ModelForm):
     class Meta:
         model = User
         fields = ('email','first_name','last_name')
+
+class EmailForm(ModelForm):
+    class Meta:
+        model = User
+        fields = ('email',)

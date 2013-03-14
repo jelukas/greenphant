@@ -40,23 +40,38 @@
         </div>
     </section>
     {% if not user|user_had_filled_poll %}
-    <div id="modal_poll" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" >
-        <div class="modal-header">
-            <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
-            <h3 id="myModalLabel">{% trans 'TrainingMe.net Poll' %}</h3>
+        <div id="modal_poll" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" >
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+                <h3 id="myModalLabel">{% trans 'TrainingMe.net Poll' %}</h3>
+            </div>
+            <div class="modal-body">
+            </div>
+            <div class="modal-footer">
+                <button class="btn btn-info" form="formulario">{% trans 'I am Interested !!' %}</button>
+            </div>
         </div>
-        <div class="modal-body">
+    {% endif %}
+    {% if not user.email %}
+        <div id="modal_update_email" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="modalEmail" aria-hidden="true" >
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+                <h3 id="modalEmail">{% trans 'TrainingMe.net' %}</h3>
+            </div>
+            <div class="modal-body">
+            </div>
+            <div class="modal-footer">
+                <button class="btn btn-info" form="formulario_email">{% trans 'Update Email' %}</button>
+            </div>
         </div>
-        <div class="modal-footer">
-            <button class="btn btn-info" form="formulario">{% trans 'I am Interested !!' %}</button>
-        </div>
-    </div>
     {% endif %}
 {% endblock %}
 {% block footerscripts %}
     <script type="text/javascript">
         $('#modal_poll').modal({ 'remote' : '{% url interest_form %}'});
         $('#modal_poll').modal('show');
+        $('#modal_update_email').modal({ 'remote' : '{% url update_email_form %}'});
+        $('#modal_update_email').modal('show');
     </script>
 {% endblock %}
 {% block footer %}

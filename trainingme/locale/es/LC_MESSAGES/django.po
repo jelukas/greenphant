@@ -7,9 +7,9 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2013-03-14 10:44+0100\n"
-"PO-Revision-Date: 2013-03-14 10:44+0100\n"
-"Last-Translator: Jennifer Garcia Perez <jlucas@guadalux.org>\n"
+"POT-Creation-Date: 2013-03-14 11:18+0100\n"
+"PO-Revision-Date: 2013-03-14 11:19+0100\n"
+"Last-Translator: Jennifer Garcia Perez <>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -442,6 +442,16 @@ msgstr "TrainingMe.net - Registra tu Interés!"
 #: elearning/templates/elearning/dashboard_learning.html:51
 msgid "I am Interested !!"
 msgstr "Estoy Interesado !!"
+
+#: elearning/templates/elearning/dashboard_learning.html:59
+#, fuzzy
+msgid "TrainingMe.net"
+msgstr "TrainingMe.net - Registra tu Interés!"
+
+#: elearning/templates/elearning/dashboard_learning.html:64
+#, fuzzy
+msgid "Update Email"
+msgstr "Actualizar Perfil"
 
 #: elearning/templates/elearning/dashboard_teaching.html:32
 msgid "Students"
@@ -1848,7 +1858,7 @@ msgstr "Reino Unido"
 msgid "Change your description"
 msgstr "Cambiar tu descripción"
 
-#: personal/views.py:22
+#: personal/views.py:22 personal/views.py:55
 msgid "Error updating Email Address"
 msgstr "tu dirección de email"
 
@@ -1942,6 +1952,12 @@ msgstr "Número de teléfono"
 #: personal/templates/personal/edit_profile.html:168
 msgid "Update Profile"
 msgstr "Actualizar Perfil"
+
+#: personal/templates/personal/update_email_form.html:2
+msgid ""
+"In order to receive our courses information to test them, please fill in the"
+" form bellow"
+msgstr "Necesitas indicar tu dirección de Email"
 
 #: personal/templates/personal/view_profile.html:2
 #: personal/templates/personal/view_profile.html:7 templates/base.html:63
