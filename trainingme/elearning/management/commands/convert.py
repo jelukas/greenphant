@@ -14,6 +14,5 @@ class Command(BaseCommand):
         video.converted_video_file_webm = args[3]
         video.save()
         user = User.objects.get(pk=video.get_owner_id())
-        if user.id != 86:
-            user.email_user(_('One of Your video is ready'), _('Your video is Ready'), from_email='trainingme@trainingme.net')
+        user.email_user(_('One of Your video is ready'), _('Your video is Ready'), from_email='trainingme@trainingme.net')
         self.stdout.write('Actualizado el Video '+ str(video.id))
