@@ -18,7 +18,8 @@ else
 	for n in `dir -1 $dir_new_videos`
 	do
 		cd $dir_new_videos
-		ffmpeg -i $n -vcodec libx264 -acodec aac -strict experimental -vpre libx264-ipod640 -threads 2 $dir_converted_videos/$n-$stamp.mp4
+		ffmpeg -i $n -c:v libx264 -crf 23 -c:a libfaac -q:a 100 -threads 2 $dir_converted_videos/$n-$stamp.mp4
+		#ffmpeg -i $n -vcodec libx264 -acodec aac -strict experimental -vpre libx264-ipod640 -threads 2 $dir_converted_videos/$n-$stamp.mp4
 		ffmpeg -i $n -acodec libvorbis -ac 2 -ab 58k -ar 44100 -b 512k -threads 2 -s 1280x720 $dir_converted_videos/$n-$stamp.webm
 		mv $dir_new_videos/$n $dir_original_videos/$stamp-$n
 		cd $proyect_path
