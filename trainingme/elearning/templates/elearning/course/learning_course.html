@@ -50,7 +50,7 @@
                                                 {% trans 'Lesson' %} {{ forloop.counter }} - {{ lesson.title }}
                                                 <div id="lesson-{{ lesson.id }}"  data-rating="{{ lesson.get_scoring }}" class="star lesson-start"></div>
                                                 {% if lesson.attach %}
-                                                    <a href="{{ lesson.attach.url }}"><div class="btnDownload"></div></a>
+                                                    <a href="{{ lesson.attach.file.url }}"><div class="btnDownload"></div></a>
                                                 {% endif %}
                                                 {% if lesson.video.converted_video_file_mp4 %}
                                                     <a href="{% url learning_lesson lesson.id %}"><div class="btnVideo"></div></a>
