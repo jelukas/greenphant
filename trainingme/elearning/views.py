@@ -182,6 +182,33 @@ def down_order_subject(request,subject_id):
     return_dict = (reverse('elearning.views.building_course', args=(course.id,))) # Redirect
     return HttpResponseRedirect(return_dict) # Redirect
 
+
+"""Move Up in Order One Lesson"""
+@login_required()
+@owner_required(Lesson)
+def up_order_lesson(request,lesson_id):
+    lesson = get_object_or_404(Lesson,pk=lesson_id,subject__course__status__name="building")
+    course_id = lesson.subject.course_id
+    lesson.order = lesson.order - 1
+    lesson.save()
+    messages.success(request,_('Lesson order changed successfully'))
+    return_dict = (reverse('elearning.views.building_course', args=(course_id,))) # Redirect
+    return HttpResponseRedirect(return_dict) # Redirect
+
+
+"""Move Down in Order One Lesson"""
+@login_required()
+@owner_required(Lesson)
+def down_order_lesson(request,lesson_id):
+    lesson = get_object_or_404(Lesson,pk=lesson_id,subject__course__status__name="building")
+    course_id = lesson.subject.course_id
+    lesson.order = lesson.order + 1
+    lesson.save()
+    messages.success(request,_('Lesson order changed successfully'))
+    return_dict = (reverse('elearning.views.building_course', args=(course_id,))) # Redirect
+    return HttpResponseRedirect(return_dict) # Redirect
+
+
 """ Lesson Zone """
 @login_required()
 @owner_required(Subject)

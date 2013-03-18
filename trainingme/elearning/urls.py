@@ -43,6 +43,8 @@ urlpatterns = patterns('',
     url(r'^lesson/(\d+)/(\d+)?$','elearning.views.vote_lesson', name='vote_lesson' ),
     url(r'^course/lesson/learning/(\d+)/$','elearning.views.learning_lesson', name='learning_lesson' ),
     url(r'^course/lesson/preview/(\d+)/$','elearning.views.preview_lesson', name='preview_lesson' ),
+    url(r'^course/lesson/up/(\d+)/$','elearning.views.up_order_lesson', name='up_order_lesson' ),
+    url(r'^course/lesson/down/(\d+)/$','elearning.views.down_order_lesson', name='down_order_lesson' ),
     #Comment
     url(r'^course/lesson/reply/(\d+)/(\d+)/$','elearning.views.reply_comment', name='reply_comment' ),
 

@@ -30,6 +30,12 @@
                         <div class="accordion-inner">
                             {% for lesson in subject.lessons.all %}
                             <div class="accordionLine">
+                                {% if not forloop.first %}
+                                    <a href="{% url up_order_lesson lesson.id %}" title="{% trans "Up Lesson" %}"><i class="icon-circle-arrow-up"></i></a>
+                                {% endif %}
+                                {% if not forloop.last %}
+                                    <a href="{% url down_order_lesson lesson.id %}" title="{% trans "Down Lesson" %}"><i class="icon-circle-arrow-down"></i></a>
+                                {% endif %}
                                 {% if lesson.attach %}
                                     <a href="{% url delete_attach lesson.attach.id %}" title="{% trans "Delete Attached file" %}"><img src="{{ STATIC_URL }}img/attach_delete.png" class="lesson-icon"/></a>
                                 {% else %}
