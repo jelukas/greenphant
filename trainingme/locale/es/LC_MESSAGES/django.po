@@ -7,9 +7,9 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2013-03-14 11:18+0100\n"
-"PO-Revision-Date: 2013-03-14 11:19+0100\n"
-"Last-Translator: Jennifer Garcia Perez <>\n"
+"POT-Creation-Date: 2013-03-18 10:27+0100\n"
+"PO-Revision-Date: 2013-03-18 10:47+0100\n"
+"Last-Translator: Jennifer Garcia Perez <jlucas@guadalux.org>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -93,7 +93,7 @@ msgid "Start Date"
 msgstr "Fecha de Inicio"
 
 #: elearning/models.py:325 elearning/models.py:353
-#: elearning/templates/elearning/building_course.html:40
+#: elearning/templates/elearning/building_course.html:46
 #: elearning/templates/elearning/course/learning_course.html:50
 #: elearning/templates/elearning/course/learning_lesson.html:20
 #: elearning/templates/elearning/course/preview_lesson.html:20
@@ -101,8 +101,8 @@ msgstr "Fecha de Inicio"
 msgid "Lesson"
 msgstr "Lección"
 
-#: elearning/models.py:327 elearning/templates/elearning/home.html:84
-#: elearning/templates/elearning/home.html:136
+#: elearning/models.py:327 elearning/templates/elearning/home.html:86
+#: elearning/templates/elearning/home.html:138
 msgid "Points"
 msgstr "Valoración"
 
@@ -180,99 +180,103 @@ msgstr "Este curso no está en fase de construcción"
 msgid "Subject order changed successfully"
 msgstr "Tema actualizado correctamente"
 
-#: elearning/views.py:202
+#: elearning/views.py:194 elearning/views.py:207
+msgid "Lesson order changed successfully"
+msgstr "Se ha cambiado el orden de la Lección correctamente"
+
+#: elearning/views.py:229
 msgid "Lesson added successfully"
 msgstr "Lección añadida correctamente"
 
-#: elearning/views.py:205
+#: elearning/views.py:232
 msgid "Failed to add the lesson"
 msgstr "Error al añadir lección"
 
-#: elearning/views.py:231
+#: elearning/views.py:258
 msgid "Lesson updated successfully"
 msgstr "Lección actualizada correctamente"
 
-#: elearning/views.py:234
+#: elearning/views.py:261
 msgid "Failed to updated the lesson"
 msgstr "Error al actualizar la lección"
 
-#: elearning/views.py:247
+#: elearning/views.py:274
 msgid "Lesson deleted successfully"
 msgstr "Lección borrada correctamente"
 
-#: elearning/views.py:262
+#: elearning/views.py:289
 msgid "Video added successfully"
 msgstr "Video añadido correctamente"
 
-#: elearning/views.py:265
+#: elearning/views.py:292
 msgid "Failed to add Video"
 msgstr "Error al añadir el video"
 
-#: elearning/views.py:278
+#: elearning/views.py:305
 msgid "Video deleted successfully"
 msgstr "Video borrado correctamente"
 
-#: elearning/views.py:307
+#: elearning/views.py:334
 msgid "File attached successfully"
 msgstr "Archivo adjuntado correctamente"
 
-#: elearning/views.py:310
+#: elearning/views.py:337
 msgid "Failed to attach File"
 msgstr "Error al adjuntar archivo"
 
-#: elearning/views.py:323
+#: elearning/views.py:350
 msgid "File attached deleted succesfully"
 msgstr "El archivo adjuntado se ha borrado correctamente"
 
-#: elearning/views.py:381
+#: elearning/views.py:411
 msgid "You are not enrrolled in this course"
 msgstr "No estás matriculado en este curso: "
 
-#: elearning/views.py:398 elearning/views.py:428
+#: elearning/views.py:431 elearning/views.py:461
 msgid "You are not enrroled in that course: "
 msgstr "No estás matriculado en este curso: "
 
-#: elearning/views.py:410
+#: elearning/views.py:443
 msgid "Comment send sucesfully"
 msgstr "Comentario enviado correctamente"
 
-#: elearning/views.py:440
+#: elearning/views.py:473
 msgid "Reply sucesfully"
 msgstr "Respuesta enviada"
 
-#: elearning/views.py:474
+#: elearning/views.py:507
 msgid "This Course is not Published: "
 msgstr "Este curso no está publicado: "
 
-#: elearning/views.py:482
+#: elearning/views.py:515
 msgid "You can not vote twice this lesson: "
 msgstr "No puedes votar dos veces esta lección: "
 
-#: elearning/views.py:484
+#: elearning/views.py:517
 msgid "You have Rated the lesson with "
 msgstr "Has calificado esta lección con "
 
-#: elearning/views.py:500
+#: elearning/views.py:533
 msgid "You can not vote twice this course: "
 msgstr "No puedes votar dos veces este curso: "
 
-#: elearning/views.py:502
+#: elearning/views.py:535
 msgid "You have Rated the course with "
 msgstr "Has calificado el curso con"
 
-#: elearning/views.py:520
+#: elearning/views.py:553
 msgid "Now you are Tester of the Course "
 msgstr "Ahora eres evaluador de este curso"
 
-#: elearning/views.py:522
+#: elearning/views.py:555
 msgid "You can't be tester on that Course"
 msgstr "No puedes ser evaluador de este curso"
 
-#: elearning/management/commands/convert.py:18
+#: elearning/management/commands/convert.py:20
 msgid "One of Your video is ready"
 msgstr "Uno de sus vídeos está listo"
 
-#: elearning/management/commands/convert.py:18
+#: elearning/management/commands/convert.py:20
 msgid "Your video is Ready"
 msgstr "Tu vídeo está listo"
 
@@ -323,7 +327,7 @@ msgid "Format"
 msgstr "Formato"
 
 #: elearning/templates/elearning/add_lesson.html:44
-#: elearning/templates/elearning/building_course.html:53
+#: elearning/templates/elearning/building_course.html:59
 msgid "Add Lesson"
 msgstr "Añadir Lección"
 
@@ -349,7 +353,7 @@ msgid "80 characters Maximum"
 msgstr "80 carácteres maximo"
 
 #: elearning/templates/elearning/add_subject.html:24
-#: elearning/templates/elearning/building_course.html:61
+#: elearning/templates/elearning/building_course.html:67
 msgid "Add Subject"
 msgstr "Añadir Tema"
 
@@ -386,34 +390,42 @@ msgid "Subject"
 msgstr "Tema"
 
 #: elearning/templates/elearning/building_course.html:34
+msgid "Up Lesson"
+msgstr "Subir"
+
+#: elearning/templates/elearning/building_course.html:37
+msgid "Down Lesson"
+msgstr "Bajar"
+
+#: elearning/templates/elearning/building_course.html:40
 msgid "Delete Attached file"
 msgstr "Borrar arhivo adjuntado"
 
-#: elearning/templates/elearning/building_course.html:36
+#: elearning/templates/elearning/building_course.html:42
 msgid "Attach file"
 msgstr "Añadir archivo"
 
-#: elearning/templates/elearning/building_course.html:38
+#: elearning/templates/elearning/building_course.html:44
 msgid "Delete Lesson"
 msgstr "Borrar Lección"
 
-#: elearning/templates/elearning/building_course.html:39
+#: elearning/templates/elearning/building_course.html:45
 msgid "Edit Lesson"
 msgstr "Editar Lección"
 
-#: elearning/templates/elearning/building_course.html:47
+#: elearning/templates/elearning/building_course.html:53
 msgid "Processing Video"
 msgstr "Procesando Vídeo"
 
-#: elearning/templates/elearning/building_course.html:60
+#: elearning/templates/elearning/building_course.html:66
 msgid "Send to Checking"
 msgstr "Enviar al proceso de pre-evaluación"
 
-#: elearning/templates/elearning/building_course.html:72
+#: elearning/templates/elearning/building_course.html:78
 msgid "Are you sure to delete this subject?"
 msgstr "¿Seguro que quieres borrar este tema?"
 
-#: elearning/templates/elearning/building_course.html:79
+#: elearning/templates/elearning/building_course.html:85
 msgid "Are you sure to delete this lesson?"
 msgstr "¿Seguro que quieres borrar esta lección?"
 
@@ -444,14 +456,12 @@ msgid "I am Interested !!"
 msgstr "Estoy Interesado !!"
 
 #: elearning/templates/elearning/dashboard_learning.html:59
-#, fuzzy
 msgid "TrainingMe.net"
-msgstr "TrainingMe.net - Registra tu Interés!"
+msgstr "TrainingMe.net"
 
 #: elearning/templates/elearning/dashboard_learning.html:64
-#, fuzzy
 msgid "Update Email"
-msgstr "Actualizar Perfil"
+msgstr "Actualizar Email"
 
 #: elearning/templates/elearning/dashboard_teaching.html:32
 msgid "Students"
@@ -484,8 +494,8 @@ msgid "Course Title"
 msgstr "Título del curso"
 
 #: elearning/templates/elearning/edit_course.html:23
-#: elearning/templates/elearning/home.html:83
-#: elearning/templates/elearning/home.html:135
+#: elearning/templates/elearning/home.html:85
+#: elearning/templates/elearning/home.html:137
 #: elearning/templates/elearning/new_course.html:23
 #: shop/templates/shop/confirmation.html:11
 msgid "Price"
@@ -550,33 +560,39 @@ msgstr "Guardar Tema"
 msgid "The first five entries of each course are free"
 msgstr "Las cinco primeras matriculaciones en cada curso son gratuitas"
 
-#: elearning/templates/elearning/home.html:31
+#: elearning/templates/elearning/home.html:32
+msgid ""
+"Regístrate y te avisaremos de los próximos lanzamientos, y si eres uno de "
+"los cinco primeros matriculados en un curso... ¡¡enhorabuena!!"
+msgstr ""
+
+#: elearning/templates/elearning/home.html:33
 msgid "Sign up Now!"
 msgstr "Regístrate Ahora!"
 
-#: elearning/templates/elearning/home.html:36
+#: elearning/templates/elearning/home.html:38
 msgid "Search courses...."
 msgstr "Encontrar Cursos"
 
-#: elearning/templates/elearning/home.html:37
+#: elearning/templates/elearning/home.html:39
 msgid "Search"
 msgstr "Encontrar Curso"
 
-#: elearning/templates/elearning/home.html:43
+#: elearning/templates/elearning/home.html:45
 msgid "Published Courses"
 msgstr "Cursos Publicados"
 
-#: elearning/templates/elearning/home.html:82
-#: elearning/templates/elearning/home.html:134
+#: elearning/templates/elearning/home.html:84
+#: elearning/templates/elearning/home.html:136
 msgid "Enrolls"
 msgstr "Matriculados"
 
-#: elearning/templates/elearning/home.html:88
-#: elearning/templates/elearning/home.html:140
+#: elearning/templates/elearning/home.html:90
+#: elearning/templates/elearning/home.html:142
 msgid "Free !"
 msgstr "Gratis !"
 
-#: elearning/templates/elearning/home.html:95
+#: elearning/templates/elearning/home.html:97
 msgid "More Courses"
 msgstr "Más Cursos"
 
@@ -761,15 +777,15 @@ msgstr "Error al actualizar tus datos de facturación"
 
 #: financial/management/commands/clear_amounts.py:43
 msgid "TrainingMe.net - Notice: Amount Cleared to your balance"
-msgstr ""
+msgstr "TrainingMe.net - Aviso: Transferencia hacia el saldo de tu cuenta"
 
 #: financial/templates/financial/clear_amount_email.html:7
 msgid "Hi,"
-msgstr ""
+msgstr "Hola,"
 
 #: financial/templates/financial/clear_amount_email.html:8
 msgid "The following amount has been added to your account balance: "
-msgstr ""
+msgstr "La siguiente cantidad ha sido añadida al saldo de tu cuenta:"
 
 #: financial/templates/financial/edit_billing.html:6
 msgid "You are Editing your Financial Details"
@@ -896,743 +912,743 @@ msgstr "Estados Unidos"
 
 #: paypal/pro/fields.py:100
 msgid "Canada"
-msgstr ""
+msgstr "Canada"
 
 #: paypal/pro/fields.py:101
 msgid "Afghanistan"
-msgstr ""
+msgstr "Afghanistan"
 
 #: paypal/pro/fields.py:102
 msgid "Albania"
-msgstr ""
+msgstr "Albania"
 
 #: paypal/pro/fields.py:103
 msgid "Algeria"
-msgstr ""
+msgstr "Algeria"
 
 #: paypal/pro/fields.py:104
 msgid "American Samoa"
-msgstr ""
+msgstr "American Samoa"
 
 #: paypal/pro/fields.py:105
 msgid "Andorra"
-msgstr ""
+msgstr "Andorra"
 
 #: paypal/pro/fields.py:106
 msgid "Angola"
-msgstr ""
+msgstr "Angola"
 
 #: paypal/pro/fields.py:107
 msgid "Anguilla"
-msgstr ""
+msgstr "Anguilla"
 
 #: paypal/pro/fields.py:108
 msgid "Antarctica"
-msgstr ""
+msgstr "Antartida"
 
 #: paypal/pro/fields.py:109
 msgid "Antigua & Barbuda"
-msgstr ""
+msgstr "Antigua & Barbuda"
 
 #: paypal/pro/fields.py:110
 msgid "Argentina"
-msgstr ""
+msgstr "Argentina"
 
 #: paypal/pro/fields.py:111
 msgid "Armenia"
-msgstr ""
+msgstr "Armenia"
 
 #: paypal/pro/fields.py:112
 msgid "Aruba"
-msgstr ""
+msgstr "Aruba"
 
 #: paypal/pro/fields.py:113
 msgid "Australia"
-msgstr ""
+msgstr "Australia"
 
 #: paypal/pro/fields.py:114
 msgid "Austria"
-msgstr ""
+msgstr "Austria"
 
 #: paypal/pro/fields.py:115
 msgid "Azerbaijan"
-msgstr ""
+msgstr "Azerbaijan"
 
 #: paypal/pro/fields.py:116
 msgid "Bahama"
-msgstr ""
+msgstr "Bahama"
 
 #: paypal/pro/fields.py:117
 msgid "Bahrain"
-msgstr ""
+msgstr "Bahrain"
 
 #: paypal/pro/fields.py:118
 msgid "Bangladesh"
-msgstr ""
+msgstr "Bangladesh"
 
 #: paypal/pro/fields.py:119
 msgid "Barbados"
-msgstr ""
+msgstr "Barbados"
 
 #: paypal/pro/fields.py:120
 msgid "Belarus"
-msgstr ""
+msgstr "Belarus"
 
 #: paypal/pro/fields.py:121
 msgid "Belgium"
-msgstr ""
+msgstr "Belgium"
 
 #: paypal/pro/fields.py:122
 msgid "Belize"
-msgstr ""
+msgstr "Belize"
 
 #: paypal/pro/fields.py:123
 msgid "Benin"
-msgstr ""
+msgstr "Benin"
 
 #: paypal/pro/fields.py:124
 msgid "Bermuda"
-msgstr ""
+msgstr "Bermuda"
 
 #: paypal/pro/fields.py:125
 msgid "Bhutan"
-msgstr ""
+msgstr "Bhutan"
 
 #: paypal/pro/fields.py:126
 msgid "Bolivia"
-msgstr ""
+msgstr "Bolivia"
 
 #: paypal/pro/fields.py:127
 msgid "Bosnia and Herzegovina"
-msgstr ""
+msgstr "Bosnia and Herzegovina"
 
 #: paypal/pro/fields.py:128
 msgid "Botswana"
-msgstr ""
+msgstr "Botswana"
 
 #: paypal/pro/fields.py:129
 msgid "Bouvet Island"
-msgstr ""
+msgstr "Bouvet Island"
 
 #: paypal/pro/fields.py:130
 msgid "Brazil"
-msgstr ""
+msgstr "Brazil"
 
 #: paypal/pro/fields.py:131
 msgid "British Indian Ocean Territory"
-msgstr ""
+msgstr "British Indian Ocean Territory"
 
 #: paypal/pro/fields.py:132
 msgid "British Virgin Islands"
-msgstr ""
+msgstr "British Virgin Islands"
 
 #: paypal/pro/fields.py:133
 msgid "Brunei Darussalam"
-msgstr ""
+msgstr "Brunei Darussalam"
 
 #: paypal/pro/fields.py:134
 msgid "Bulgaria"
-msgstr ""
+msgstr "Bulgaria"
 
 #: paypal/pro/fields.py:135
 msgid "Burkina Faso"
-msgstr ""
+msgstr "Burkina Faso"
 
 #: paypal/pro/fields.py:136
 msgid "Burundi"
-msgstr ""
+msgstr "Burundi"
 
 #: paypal/pro/fields.py:137
 msgid "Cambodia"
-msgstr ""
+msgstr "Cambodia"
 
 #: paypal/pro/fields.py:138
 msgid "Cameroon"
-msgstr ""
+msgstr "Cameroon"
 
 #: paypal/pro/fields.py:139
 msgid "Cape Verde"
-msgstr ""
+msgstr "Cape Verde"
 
 #: paypal/pro/fields.py:140
 msgid "Cayman Islands"
-msgstr ""
+msgstr "Cayman Islands"
 
 #: paypal/pro/fields.py:141
 msgid "Central African Republic"
-msgstr ""
+msgstr "Central African Republic"
 
 #: paypal/pro/fields.py:142
 msgid "Chad"
-msgstr ""
+msgstr "Chad"
 
 #: paypal/pro/fields.py:143 personal/models.py:14
 msgid "Chile"
-msgstr ""
+msgstr "Chile"
 
 #: paypal/pro/fields.py:144
 msgid "China"
-msgstr ""
+msgstr "China"
 
 #: paypal/pro/fields.py:145
 msgid "Christmas Island"
-msgstr ""
+msgstr "Christmas Island"
 
 #: paypal/pro/fields.py:146
 msgid "Cocos (Keeling) Islands"
-msgstr ""
+msgstr "Cocos (Keeling) Islands"
 
 #: paypal/pro/fields.py:147
 msgid "Colombia"
-msgstr ""
+msgstr "Colombia"
 
 #: paypal/pro/fields.py:148
 msgid "Comoros"
-msgstr ""
+msgstr "Comoros"
 
 #: paypal/pro/fields.py:149
 msgid "Congo"
-msgstr ""
+msgstr "Congo"
 
 #: paypal/pro/fields.py:150
 msgid "Cook Iislands"
-msgstr ""
+msgstr "Cook Iislands"
 
 #: paypal/pro/fields.py:151
 msgid "Costa Rica"
-msgstr ""
+msgstr "Costa Rica"
 
 #: paypal/pro/fields.py:152
 msgid "Croatia"
-msgstr ""
+msgstr "Croatia"
 
 #: paypal/pro/fields.py:153
 msgid "Cuba"
-msgstr ""
+msgstr "Cuba"
 
 #: paypal/pro/fields.py:154
 msgid "Cyprus"
-msgstr ""
+msgstr "Cyprus"
 
 #: paypal/pro/fields.py:155
 msgid "Czech Republic"
-msgstr ""
+msgstr "Czech Republic"
 
 #: paypal/pro/fields.py:156
 msgid "Denmark"
-msgstr ""
+msgstr "Denmark"
 
 #: paypal/pro/fields.py:157
 msgid "Djibouti"
-msgstr ""
+msgstr "Djibouti"
 
 #: paypal/pro/fields.py:158
 msgid "Dominica"
-msgstr ""
+msgstr "Dominica"
 
 #: paypal/pro/fields.py:159
 msgid "Dominican Republic"
-msgstr ""
+msgstr "Dominican Republic"
 
 #: paypal/pro/fields.py:160
 msgid "East Timor"
-msgstr ""
+msgstr "East Timor"
 
 #: paypal/pro/fields.py:161
 msgid "Ecuador"
-msgstr ""
+msgstr "Ecuador"
 
 #: paypal/pro/fields.py:162
 msgid "Egypt"
-msgstr ""
+msgstr "Egypt"
 
 #: paypal/pro/fields.py:163
 msgid "El Salvador"
-msgstr ""
+msgstr "El Salvador"
 
 #: paypal/pro/fields.py:164
 msgid "Equatorial Guinea"
-msgstr ""
+msgstr "Equatorial Guinea"
 
 #: paypal/pro/fields.py:165
 msgid "Eritrea"
-msgstr ""
+msgstr "Eritrea"
 
 #: paypal/pro/fields.py:166
 msgid "Estonia"
-msgstr ""
+msgstr "Estonia"
 
 #: paypal/pro/fields.py:167
 msgid "Ethiopia"
-msgstr ""
+msgstr "Ethiopia"
 
 #: paypal/pro/fields.py:168
 msgid "Falkland Islands (Malvinas)"
-msgstr ""
+msgstr "Falkland Islands (Malvinas)"
 
 #: paypal/pro/fields.py:169
 msgid "Faroe Islands"
-msgstr ""
+msgstr "Faroe Islands"
 
 #: paypal/pro/fields.py:170
 msgid "Fiji"
-msgstr ""
+msgstr "Fiji"
 
 #: paypal/pro/fields.py:171
 msgid "Finland"
-msgstr ""
+msgstr "Finland"
 
 #: paypal/pro/fields.py:172
 msgid "France"
-msgstr ""
+msgstr "Francia"
 
 #: paypal/pro/fields.py:173
 msgid "France, Metropolitan"
-msgstr ""
+msgstr "France, Metropolitan"
 
 #: paypal/pro/fields.py:174
 msgid "French Guiana"
-msgstr ""
+msgstr "French Guiana"
 
 #: paypal/pro/fields.py:175
 msgid "French Polynesia"
-msgstr ""
+msgstr "French Polynesia"
 
 #: paypal/pro/fields.py:176
 msgid "French Southern Territories"
-msgstr ""
+msgstr "French Southern Territories"
 
 #: paypal/pro/fields.py:177
 msgid "Gabon"
-msgstr ""
+msgstr "Gabon"
 
 #: paypal/pro/fields.py:178
 msgid "Gambia"
-msgstr ""
+msgstr "Gambia"
 
 #: paypal/pro/fields.py:179
 msgid "Georgia"
-msgstr ""
+msgstr "Georgia"
 
 #: paypal/pro/fields.py:180
 msgid "Germany"
-msgstr ""
+msgstr "Germany"
 
 #: paypal/pro/fields.py:181
 msgid "Ghana"
-msgstr ""
+msgstr "Ghana"
 
 #: paypal/pro/fields.py:182
 msgid "Gibraltar"
-msgstr ""
+msgstr "Gibraltar"
 
 #: paypal/pro/fields.py:183
 msgid "Greece"
-msgstr ""
+msgstr "Greece"
 
 #: paypal/pro/fields.py:184
 msgid "Greenland"
-msgstr ""
+msgstr "Greenland"
 
 #: paypal/pro/fields.py:185
 msgid "Grenada"
-msgstr ""
+msgstr "Grenada"
 
 #: paypal/pro/fields.py:186
 msgid "Guadeloupe"
-msgstr ""
+msgstr "Guadeloupe"
 
 #: paypal/pro/fields.py:187
 msgid "Guam"
-msgstr ""
+msgstr "Guam"
 
 #: paypal/pro/fields.py:188
 msgid "Guatemala"
-msgstr ""
+msgstr "Guatemala"
 
 #: paypal/pro/fields.py:189
 msgid "Guinea"
-msgstr ""
+msgstr "Guinea"
 
 #: paypal/pro/fields.py:190
 msgid "Guinea-Bissau"
-msgstr ""
+msgstr "Guinea-Bissau"
 
 #: paypal/pro/fields.py:191
 msgid "Guyana"
-msgstr ""
+msgstr "Guyana"
 
 #: paypal/pro/fields.py:192
 msgid "Haiti"
-msgstr ""
+msgstr "Haiti"
 
 #: paypal/pro/fields.py:193
 msgid "Heard & McDonald Islands"
-msgstr ""
+msgstr "Heard & McDonald Islands"
 
 #: paypal/pro/fields.py:194
 msgid "Honduras"
-msgstr ""
+msgstr "Honduras"
 
 #: paypal/pro/fields.py:195
 msgid "Hong Kong"
-msgstr ""
+msgstr "Hong Kong"
 
 #: paypal/pro/fields.py:196
 msgid "Hungary"
-msgstr ""
+msgstr "Hungary"
 
 #: paypal/pro/fields.py:197
 msgid "Iceland"
-msgstr ""
+msgstr "Iceland"
 
 #: paypal/pro/fields.py:198
 msgid "India"
-msgstr ""
+msgstr "India"
 
 #: paypal/pro/fields.py:199
 msgid "Indonesia"
-msgstr ""
+msgstr "Indonesia"
 
 #: paypal/pro/fields.py:200
 msgid "Iraq"
-msgstr ""
+msgstr "Iraq"
 
 #: paypal/pro/fields.py:201
 msgid "Ireland"
-msgstr ""
+msgstr "Ireland"
 
 #: paypal/pro/fields.py:202
 msgid "Islamic Republic of Iran"
-msgstr ""
+msgstr "Islamic Republic of Iran"
 
 #: paypal/pro/fields.py:203
 msgid "Israel"
-msgstr ""
+msgstr "Israel"
 
 #: paypal/pro/fields.py:204
 msgid "Italy"
-msgstr ""
+msgstr "Italy"
 
 #: paypal/pro/fields.py:205
 msgid "Ivory Coast"
-msgstr ""
+msgstr "Ivory Coast"
 
 #: paypal/pro/fields.py:206
 msgid "Jamaica"
-msgstr ""
+msgstr "Jamaica"
 
 #: paypal/pro/fields.py:207
 msgid "Japan"
-msgstr ""
+msgstr "Japan"
 
 #: paypal/pro/fields.py:208
 msgid "Jordan"
-msgstr ""
+msgstr "Jordan"
 
 #: paypal/pro/fields.py:209
 msgid "Kazakhstan"
-msgstr ""
+msgstr "Kazakhstan"
 
 #: paypal/pro/fields.py:210
 msgid "Kenya"
-msgstr ""
+msgstr "Kenya"
 
 #: paypal/pro/fields.py:211
 msgid "Kiribati"
-msgstr ""
+msgstr "Kiribati"
 
 #: paypal/pro/fields.py:212
 msgid "Korea, Democratic People's Republic of"
-msgstr ""
+msgstr "Korea, Democratic People's Republic of"
 
 #: paypal/pro/fields.py:213
 msgid "Korea, Republic of"
-msgstr ""
+msgstr "Korea, Republic of"
 
 #: paypal/pro/fields.py:214
 msgid "Kuwait"
-msgstr ""
+msgstr "Kuwait"
 
 #: paypal/pro/fields.py:215
 msgid "Kyrgyzstan"
-msgstr ""
+msgstr "Kyrgyzstan"
 
 #: paypal/pro/fields.py:216
 msgid "Lao People's Democratic Republic"
-msgstr ""
+msgstr "Lao People's Democratic Republic"
 
 #: paypal/pro/fields.py:217
 msgid "Latvia"
-msgstr ""
+msgstr "Latvia"
 
 #: paypal/pro/fields.py:218
 msgid "Lebanon"
-msgstr ""
+msgstr "Lebanon"
 
 #: paypal/pro/fields.py:219
 msgid "Lesotho"
-msgstr ""
+msgstr "Lesotho"
 
 #: paypal/pro/fields.py:220
 msgid "Liberia"
-msgstr ""
+msgstr "Liberia"
 
 #: paypal/pro/fields.py:221
 msgid "Libyan Arab Jamahiriya"
-msgstr ""
+msgstr "Libyan Arab Jamahiriya"
 
 #: paypal/pro/fields.py:222
 msgid "Liechtenstein"
-msgstr ""
+msgstr "Liechtenstein"
 
 #: paypal/pro/fields.py:223
 msgid "Lithuania"
-msgstr ""
+msgstr "Lithuania"
 
 #: paypal/pro/fields.py:224
 msgid "Luxembourg"
-msgstr ""
+msgstr "Luxembourg"
 
 #: paypal/pro/fields.py:225
 msgid "Macau"
-msgstr ""
+msgstr "Macau"
 
 #: paypal/pro/fields.py:226
 msgid "Madagascar"
-msgstr ""
+msgstr "Madagascar"
 
 #: paypal/pro/fields.py:227
 msgid "Malawi"
-msgstr ""
+msgstr "Malawi"
 
 #: paypal/pro/fields.py:228
 msgid "Malaysia"
-msgstr ""
+msgstr "Malaysia"
 
 #: paypal/pro/fields.py:229
 msgid "Maldives"
-msgstr ""
+msgstr "Maldives"
 
 #: paypal/pro/fields.py:230
 msgid "Mali"
-msgstr ""
+msgstr "Mali"
 
 #: paypal/pro/fields.py:231
 msgid "Malta"
-msgstr ""
+msgstr "Malta"
 
 #: paypal/pro/fields.py:232
 msgid "Marshall Islands"
-msgstr ""
+msgstr "Marshall Islands"
 
 #: paypal/pro/fields.py:233
 msgid "Martinique"
-msgstr ""
+msgstr "Martinique"
 
 #: paypal/pro/fields.py:234
 msgid "Mauritania"
-msgstr ""
+msgstr "Mauritania"
 
 #: paypal/pro/fields.py:235
 msgid "Mauritius"
-msgstr ""
+msgstr "Mauritius"
 
 #: paypal/pro/fields.py:236
 msgid "Mayotte"
-msgstr ""
+msgstr "Mayotte"
 
 #: paypal/pro/fields.py:237 personal/models.py:13
 msgid "Mexico"
-msgstr ""
+msgstr "Mexico"
 
 #: paypal/pro/fields.py:238
 msgid "Micronesia"
-msgstr ""
+msgstr "Micronesia"
 
 #: paypal/pro/fields.py:239
 msgid "Moldova, Republic of"
-msgstr ""
+msgstr "Moldova, Republic of"
 
 #: paypal/pro/fields.py:240
 msgid "Monaco"
-msgstr ""
+msgstr "Monaco"
 
 #: paypal/pro/fields.py:241
 msgid "Mongolia"
-msgstr ""
+msgstr "Mongolia"
 
 #: paypal/pro/fields.py:242
 msgid "Monserrat"
-msgstr ""
+msgstr "Monserrat"
 
 #: paypal/pro/fields.py:243
 msgid "Morocco"
-msgstr ""
+msgstr "Morocco"
 
 #: paypal/pro/fields.py:244
 msgid "Mozambique"
-msgstr ""
+msgstr "Mozambique"
 
 #: paypal/pro/fields.py:245
 msgid "Myanmar"
-msgstr ""
+msgstr "Myanmar"
 
 #: paypal/pro/fields.py:246
 msgid "Namibia"
-msgstr ""
+msgstr "Namibia"
 
 #: paypal/pro/fields.py:247
 msgid "Nauru"
-msgstr ""
+msgstr "Nauru"
 
 #: paypal/pro/fields.py:248
 msgid "Nepal"
-msgstr ""
+msgstr "Nepal"
 
 #: paypal/pro/fields.py:249
 msgid "Netherlands"
-msgstr ""
+msgstr "Netherlands"
 
 #: paypal/pro/fields.py:250
 msgid "Netherlands Antilles"
-msgstr ""
+msgstr "Netherlands Antilles"
 
 #: paypal/pro/fields.py:251
 msgid "New Caledonia"
-msgstr ""
+msgstr "New Caledonia"
 
 #: paypal/pro/fields.py:252
 msgid "New Zealand"
-msgstr ""
+msgstr "New Zealand"
 
 #: paypal/pro/fields.py:253
 msgid "Nicaragua"
-msgstr ""
+msgstr "Nicaragua"
 
 #: paypal/pro/fields.py:254
 msgid "Niger"
-msgstr ""
+msgstr "Niger"
 
 #: paypal/pro/fields.py:255
 msgid "Nigeria"
-msgstr ""
+msgstr "Nigeria"
 
 #: paypal/pro/fields.py:256
 msgid "Niue"
-msgstr ""
+msgstr "Niue"
 
 #: paypal/pro/fields.py:257
 msgid "Norfolk Island"
-msgstr ""
+msgstr "Norfolk Island"
 
 #: paypal/pro/fields.py:258
 msgid "Northern Mariana Islands"
-msgstr ""
+msgstr "Northern Mariana Islands"
 
 #: paypal/pro/fields.py:259
 msgid "Norway"
-msgstr ""
+msgstr "Norway"
 
 #: paypal/pro/fields.py:260
 msgid "Oman"
-msgstr ""
+msgstr "Oman"
 
 #: paypal/pro/fields.py:261
 msgid "Pakistan"
-msgstr ""
+msgstr "Pakistan"
 
 #: paypal/pro/fields.py:262
 msgid "Palau"
-msgstr ""
+msgstr "Palau"
 
 #: paypal/pro/fields.py:263
 msgid "Panama"
-msgstr ""
+msgstr "Panama"
 
 #: paypal/pro/fields.py:264
 msgid "Papua New Guinea"
-msgstr ""
+msgstr "Papua New Guinea"
 
 #: paypal/pro/fields.py:265
 msgid "Paraguay"
-msgstr ""
+msgstr "Paraguay"
 
 #: paypal/pro/fields.py:266
 msgid "Peru"
-msgstr ""
+msgstr "Peru"
 
 #: paypal/pro/fields.py:267
 msgid "Philippines"
-msgstr ""
+msgstr "Philippines"
 
 #: paypal/pro/fields.py:268
 msgid "Pitcairn"
-msgstr ""
+msgstr "Pitcairn"
 
 #: paypal/pro/fields.py:269
 msgid "Poland"
-msgstr ""
+msgstr "Poland"
 
 #: paypal/pro/fields.py:270
 msgid "Portugal"
-msgstr ""
+msgstr "Portugal"
 
 #: paypal/pro/fields.py:271
 msgid "Puerto Rico"
-msgstr ""
+msgstr "Puerto Rico"
 
 #: paypal/pro/fields.py:272
 msgid "Qatar"
-msgstr ""
+msgstr "Qatar"
 
 #: paypal/pro/fields.py:273
 msgid "Reunion"
-msgstr ""
+msgstr "Reunion"
 
 #: paypal/pro/fields.py:274
 msgid "Romania"
-msgstr ""
+msgstr "Romania"
 
 #: paypal/pro/fields.py:275
 msgid "Russian Federation"
-msgstr ""
+msgstr "Russian Federation"
 
 #: paypal/pro/fields.py:276
 msgid "Rwanda"
-msgstr ""
+msgstr "Rwanda"
 
 #: paypal/pro/fields.py:277
 msgid "Saint Lucia"
-msgstr ""
+msgstr "Saint Lucia"
 
 #: paypal/pro/fields.py:278
 msgid "Samoa"
-msgstr ""
+msgstr "Samoa"
 
 #: paypal/pro/fields.py:279
 msgid "San Marino"
-msgstr ""
+msgstr "San Marino"
 
 #: paypal/pro/fields.py:280
 msgid "Sao Tome & Principe"
-msgstr ""
+msgstr "Sao Tome & Principe"
 
 #: paypal/pro/fields.py:281
 msgid "Saudi Arabia"
-msgstr ""
+msgstr "Saudi Arabia"
 
 #: paypal/pro/fields.py:282
 msgid "Senegal"
-msgstr ""
+msgstr "Senegal"
 
 #: paypal/pro/fields.py:283
 msgid "Seychelles"
-msgstr ""
+msgstr "Seychelles"
 
 #: paypal/pro/fields.py:284
 msgid "Sierra Leone"
-msgstr ""
+msgstr "Sierra Leone"
 
 #: paypal/pro/fields.py:285
 msgid "Singapore"
@@ -1640,27 +1656,27 @@ msgstr "Singapore"
 
 #: paypal/pro/fields.py:286
 msgid "Slovakia"
-msgstr ""
+msgstr "Slovakia"
 
 #: paypal/pro/fields.py:287
 msgid "Slovenia"
-msgstr ""
+msgstr "Slovenia"
 
 #: paypal/pro/fields.py:288
 msgid "Solomon Islands"
-msgstr ""
+msgstr "Solomon Islands"
 
 #: paypal/pro/fields.py:289
 msgid "Somalia"
-msgstr ""
+msgstr "Somalia"
 
 #: paypal/pro/fields.py:290
 msgid "South Africa"
-msgstr ""
+msgstr "South Africa"
 
 #: paypal/pro/fields.py:291
 msgid "South Georgia and the South Sandwich Islands"
-msgstr ""
+msgstr "South Georgia and the South Sandwich Islands"
 
 #: paypal/pro/fields.py:292 personal/models.py:17
 msgid "Spain"
@@ -1668,27 +1684,27 @@ msgstr "España"
 
 #: paypal/pro/fields.py:293
 msgid "Sri Lanka"
-msgstr ""
+msgstr "Sri Lanka"
 
 #: paypal/pro/fields.py:294
 msgid "St. Helena"
-msgstr ""
+msgstr "St. Helena"
 
 #: paypal/pro/fields.py:295
 msgid "St. Kitts and Nevis"
-msgstr ""
+msgstr "St. Kitts and Nevis"
 
 #: paypal/pro/fields.py:296
 msgid "St. Pierre & Miquelon"
-msgstr ""
+msgstr "St. Pierre & Miquelon"
 
 #: paypal/pro/fields.py:297
 msgid "St. Vincent & the Grenadines"
-msgstr ""
+msgstr "St. Vincent & the Grenadines"
 
 #: paypal/pro/fields.py:298
 msgid "Sudan"
-msgstr ""
+msgstr "Sudan"
 
 #: paypal/pro/fields.py:299
 msgid "Suriname"
@@ -1696,83 +1712,83 @@ msgstr "Apellido"
 
 #: paypal/pro/fields.py:300
 msgid "Svalbard & Jan Mayen Islands"
-msgstr ""
+msgstr "Svalbard & Jan Mayen Islands"
 
 #: paypal/pro/fields.py:301
 msgid "Swaziland"
-msgstr ""
+msgstr "Swaziland"
 
 #: paypal/pro/fields.py:302
 msgid "Sweden"
-msgstr ""
+msgstr "Sweden"
 
 #: paypal/pro/fields.py:303
 msgid "Switzerland"
-msgstr ""
+msgstr "Switzerland"
 
 #: paypal/pro/fields.py:304
 msgid "Syrian Arab Republic"
-msgstr ""
+msgstr "Syrian Arab Republic"
 
 #: paypal/pro/fields.py:305
 msgid "Taiwan, Province of China"
-msgstr ""
+msgstr "Taiwan, Province of China"
 
 #: paypal/pro/fields.py:306
 msgid "Tajikistan"
-msgstr ""
+msgstr "Tajikistan"
 
 #: paypal/pro/fields.py:307
 msgid "Tanzania, United Republic of"
-msgstr ""
+msgstr "Tanzania, United Republic of"
 
 #: paypal/pro/fields.py:308
 msgid "Thailand"
-msgstr ""
+msgstr "Thailand"
 
 #: paypal/pro/fields.py:309
 msgid "Togo"
-msgstr ""
+msgstr "Togo"
 
 #: paypal/pro/fields.py:310
 msgid "Tokelau"
-msgstr ""
+msgstr "Tokelau"
 
 #: paypal/pro/fields.py:311
 msgid "Tonga"
-msgstr ""
+msgstr "Tonga"
 
 #: paypal/pro/fields.py:312
 msgid "Trinidad & Tobago"
-msgstr ""
+msgstr "Trinidad & Tobago"
 
 #: paypal/pro/fields.py:313
 msgid "Tunisia"
-msgstr ""
+msgstr "Tunisia"
 
 #: paypal/pro/fields.py:314
 msgid "Turkey"
-msgstr ""
+msgstr "Turkey"
 
 #: paypal/pro/fields.py:315
 msgid "Turkmenistan"
-msgstr ""
+msgstr "Turkmenistan"
 
 #: paypal/pro/fields.py:316
 msgid "Turks & Caicos Islands"
-msgstr ""
+msgstr "Turks & Caicos Islands"
 
 #: paypal/pro/fields.py:317
 msgid "Tuvalu"
-msgstr ""
+msgstr "Tuvalu"
 
 #: paypal/pro/fields.py:318
 msgid "Uganda"
-msgstr ""
+msgstr "Uganda"
 
 #: paypal/pro/fields.py:319
 msgid "Ukraine"
-msgstr ""
+msgstr "Ukraine"
 
 #: paypal/pro/fields.py:320
 msgid "United Arab Emirates"
@@ -1784,7 +1800,7 @@ msgstr "Reino Unido"
 
 #: paypal/pro/fields.py:322
 msgid "United States Minor Outlying Islands"
-msgstr ""
+msgstr "United States Minor Outlying Islands"
 
 #: paypal/pro/fields.py:323
 msgid "United States Virgin Islands"
@@ -1792,59 +1808,59 @@ msgstr "Estados Unidos - Islas Vírgenes"
 
 #: paypal/pro/fields.py:324
 msgid "Unknown or unspecified country"
-msgstr ""
+msgstr "Unknown or unspecified country"
 
 #: paypal/pro/fields.py:325
 msgid "Uruguay"
-msgstr ""
+msgstr "Uruguay"
 
 #: paypal/pro/fields.py:326
 msgid "Uzbekistan"
-msgstr ""
+msgstr "Uzbekistan"
 
 #: paypal/pro/fields.py:327
 msgid "Vanuatu"
-msgstr ""
+msgstr "Vanuatu"
 
 #: paypal/pro/fields.py:328
 msgid "Vatican City State (Holy See)"
-msgstr ""
+msgstr "Vatican City State (Holy See)"
 
 #: paypal/pro/fields.py:329
 msgid "Venezuela"
-msgstr ""
+msgstr "Venezuela"
 
 #: paypal/pro/fields.py:330
 msgid "Viet Nam"
-msgstr ""
+msgstr "Viet Nam"
 
 #: paypal/pro/fields.py:331
 msgid "Wallis & Futuna Islands"
-msgstr ""
+msgstr "Wallis & Futuna Islands"
 
 #: paypal/pro/fields.py:332
 msgid "Western Sahara"
-msgstr ""
+msgstr "Western Sahara"
 
 #: paypal/pro/fields.py:333
 msgid "Yemen"
-msgstr ""
+msgstr "Yemen"
 
 #: paypal/pro/fields.py:334
 msgid "Yugoslavia"
-msgstr ""
+msgstr "Yugoslavia"
 
 #: paypal/pro/fields.py:335
 msgid "Zaire"
-msgstr ""
+msgstr "Zaire"
 
 #: paypal/pro/fields.py:336
 msgid "Zambia"
-msgstr ""
+msgstr "Zambia"
 
 #: paypal/pro/fields.py:337
 msgid "Zimbabwe"
-msgstr ""
+msgstr "Zimbabwe"
 
 #: personal/models.py:15
 msgid "United States"
@@ -1986,37 +2002,35 @@ msgstr "Usuario"
 
 #: personal/templates/personal/view_profile.html:38
 msgid "Email"
-msgstr ""
+msgstr "Email"
 
 #: shop/models.py:32
 msgid "Someone has purchased your course: "
-msgstr ""
+msgstr "Someone has purchased your course:"
 
 #: shop/models.py:39
 msgid "You has been enrrolled in "
 msgstr "Has sido matriculado en el curso"
 
 #: shop/views.py:18
-#, fuzzy
 msgid "You can not buy this course twice"
-msgstr "No puedes votar dos veces este curso: "
+msgstr "No puedes comprar dos veces este curso"
 
 #: shop/views.py:48
 msgid "Thank you! Your purchase was successful. You can now watch the course"
-msgstr ""
+msgstr "Thank you! Your purchase was successful. You can now watch the course"
 
 #: shop/templates/shop/buy_email.html:7
-#, fuzzy
 msgid "The User"
-msgstr "Perfil de Twitter"
+msgstr "El usuario"
 
 #: shop/templates/shop/buy_email.html:8
 msgid "with email"
-msgstr ""
+msgstr "con email"
 
 #: shop/templates/shop/buy_email.html:9
 msgid "has purchased your course:"
-msgstr ""
+msgstr "ha comprado tu curso:"
 
 #: shop/templates/shop/buy_email.html:11
 msgid ""
@@ -2026,21 +2040,19 @@ msgstr ""
 
 #: shop/templates/shop/confirmation.html:2
 msgid "Confirm your Order"
-msgstr ""
+msgstr "Confirma tu compra"
 
 #: shop/templates/shop/confirmation.html:7
-#, fuzzy
 msgid "Are you sure you want to buy this course?"
-msgstr "¿Seguro que quieres borrar este tema?"
+msgstr "¿Seguro que quieres comprar este curso?"
 
 #: shop/templates/shop/confirmation.html:21
 msgid "Yes I am"
-msgstr ""
+msgstr "Confirmar"
 
 #: shop/templates/shop/confirmation.html:22
-#, fuzzy
 msgid "No and Go Home"
-msgstr "Volver a Inicio"
+msgstr "No, ir al Inicio"
 
 #: shop/templates/shop/enrroled_email.html:4
 msgid "Gracias por comprar el curso "
@@ -2114,11 +2126,11 @@ msgstr "Equipo"
 
 #: templates/base.html:131
 msgid "Blog"
-msgstr ""
+msgstr "Blog"
 
 #: templates/base.html:137
 msgid "FAQ"
-msgstr ""
+msgstr "FAQ"
 
 #: templates/base.html:138
 msgid "Terms of Use"
@@ -2142,7 +2154,7 @@ msgstr "Ayudando"
 
 #: templates/base.html:152
 msgid "Talk about us"
-msgstr ""
+msgstr "Hablan de Nosotros"
 
 #: templates/base.html:159
 msgid "Follow us"
@@ -2154,7 +2166,7 @@ msgstr "Nuestro Equipo"
 
 #: templates/pages/team.html:46
 msgid "Contributors"
-msgstr ""
+msgstr "Contribuidores"
 
 #: templates/registration/activate.html:2
 #: templates/registration/activation_complete.html:3
@@ -2205,7 +2217,7 @@ msgstr ""
 #: templates/registration/password_reset_confirm.html:16
 #: templates/registration/password_reset_done.html:11
 #: templates/registration/password_reset_form.html:19
-#: templates/registration/registration_complete.html:13
+#: templates/registration/registration_complete.html:14
 msgid "Back to Home"
 msgstr "Volver a Inicio"
 
@@ -2294,24 +2306,20 @@ msgid "Change password"
 msgstr "Cambiar contraseña"
 
 #: templates/registration/password_change_form.html:6
-#, fuzzy
 msgid "You are Changing Password"
-msgstr "Cambiar contraseña"
+msgstr "Estas cambiando tu Contraseña"
 
 #: templates/registration/password_change_form.html:13
-#, fuzzy
 msgid "Old Password"
-msgstr "Cambiar contraseña"
+msgstr "Contraseña Antigua"
 
 #: templates/registration/password_change_form.html:22
-#, fuzzy
 msgid "New Password"
-msgstr "Cambiar contraseña"
+msgstr "Nueva Contraseña"
 
 #: templates/registration/password_change_form.html:31
-#, fuzzy
 msgid "Confirm New Password"
-msgstr "Cambiar contraseña"
+msgstr "Confirmar Nueva Contraseña"
 
 #: templates/registration/password_change_form.html:44
 msgid "Back to Profile"
@@ -2374,6 +2382,10 @@ msgstr ""
 "Te Hemos enviado un email. Por favor comprueba tu email y haz clic en el "
 "enlace para activar tu cuenta."
 
+#: templates/registration/registration_complete.html:10
+msgid "* Check your SPAM inbox"
+msgstr "* Revisa tu carpeta de SPAM"
+
 #: templates/registration/registration_form.html:4
 msgid "Create a new Account"
 msgstr "Crear una nueva Cuenta"
@@ -2390,6 +2402,8 @@ msgid ""
 "            By clicking Create Account you agree to the <a href=\"%(STATIC_URL)spdf/Terminos-y-condiciones-TrainingMe.net.pdf\">Terms of Service</a> and <a href=\"%(STATIC_URL)spdf/Terminos-y-condiciones-TrainingMe.net.pdf\">Privacy policies</a>.\n"
 "            "
 msgstr ""
+"\n"
+"Haciendo click en Crear Cuenta significa que aceptas los <a href=\"%(STATIC_URL)spdf/Terminos-y-condiciones-TrainingMe.net.pdf\">Terminos del Servicio</a> y nuestra <a href=\"%(STATIC_URL)spdf/Terminos-y-condiciones-TrainingMe.net.pdf\">Política de Privacidad</a>."
 
 #: validatedfile/__init__.py:27
 #, python-format
@@ -2411,6 +2425,8 @@ msgid ""
 "Please keep the total uploaded files under %(total_size)s. With this file, "
 "the total would be %(exceed_size)s."
 msgstr ""
+"Por favor, mantenga el total de archivos subidos en%(total_size)s. Con este "
+"archivo, el total sería de  %(exceed_size)s."
 
 #~ msgid "Rating "
 #~ msgstr "Valoración"
