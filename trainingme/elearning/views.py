@@ -375,7 +375,10 @@ Vista de los contenidos del Curso una vez matriculado y Vista del Profesor
 """
 @login_required()
 def learning_course(request,course_id):
-    course = get_object_or_404(Course,pk=course_id,status__name__in=["published","evaluation period","building"])
+    if not request.user.is_staff:
+        course = get_object_or_404(Course,pk=course_id,status__name__in=["published","evaluation period","building"])
+    else:
+        course = get_object_or_404(Course,pk=course_id)
     enrrollment = course.enrollments.filter(user_id=request.user.id)
     if not enrrollment and course.get_owner_id() != request.user.id and not request.user.is_staff:
         messages.error(request,_('You are not enrrolled in this course'))
@@ -392,7 +395,10 @@ Vista de la Leccion una vez matriculado
 """
 @login_required()
 def learning_lesson(request,lesson_id):
-    lesson = get_object_or_404(Lesson,pk=lesson_id,subject__course__status__name__in=["published","evaluation period","building"])
+    if not request.user.is_staff:
+        lesson = get_object_or_404(Lesson,pk=lesson_id,subject__course__status__name__in=["published","evaluation period","building"])
+    else:
+        lesson = get_object_or_404(Lesson,pk=lesson_id)
     enrrollment = lesson.subject.course.enrollments.filter(user_id=request.user.id)
     if not enrrollment and lesson.subject.course.get_owner_id() != request.user.id and not request.user.is_staff:
         messages.warning(request,_('You are not enrroled in that course: ')+lesson.subject.course.title)
