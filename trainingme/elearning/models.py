@@ -362,6 +362,7 @@ class Comment(models.Model):
         return unicode(self.created_at) + '--' + unicode(self.lesson.title) + '--' + unicode(self.user) + '--' + unicode(self.message)
 
 
+
 # -------- Signals -----------
 
 # Enrroll automatic in the course when the user is created

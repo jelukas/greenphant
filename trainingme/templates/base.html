@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+{% load personal_extras %}<!DOCTYPE html>
 <html>
 <head>
     <title>{% block title %}{% trans 'TrainingMe.Net - New Elearning Plataform' %}{% endblock %}</title>
@@ -56,7 +56,23 @@
                                 <li><a href="{% url learning %}">{% trans "My Courses" %}</a></li>
                                 <li><a href="{% url new_course %}">{% trans "Create New Course" %}</a></li>
                                 <li><a href="{% url home %}">{% trans "Search Courses" %}</a></li>
+                                <li></li>
                                 <li><a href="/pages/social-projects/">{% trans "Social Project" %}</a></li>
+                                <li class="dropdown">
+                                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">{% if user.get_profile.count_unread_received_messages > 0 %}<span class="label label-warning">{{ user.id|user_count_messages }}</span>{% endif %}<i class="icon-comment icon-white"></i> {% trans "Messages" %} <b class="caret"></b></a>
+                                    <ul class="dropdown-menu">
+                                        {% for msg in user.get_profile.get_unread_received_messages %}
+                                            <li class="menu-msg">
+                                                {% if msg.from_user.get_profile.image %}
+                                                    <a href="{% url view_conversation msg.from_user_id msg.id %}"><img src="{{ msg.from_user.get_profile.image.url }}"  class="img-rounded" />{{ msg.message|truncatechars:50 }}</a>
+                                                {% else %}
+                                                    <a href="{% url view_conversation msg.from_user_id msg.id %}"><img src="{{ STATIC_URL }}img/default_profile.png" alt="{{ user.get_full_name }}" class="img-rounded" />{{ msg.message|truncatechars:50 }}</a>
+                                                {% endif %}
+                                            </li>
+                                        {% endfor %}
+                                        <li><a href="{% url list_messages %}" alt="{% trans 'View all Messages' %}">{% trans 'View all Messages' %}</a></li>
+                                    </ul>
+                                </li>
                                 <li class="dropdown">
                                     <a href="#" class="dropdown-toggle" data-toggle="dropdown">{% trans "My Account" %}<b class="caret"></b></a>
                                     <ul class="dropdown-menu">

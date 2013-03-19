@@ -1,0 +1,31 @@
+{% extends "base.html" %}
+{% load i18n %}{% load widget_tweaks %}
+{% block sections %}
+    <section>
+        <div class="container MainTitle">
+            <h3>{% trans "Messages" %}</h3>
+        </div>
+    </section>
+    <section class="container">
+        <div class="row">
+            <h1>{% trans 'Conversation with' %} {{ conversation_with_user.get_full_name }}</h1>
+            <ul class="conversation">
+                {% for message in msgs %}
+                    <li {% if message.from_user_id == user.id %}class="to_me"{% endif %}>
+                        <h5><span class="badge badge-info">{% trans 'Since ' %} {{ message.created_at|timesince }}</span> {{ message.subject }}</h5>
+                        {% if message.from_user.get_profile.image %}
+                            <img src="{{ message.from_user.get_profile.image.url }}"  class="img-rounded"/>
+                        {% else %}
+                           <img src="{{ STATIC_URL }}img/default_profile.png" alt="{{ user.get_full_name }}" class="img-rounded"/>
+                        {% endif %}
+                        <div class="message-text">{{ message.message }}</div>
+                        <div class="clearfix"></div>
+                    </li>
+                {% endfor %}
+            </ul>
+        </div>
+    </section>
+{% endblock %}
+{% block footerscripts %}
+    {{ block.super }}
+{% endblock footerscripts %}

@@ -1,12 +1,15 @@
 from django.http import HttpResponseRedirect
-from django.shortcuts import render_to_response
+from django.shortcuts import render_to_response, get_object_or_404
 from django.template.context import  RequestContext
 from django.contrib.auth.decorators import login_required
-from personal.forms import ProfileForm, UserForm, EmailForm
 from django.core.urlresolvers import reverse
 from django.contrib import messages
 from django.utils.translation import ugettext as _
 from django.contrib.auth import logout
+from django.contrib.auth.models import User
+from django.db.models import Q
+from .forms import ProfileForm, UserForm, EmailForm
+from .models import Message
 
 @login_required
 def edit(request):
@@ -60,6 +63,24 @@ def update_email_form(request):
         context = {'email_form':email_form,}
         return render_to_response('personal/update_email_form.html',context,context_instance = RequestContext(request))
 
+
+@login_required
+def list_messages(request):
+    msgs = request.user.messages_received.all().order_by('-created_at')
+    context = {'msgs': msgs}
+    return render_to_response('personal/list_messages.html', context, context_instance = RequestContext(request))
+
+
+@login_required
+def view_conversation(request,with_user_id,msg_id=None):
+    msgs = Message.objects.filter(Q(from_user_id=with_user_id) | Q(to_user_id=with_user_id),).order_by('-created_at')
+    conversation_with_user = get_object_or_404(User,pk=with_user_id)
+    if msg_id:
+        msg = get_object_or_404(Message,pk=msg_id)
+        msg.is_read = True
+        msg.save()
+    context = {'msgs': msgs, 'conversation_with_user': conversation_with_user }
+    return render_to_response('personal/view_conversation.html', context, context_instance = RequestContext(request))
 
 
 def logout_view(request):

@@ -43,6 +43,29 @@ class Profile(models.Model):
             filled = True
         return filled
 
+    def get_unread_received_messages(self):
+        return self.user.messages_received.filter(is_read=False)
+
+    def count_unread_received_messages(self):
+        return self.user.messages_received.filter(is_read=False).count()
+
+
+
+class Message(models.Model):
+    from_user = models.ForeignKey(User,verbose_name=_('From User'),related_name='messages_sent')
+    to_user = models.ForeignKey(User,verbose_name=_('To User'),related_name='messages_received')
+    subject = models.CharField(max_length=200)
+    message = models.TextField(_('Message'),max_length=2000)
+    created_at = models.DateTimeField(auto_now_add=True)
+    modified_at = models.DateTimeField(auto_now=True)
+    is_read = models.BooleanField(default=False,editable=True)
+
+    def __unicode__(self):
+        return unicode(self.from_user)
+
+    class META:
+        ordering = ['created_at']
+
 
 # -------- Signals -----------
 
