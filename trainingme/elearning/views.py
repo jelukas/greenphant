@@ -561,6 +561,8 @@ HOME PAGE
 def home(request):
     cursos_de_prueba = [51,48,47,20,22]
     cursos_destacados = [54,13,29,23]
+    from django.contrib.auth.forms import AuthenticationForm
+    form = AuthenticationForm(request)
     users_count = User.objects.count()
     if request.POST:
         courses_published = Course.objects.filter(Q(short_description__icontains=request.POST['query']) | Q(title__icontains=request.POST['query']),Q(status__name="evaluation period") | Q(status__name="published"))
@@ -570,5 +572,5 @@ def home(request):
         courses_published = Course.objects.filter(Q(status__name="evaluation period") | Q(status__name="published"))
         featured = Course.objects.filter(id__in=cursos_destacados)
         courses_building = Course.objects.filter(Q(status__name="building")).exclude(id__in = cursos_de_prueba)
-    context = {'courses_published' : courses_published,'courses_building' : courses_building, 'users_count' : users_count,'featured': featured}
+    context = {'courses_published' : courses_published,'courses_building' : courses_building, 'users_count' : users_count,'featured': featured, 'form': form}
     return render_to_response('elearning/home.html',context,context_instance = RequestContext(request))

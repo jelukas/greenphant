@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2013-03-19 14:13+0100\n"
-"PO-Revision-Date: 2013-03-19 14:16+0100\n"
+"POT-Creation-Date: 2013-03-20 14:32+0100\n"
+"PO-Revision-Date: 2013-03-20 14:34+0000\n"
 "Last-Translator: Jennifer Garcia Perez <jlucas@guadalux.org>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "MIME-Version: 1.0\n"
@@ -101,8 +101,10 @@ msgstr "Fecha de Inicio"
 msgid "Lesson"
 msgstr "Lección"
 
-#: elearning/models.py:327 elearning/templates/elearning/home.html:86
-#: elearning/templates/elearning/home.html:138
+#: elearning/models.py:327 elearning/templates/elearning/home.html:161
+#: elearning/templates/elearning/home.html:213
+#: elearning/templates/elearning/home_2.html:86
+#: elearning/templates/elearning/home_2.html:138
 msgid "Points"
 msgstr "Valoración"
 
@@ -494,8 +496,10 @@ msgid "Course Title"
 msgstr "Título del curso"
 
 #: elearning/templates/elearning/edit_course.html:23
-#: elearning/templates/elearning/home.html:85
-#: elearning/templates/elearning/home.html:137
+#: elearning/templates/elearning/home.html:160
+#: elearning/templates/elearning/home.html:212
+#: elearning/templates/elearning/home_2.html:85
+#: elearning/templates/elearning/home_2.html:137
 #: elearning/templates/elearning/new_course.html:23
 #: shop/templates/shop/confirmation.html:11
 msgid "Price"
@@ -556,45 +560,97 @@ msgstr "Estás editando el Tema"
 msgid "Update Subject"
 msgstr "Guardar Tema"
 
-#: elearning/templates/elearning/home.html:31
+#: elearning/templates/elearning/home.html:10
+msgid "Learn"
+msgstr "Aprende"
+
+#: elearning/templates/elearning/home.html:29
+msgid "Teach"
+msgstr "Enseña"
+
+#: elearning/templates/elearning/home.html:49
+msgid "Login"
+msgstr "Inicia sesión"
+
+#: elearning/templates/elearning/home.html:53
+#: templates/registration/login.html:9
+msgid "Your username and password didn't match. Please try again."
+msgstr ""
+"Tu usuario y contraseña no se ha encontrado. Por favor inténtelo de nuevo"
+
+#: elearning/templates/elearning/home.html:66
+msgid "Or"
+msgstr "ó"
+
+#: elearning/templates/elearning/home.html:88
+msgid "Forgot your password?"
+msgstr "¿Olvidaste tu contraseña?"
+
+#: elearning/templates/elearning/home.html:89
+#: templates/registration/login.html:37
+msgid "Log in"
+msgstr "Iniciar Sesión"
+
+#: elearning/templates/elearning/home.html:91
+msgid "¿Need an account?"
+msgstr "¿Necesitas una cuenta?"
+
+#: elearning/templates/elearning/home.html:91
+msgid "REGISTER NOW"
+msgstr "REGÍSTRATE AHORA"
+
+#: elearning/templates/elearning/home.html:107
+#: elearning/templates/elearning/home_2.html:31
 msgid "The first five entries of each course are free"
 msgstr "Las cinco primeras matriculaciones en cada curso son gratuitas"
 
-#: elearning/templates/elearning/home.html:32
+#: elearning/templates/elearning/home.html:108
+#: elearning/templates/elearning/home_2.html:32
 msgid ""
 "Regístrate y te avisaremos de los próximos lanzamientos, y si eres uno de "
 "los cinco primeros matriculados en un curso... ¡¡enhorabuena!!"
 msgstr ""
 
-#: elearning/templates/elearning/home.html:33
-msgid "Sign up Now!"
-msgstr "Regístrate Ahora!"
-
-#: elearning/templates/elearning/home.html:38
+#: elearning/templates/elearning/home.html:113
+#: elearning/templates/elearning/home_2.html:38
 msgid "Search courses...."
 msgstr "Encontrar Cursos"
 
-#: elearning/templates/elearning/home.html:39
+#: elearning/templates/elearning/home.html:114
+#: elearning/templates/elearning/home_2.html:39
 msgid "Search"
 msgstr "Encontrar Curso"
 
-#: elearning/templates/elearning/home.html:45
-msgid "Published Courses"
-msgstr "Cursos Publicados"
+#: elearning/templates/elearning/home.html:120
+msgid "Evaluation Period Courses"
+msgstr "Cursos en Periodo de Evaluacion"
 
-#: elearning/templates/elearning/home.html:84
-#: elearning/templates/elearning/home.html:136
+#: elearning/templates/elearning/home.html:159
+#: elearning/templates/elearning/home.html:211
+#: elearning/templates/elearning/home_2.html:84
+#: elearning/templates/elearning/home_2.html:136
 msgid "Enrolls"
 msgstr "Matriculados"
 
-#: elearning/templates/elearning/home.html:90
-#: elearning/templates/elearning/home.html:142
+#: elearning/templates/elearning/home.html:165
+#: elearning/templates/elearning/home.html:217
+#: elearning/templates/elearning/home_2.html:90
+#: elearning/templates/elearning/home_2.html:142
 msgid "Free !"
 msgstr "Gratis !"
 
-#: elearning/templates/elearning/home.html:97
+#: elearning/templates/elearning/home.html:172
+#: elearning/templates/elearning/home_2.html:97
 msgid "More Courses"
 msgstr "Más Cursos"
+
+#: elearning/templates/elearning/home_2.html:33
+msgid "Sign up Now!"
+msgstr "Regístrate Ahora!"
+
+#: elearning/templates/elearning/home_2.html:45
+msgid "Published Courses"
+msgstr "Cursos Publicados"
 
 #: elearning/templates/elearning/new_course.html:6
 msgid "You are Creating a New Course"
@@ -2297,11 +2353,6 @@ msgstr "Administración"
 msgid "Account registration for"
 msgstr "Cuenta registrada para"
 
-#: templates/registration/login.html:9
-msgid "Your username and password didn't match. Please try again."
-msgstr ""
-"Tu usuario y contraseña no se ha encontrado. Por favor inténtelo de nuevo"
-
 #: templates/registration/login.html:13
 msgid "login-fb-en.png"
 msgstr "login-fb-es.png"
@@ -2325,10 +2376,6 @@ msgstr "tu contraseña"
 #: templates/registration/login.html:35
 msgid "Need an account"
 msgstr "Necesitas una cuenta"
-
-#: templates/registration/login.html:37
-msgid "Log in"
-msgstr "Iniciar Sesión"
 
 #: templates/registration/logout.html:2
 msgid "Logged out"

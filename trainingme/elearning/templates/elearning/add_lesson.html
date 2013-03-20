@@ -35,7 +35,7 @@
                         {% for error in video_form.original_video_file.errors %}
                             <span class="text-error">{{ error }}</span>
                         {% endfor %}
-                        {{ video_form.original_video_file|add_class:"fixedtype"}}
+                        {{ video_form.original_video_file|add_class:"fixedtype" }}
                         <span class="help-inline">{% trans 'Format' %}: MP4, WMV, MPEG, MOV, AVI</span>
                     </div>
                 </div>
