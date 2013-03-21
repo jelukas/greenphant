@@ -547,10 +547,11 @@ def enrroll_tester(request,course_id):
     if testers_number < 5:
         enrollment = Enrollment(user_id=request.user.id, course_id=course_id, start_date=datetime.now(), tester=True)
         enrollment.save()
-        if testers_number == 4:
-            course.status = Status.objects.get(name='published')
-            course.save()
-        messages.success(request,_('Now you are Tester of the Course ')+course.title)
+        #Temporary Disable Auto Published Courses when 5 testers
+#        if testers_number == 4:
+#            course.status = Status.objects.get(name='published')
+#            course.save()
+#        messages.success(request,_('Now you are Tester of the Course ')+course.title)
     else:
         messages.error(request,_('You can\'t be tester on that Course'))
     return redirect(reverse('elearning.views.view_course', args=(course.slug,)))
