@@ -574,5 +574,5 @@ def home(request):
         cursos_mas_visitados = Course.objects.filter(id__in = cursos_mas_visitados).exclude(id__in = cursos_de_prueba)
         featured = Course.objects.filter(id__in=cursos_destacados)
         courses_building = Course.objects.filter(Q(status__name="building")).exclude(id__in = cursos_de_prueba)
-    context = {'courses_published' : courses_published,'courses_building' : courses_building, 'users_count' : users_count,'featured': featured, 'form': form}
+    context = {'courses_published' : courses_published,'courses_building' : courses_building,'cursos_mas_visitados': cursos_mas_visitados, 'users_count' : users_count,'featured': featured, 'form': form}
     return render_to_response('elearning/home.html',context,context_instance = RequestContext(request))
