@@ -120,54 +120,7 @@
                 <h3 class="span12">{% trans 'Evaluation Period Courses' %}</h3>
                 <hr/>
                 <div class="boxLine">
-                    {% for course in cursos_mas_visitados %}
-                        <div class="span3 cursoBox">
-                            <a href="{% url "view_course" course.slug %}">
-                                {% if course.image %}
-                                    {% thumbnail course.image "238x135" as im %}
-                                        <div class="boxTitleBG" style="background-image: url({{ im.url }});background-size:100% 100%;"></div>
-                                    {% endthumbnail %}
-                                {% else %}
-                                    <div class="boxTitleBG" style="background-image: url('{{ STATIC_URL }}/img/dafault_image_course.gif');background-size:100% 100%;"></div>
-                                {% endif %}
-                            </a>
-                            <div class="boxTitle" >
-                                <a href="{% url "view_course" course.slug %}">{{ course.title }}</a>
-                            </div>
-                            <div class="boxDescription">
-                                <p>
-                                    {{ course.short_description|truncatewords:13 }}
-                                </p>
-                            </div>
-                            <div class="boxInfoFooter">
-                                <ul class="unstyled course-teacher">
-                                    <li class="avatar">
-                                        {% if course.user.get_profile.image %}
-                                            <img src="{{ course.user.get_profile.image.url }}"  class="img-rounded"/>
-                                        {% else %}
-                                            <img src="{{ STATIC_URL }}img/default_profile.png" alt="{{ course.user.get_full_name }}"  class="img-rounded" />
-                                        {% endif %}
-                                    </li>
-                                    <li class="teaching">
-                                        <p class="teacher-fullname">{{ course.user.get_full_name }}</p>
-                                        <p class="teacher-subtitle">{{ course.user.get_profile.subtitle|truncatechars:32|title  }}</p>
-                                    </li>
-                                </ul>
-                            </div>
-                            <div class="boxInfoFooter">
-                                <div class="headerTitle">
-                                    <div class="leftSide">{% trans "Enrolls" %}</div>
-                                    <div class="middleSide">{% trans "Price" %}</div>
-                                    <div class="rightSide">{% trans "Points" %}</div>
-                                </div>
-                                <div class="footerInfo">
-                                    <div class="leftSide">{{ course.enrollments.count }}</div>
-                                    <div class="middleSide">{% if course.price == 0 %}<span class="label label-warning">{% trans 'Free !' %}</span>{% else %}{{ course.price }} &euro;{% endif %}</div>
-                                    <div id="curso-{{ course.id }}"  data-rating="{{ course.get_scoring }}" class="star rightSide"></div>
-                                </div>
-                            </div>
-                        </div>
-                    {% endfor %}{% for course in courses_published %}
+                    {% for course in courses_published %}
                         <div class="span3 cursoBox">
                             <a href="{% url "view_course" course.slug %}">
                                 {% if course.image %}
@@ -219,6 +172,54 @@
                 <h3 class="span12">{% trans 'More Courses' %}</h3>
                 <hr/>
                 <div class="boxLine">
+                    {% for course in cursos_mas_visitados %}
+                        <div class="span3 cursoBox">
+                            <a href="{% url "view_course" course.slug %}">
+                                {% if course.image %}
+                                    {% thumbnail course.image "238x135" as im %}
+                                        <div class="boxTitleBG" style="background-image: url({{ im.url }});background-size:100% 100%;"></div>
+                                    {% endthumbnail %}
+                                {% else %}
+                                    <div class="boxTitleBG" style="background-image: url('{{ STATIC_URL }}/img/dafault_image_course.gif');background-size:100% 100%;"></div>
+                                {% endif %}
+                            </a>
+                            <div class="boxTitle" >
+                                <a href="{% url "view_course" course.slug %}">{{ course.title }}</a>
+                            </div>
+                            <div class="boxDescription">
+                                <p>
+                                    {{ course.short_description|truncatewords:13 }}
+                                </p>
+                            </div>
+                            <div class="boxInfoFooter">
+                                <ul class="unstyled course-teacher">
+                                    <li class="avatar">
+                                        {% if course.user.get_profile.image %}
+                                            <img src="{{ course.user.get_profile.image.url }}"  class="img-rounded"/>
+                                        {% else %}
+                                            <img src="{{ STATIC_URL }}img/default_profile.png" alt="{{ course.user.get_full_name }}"  class="img-rounded" />
+                                        {% endif %}
+                                    </li>
+                                    <li class="teaching">
+                                        <p class="teacher-fullname">{{ course.user.get_full_name }}</p>
+                                        <p class="teacher-subtitle">{{ course.user.get_profile.subtitle|truncatechars:32|title  }}</p>
+                                    </li>
+                                </ul>
+                            </div>
+                            <div class="boxInfoFooter">
+                                <div class="headerTitle">
+                                    <div class="leftSide">{% trans "Enrolls" %}</div>
+                                    <div class="middleSide">{% trans "Price" %}</div>
+                                    <div class="rightSide">{% trans "Points" %}</div>
+                                </div>
+                                <div class="footerInfo">
+                                    <div class="leftSide">{{ course.enrollments.count }}</div>
+                                    <div class="middleSide">{% if course.price == 0 %}<span class="label label-warning">{% trans 'Free !' %}</span>{% else %}{{ course.price }} &euro;{% endif %}</div>
+                                    <div id="curso-{{ course.id }}"  data-rating="{{ course.get_scoring }}" class="star rightSide"></div>
+                                </div>
+                            </div>
+                        </div>
+                    {% endfor %}
                     {% for course in courses_building %}
                         <div class="span3 cursoBox">
                             <a href="{% url "view_course" course.slug %}">
