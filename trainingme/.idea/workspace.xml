@@ -25,19 +25,19 @@
   <component name="ExecutionTargetManager" SELECTED_TARGET="default_target" />
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="views.py" pinned="false" current="false" current-in-tab="false">
+      <file leaf-file-name="views.py" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/elearning/views.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="576" column="137" selection-start="27259" selection-end="27259" vertical-scroll-proportion="0.0">
+            <state line="573" column="156" selection-start="26974" selection-end="26974" vertical-scroll-proportion="0.8562874">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="home.html" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="home.html" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/elearning/templates/elearning/home.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="221" column="32" selection-start="14417" selection-end="14417" vertical-scroll-proportion="0.96300864">
+            <state line="221" column="32" selection-start="14417" selection-end="14417" vertical-scroll-proportion="-32.541668">
               <folding>
                 <element signature="e#7892#7962#0" expanded="true" />
                 <element signature="e#8128#8233#0" expanded="true" />
@@ -72,8 +72,8 @@
         <option value="$PROJECT_DIR$/static/css/styles.less" />
         <option value="$PROJECT_DIR$/elearning/templates/elearning/add_lesson.html" />
         <option value="$PROJECT_DIR$/templates/base.html" />
-        <option value="$PROJECT_DIR$/elearning/views.py" />
         <option value="$PROJECT_DIR$/elearning/templates/elearning/home.html" />
+        <option value="$PROJECT_DIR$/elearning/views.py" />
       </list>
     </option>
   </component>
@@ -523,22 +523,22 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/elearning/views.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="576" column="137" selection-start="27259" selection-end="27259" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/elearning/templates/elearning/home.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="221" column="32" selection-start="14417" selection-end="14417" vertical-scroll-proportion="0.96300864">
+        <state line="221" column="32" selection-start="14417" selection-end="14417" vertical-scroll-proportion="-32.541668">
           <folding>
             <element signature="e#7892#7962#0" expanded="true" />
             <element signature="e#8128#8233#0" expanded="true" />
             <element signature="e#11424#11494#0" expanded="true" />
             <element signature="e#11660#11765#0" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/elearning/views.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="573" column="156" selection-start="26974" selection-end="26974" vertical-scroll-proportion="0.8562874">
+          <folding />
         </state>
       </provider>
     </entry>
