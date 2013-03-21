@@ -559,7 +559,7 @@ def enrroll_tester(request,course_id):
 HOME PAGE
 """
 def home(request):
-    cursos_de_prueba = [51,48,47,20,22]
+    cursos_de_prueba = [51,48,47,20,22,29,10,54]
     cursos_mas_visitados = [29,10,54]
     cursos_destacados = [54,13,29,23]
     from django.contrib.auth.forms import AuthenticationForm
@@ -571,7 +571,7 @@ def home(request):
         courses_building = Course.objects.filter(Q(short_description__icontains=request.POST['query']) | Q(title__icontains=request.POST['query']), Q(status__name="building")).exclude(id__in = cursos_de_prueba)
     else:
         courses_published = Course.objects.filter(Q(status__name="evaluation period") | Q(status__name="published"))
-        cursos_mas_visitados = Course.objects.filter(id__in = cursos_mas_visitados).exclude(id__in = cursos_de_prueba + cursos_mas_visitados)
+        cursos_mas_visitados = Course.objects.filter(id__in = cursos_mas_visitados)
         featured = Course.objects.filter(id__in=cursos_destacados)
         courses_building = Course.objects.filter(Q(status__name="building")).exclude(id__in = cursos_de_prueba)
     context = {'courses_published' : courses_published,'courses_building' : courses_building,'cursos_mas_visitados': cursos_mas_visitados, 'users_count' : users_count,'featured': featured, 'form': form}
