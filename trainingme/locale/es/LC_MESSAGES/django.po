@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2013-03-20 14:32+0100\n"
-"PO-Revision-Date: 2013-03-20 14:34+0000\n"
+"POT-Creation-Date: 2013-03-21 12:55+0100\n"
+"PO-Revision-Date: 2013-03-21 12:56+0000\n"
 "Last-Translator: Jennifer Garcia Perez <jlucas@guadalux.org>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "MIME-Version: 1.0\n"
@@ -103,6 +103,7 @@ msgstr "Lección"
 
 #: elearning/models.py:327 elearning/templates/elearning/home.html:161
 #: elearning/templates/elearning/home.html:213
+#: elearning/templates/elearning/home.html:261
 #: elearning/templates/elearning/home_2.html:86
 #: elearning/templates/elearning/home_2.html:138
 msgid "Points"
@@ -114,7 +115,8 @@ msgstr "Valoración"
 msgid "Rating"
 msgstr "Valoración"
 
-#: elearning/models.py:355 personal/models.py:58
+#: elearning/models.py:355 personal/models.py:62
+#: personal/templates/personal/email/mail.html:14
 msgid "Message"
 msgstr "Mensaje"
 
@@ -388,6 +390,7 @@ msgstr "Editar Tema"
 #: elearning/templates/elearning/course/learning_lesson.html:15
 #: elearning/templates/elearning/course/preview_lesson.html:15
 #: elearning/templates/elearning/course/view_course.html:58
+#: personal/templates/personal/email/mail.html:13
 msgid "Subject"
 msgstr "Tema"
 
@@ -434,14 +437,14 @@ msgstr "¿Seguro que quieres borrar esta lección?"
 #: elearning/templates/elearning/dashboard.html:7
 #: elearning/templates/elearning/dashboard_learning.html:6
 #: elearning/templates/elearning/dashboard_teaching.html:6
-#: templates/base.html:162
+#: templates/base.html:163
 msgid "Learning"
 msgstr "Aprendiendo"
 
 #: elearning/templates/elearning/dashboard.html:8
 #: elearning/templates/elearning/dashboard_learning.html:7
 #: elearning/templates/elearning/dashboard_teaching.html:7
-#: templates/base.html:163
+#: templates/base.html:164
 msgid "Teaching"
 msgstr "Enseñando"
 
@@ -498,6 +501,7 @@ msgstr "Título del curso"
 #: elearning/templates/elearning/edit_course.html:23
 #: elearning/templates/elearning/home.html:160
 #: elearning/templates/elearning/home.html:212
+#: elearning/templates/elearning/home.html:260
 #: elearning/templates/elearning/home_2.html:85
 #: elearning/templates/elearning/home_2.html:137
 #: elearning/templates/elearning/new_course.html:23
@@ -627,6 +631,7 @@ msgstr "Cursos en Periodo de Evaluacion"
 
 #: elearning/templates/elearning/home.html:159
 #: elearning/templates/elearning/home.html:211
+#: elearning/templates/elearning/home.html:259
 #: elearning/templates/elearning/home_2.html:84
 #: elearning/templates/elearning/home_2.html:136
 msgid "Enrolls"
@@ -634,6 +639,7 @@ msgstr "Matriculados"
 
 #: elearning/templates/elearning/home.html:165
 #: elearning/templates/elearning/home.html:217
+#: elearning/templates/elearning/home.html:265
 #: elearning/templates/elearning/home_2.html:90
 #: elearning/templates/elearning/home_2.html:142
 msgid "Free !"
@@ -836,6 +842,7 @@ msgid "TrainingMe.net - Notice: Amount Cleared to your balance"
 msgstr "TrainingMe.net - Aviso: Transferencia hacia el saldo de tu cuenta"
 
 #: financial/templates/financial/clear_amount_email.html:7
+#: personal/templates/personal/email/mail.html:7
 msgid "Hi,"
 msgstr "Hola,"
 
@@ -1139,7 +1146,7 @@ msgstr "Central African Republic"
 msgid "Chad"
 msgstr "Chad"
 
-#: paypal/pro/fields.py:143 personal/models.py:14
+#: paypal/pro/fields.py:143 personal/models.py:18
 msgid "Chile"
 msgstr "Chile"
 
@@ -1515,7 +1522,7 @@ msgstr "Mauritius"
 msgid "Mayotte"
 msgstr "Mayotte"
 
-#: paypal/pro/fields.py:237 personal/models.py:13
+#: paypal/pro/fields.py:237 personal/models.py:17
 msgid "Mexico"
 msgstr "Mexico"
 
@@ -1735,7 +1742,7 @@ msgstr "South Africa"
 msgid "South Georgia and the South Sandwich Islands"
 msgstr "South Georgia and the South Sandwich Islands"
 
-#: paypal/pro/fields.py:292 personal/models.py:17
+#: paypal/pro/fields.py:292 personal/models.py:21
 msgid "Spain"
 msgstr "España"
 
@@ -1919,25 +1926,29 @@ msgstr "Zambia"
 msgid "Zimbabwe"
 msgstr "Zimbabwe"
 
-#: personal/models.py:15
+#: personal/models.py:19
 msgid "United States"
 msgstr "Estados Unidos"
 
-#: personal/models.py:16
+#: personal/models.py:20
 msgid "United Kingdom"
 msgstr "Reino Unido"
 
-#: personal/models.py:55
+#: personal/models.py:59
 msgid "From User"
 msgstr "De"
 
-#: personal/models.py:56
+#: personal/models.py:60
 msgid "To User"
 msgstr "para"
 
-#: personal/models.py:75
+#: personal/models.py:83
 msgid "Change your description"
 msgstr "Cambiar tu descripción"
+
+#: personal/models.py:94
+msgid "TrainingMe.net - New Message"
+msgstr "Nuevo Mensaje en TrainingMe.net"
 
 #: personal/views.py:25 personal/views.py:58
 msgid "Error updating Email Address"
@@ -2039,11 +2050,12 @@ msgid "Messages List"
 msgstr "Lista de Mensajes"
 
 #: personal/templates/personal/list_messages.html:9
-#: personal/templates/personal/view_conversation.html:6 templates/base.html:62
+#: personal/templates/personal/view_conversation.html:6 templates/base.html:63
 msgid "Messages"
 msgstr "Mensajes"
 
 #: personal/templates/personal/list_messages.html:16
+#: personal/templates/personal/email/mail.html:11
 msgid "From"
 msgstr "De"
 
@@ -2074,7 +2086,7 @@ msgid "Since "
 msgstr "Hace"
 
 #: personal/templates/personal/view_profile.html:2
-#: personal/templates/personal/view_profile.html:7 templates/base.html:79
+#: personal/templates/personal/view_profile.html:7 templates/base.html:80
 msgid "My Profile"
 msgstr "Mi Perfil"
 
@@ -2101,6 +2113,18 @@ msgstr "Usuario"
 #: personal/templates/personal/view_profile.html:38
 msgid "Email"
 msgstr "Email"
+
+#: personal/templates/personal/email/mail.html:8
+msgid "You have received a new Message on TrainingMe.net"
+msgstr "Has recibido un nuevo mensaje en TrainingMe.net"
+
+#: personal/templates/personal/email/mail.html:10
+msgid "View in TrainingMe.Net"
+msgstr "Ver en TrainingMe.net"
+
+#: personal/templates/personal/email/mail.html:12
+msgid "Date and Time"
+msgstr "Fecha y Hora"
 
 #: shop/models.py:32
 msgid "Someone has purchased your course: "
@@ -2178,87 +2202,87 @@ msgstr ""
 msgid "TrainingMe.Net - New Elearning Plataform"
 msgstr "TrainingMe.Net - Nueva Plataforma Elearning"
 
-#: templates/base.html:56
+#: templates/base.html:57
 msgid "My Courses"
 msgstr "Mis Cursos"
 
-#: templates/base.html:57
+#: templates/base.html:58
 msgid "Create New Course"
 msgstr "Crear Nuevo Curso"
 
-#: templates/base.html:58
+#: templates/base.html:59
 msgid "Search Courses"
 msgstr "Encontrar Cursos"
 
-#: templates/base.html:60
+#: templates/base.html:61
 msgid "Social Project"
 msgstr "Proyecto Social"
 
-#: templates/base.html:73
+#: templates/base.html:74
 msgid "View all Messages"
 msgstr "Ver todos mis mensajes"
 
-#: templates/base.html:77
+#: templates/base.html:78
 msgid "My Account"
 msgstr "Mi cuenta"
 
-#: templates/base.html:80
+#: templates/base.html:81
 msgid "Earnings"
 msgstr "Ganancias"
 
-#: templates/base.html:88
+#: templates/base.html:89
 msgid "Logout"
 msgstr "Cerrar Sesión"
 
-#: templates/base.html:112
+#: templates/base.html:113
 msgid "Login or Register"
 msgstr "Entra o Regístrate"
 
-#: templates/base.html:143
+#: templates/base.html:144
 msgid "About TrainingMe.Net"
 msgstr "Acerca de TrainingMe.net"
 
-#: templates/base.html:145
+#: templates/base.html:146
 msgid "Mission, Vision and Values"
 msgstr "Misión, Visión y Valores"
 
-#: templates/base.html:146
+#: templates/base.html:147
 msgid "Team"
 msgstr "Equipo"
 
-#: templates/base.html:147
+#: templates/base.html:148
 msgid "Blog"
 msgstr "Blog"
 
-#: templates/base.html:153
+#: templates/base.html:154
 msgid "FAQ"
 msgstr "FAQ"
 
-#: templates/base.html:154
+#: templates/base.html:155
 msgid "Terms of Use"
 msgstr "Terminos de Uso"
 
-#: templates/base.html:155
+#: templates/base.html:156
 msgid "Privacy Policy"
 msgstr "Política de Privacidad"
 
-#: templates/base.html:156
+#: templates/base.html:157
 msgid "Contact"
 msgstr "Contacto"
 
-#: templates/base.html:160
+#: templates/base.html:161
 msgid "Enjoy"
 msgstr "Disfruta"
 
-#: templates/base.html:164
+#: templates/base.html:165
 msgid "Helping"
 msgstr "Ayudando"
 
-#: templates/base.html:168
+#: templates/base.html:169
 msgid "Talk about us"
 msgstr "Hablan de Nosotros"
 
-#: templates/base.html:175
+#: templates/base.html:176
 msgid "Follow us"
 msgstr "Síguenos"
 

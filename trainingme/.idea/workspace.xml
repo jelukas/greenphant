@@ -25,24 +25,46 @@
   <component name="ExecutionTargetManager" SELECTED_TARGET="default_target" />
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="views.py" pinned="false" current="true" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/elearning/views.py">
+      <file leaf-file-name="models.py" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/personal/models.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="562" column="39" selection-start="26013" selection-end="26013" vertical-scroll-proportion="0.65868264">
-              <folding />
+            <state line="70" column="54" selection-start="2810" selection-end="2810" vertical-scroll-proportion="0.0">
+              <folding>
+                <element signature="e#0#28#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="home.html" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/elearning/templates/elearning/home.html">
+      <file leaf-file-name="views.py" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/personal/views.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="221" column="32" selection-start="14417" selection-end="14417" vertical-scroll-proportion="-32.541668">
+            <state line="67" column="17" selection-start="3036" selection-end="3049" vertical-scroll-proportion="0.0">
               <folding>
-                <element signature="e#7892#7962#0" expanded="true" />
-                <element signature="e#8128#8233#0" expanded="true" />
-                <element signature="e#11424#11494#0" expanded="true" />
-                <element signature="e#11660#11765#0" expanded="true" />
+                <element signature="e#0#44#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="mail.html" pinned="false" current="true" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/personal/templates/personal/email/mail.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="9" column="156" selection-start="436" selection-end="436" vertical-scroll-proportion="0.16383494">
+              <folding>
+                <element signature="n#style#0;n#a#0;n#p#2;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#p#7;n#!!top" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="testers_checking.py" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/elearning/management/commands/testers_checking.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="22" column="17" selection-start="1003" selection-end="1003" vertical-scroll-proportion="0.0">
+              <folding>
+                <element signature="e#0#65#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -58,7 +80,6 @@
   <component name="IdeDocumentHistory">
     <option name="changedFiles">
       <list>
-        <option value="$PROJECT_DIR$/elearning/templates/elearning/course/learning_course.html" />
         <option value="$PROJECT_DIR$/elearning/templates/elearning/building_course.html" />
         <option value="$PROJECT_DIR$/elearning/urls.py" />
         <option value="$PROJECT_DIR$/elearning/models.py" />
@@ -67,13 +88,14 @@
         <option value="$PROJECT_DIR$/personal/views.py" />
         <option value="$PROJECT_DIR$/personal/templates/personal/list_messages.html" />
         <option value="$PROJECT_DIR$/personal/admin.py" />
-        <option value="$PROJECT_DIR$/personal/models.py" />
         <option value="$PROJECT_DIR$/personal/templates/personal/view_conversation.html" />
         <option value="$PROJECT_DIR$/static/css/styles.less" />
         <option value="$PROJECT_DIR$/elearning/templates/elearning/add_lesson.html" />
         <option value="$PROJECT_DIR$/templates/base.html" />
         <option value="$PROJECT_DIR$/elearning/templates/elearning/home.html" />
         <option value="$PROJECT_DIR$/elearning/views.py" />
+        <option value="$PROJECT_DIR$/personal/models.py" />
+        <option value="$PROJECT_DIR$/personal/templates/personal/email/mail.html" />
       </list>
     </option>
   </component>
@@ -136,7 +158,7 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="elearning" />
+              <option name="myItemId" value="personal" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -150,15 +172,11 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="elearning" />
+              <option name="myItemId" value="personal" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="templates" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="elearning" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -429,46 +447,6 @@
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/personal/views.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="68" column="71" selection-start="3131" selection-end="3131" vertical-scroll-proportion="0.0">
-          <folding>
-            <element signature="e#0#44#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/static/css/bootstrap.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/personal/templates/personal/list_messages.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="28" column="24" selection-start="1246" selection-end="1246" vertical-scroll-proportion="0.5178792">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/personal/admin.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="13" column="70" selection-start="501" selection-end="501" vertical-scroll-proportion="0.22995283" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/personal/models.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="48" column="38" selection-start="1915" selection-end="1945" vertical-scroll-proportion="0.4870283" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/personal/templates/personal/view_conversation.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="20" column="48" selection-start="1105" selection-end="1117" vertical-scroll-proportion="0.36407766">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/statistics/models.py">
       <provider selected="true" editor-type-id="text-editor">
         <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" />
@@ -525,7 +503,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/elearning/templates/elearning/home.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="221" column="32" selection-start="14417" selection-end="14417" vertical-scroll-proportion="-32.541668">
+        <state line="221" column="32" selection-start="14417" selection-end="14417" vertical-scroll-proportion="0.96300864">
           <folding>
             <element signature="e#7892#7962#0" expanded="true" />
             <element signature="e#8128#8233#0" expanded="true" />
@@ -535,10 +513,61 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/elearning/management/testers_checking.sh">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/elearning/templates/elearning/email/unenroll_bad_tester.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="22" column="0" selection-start="0" selection-end="679" vertical-scroll-proportion="0.40048543">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/elearning/management/commands/testers_checking.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="22" column="17" selection-start="1003" selection-end="1003" vertical-scroll-proportion="0.0">
+          <folding>
+            <element signature="e#0#65#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/elearning/views.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="562" column="39" selection-start="26013" selection-end="26013" vertical-scroll-proportion="0.65868264">
+        <state line="6" column="0" selection-start="328" selection-end="372" vertical-scroll-proportion="-1.4550898">
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/personal/models.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="70" column="54" selection-start="2810" selection-end="2810" vertical-scroll-proportion="0.0">
+          <folding>
+            <element signature="e#0#28#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/personal/views.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="67" column="17" selection-start="3036" selection-end="3049" vertical-scroll-proportion="0.0">
+          <folding>
+            <element signature="e#0#44#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/personal/templates/personal/email/mail.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="9" column="156" selection-start="436" selection-end="436" vertical-scroll-proportion="0.16383494">
+          <folding>
+            <element signature="n#style#0;n#a#0;n#p#2;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#p#7;n#!!top" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>

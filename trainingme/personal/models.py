@@ -3,10 +3,14 @@ from django.conf import settings
 from django.contrib.auth.models import User
 from django.db.models.signals import post_save
 from django_countries import CountryField
-import os
+from django.core.mail import EmailMessage
+from django.template.loader import render_to_string
 from django.utils.translation import ugettext as _
+from django.core.urlresolvers import reverse
 from django_countries.countries import COUNTRIES
 from statistics.models import Interest
+
+
 
 # We add the most used countries first
 COUNTRIES = list(COUNTRIES)
@@ -63,8 +67,12 @@ class Message(models.Model):
     def __unicode__(self):
         return unicode(self.from_user)
 
+    def get_url(self):
+        return reverse('personal.views.list_messages')
+
     class META:
         ordering = ['created_at']
+
 
 
 # -------- Signals -----------
@@ -75,3 +83,17 @@ def create_user_profile(sender, instance, created, **kwargs):
         Profile.objects.create(user=instance,description = _('Change your description'),is_first_login = True)
 
 post_save.connect(create_user_profile, sender=User, dispatch_uid='users-profile-creation-signal')
+
+
+# Email Message
+def send_email_message(sender, instance, created, **kwargs):
+    if created:
+        message = instance
+        ctx_dict = { 'message': message }
+        email_message = render_to_string('personal/email/mail.html',ctx_dict)
+        subject = _('TrainingMe.net - New Message')
+        msg = EmailMessage(subject, email_message, settings.DEFAULT_FROM_EMAIL, [message.to_user.email])
+        msg.content_subtype = "html"  # Main content is now text/html
+        msg.send()
+
+post_save.connect(send_email_message, sender=Message, dispatch_uid='send-email-message-signal')
