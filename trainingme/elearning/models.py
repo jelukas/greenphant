@@ -269,6 +269,7 @@ class Video(models.Model):
     original_video_file = ValidatedFileField(_('Video'),upload_to='new_lesson_videos',max_length=245,content_types = ['video/mp4','video/x-ms-asf','video/avi','video/msvideo','video/x-msvideo','video/x-flv','video/quicktime','video/mpeg','video/x-ms-wmv','video/webm',])
     converted_video_file_mp4 = models.FileField(upload_to='converted_lesson_videos',max_length=245,blank=True,null=True)
     converted_video_file_webm = models.FileField(upload_to='converted_lesson_videos',max_length=245,blank=True,null=True)
+    duration = models.DecimalField(decimal_places=2,max_digits=15,null=True,blank=True)
 
     def __unicode__(self):
         return self.original_video_file.name

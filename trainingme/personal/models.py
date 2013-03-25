@@ -89,11 +89,12 @@ post_save.connect(create_user_profile, sender=User, dispatch_uid='users-profile-
 def send_email_message(sender, instance, created, **kwargs):
     if created:
         message = instance
-        ctx_dict = { 'message': message }
-        email_message = render_to_string('personal/email/mail.html',ctx_dict)
-        subject = _('TrainingMe.net - New Message')
-        msg = EmailMessage(subject, email_message, settings.DEFAULT_FROM_EMAIL, [message.to_user.email])
-        msg.content_subtype = "html"  # Main content is now text/html
-        msg.send()
+        if message.to_user.email:
+            ctx_dict = { 'message': message }
+            email_message = render_to_string('personal/email/mail.html',ctx_dict)
+            subject = _('TrainingMe.net - New Message')
+            msg = EmailMessage(subject, email_message, settings.DEFAULT_FROM_EMAIL, [message.to_user.email])
+            msg.content_subtype = "html"  # Main content is now text/html
+            msg.send()
 
 post_save.connect(send_email_message, sender=Message, dispatch_uid='send-email-message-signal')

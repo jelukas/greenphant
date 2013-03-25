@@ -4,14 +4,18 @@
 </div>
 <br/><br/>
 
-<p>El curso {{ course.title }} ha sido enviado al proceso de revisión.</p>
+<p>{% block trans %}
+    The course {{ course.title }} has been sent to Checking Process
+    {% endblock %}
+</p>
 
-<p>Revísalo y comúnicale al profesor el resultado por email ( si tiene email ) .</p>
+<p>{% trans 'Check it and have feedback with the teacher via email ( if he have email) or messaging system .' %}</p>
 
 
 <ul>
-    <li>Profesor Nombre: {{ course.user.get_full_name }}</li>
-    <li>Profesor Email:  {{ course.user.email }}</li>
+    <li>{% trans 'Teacher Username' %}: {{ course.user.username }}</li>
+    <li>{% trans 'Teacher Name' %}: {{ course.user.get_full_name }}</li>
+    <li>{% trans 'Teacher Email' %}:  {{ course.user.email }}</li>
 </ul>
 
 <br/><br/>

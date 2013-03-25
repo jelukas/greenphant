@@ -4,11 +4,12 @@
 </div>
 <br/><br/>
 
-{% trans 'Hola,' %}{{ tester.get_full_name }}
-{% trans 'Has sido desmatriculado del curso ' %}{{ couse.title }}
-{% trans 'ya que no lo has valorado desde hace 30 días.' %}
-
-{% trans 'Esperamos que valores próximos cursos' %}
+<p>{% trans 'Hi,' %}{{ tester.get_full_name }}</p>
+<p>{% trans 'You have been unenrolled in ' %}{{ couse.title }}</p>
+<p>{% trans 'because you have not rated it in the last 30 days.' %}</p>
+<br/>
+<p>{% trans 'We hope you rate the next courses.' %}</p>
+<p>{% trans 'Thank you' %}</p>
 
 <br/><br/>
 <hr color="#000066" width="100%">

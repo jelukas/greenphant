@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2013-03-21 12:55+0100\n"
-"PO-Revision-Date: 2013-03-21 12:56+0000\n"
+"POT-Creation-Date: 2013-03-22 09:42+0100\n"
+"PO-Revision-Date: 2013-03-22 09:43+0000\n"
 "Last-Translator: Jennifer Garcia Perez <jlucas@guadalux.org>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "MIME-Version: 1.0\n"
@@ -268,11 +268,7 @@ msgstr "No puedes votar dos veces este curso: "
 msgid "You have Rated the course with "
 msgstr "Has calificado el curso con"
 
-#: elearning/views.py:553
-msgid "Now you are Tester of the Course "
-msgstr "Ahora eres evaluador de este curso"
-
-#: elearning/views.py:555
+#: elearning/views.py:556
 msgid "You can't be tester on that Course"
 msgstr "No puedes ser evaluador de este curso"
 
@@ -786,21 +782,47 @@ msgstr ""
 msgid "Evaluate Now!"
 msgstr "Evaluar ahora!"
 
-#: elearning/templates/elearning/email/unenroll_bad_tester.html:7
-msgid "Hola,"
+#: elearning/templates/elearning/email/new_checking.html:12
+msgid ""
+"Check it and have feedback with the teacher via email ( if he have email) or"
+" messaging system ."
 msgstr ""
+"Revísalo y comunícale al profesor los resultados vía email ( si tiene email)"
+" o por el sistema de Mensajes."
+
+#: elearning/templates/elearning/email/new_checking.html:16
+msgid "Teacher Username"
+msgstr "Nombre de Usuario del Profesor:"
+
+#: elearning/templates/elearning/email/new_checking.html:17
+msgid "Teacher Name"
+msgstr "Nombre del Profesor"
+
+#: elearning/templates/elearning/email/new_checking.html:18
+msgid "Teacher Email"
+msgstr "Email del Profesor"
+
+#: elearning/templates/elearning/email/unenroll_bad_tester.html:7
+#: financial/templates/financial/clear_amount_email.html:7
+#: personal/templates/personal/email/mail.html:7
+msgid "Hi,"
+msgstr "Hola,"
 
 #: elearning/templates/elearning/email/unenroll_bad_tester.html:8
-msgid "Has sido desmatriculado del curso "
-msgstr ""
+msgid "You have been unenrolled in "
+msgstr "Has sido desmatriculado del curso"
 
 #: elearning/templates/elearning/email/unenroll_bad_tester.html:9
-msgid "ya que no lo has valorado desde hace 30 días."
-msgstr ""
+msgid "because you have not rated it in the last 30 days."
+msgstr "ya que no has evaluado el curso en los últimos 30 días."
 
 #: elearning/templates/elearning/email/unenroll_bad_tester.html:11
-msgid "Esperamos que valores próximos cursos"
-msgstr ""
+msgid "We hope you rate the next courses."
+msgstr "Esperamos que evalúes los siguiente cursos."
+
+#: elearning/templates/elearning/email/unenroll_bad_tester.html:12
+msgid "Thank you"
+msgstr "Gracias"
 
 #: financial/models.py:26 financial/models.py:36
 #: financial/templates/financial/view_billing.html:28
@@ -840,11 +862,6 @@ msgstr "Error al actualizar tus datos de facturación"
 #: financial/management/commands/clear_amounts.py:43
 msgid "TrainingMe.net - Notice: Amount Cleared to your balance"
 msgstr "TrainingMe.net - Aviso: Transferencia hacia el saldo de tu cuenta"
-
-#: financial/templates/financial/clear_amount_email.html:7
-#: personal/templates/personal/email/mail.html:7
-msgid "Hi,"
-msgstr "Hola,"
 
 #: financial/templates/financial/clear_amount_email.html:8
 msgid "The following amount has been added to your account balance: "
@@ -1946,7 +1963,7 @@ msgstr "para"
 msgid "Change your description"
 msgstr "Cambiar tu descripción"
 
-#: personal/models.py:94
+#: personal/models.py:95
 msgid "TrainingMe.net - New Message"
 msgstr "Nuevo Mensaje en TrainingMe.net"
 
@@ -2545,6 +2562,9 @@ msgstr ""
 "Por favor, mantenga el total de archivos subidos en%(total_size)s. Con este "
 "archivo, el total sería de  %(exceed_size)s."
 
+#~ msgid "Now you are Tester of the Course "
+#~ msgstr "Ahora eres evaluador de este curso"
+
 #~ msgid "Rating "
 #~ msgstr "Valoración"
 
@@ -2561,6 +2581,3 @@ msgstr ""
 #~ msgstr ""
 #~ "Estamos en fase Beta solo para profesores.¡Regístrate ahora y crea tus "
 #~ "cursos!"
-
-#~ msgid "You have been enrrolled in: "
-#~ msgstr "Has sido matriculado en el curso"
