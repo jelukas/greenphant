@@ -35,7 +35,7 @@ class CourseAdmin(admin.ModelAdmin):
 
 
 class VideoAdmin(admin.ModelAdmin):
-    list_display = ('original_video_file','lesson','get_course',)
+    list_display = ('original_video_file','lesson','duration','get_course',)
 
     def get_course(self,object):
         url = reverse('admin:%s_%s_change' %( object.lesson.subject.course._meta.app_label,   object.lesson.subject.course._meta.module_name),  args=[ object.lesson.subject.course.id] )
