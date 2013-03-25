@@ -571,7 +571,7 @@ def home(request):
         featured = Course.objects.filter(id__in=cursos_destacados)
         courses_building = Course.objects.filter(Q(short_description__icontains=request.POST['query']) | Q(title__icontains=request.POST['query']), Q(status__name="building")).exclude(id__in = cursos_de_prueba)
     else:
-        courses_published = Course.objects.filter(Q(status__name="evaluation period") | Q(status__name="published"))
+        courses_published = Course.objects.filter(Q(status__name="evaluation period"))
         cursos_mas_visitados = Course.objects.filter(id__in = cursos_mas_visitados)
         featured = Course.objects.filter(id__in=cursos_destacados)
         courses_building = Course.objects.filter(Q(status__name="building")).exclude(id__in = cursos_de_prueba)
