@@ -1,0 +1,26 @@
+{% load url from future %}{% load i18n %}
+<div>
+    <img src="http://trainingme.net/static/img/trainingme_emaillogo.png" />
+</div>
+<br/><br/>
+
+<p>{% trans 'Hi,' %}{{ message.to_user.get_full_name }}</p>
+<p>{% trans 'You have received a new Message on TrainingMe.net' %}</p>
+<br/>
+<p><a style="color: white; background-color: #006dcc; padding: 3px;"  href="http://trainingme.net{{ message.get_url }}">{% trans 'View in TrainingMe.Net' %}</a></p>
+<p>{% trans 'From' %}: {{ message.from_user.get_full_name }}</p>
+<p>{% trans 'Date and Time' %}: {{ message.created_at }}</p>
+<p>{% trans 'Subject' %}: {{ message.subject }}</p>
+<p>{% trans 'Message' %}:</p>
+<p style="white-space: pre;">{{ message.message }}</p>
+
+<br/><br/>
+<hr color="#000066" width="100%">
+<table width="34%" border="0">
+    <tbody>
+    <tr>
+        <td><i><b>Trainingme.Net Team</b></i></td></tr>
+    <tr>
+        <td><a href="http://www.trainingme.net" target="_blank">www.trainingme.net</a><br></td></tr></tbody></table></div></div></div>
+</br>
+</div>
