@@ -1,5 +1,5 @@
 import os
-from datetime import datetime
+from datetime import datetime, timedelta
 from django.db.models.signals import pre_save, post_save
 from django.db import models
 from django.db.models import Max
@@ -276,6 +276,9 @@ class Video(models.Model):
 
     def get_owner_id(self):
         return self.lesson.subject.course.user.id
+
+    def get_video_duration_format(self):
+        return u'%s' %(str(timedelta(seconds=int(self.duration))))
 
     #Delete the file when deleting the record
 #    def delete(self):
