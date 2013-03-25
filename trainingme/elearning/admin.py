@@ -1,6 +1,7 @@
 from django.contrib import admin
 from elearning.models import Category,Course,Status,Subject,Attach,Video,Lesson,Enrollment,Vote,Comment, Course_Vote
 from django.core.urlresolvers import reverse
+from datetime import timedelta
 
 
 class AttachAdmin(admin.ModelAdmin):
@@ -35,7 +36,11 @@ class CourseAdmin(admin.ModelAdmin):
 
 
 class VideoAdmin(admin.ModelAdmin):
-    list_display = ('original_video_file','lesson','duration','get_course',)
+    list_display = ('original_video_file','lesson','video_duration','duration','get_course',)
+
+    def video_duration(self,object):
+        return u'%s' %(str(timedelta(seconds=int(object.duration))))
+    video_duration.short_description = 'Duration h:m:s'
 
     def get_course(self,object):
         url = reverse('admin:%s_%s_change' %( object.lesson.subject.course._meta.app_label,   object.lesson.subject.course._meta.module_name),  args=[ object.lesson.subject.course.id] )
