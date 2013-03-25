@@ -25,10 +25,10 @@
   <component name="ExecutionTargetManager" SELECTED_TARGET="default_target" />
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="learning_course.html" pinned="false" current="true" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/elearning/templates/elearning/course/learning_course.html">
+      <file leaf-file-name="view_course.html" pinned="false" current="true" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/elearning/templates/elearning/course/view_course.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="55" column="98" selection-start="3969" selection-end="4014" vertical-scroll-proportion="-0.2589396">
+            <state line="71" column="97" selection-start="5532" selection-end="5532" vertical-scroll-proportion="0.702836">
               <folding />
             </state>
           </provider>
@@ -44,7 +44,6 @@
   <component name="IdeDocumentHistory">
     <option name="changedFiles">
       <list>
-        <option value="$PROJECT_DIR$/personal/templates/personal/view_conversation.html" />
         <option value="$PROJECT_DIR$/static/css/styles.less" />
         <option value="$PROJECT_DIR$/elearning/templates/elearning/add_lesson.html" />
         <option value="$PROJECT_DIR$/templates/base.html" />
@@ -60,6 +59,7 @@
         <option value="$PROJECT_DIR$/elearning/admin.py" />
         <option value="$PROJECT_DIR$/elearning/models.py" />
         <option value="$PROJECT_DIR$/elearning/templates/elearning/course/learning_course.html" />
+        <option value="$PROJECT_DIR$/elearning/templates/elearning/course/view_course.html" />
       </list>
     </option>
   </component>
@@ -441,13 +441,6 @@
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/trainingme/settings.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="216" column="0" selection-start="6981" selection-end="6981" vertical-scroll-proportion="0.45990565">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/elearning/templates/elearning/email/new_checking.html">
       <provider selected="true" editor-type-id="text-editor">
         <state line="29" column="6" selection-start="909" selection-end="909" vertical-scroll-proportion="0.5279126" />
@@ -556,7 +549,14 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/elearning/templates/elearning/course/learning_course.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="55" column="98" selection-start="3969" selection-end="4014" vertical-scroll-proportion="-0.2589396">
+        <state line="55" column="98" selection-start="3969" selection-end="4014" vertical-scroll-proportion="0.29593095">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/elearning/templates/elearning/course/view_course.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="71" column="97" selection-start="5532" selection-end="5532" vertical-scroll-proportion="0.702836">
           <folding />
         </state>
       </provider>
