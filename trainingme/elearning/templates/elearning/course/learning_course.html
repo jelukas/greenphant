@@ -1,5 +1,5 @@
 {% extends 'base.html' %}
-{% load i18n %}{% load humanize %}{% load thumbnail %}{% load elearning_extras %}
+{% load i18n %}{% load humanize %}{% load thumbnail %}{% load elearning_extras %}{% load widget_tweaks %}
 {% block title %}
     {% trans 'Course of ' %}{{ course.title }} #{{ course.category.name|slugify }} v @trainingmenet
 {% endblock %}
@@ -48,7 +48,6 @@
                                         {% for lesson in subject.lessons.all %}
                                             <div class="accordionLine">
                                                 {% trans 'Lesson' %} {{ forloop.counter }} - {{ lesson.title }}
-                                                <div id="lesson-{{ lesson.id }}"  data-rating="{{ lesson.get_scoring }}" class="star lesson-start"></div>
                                                 {% if lesson.attach %}
                                                     <a href="{{ lesson.attach.file.url }}"><div class="btnDownload"></div></a>
                                                 {% endif %}
@@ -63,19 +62,27 @@
                         {% endfor %}
                     </section>
                 </div>
-                {% if not course|user_had_vote_course:user.id and not is_teacher %}
-                    <div class="span3 offset1">
-                        <div id="course-rating">
-                        {% trans 'Rate this course ' %}<p id="rate-course"  data-rating="{{ course.get_scoring }}" class="star_course leftSide"></p>
-                        </div>
+                <div class="span3 offset1">
+                    <div id="course-rating">
+                            {% if not course|user_had_vote_course:user.id and not is_teacher %}
+                                <form method="post" action="">{% csrf_token %}
+                                {{ course_vote_form.rating|attr:"type:hidden" }}
+                                {{ course_vote_form.comment.label }}
+                                {% for error in course_vote_form.comment.errors %}
+                                    <p><span class="text-error">{{ error }}</span></p>
+                                {% endfor %}
+                                {{ course_vote_form.comment }}
+                                {% for error in course_vote_form.rating.errors %}
+                                    <p><span class="text-error">{{ error }}</span></p>
+                                {% endfor %}
+                                <button type="submit" class="btn btn-warning" value="{% trans 'Rate' %}"><i class=" icon-ok-circle icon-white"></i> {% trans 'Rate' %}</button>
+                                </form>
+                                {% trans 'Rating' %}<p id="rate-course"  data-rating="{{ course.get_scoring }}" class="star_course"></p>
+                            {% else %}
+                                {% trans 'Course Rating ' %}<p id="rated-course"  data-rating="{{ course.get_scoring }}" class="star_course_rated"></p>
+                            {% endif %}
                     </div>
-                {% else %}
-                    <div class="span3 offset1">
-                        <div id="course-rating">
-                        {% trans 'Course Rating ' %}<p id="rated-course"  data-rating="{{ course.get_scoring }}" class="star_course_rated leftSide"></p>
-                        </div>
-                    </div>
-                {% endif %}
+                </div>
                 <div class="teacher span3 offset1">
                     {% if course.user.get_profile.image %}
                         {% thumbnail course.user.get_profile.image "x200" as im %}
@@ -116,12 +123,12 @@
                 return $(this).attr('data-rating');
             },
             size: 24,
+            target    : '#id_rating',
+            targetKeep: true,
+            targetType: 'number',
             starHalf  : 'star-half-big.png',
             starOff   : 'star-off-big.png',
-            starOn    : 'star-on-big.png',
-            click: function(score, evt) {
-                window.location.href = "{% url vote_course course.id %}" + score;
-            }
+            starOn    : 'star-on-big.png'
         });
         $('.star_course_rated').raty({
             readOnly: true,
@@ -132,9 +139,6 @@
             starOn    : 'star-on-big.png',
             score: function() {
                 return $(this).attr('data-rating');
-            },
-            click: function(score, evt) {
-                window.location.href = "{% url vote_course course.id %}" + score;
             }
         });
     </script>

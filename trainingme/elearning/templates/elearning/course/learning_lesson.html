@@ -32,17 +32,6 @@
                                         <p><a href="{{ lesson.attach.file.url }}"><img src="{{ STATIC_URL }}img/download_attachment.png" alt="{% trans 'Download Attachment' %}"> {% trans 'Download Attachment' %}</a></p>
                                     </div>
                                 {% endif %}
-                                {% if not lesson|user_had_vote_lesson:user.id and not is_teacher %}
-                                    <div class="pull-left">
-                                        <p style="color: #fff;">{% trans 'Rate this lesson' %}</p>
-                                        <div id="lesson-{{ lesson.id }}"  data-rating="{{ lesson.get_scoring }}" class="star leftSide"></div>
-                                    </div>
-                                {% else %}
-                                    <div class="pull-left">
-                                        <p style="color: #fff;">{% trans 'Rating' %}</p>
-                                        <div id="lesson-{{ lesson.id }}"  data-rating="{{ lesson.get_scoring }}" class="star-rated leftSide"></div>
-                                    </div>
-                                {% endif %}
                             </div>
                         </div>
                     </div>
@@ -112,36 +101,3 @@
             </div>
     </div>
 {% endblock %}
-{% block footerscripts %}
-    {{ block.super }}
-    <script type="text/javascript">
-        $('.star').raty({
-            readOnly: false,
-            half: false,
-            score: function() {
-                return $(this).attr('data-rating');
-            },
-            size: 24,
-            starHalf  : 'star-half-big.png',
-            starOff   : 'star-off-big.png',
-            starOn    : 'star-on-big.png',
-            click: function(score, evt) {
-                window.location.href = "{% url vote_lesson lesson.id %}" + score;
-            }
-        });
-        $('.star-rated').raty({
-            readOnly: true,
-            half: true,
-            size : 24,
-            starHalf  : 'star-half-big.png',
-            starOff   : 'star-off-big.png',
-            starOn    : 'star-on-big.png',
-            score: function() {
-                return $(this).attr('data-rating');
-            },
-            click: function(score, evt) {
-                window.location.href = "{% url vote_lesson lesson.id %}" + score;
-            }
-        });
-    </script>
-{% endblock footerscripts %}

@@ -1,6 +1,6 @@
 from django.forms import ModelForm
 from django.forms import widgets
-from elearning.models import Course,Subject,Lesson,Video, Attach, Comment
+from elearning.models import Course,Subject,Lesson,Video, Attach, Comment, Course_Vote
 from django.forms import ValidationError
 from django.utils.translation import ugettext as _
 
@@ -17,6 +17,13 @@ class CourseForm(ModelForm):
             # Always return the cleaned data, whether you have changed it or
         # not.
         return data
+
+
+class CourseVoteForm(ModelForm):
+    class Meta:
+        model  = Course_Vote
+        exclude = ('user','created_at','course')
+
 
 class SubjectForm(ModelForm):
     class Meta:

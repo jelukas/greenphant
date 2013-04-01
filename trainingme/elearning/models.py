@@ -343,6 +343,7 @@ class Course_Vote(models.Model):
     course = models.ForeignKey(Course,verbose_name=_('Course'),related_name='votes')
     created_at = models.DateTimeField(blank=False,auto_now_add=True)
     rating = models.DecimalField(verbose_name=_('Rating'),max_digits=5,decimal_places=2)
+    comment = models.TextField(blank=False,max_length=800,verbose_name=_('Comment Rating'))
 
     def get_owner_id(self):
         return self.user.id

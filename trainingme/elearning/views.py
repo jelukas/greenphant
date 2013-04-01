@@ -7,7 +7,7 @@ from django.contrib.auth.models import User
 from django.core.urlresolvers import reverse
 from django.core.mail import EmailMessage
 from elearning.models import Status, Course, Subject, Lesson, Video, Attach, Enrollment, Comment
-from elearning.forms import CourseForm, SubjectForm, LessonForm, VideoForm, AttachForm, CommentForm
+from elearning.forms import CourseForm, SubjectForm, LessonForm, VideoForm, AttachForm, CommentForm, CourseVoteForm
 from personal.decorators import owner_required
 from django.contrib import messages
 from django.utils.translation import ugettext as _
@@ -402,6 +402,18 @@ Vista de los contenidos del Curso una vez matriculado y Vista del Profesor
 """
 @login_required()
 def learning_course(request,course_id):
+    if request.POST:
+        course_vote_form = CourseVoteForm(request.POST)
+        course_vote_form.user_id = request.user.id
+        course_vote_form.course_id = course_id
+        if course_vote_form.is_valid():
+            course_vote = course_vote_form.save(commit=False)
+            course_vote.user_id = request.user.id
+            course_vote.course_id = course_id
+            course_vote.save()
+    else:
+        course_vote_form = CourseVoteForm()
+
     if not request.user.is_staff:
         course = get_object_or_404(Course,pk=course_id,status__name__in=["published","evaluation period","building"])
     else:
@@ -411,7 +423,7 @@ def learning_course(request,course_id):
         messages.error(request,_('You are not enrrolled in this course'))
         return HttpResponseRedirect(reverse('elearning.views.view_course', args=(course.slug,)))
     else:
-        context = {'course':course,'enrrolled':True}
+        context = {'course':course,'enrrolled':True, 'course_vote_form': course_vote_form}
         if course.get_owner_id() == request.user.id:
             context = {'course':course,'enrrolled':False,'is_teacher':True}
     return render_to_response('elearning/course/learning_course.html',context,context_instance = RequestContext(request))
@@ -568,12 +580,11 @@ def home(request):
     users_count = User.objects.count()
     if request.POST:
         courses_published = Course.objects.filter(Q(short_description__icontains=request.POST['query']) | Q(title__icontains=request.POST['query']),Q(status__name="evaluation period"))
-        featured = Course.objects.filter(id__in=cursos_destacados)
         courses_building = Course.objects.filter(Q(short_description__icontains=request.POST['query']) | Q(title__icontains=request.POST['query']), Q(status__name="building")).exclude(id__in = cursos_de_prueba)
     else:
         courses_published = Course.objects.filter(Q(status__name="evaluation period"))
-        cursos_mas_visitados = Course.objects.filter(id__in = cursos_mas_visitados)
-        featured = Course.objects.filter(id__in=cursos_destacados)
         courses_building = Course.objects.filter(Q(status__name="building")).exclude(id__in = cursos_de_prueba)
+    cursos_mas_visitados = Course.objects.filter(id__in = cursos_mas_visitados)
+    featured = Course.objects.filter(id__in=cursos_destacados)
     context = {'courses_published' : courses_published,'courses_building' : courses_building,'cursos_mas_visitados': cursos_mas_visitados, 'users_count' : users_count,'featured': featured, 'form': form}
     return render_to_response('elearning/home.html',context,context_instance = RequestContext(request))

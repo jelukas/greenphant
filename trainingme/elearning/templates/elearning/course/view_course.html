@@ -64,7 +64,6 @@
                                         {% for lesson in subject.lessons.all %}
                                             <div class="accordionLine">
                                                 {% trans 'Lesson' %} {{ forloop.counter }} - {{ lesson.title }}
-                                                <div id="lesson-{{ lesson.id }}"  data-rating="{{ lesson.get_scoring }}" class="star lesson-start"></div>
                                                 {% if lesson.attach.url %}
                                                     <div class="btnDownload"></div>
                                                 {% endif %}
