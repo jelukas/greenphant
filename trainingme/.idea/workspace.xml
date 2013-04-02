@@ -25,10 +25,10 @@
   <component name="ExecutionTargetManager" SELECTED_TARGET="default_target" />
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="learning_course.html" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="learning_course.html" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/elearning/templates/elearning/course/learning_course.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="164" column="11" selection-start="10446" selection-end="10664" vertical-scroll-proportion="0.7887324">
+            <state line="113" column="61" selection-start="8274" selection-end="8286" vertical-scroll-proportion="-8.907408">
               <folding />
             </state>
           </provider>
@@ -37,16 +37,16 @@
       <file leaf-file-name="view_course.html" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/elearning/templates/elearning/course/view_course.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="189" column="11" selection-start="12479" selection-end="12479" vertical-scroll-proportion="-30.041666">
+            <state line="189" column="11" selection-start="12479" selection-end="12479" vertical-scroll-proportion="-50.666668">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="styles.less" pinned="false" current="false" current-in-tab="false">
+      <file leaf-file-name="styles.less" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/static/css/styles.less">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="2008" column="20" selection-start="35130" selection-end="35130" vertical-scroll-proportion="-25.833334">
+            <state line="2000" column="20" selection-start="34977" selection-end="34977" vertical-scroll-proportion="0.6086956">
               <folding />
             </state>
           </provider>
@@ -95,9 +95,9 @@
         <option value="$PROJECT_DIR$/elearning/forms.py" />
         <option value="$PROJECT_DIR$/elearning/models.py" />
         <option value="$PROJECT_DIR$/elearning/views.py" />
-        <option value="$PROJECT_DIR$/static/css/styles.less" />
         <option value="$PROJECT_DIR$/elearning/templates/elearning/course/learning_course.html" />
         <option value="$PROJECT_DIR$/elearning/templates/elearning/course/view_course.html" />
+        <option value="$PROJECT_DIR$/static/css/styles.less" />
       </list>
     </option>
   </component>
@@ -599,13 +599,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/static/css/styles.less">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="2008" column="20" selection-start="35130" selection-end="35130" vertical-scroll-proportion="-25.833334">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/elearning/models.py">
       <provider selected="true" editor-type-id="text-editor">
         <state line="342" column="82" selection-start="12261" selection-end="12266" vertical-scroll-proportion="0.0">
@@ -617,14 +610,21 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/elearning/templates/elearning/course/view_course.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="189" column="11" selection-start="12479" selection-end="12479" vertical-scroll-proportion="-30.041666">
+        <state line="189" column="11" selection-start="12479" selection-end="12479" vertical-scroll-proportion="-50.666668">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/elearning/templates/elearning/course/learning_course.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="164" column="11" selection-start="10446" selection-end="10664" vertical-scroll-proportion="0.7887324">
+        <state line="113" column="61" selection-start="8274" selection-end="8286" vertical-scroll-proportion="-8.907408">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/static/css/styles.less">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="2000" column="20" selection-start="34977" selection-end="34977" vertical-scroll-proportion="0.6086956">
           <folding />
         </state>
       </provider>
