@@ -25,10 +25,10 @@
   <component name="ExecutionTargetManager" SELECTED_TARGET="default_target" />
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="learning_course.html" pinned="false" current="false" current-in-tab="false">
+      <file leaf-file-name="learning_course.html" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/elearning/templates/elearning/course/learning_course.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="113" column="61" selection-start="8274" selection-end="8286" vertical-scroll-proportion="-8.907408">
+            <state line="117" column="201" selection-start="8706" selection-end="8706" vertical-scroll-proportion="0.69270164">
               <folding />
             </state>
           </provider>
@@ -43,10 +43,10 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="styles.less" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="styles.less" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/static/css/styles.less">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="2000" column="20" selection-start="34977" selection-end="34977" vertical-scroll-proportion="0.6086956">
+            <state line="2000" column="20" selection-start="34977" selection-end="34977" vertical-scroll-proportion="-16.333334">
               <folding />
             </state>
           </provider>
@@ -95,9 +95,9 @@
         <option value="$PROJECT_DIR$/elearning/forms.py" />
         <option value="$PROJECT_DIR$/elearning/models.py" />
         <option value="$PROJECT_DIR$/elearning/views.py" />
-        <option value="$PROJECT_DIR$/elearning/templates/elearning/course/learning_course.html" />
         <option value="$PROJECT_DIR$/elearning/templates/elearning/course/view_course.html" />
         <option value="$PROJECT_DIR$/static/css/styles.less" />
+        <option value="$PROJECT_DIR$/elearning/templates/elearning/course/learning_course.html" />
       </list>
     </option>
   </component>
@@ -615,16 +615,16 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/elearning/templates/elearning/course/learning_course.html">
+    <entry file="file://$PROJECT_DIR$/static/css/styles.less">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="113" column="61" selection-start="8274" selection-end="8286" vertical-scroll-proportion="-8.907408">
+        <state line="2000" column="20" selection-start="34977" selection-end="34977" vertical-scroll-proportion="-16.333334">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/static/css/styles.less">
+    <entry file="file://$PROJECT_DIR$/elearning/templates/elearning/course/learning_course.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="2000" column="20" selection-start="34977" selection-end="34977" vertical-scroll-proportion="0.6086956">
+        <state line="117" column="201" selection-start="8706" selection-end="8706" vertical-scroll-proportion="0.69270164">
           <folding />
         </state>
       </provider>
