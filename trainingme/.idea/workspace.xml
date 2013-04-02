@@ -37,7 +37,7 @@
       <file leaf-file-name="view_course.html" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/elearning/templates/elearning/course/view_course.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="114" column="130" selection-start="8889" selection-end="8889" vertical-scroll-proportion="0.5561036">
+            <state line="114" column="195" selection-start="8954" selection-end="8954" vertical-scroll-proportion="0.5561036">
               <folding />
             </state>
           </provider>
@@ -626,7 +626,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/elearning/templates/elearning/course/view_course.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="114" column="130" selection-start="8889" selection-end="8889" vertical-scroll-proportion="0.5561036">
+        <state line="114" column="195" selection-start="8954" selection-end="8954" vertical-scroll-proportion="0.5561036">
           <folding />
         </state>
       </provider>
