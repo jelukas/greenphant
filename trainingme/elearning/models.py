@@ -351,6 +351,8 @@ class Course_Vote(models.Model):
     def __str__(self):
         return unicode(self.user.username) + '--' + str(self.rating)
 
+    class Meta:
+        ordering = ['-created_at',]
 
 #Lesson comments
 class Comment(models.Model):
