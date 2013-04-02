@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2013-04-02 09:39+0200\n"
-"PO-Revision-Date: 2013-04-02 09:47+0000\n"
+"PO-Revision-Date: 2013-04-02 11:25+0000\n"
 "Last-Translator: Jennifer Garcia Perez <jlucas@guadalux.org>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "MIME-Version: 1.0\n"
@@ -107,13 +107,13 @@ msgstr "Lección"
 #: elearning/templates/elearning/home_2.html:86
 #: elearning/templates/elearning/home_2.html:138
 msgid "Points"
-msgstr "Valoración"
+msgstr "Calificación"
 
 #: elearning/models.py:345
 #: elearning/templates/elearning/course/learning_course.html:78
 #: elearning/templates/elearning/course/preview_lesson.html:42
 msgid "Rating"
-msgstr "Valoración"
+msgstr "Calificación"
 
 #: elearning/models.py:346
 msgid "Comment Rating"
@@ -690,7 +690,7 @@ msgstr "Calificar"
 
 #: elearning/templates/elearning/course/learning_course.html:82
 msgid "Course Rating "
-msgstr "Valoración del Curso"
+msgstr "Calificación del Curso"
 
 #: elearning/templates/elearning/course/learning_course.html:105
 msgid "Ratings"

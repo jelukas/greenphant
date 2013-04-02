@@ -152,6 +152,22 @@ class Course(models.Model):
         """
 
 
+#Tester sheet
+class TesterSheet(models.Model):
+    video_rating = models.DecimalField(verbose_name=_('Video Rating'),max_digits=5,decimal_places=2)
+    audio_rating = models.DecimalField(verbose_name=_('Audio Rating'),max_digits=5,decimal_places=2)
+    course_rating = models.DecimalField(verbose_name=_('Course Rating'),max_digits=5,decimal_places=2)
+    comment = models.TextField(max_length=2000)
+    CHOICES_PRICE = (
+        (0, _('Never')),
+        (1, _('Rarely')),
+        (2, _('Frecuently')),
+        (3, _('Always')),
+    )
+    price_1 = models.SmallIntegerField(verbose_name=_('Price 1'),max_length=1,choices=CHOICES_PRICE)
+    price_2 = models.SmallIntegerField(verbose_name=_('Price 2'),max_length=1,choices=CHOICES_PRICE)
+    price_3 = models.SmallIntegerField(verbose_name=_('Price 3'),max_length=1,choices=CHOICES_PRICE)
+
 
 
 #Subjects of the Courses

@@ -39,7 +39,10 @@ class VideoAdmin(admin.ModelAdmin):
     list_display = ('original_video_file','lesson','video_duration','duration','get_course',)
 
     def video_duration(self,object):
-        return u'%s' %(str(timedelta(seconds=int(object.duration))))
+        duration = 0
+        if object.duration:
+            duration = object.duration
+        return u'%s' %(str(timedelta(seconds=int(duration))))
     video_duration.short_description = 'Duration h:m:s'
 
     def get_course(self,object):
