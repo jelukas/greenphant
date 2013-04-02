@@ -115,7 +115,7 @@
                                 {% endif %}
                             </a>
                             <div class="media-body">
-                                <h6 class="media-heading">{% trans 'By' %} {{ course_vote.user.get_full_name|default_if_none:course_vote.user.username  }}</h6>
+                                <h6 class="media-heading">{% trans 'By' %} {% if course_vote.user.get_full_name|length %}{{ course_vote.user.get_full_name }}{% else %}{{ course_vote.user.username }}{% endif %}</h6>
                                 <p class="created_at"><span data-rating="{{ course_vote.rating }}" class="user_rating"></span> {% blocktrans with created_at=course_vote.created_at|timesince %} {{ created_at }} ago{% endblocktrans %}</p>
                                 {{ course_vote.comment|truncatechars:220 }}
                             </div>

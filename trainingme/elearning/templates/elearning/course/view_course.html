@@ -80,6 +80,11 @@
                         {% endfor %}
                     </section>
                 </div>
+                <div class="span3 offset1">
+                    <div id="course-rating">
+                            {% trans 'Course Rating ' %}<p id="rated-course"  data-rating="{{ course.get_scoring }}" class="star_course_rated"></p>
+                    </div>
+                </div>
                 <div class="teacher span3 offset1">
                     {% if course.user.get_profile.image %}
                         {% thumbnail course.user.get_profile.image "x200" as im %}
@@ -176,6 +181,17 @@
         $('.star').raty({
             readOnly: true,
             half: true,
+            score: function() {
+                return $(this).attr('data-rating');
+            }
+        });
+        $('.star_course_rated').raty({
+            readOnly: true,
+            half: true,
+            size : 24,
+            starHalf  : 'star-half-big.png',
+            starOff   : 'star-off-big.png',
+            starOn    : 'star-on-big.png',
             score: function() {
                 return $(this).attr('data-rating');
             }
