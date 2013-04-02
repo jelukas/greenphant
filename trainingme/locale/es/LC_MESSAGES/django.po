@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2013-03-22 09:42+0100\n"
-"PO-Revision-Date: 2013-03-22 09:43+0000\n"
+"POT-Creation-Date: 2013-04-02 09:39+0200\n"
+"PO-Revision-Date: 2013-04-02 09:47+0000\n"
 "Last-Translator: Jennifer Garcia Perez <jlucas@guadalux.org>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "MIME-Version: 1.0\n"
@@ -73,26 +73,26 @@ msgstr "Categoría"
 msgid "Video"
 msgstr "Vídeo"
 
-#: elearning/models.py:295 elearning/templates/elearning/add_attach.html:13
+#: elearning/models.py:299 elearning/templates/elearning/add_attach.html:13
 msgid "File"
 msgstr "Archivo"
 
-#: elearning/models.py:312 elearning/models.py:324 elearning/models.py:338
-#: elearning/models.py:352 financial/models.py:24 financial/models.py:33
+#: elearning/models.py:316 elearning/models.py:328 elearning/models.py:342
+#: elearning/models.py:357 financial/models.py:24 financial/models.py:33
 msgid "User"
 msgstr "Usuario"
 
-#: elearning/models.py:313 elearning/models.py:339 financial/models.py:34
+#: elearning/models.py:317 elearning/models.py:343 financial/models.py:34
 #: financial/templates/financial/view_billing.html:44
 #: financial/templates/financial/view_billing.html:61
 msgid "Course"
 msgstr "Curso"
 
-#: elearning/models.py:314
+#: elearning/models.py:318
 msgid "Start Date"
 msgstr "Fecha de Inicio"
 
-#: elearning/models.py:325 elearning/models.py:353
+#: elearning/models.py:329 elearning/models.py:358
 #: elearning/templates/elearning/building_course.html:46
 #: elearning/templates/elearning/course/learning_course.html:50
 #: elearning/templates/elearning/course/learning_lesson.html:20
@@ -101,7 +101,7 @@ msgstr "Fecha de Inicio"
 msgid "Lesson"
 msgstr "Lección"
 
-#: elearning/models.py:327 elearning/templates/elearning/home.html:161
+#: elearning/models.py:331 elearning/templates/elearning/home.html:161
 #: elearning/templates/elearning/home.html:213
 #: elearning/templates/elearning/home.html:261
 #: elearning/templates/elearning/home_2.html:86
@@ -109,18 +109,22 @@ msgstr "Lección"
 msgid "Points"
 msgstr "Valoración"
 
-#: elearning/models.py:341
-#: elearning/templates/elearning/course/learning_lesson.html:42
+#: elearning/models.py:345
+#: elearning/templates/elearning/course/learning_course.html:78
 #: elearning/templates/elearning/course/preview_lesson.html:42
 msgid "Rating"
 msgstr "Valoración"
 
-#: elearning/models.py:355 personal/models.py:62
+#: elearning/models.py:346
+msgid "Comment Rating"
+msgstr "Comentario"
+
+#: elearning/models.py:360 personal/models.py:62
 #: personal/templates/personal/email/mail.html:14
 msgid "Message"
 msgstr "Mensaje"
 
-#: elearning/models.py:356
+#: elearning/models.py:361
 msgid "Comment"
 msgstr "Comentar"
 
@@ -232,51 +236,51 @@ msgstr "Error al adjuntar archivo"
 msgid "File attached deleted succesfully"
 msgstr "El archivo adjuntado se ha borrado correctamente"
 
-#: elearning/views.py:411
+#: elearning/views.py:423
 msgid "You are not enrrolled in this course"
 msgstr "No estás matriculado en este curso: "
 
-#: elearning/views.py:431 elearning/views.py:461
+#: elearning/views.py:443 elearning/views.py:473
 msgid "You are not enrroled in that course: "
 msgstr "No estás matriculado en este curso: "
 
-#: elearning/views.py:443
+#: elearning/views.py:455
 msgid "Comment send sucesfully"
 msgstr "Comentario enviado correctamente"
 
-#: elearning/views.py:473
+#: elearning/views.py:485
 msgid "Reply sucesfully"
 msgstr "Respuesta enviada"
 
-#: elearning/views.py:507
+#: elearning/views.py:519
 msgid "This Course is not Published: "
 msgstr "Este curso no está publicado: "
 
-#: elearning/views.py:515
+#: elearning/views.py:527
 msgid "You can not vote twice this lesson: "
 msgstr "No puedes votar dos veces esta lección: "
 
-#: elearning/views.py:517
+#: elearning/views.py:529
 msgid "You have Rated the lesson with "
 msgstr "Has calificado esta lección con "
 
-#: elearning/views.py:533
+#: elearning/views.py:545
 msgid "You can not vote twice this course: "
 msgstr "No puedes votar dos veces este curso: "
 
-#: elearning/views.py:535
+#: elearning/views.py:547
 msgid "You have Rated the course with "
 msgstr "Has calificado el curso con"
 
-#: elearning/views.py:556
+#: elearning/views.py:568
 msgid "You can't be tester on that Course"
 msgstr "No puedes ser evaluador de este curso"
 
-#: elearning/management/commands/convert.py:20
+#: elearning/management/commands/convert.py:24
 msgid "One of Your video is ready"
 msgstr "Uno de sus vídeos está listo"
 
-#: elearning/management/commands/convert.py:20
+#: elearning/management/commands/convert.py:24
 msgid "Your video is Ready"
 msgstr "Tu vídeo está listo"
 
@@ -298,7 +302,7 @@ msgstr "Añadir Archivo"
 #: elearning/templates/elearning/edit_course.html:105
 #: elearning/templates/elearning/edit_lesson.html:50
 #: elearning/templates/elearning/edit_subject.html:30
-#: elearning/templates/elearning/course/learning_lesson.html:86
+#: elearning/templates/elearning/course/learning_lesson.html:75
 msgid "Back to Course"
 msgstr "Volver al Curso"
 
@@ -680,15 +684,28 @@ msgstr "Curso"
 msgid "default_video_image_en.jpg"
 msgstr "default_video_image_es.jpg"
 
-#: elearning/templates/elearning/course/learning_course.html:69
-msgid "Rate this course "
-msgstr "Valorar Curso"
+#: elearning/templates/elearning/course/learning_course.html:79
+msgid "Rate"
+msgstr "Calificar"
 
-#: elearning/templates/elearning/course/learning_course.html:75
+#: elearning/templates/elearning/course/learning_course.html:82
 msgid "Course Rating "
 msgstr "Valoración del Curso"
 
-#: elearning/templates/elearning/course/learning_course.html:103
+#: elearning/templates/elearning/course/learning_course.html:105
+msgid "Ratings"
+msgstr "Calificaciones"
+
+#: elearning/templates/elearning/course/learning_course.html:118
+msgid "By"
+msgstr "por"
+
+#: elearning/templates/elearning/course/learning_course.html:119
+#, python-format
+msgid " %(created_at)s ago"
+msgstr "hace %(created_at)s "
+
+#: elearning/templates/elearning/course/learning_course.html:132
 #: elearning/templates/elearning/course/view_course.html:107
 msgid "Free Video"
 msgstr "Video de Promoción"
@@ -698,33 +715,32 @@ msgstr "Video de Promoción"
 msgid "Download Attachment"
 msgstr "Descargar Adjunto"
 
-#: elearning/templates/elearning/course/learning_lesson.html:37
-#: elearning/templates/elearning/course/preview_lesson.html:37
-msgid "Rate this lesson"
-msgstr "Valorar esta Lección"
-
-#: elearning/templates/elearning/course/learning_lesson.html:52
-#: elearning/templates/elearning/course/learning_lesson.html:92
+#: elearning/templates/elearning/course/learning_lesson.html:41
+#: elearning/templates/elearning/course/learning_lesson.html:81
 msgid "New Comment"
 msgstr "Nuevo Comentario"
 
-#: elearning/templates/elearning/course/learning_lesson.html:63
+#: elearning/templates/elearning/course/learning_lesson.html:52
 #: elearning/templates/elearning/course/comments/reply_form.html:5
 msgid "Reply"
 msgstr "Responder"
 
-#: elearning/templates/elearning/course/learning_lesson.html:99
+#: elearning/templates/elearning/course/learning_lesson.html:88
 #: elearning/templates/elearning/course/comments/reply_form.html:4
 msgid "Cancel"
 msgstr "Cancelar"
 
-#: elearning/templates/elearning/course/learning_lesson.html:100
+#: elearning/templates/elearning/course/learning_lesson.html:89
 msgid "Add Comment"
 msgstr "Nuevo Comentario"
 
-#: elearning/templates/elearning/course/learning_lesson.html:107
+#: elearning/templates/elearning/course/learning_lesson.html:96
 msgid "Reply Comment"
 msgstr "Responder Comentario"
+
+#: elearning/templates/elearning/course/preview_lesson.html:37
+msgid "Rate this lesson"
+msgstr "Valorar esta Lección"
 
 #: elearning/templates/elearning/course/preview_lesson.html:54
 msgid "Back to Builder"
@@ -2561,6 +2577,9 @@ msgid ""
 msgstr ""
 "Por favor, mantenga el total de archivos subidos en%(total_size)s. Con este "
 "archivo, el total sería de  %(exceed_size)s."
+
+#~ msgid "Rate this course "
+#~ msgstr "Valorar Curso"
 
 #~ msgid "Now you are Tester of the Course "
 #~ msgstr "Ahora eres evaluador de este curso"

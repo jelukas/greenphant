@@ -75,9 +75,9 @@
                                 {% for error in course_vote_form.rating.errors %}
                                     <p><span class="text-error">{{ error }}</span></p>
                                 {% endfor %}
+                                {% trans 'Rating' %}<p id="rate-course"  data-rating="{{ course.get_scoring }}" class="star_course"></p>
                                 <button type="submit" class="btn btn-warning" value="{% trans 'Rate' %}"><i class=" icon-ok-circle icon-white"></i> {% trans 'Rate' %}</button>
                                 </form>
-                                {% trans 'Rating' %}<p id="rate-course"  data-rating="{{ course.get_scoring }}" class="star_course"></p>
                             {% else %}
                                 {% trans 'Course Rating ' %}<p id="rated-course"  data-rating="{{ course.get_scoring }}" class="star_course_rated"></p>
                             {% endif %}
@@ -100,6 +100,28 @@
                         {% if course.user.get_profile.linkedin_url %}<li><a href="{{ course.user.get_profile.linkedin_url }}" target="_blank"><img src="{{ STATIC_URL }}img/linkedin.png"/></a></li>{% endif %}
                         {% if course.user.get_profile.googleplus_url %}<li><a href="{{ course.user.get_profile.googleplus_url }}" target="_blank"><img src="{{ STATIC_URL }}img/google-plus.png"/></a></li>{% endif %}
                     </ul>
+                </div>
+                <div class="ratings span3 offset1">
+                    <h4>{% trans 'Ratings' %}</h4>
+                    {% for course_vote in course.votes.all  %}
+                        <div class="media">
+                            <a class="pull-left" href="#">
+                                {% if course_vote.user.get_profile.image %}
+                                    {% thumbnail course_vote.user.get_profile.image "x45" as im %}
+                                        <img  class="media-object"  src="{{ im.url }}" alt="{{ course_vote.user.username }}" />
+                                    {% endthumbnail %}
+                                {% else %}
+                                    <img  class="media-object" src="{{ STATIC_URL }}img/default_profile.png" alt="{{ course_vote.user.username }}" />
+                                {% endif %}
+                            </a>
+                            <div class="media-body">
+                                <h6 class="media-heading">{% trans 'By' %} {{ course_vote.user.get_full_name }}</h6>
+                                <p class="created_at"><span data-rating="{{ course_vote.rating }}" class="user_rating"></span> {% blocktrans with created_at=course_vote.created_at|timesince %} {{ created_at }} ago{% endblocktrans %}</p>
+                                {{ course_vote.comment|truncatechars:220 }}
+                            </div>
+                        </div>
+                        <hr/>
+                    {% endfor %}
                 </div>
             </div>
         </div>
@@ -137,6 +159,14 @@
             starHalf  : 'star-half-big.png',
             starOff   : 'star-off-big.png',
             starOn    : 'star-on-big.png',
+            score: function() {
+                return $(this).attr('data-rating');
+            }
+        });
+        $('.user_rating').raty({
+            readOnly: true,
+            half: true,
+            size : 24,
             score: function() {
                 return $(this).attr('data-rating');
             }

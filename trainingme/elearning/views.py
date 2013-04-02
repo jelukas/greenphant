@@ -579,6 +579,9 @@ def home(request):
     form = AuthenticationForm(request)
     users_count = User.objects.count()
     if request.POST:
+        cursos_de_prueba = []
+        cursos_mas_visitados = []
+        cursos_destacados = []
         courses_published = Course.objects.filter(Q(short_description__icontains=request.POST['query']) | Q(title__icontains=request.POST['query']),Q(status__name="evaluation period"))
         courses_building = Course.objects.filter(Q(short_description__icontains=request.POST['query']) | Q(title__icontains=request.POST['query']), Q(status__name="building")).exclude(id__in = cursos_de_prueba)
     else:
