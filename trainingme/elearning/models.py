@@ -64,6 +64,9 @@ class Course(models.Model):
     download_allowed = models.BooleanField(_('Download Allowed'))
     status = models.ForeignKey(Status,related_name='courses')
     category = models.ForeignKey(Category,related_name='courses',verbose_name=_('Category'))
+    price_test1 = models.DecimalField(_('price test 1'),blank=False,max_digits=20,decimal_places=2)
+    price_test2 = models.DecimalField(_('price test 2'),blank=False,max_digits=20,decimal_places=2)
+    price_test3 = models.DecimalField(_('price test 3'),blank=False,max_digits=20,decimal_places=2)
 
     class Meta:
         ordering = ['-created_at',]

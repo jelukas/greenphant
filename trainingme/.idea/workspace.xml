@@ -34,10 +34,10 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="view_course.html" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="view_course.html" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/elearning/templates/elearning/course/view_course.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="197" column="11" selection-start="13002" selection-end="13002" vertical-scroll-proportion="0.7965475">
+            <state line="197" column="11" selection-start="13002" selection-end="13002" vertical-scroll-proportion="-26.916666">
               <folding />
             </state>
           </provider>
@@ -55,16 +55,16 @@
       <file leaf-file-name="learning_lesson.html" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/elearning/templates/elearning/course/learning_lesson.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="33" column="43" selection-start="2087" selection-end="2087" vertical-scroll-proportion="-6.5">
+            <state line="46" column="28" selection-start="2821" selection-end="2821" vertical-scroll-proportion="-14.625">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="models.py" pinned="false" current="false" current-in-tab="false">
+      <file leaf-file-name="models.py" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/elearning/models.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="354" column="35" selection-start="12721" selection-end="12721" vertical-scroll-proportion="-15.933333">
+            <state line="403" column="92" selection-start="15149" selection-end="15149" vertical-scroll-proportion="0.88819873">
               <folding>
                 <element signature="e#0#9#0" expanded="true" />
               </folding>
@@ -95,9 +95,9 @@
         <option value="$PROJECT_DIR$/elearning/forms.py" />
         <option value="$PROJECT_DIR$/elearning/views.py" />
         <option value="$PROJECT_DIR$/static/css/styles.less" />
-        <option value="$PROJECT_DIR$/elearning/models.py" />
         <option value="$PROJECT_DIR$/elearning/templates/elearning/course/learning_course.html" />
         <option value="$PROJECT_DIR$/elearning/templates/elearning/course/view_course.html" />
+        <option value="$PROJECT_DIR$/elearning/models.py" />
       </list>
     </option>
   </component>
@@ -601,22 +601,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/elearning/templates/elearning/course/learning_lesson.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="33" column="43" selection-start="2087" selection-end="2087" vertical-scroll-proportion="-6.5">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/elearning/models.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="354" column="35" selection-start="12721" selection-end="12721" vertical-scroll-proportion="-15.933333">
-          <folding>
-            <element signature="e#0#9#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/elearning/templates/elearning/course/learning_course.html">
       <provider selected="true" editor-type-id="text-editor">
         <state line="153" column="11" selection-start="10188" selection-end="10544" vertical-scroll-proportion="-7.5185184">
@@ -626,8 +610,24 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/elearning/templates/elearning/course/view_course.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="197" column="11" selection-start="13002" selection-end="13002" vertical-scroll-proportion="0.7965475">
+        <state line="197" column="11" selection-start="13002" selection-end="13002" vertical-scroll-proportion="-26.916666">
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/elearning/templates/elearning/course/learning_lesson.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="46" column="28" selection-start="2821" selection-end="2821" vertical-scroll-proportion="-14.625">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/elearning/models.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="403" column="92" selection-start="15149" selection-end="15149" vertical-scroll-proportion="0.88819873">
+          <folding>
+            <element signature="e#0#9#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
