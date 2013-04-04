@@ -416,7 +416,7 @@ def learning_course(request,course_id):
         return HttpResponseRedirect(reverse('elearning.views.view_course', args=(course.slug,)))
     else:
         if request.POST:
-            if not enrrollment[0].tester:
+            if enrrollment and not enrrollment[0].tester:
                 course_vote_form = CourseVoteForm(request.POST)
                 course_vote_form.user_id = request.user.id
                 course_vote_form.course_id = course_id
@@ -444,7 +444,7 @@ def learning_course(request,course_id):
                 else:
                     context.update({'testersheet_form': testersheet_form})
         else:
-            if not enrrollment[0].tester:
+            if enrrollment and not enrrollment[0].tester:
                 course_vote_form = CourseVoteForm()
                 context.update({'course_vote_form': course_vote_form})
             elif not course.user_had_filled_testersheet_course(request.user.id):
