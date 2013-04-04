@@ -14,7 +14,7 @@ class Command(BaseCommand):
     def handle(self, *args, **options):
         videos = Video.objects.all()
         for video in videos:
-            if video.converted_video_file_mp4:
+            if video.converted_video_file_mp4 and not video.duration:
                 path = video.converted_video_file_mp4.path
                 seconds = get_video_length(path)
                 video.duration = seconds
