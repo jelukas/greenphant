@@ -68,28 +68,29 @@
                         <h4>{% trans 'Evaluation Sheet' %}</h4>
                         <form id="testersheet_form" method="post" action="" >{% csrf_token %}
                             {{ testersheet_form.video_rating|attr:"type:hidden" }}
-                            {{ testersheet_form.video_rating.label }}
+                            <p><strong>{{ testersheet_form.video_rating.label }}</strong></p>
                             <p id="rate-video" class="stars"></p>
                             {% for error in testersheet_form.video_rating.errors %}
                                 <p><span class="text-error">{{ error }}</span></p>
                             {% endfor %}
                             {{ testersheet_form.audio_rating|attr:"type:hidden" }}
-                            {{ testersheet_form.audio_rating.label }}
+                            <p><strong>{{ testersheet_form.audio_rating.label }}</strong></p>
                             <p id="rate-audio" class="stars"></p>
                             {% for error in testersheet_form.audio_rating.errors %}
                                 <p><span class="text-error">{{ error }}</span></p>
                             {% endfor %}
                             {{ testersheet_form.course_rating|attr:"type:hidden" }}
-                            {{ testersheet_form.course_rating.label }}
+                            <p><strong>{{ testersheet_form.course_rating.label }}</strong></p>
                             <p id="rate-course" class="stars"></p>
                             {% for error in testersheet_form.course_rating.errors %}
                                 <p><span class="text-error">{{ error }}</span></p>
                             {% endfor %}
-                            <p>{{ testersheet_form.comment.label }}</p>
+                            <p><strong>{{ testersheet_form.comment.label }}</strong></p>
                             <p>{{ testersheet_form.comment }}</p>
                             {% for error in testersheet_form.comment.errors %}
                                 <p><span class="text-error">{{ error }}</span></p>
                             {% endfor %}
+                            <p><strong>{% trans 'Would you buy this course?' %}</strong></p>
                             <p>{{ testersheet_form.price_1_rating.label }} - {{ course.price_test1 }}</p>
                             <p>{{ testersheet_form.price_1_rating }}</p>
                             {% for error in testersheet_form.price_1_rating.errors %}

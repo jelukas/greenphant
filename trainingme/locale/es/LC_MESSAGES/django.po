@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2013-04-04 13:01+0200\n"
-"PO-Revision-Date: 2013-04-04 13:03+0000\n"
+"POT-Creation-Date: 2013-04-04 13:29+0200\n"
+"PO-Revision-Date: 2013-04-04 13:35+0000\n"
 "Last-Translator: Jennifer Garcia Perez <jlucas@guadalux.org>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "MIME-Version: 1.0\n"
@@ -82,7 +82,7 @@ msgstr "Precio para Evaluar 3"
 
 #: elearning/models.py:169
 msgid "Video Rating"
-msgstr "Calificación del Vçideo"
+msgstr "Calificación del Vídeo"
 
 #: elearning/models.py:170
 msgid "Audio Rating"
@@ -163,7 +163,7 @@ msgid "Points"
 msgstr "Calificación"
 
 #: elearning/models.py:378
-#: elearning/templates/elearning/course/learning_course.html:125
+#: elearning/templates/elearning/course/learning_course.html:126
 #: elearning/templates/elearning/course/preview_lesson.html:42
 msgid "Rating"
 msgstr "Calificación"
@@ -747,42 +747,46 @@ msgstr "default_video_image_es.jpg"
 msgid "Evaluation Sheet"
 msgstr "Ficha de Evaluacion"
 
-#: elearning/templates/elearning/course/learning_course.html:108
-#: elearning/templates/elearning/course/learning_course.html:126
+#: elearning/templates/elearning/course/learning_course.html:93
+msgid "Would you buy this course?"
+msgstr "¿Comprarías este curso con este precio?"
+
+#: elearning/templates/elearning/course/learning_course.html:109
+#: elearning/templates/elearning/course/learning_course.html:127
 msgid "Rate"
 msgstr "Calificar"
 
-#: elearning/templates/elearning/course/learning_course.html:108
+#: elearning/templates/elearning/course/learning_course.html:109
 msgid "Send Evaluation"
 msgstr "Enviar Evaluación"
 
-#: elearning/templates/elearning/course/learning_course.html:113
+#: elearning/templates/elearning/course/learning_course.html:114
 #: elearning/templates/elearning/course/view_course.html:85
 msgid "Course Rating "
 msgstr "Calificación del Curso"
 
-#: elearning/templates/elearning/course/learning_course.html:134
+#: elearning/templates/elearning/course/learning_course.html:135
 #: elearning/templates/elearning/course/view_course.html:89
 msgid "Ratings"
 msgstr "Calificaciones"
 
-#: elearning/templates/elearning/course/learning_course.html:147
+#: elearning/templates/elearning/course/learning_course.html:148
 #: elearning/templates/elearning/course/view_course.html:102
 msgid "By"
 msgstr "por"
 
-#: elearning/templates/elearning/course/learning_course.html:148
+#: elearning/templates/elearning/course/learning_course.html:149
 #: elearning/templates/elearning/course/view_course.html:103
 #, python-format
 msgid " %(created_at)s ago"
 msgstr "hace %(created_at)s "
 
-#: elearning/templates/elearning/course/learning_course.html:154
+#: elearning/templates/elearning/course/learning_course.html:155
 #: elearning/templates/elearning/course/view_course.html:109
 msgid "There is no ratings right now"
 msgstr "No hay calificaciones en este momento"
 
-#: elearning/templates/elearning/course/learning_course.html:182
+#: elearning/templates/elearning/course/learning_course.html:183
 #: elearning/templates/elearning/course/view_course.html:137
 msgid "Free Video"
 msgstr "Video de Promoción"
