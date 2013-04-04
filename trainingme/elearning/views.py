@@ -6,8 +6,8 @@ from django.contrib.auth.decorators import login_required
 from django.contrib.auth.models import User
 from django.core.urlresolvers import reverse
 from django.core.mail import EmailMessage
-from elearning.models import Status, Course, Subject, Lesson, Video, Attach, Enrollment, Comment
-from elearning.forms import CourseForm, SubjectForm, LessonForm, VideoForm, AttachForm, CommentForm, CourseVoteForm
+from elearning.models import Status, Course, Subject, Lesson, Video, Attach, Enrollment, Comment, TesterSheet, Course_Vote
+from elearning.forms import CourseForm, SubjectForm, LessonForm, VideoForm, AttachForm, CommentForm, CourseVoteForm, TesterSheetForm
 from personal.decorators import owner_required
 from django.contrib import messages
 from django.utils.translation import ugettext as _
@@ -402,30 +402,54 @@ Vista de los contenidos del Curso una vez matriculado y Vista del Profesor
 """
 @login_required()
 def learning_course(request,course_id):
-    if request.POST:
-        course_vote_form = CourseVoteForm(request.POST)
-        course_vote_form.user_id = request.user.id
-        course_vote_form.course_id = course_id
-        if course_vote_form.is_valid():
-            course_vote = course_vote_form.save(commit=False)
-            course_vote.user_id = request.user.id
-            course_vote.course_id = course_id
-            course_vote.save()
-    else:
-        course_vote_form = CourseVoteForm()
-
+    context = {}
     if not request.user.is_staff:
         course = get_object_or_404(Course,pk=course_id,status__name__in=["published","evaluation period","building"])
     else:
         course = get_object_or_404(Course,pk=course_id)
+    context.update({'course':course})
+    if course.get_owner_id() == request.user.id:
+        context.update({'enrrolled':False,'is_teacher':True})
     enrrollment = course.enrollments.filter(user_id=request.user.id)
     if not enrrollment and course.get_owner_id() != request.user.id and not request.user.is_staff:
         messages.error(request,_('You are not enrrolled in this course'))
         return HttpResponseRedirect(reverse('elearning.views.view_course', args=(course.slug,)))
     else:
-        context = {'course':course,'enrrolled':True, 'course_vote_form': course_vote_form}
-        if course.get_owner_id() == request.user.id:
-            context = {'course':course,'enrrolled':False,'is_teacher':True}
+        if request.POST:
+            if not enrrollment[0].tester:
+                course_vote_form = CourseVoteForm(request.POST)
+                course_vote_form.user_id = request.user.id
+                course_vote_form.course_id = course_id
+                if course_vote_form.is_valid():
+                    course_vote = course_vote_form.save(commit=False)
+                    course_vote.user_id = request.user.id
+                    course_vote.course_id = course_id
+                    course_vote.save()
+                context.update({'course_vote_form': course_vote_form})
+            elif not course.user_had_filled_testersheet_course(request.user.id):
+                testersheet_form = TesterSheetForm(request.POST)
+                testersheet_form.user_id = request.user.id
+                testersheet_form.course_id = course_id
+                if testersheet_form.is_valid():
+                    testersheet = testersheet_form.save(commit=False)
+                    testersheet.user_id = request.user.id
+                    testersheet.course_id = course_id
+                    testersheet.save()
+                    course_vote = Course_Vote()
+                    course_vote.user_id =testersheet.user_id
+                    course_vote.course_id = testersheet.course_id
+                    course_vote.comment = testersheet.comment
+                    course_vote.rating = testersheet.course_rating
+                    course_vote.save()
+                else:
+                    context.update({'testersheet_form': testersheet_form})
+        else:
+            if not enrrollment[0].tester:
+                course_vote_form = CourseVoteForm()
+                context.update({'course_vote_form': course_vote_form})
+            elif not course.user_had_filled_testersheet_course(request.user.id):
+                testersheet_form = TesterSheetForm()
+                context.update({'testersheet_form': testersheet_form})
     return render_to_response('elearning/course/learning_course.html',context,context_instance = RequestContext(request))
 
 

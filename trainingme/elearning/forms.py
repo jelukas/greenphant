@@ -1,6 +1,6 @@
 from django.forms import ModelForm
 from django.forms import widgets
-from elearning.models import Course,Subject,Lesson,Video, Attach, Comment, Course_Vote
+from elearning.models import Course,Subject,Lesson,Video, Attach, Comment, Course_Vote, TesterSheet
 from django.forms import ValidationError
 from django.utils.translation import ugettext as _
 
@@ -22,6 +22,12 @@ class CourseForm(ModelForm):
 class CourseVoteForm(ModelForm):
     class Meta:
         model  = Course_Vote
+        exclude = ('user','created_at','course')
+
+
+class TesterSheetForm(ModelForm):
+    class Meta:
+        model = TesterSheet
         exclude = ('user','created_at','course')
 
 

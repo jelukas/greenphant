@@ -96,6 +96,37 @@
                     {% endfor %}
                     {{ course_form.download_allowed|add_class:"fixedtype" }}
                 </div>
+                <hr/>
+                <div class="control-group">
+                    <label class="control-label">{{ course_form.price_test1.label }}</label>
+                    <div class="controls">
+                        {% for error in course_form.price_test1.errors %}
+                            <span class="text-error">{{ error }}</span>
+                        {% endfor %}
+                        {{ course_form.price_test1|add_class:"fixedtype"|attr:"placeholder:10" }}
+                        <span class="help-inline">{% trans "10 € Minimum" %}</span>
+                    </div>
+                </div>
+                <div class="control-group">
+                    <label class="control-label">{{ course_form.price_test2.label }}</label>
+                    <div class="controls">
+                        {% for error in course_form.price_test2.errors %}
+                            <span class="text-error">{{ error }}</span>
+                        {% endfor %}
+                        {{ course_form.price_test2|add_class:"fixedtype"|attr:"placeholder:10" }}
+                        <span class="help-inline">{% trans "10 € Minimum" %}</span>
+                    </div>
+                </div>
+                <div class="control-group">
+                    <label class="control-label">{{ course_form.price_test3.label }}</label>
+                    <div class="controls">
+                        {% for error in course_form.price_test3.errors %}
+                            <span class="text-error">{{ error }}</span>
+                        {% endfor %}
+                        {{ course_form.price_test3|add_class:"fixedtype"|attr:"placeholder:10" }}
+                        <span class="help-inline">{% trans "10 € Minimum" %}</span>
+                    </div>
+                </div>
                 <p class="center"><button type="submit" form="creating_course_form" class="btn btn-primary">{% trans "Create Course Yeah!" %}</button></p>
             </form>
         </div>

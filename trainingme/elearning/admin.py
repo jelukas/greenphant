@@ -1,5 +1,5 @@
 from django.contrib import admin
-from elearning.models import Category,Course,Status,Subject,Attach,Video,Lesson,Enrollment,Vote,Comment, Course_Vote
+from elearning.models import Category,Course,Status,Subject,Attach,Video,Lesson,Enrollment,Vote,Comment, Course_Vote, TesterSheet
 from django.core.urlresolvers import reverse
 from datetime import timedelta
 
@@ -35,6 +35,10 @@ class CourseAdmin(admin.ModelAdmin):
     learning_course.allow_tags = True
 
 
+class TesterSheetAdmin(admin.ModelAdmin):
+    list_display = ('created_at','course','user','video_rating','audio_rating','course_rating','price_1_rating','price_2_rating','price_2_rating')
+
+
 class VideoAdmin(admin.ModelAdmin):
     list_display = ('original_video_file','lesson','video_duration','duration','get_course',)
 
@@ -61,4 +65,5 @@ admin.site.register(Lesson)
 admin.site.register(Enrollment,EnrollmentAdmin)
 admin.site.register(Vote)
 admin.site.register(Course_Vote)
+admin.site.register(TesterSheet,TesterSheetAdmin)
 admin.site.register(Comment,CommentAdmin)

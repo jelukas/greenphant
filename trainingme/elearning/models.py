@@ -122,6 +122,17 @@ class Course(models.Model):
         else:
             return False
 
+    def user_had_filled_testersheet_course(self,user_id):
+        if self.id:
+            try:
+                testersheet = self.tester_sheets.get(user_id=user_id)
+            except TesterSheet.DoesNotExist:
+                return False
+            else:
+                return True
+        else:
+            return False
+
         """
     def save(self):
         super(Course, self).save()
@@ -154,6 +165,7 @@ class Course(models.Model):
 
 #Tester sheet
 class TesterSheet(models.Model):
+    created_at = models.DateTimeField(blank=False,auto_now_add=True)
     video_rating = models.DecimalField(verbose_name=_('Video Rating'),max_digits=5,decimal_places=2)
     audio_rating = models.DecimalField(verbose_name=_('Audio Rating'),max_digits=5,decimal_places=2)
     course_rating = models.DecimalField(verbose_name=_('Course Rating'),max_digits=5,decimal_places=2)
@@ -164,9 +176,11 @@ class TesterSheet(models.Model):
         (2, _('Frecuently')),
         (3, _('Always')),
     )
-    price_1 = models.SmallIntegerField(verbose_name=_('Price 1'),max_length=1,choices=CHOICES_PRICE)
-    price_2 = models.SmallIntegerField(verbose_name=_('Price 2'),max_length=1,choices=CHOICES_PRICE)
-    price_3 = models.SmallIntegerField(verbose_name=_('Price 3'),max_length=1,choices=CHOICES_PRICE)
+    price_1_rating = models.SmallIntegerField(verbose_name=_('Price 1'),max_length=1,choices=CHOICES_PRICE,default=0)
+    price_2_rating = models.SmallIntegerField(verbose_name=_('Price 2'),max_length=1,choices=CHOICES_PRICE,default=0)
+    price_3_rating = models.SmallIntegerField(verbose_name=_('Price 3'),max_length=1,choices=CHOICES_PRICE,default=0)
+    course = models.ForeignKey(Course,related_name='tester_sheets')
+    user = models.ForeignKey(User,verbose_name=_('User'),related_name='tester_sheets')
 
 
 

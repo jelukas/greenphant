@@ -1,6 +1,6 @@
 from django.core.management.base import BaseCommand, CommandError
 from datetime import datetime, timedelta
-from elearning.models import Enrollment, Course_Vote
+from elearning.models import Enrollment, TesterSheet
 from django.core.mail import EmailMessage
 from django.conf import settings
 from django.template.loader import render_to_string
@@ -11,13 +11,13 @@ Esto debe ejecutarse en una tarea del cron de madrugada todos los dias.
 Para ello usamos el script BASH tester_checking.sh
 """
 class Command(BaseCommand):
-    help = 'Comprobamos que los Testers hayan votado el curso despues de 30 dias'
+    help = 'Comprobamos que los Testers hayan rellenado la ficha de evaluacion del curso despues de 30 dias'
 
     def handle(self, *args, **options):
         now = datetime.now()
         enrrollments = Enrollment.objects.filter(tester = True, start_date__lte= now - timedelta(days=30),)
         for enrrollment in enrrollments:
-            if Course_Vote.objects.filter(user_id = enrrollment.user_id, course_id = enrrollment.course_id):
+            if TesterSheet.objects.filter(user_id = enrrollment.user_id, course_id = enrrollment.course_id):
                 enrrollment.tester = False
                 enrrollment.save()
             else:

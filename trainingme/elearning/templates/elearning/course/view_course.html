@@ -80,50 +80,53 @@
                         {% endfor %}
                     </section>
                 </div>
-                <div class="span3 offset1">
+                <div class="left-column span3 offset1">
                     <div id="course-rating">
-                            {% trans 'Course Rating ' %}<p id="rated-course"  data-rating="{{ course.get_scoring }}" class="star_course_rated"></p>
+                        <h4>{% trans 'Course Rating ' %}</h4>
+                        <p id="rated-course"  data-rating="{{ course.get_scoring }}" class="star_course_rated"></p>
                     </div>
-                </div>
-                <div class="teacher span3 offset1">
-                    {% if course.user.get_profile.image %}
-                        {% thumbnail course.user.get_profile.image "x200" as im %}
-                            <img class="img-polaroid" src="{{ im.url }}" alt="{{ user.username }}" />
-                        {% endthumbnail %}
-                    {% else %}
-                        <img src="{{ STATIC_URL }}img/default_profile.png" alt="{{ user.username }}"  class="img-polaroid"/>
-                    {% endif %}
-                    <h4>{{ course.user.first_name }} {{ course.user.last_name }}</h4>
-                    <h5>{{ course.user.get_profile.subtitle }}</h5>
-                    <p class="teacher_description">{{ course.user.get_profile.description }}</p>
-                    <ul class="inline">
-                        {% if course.user.get_profile.twitter_user %}<li><a href="http://twitter.com/{{ course.user.get_profile.twitter_user }}" target="_blank"><img src="{{ STATIC_URL }}img/twitter-2.png"/></a></li>{% endif %}
-                        {% if course.user.get_profile.facebook_url %}<li><a href="{{ course.user.get_profile.facebook_url }}" target="_blank"><img src="{{ STATIC_URL }}img/facebook.png"/></a></li>{% endif %}
-                        {% if course.user.get_profile.linkedin_url %}<li><a href="{{ course.user.get_profile.linkedin_url }}" target="_blank"><img src="{{ STATIC_URL }}img/linkedin.png"/></a></li>{% endif %}
-                        {% if course.user.get_profile.googleplus_url %}<li><a href="{{ course.user.get_profile.googleplus_url }}" target="_blank"><img src="{{ STATIC_URL }}img/google-plus.png"/></a></li>{% endif %}
-                    </ul>
-                </div>
-                <div class="ratings span3 offset1">
-                    <h4>{% trans 'Ratings' %}</h4>
-                    {% for course_vote in course.votes.all  %}
-                        <div class="media">
-                            <a class="pull-left" href="#">
-                                {% if course_vote.user.get_profile.image %}
-                                    {% thumbnail course_vote.user.get_profile.image "x45" as im %}
-                                        <img  class="media-object"  src="{{ im.url }}" alt="{{ course_vote.user.username }}" />
-                                    {% endthumbnail %}
-                                {% else %}
-                                    <img  class="media-object" src="{{ STATIC_URL }}img/default_profile.png" alt="{{ course_vote.user.username }}" />
-                                {% endif %}
-                            </a>
-                            <div class="media-body">
-                                <h6 class="media-heading">{% trans 'By' %} {% if course_vote.user.get_full_name|length %}{{ course_vote.user.get_full_name }}{% else %}{{ course_vote.user.username }}{% endif %}</h6>
-                                <p class="created_at"><span data-rating="{{ course_vote.rating }}" class="user_rating"></span> {% blocktrans with created_at=course_vote.created_at|timesince %} {{ created_at }} ago{% endblocktrans %}</p>
-                                {{ course_vote.comment|truncatechars:220 }}
+                    <div class="ratings">
+                        <h4>{% trans 'Ratings' %}</h4>
+                        {% for course_vote in course.votes.all  %}
+                            <div class="media">
+                                <a class="pull-left" href="#">
+                                    {% if course_vote.user.get_profile.image %}
+                                        {% thumbnail course_vote.user.get_profile.image "x45" as im %}
+                                            <img  class="media-object"  src="{{ im.url }}" alt="{{ course_vote.user.username }}" />
+                                        {% endthumbnail %}
+                                    {% else %}
+                                        <img  class="media-object" src="{{ STATIC_URL }}img/default_profile.png" alt="{{ course_vote.user.username }}" />
+                                    {% endif %}
+                                </a>
+                                <div class="media-body">
+                                    <h6 class="media-heading">{% trans 'By' %} {% if course_vote.user.get_full_name|length %}{{ course_vote.user.get_full_name }}{% else %}{{ course_vote.user.username }}{% endif %}</h6>
+                                    <p class="created_at"><span data-rating="{{ course_vote.rating }}" class="user_rating"></span> {% blocktrans with created_at=course_vote.created_at|timesince %} {{ created_at }} ago{% endblocktrans %}</p>
+                                    {{ course_vote.comment|truncatechars:220 }}
+                                </div>
                             </div>
-                        </div>
-                        <hr/>
-                    {% endfor %}
+                            <hr/>
+                        {% empty  %}
+                            <p>{% trans 'There is no ratings right now' %}</p>
+                        {% endfor %}
+                    </div>
+                    <div class="teacher">
+                        <h4>{{ course.user.get_full_name }}</h4>
+                        {% if course.user.get_profile.image %}
+                            {% thumbnail course.user.get_profile.image "x200" as im %}
+                                <img class="img-polaroid" src="{{ im.url }}" alt="{{ user.username }}" />
+                            {% endthumbnail %}
+                        {% else %}
+                            <img src="{{ STATIC_URL }}img/default_profile.png" alt="{{ user.username }}"  class="img-polaroid"/>
+                        {% endif %}
+                        <h5>{{ course.user.get_profile.subtitle }}</h5>
+                        <p class="teacher_description">{{ course.user.get_profile.description }}</p>
+                        <ul class="inline">
+                            {% if course.user.get_profile.twitter_user %}<li><a href="http://twitter.com/{{ course.user.get_profile.twitter_user }}" target="_blank"><img src="{{ STATIC_URL }}img/twitter-2.png"/></a></li>{% endif %}
+                            {% if course.user.get_profile.facebook_url %}<li><a href="{{ course.user.get_profile.facebook_url }}" target="_blank"><img src="{{ STATIC_URL }}img/facebook.png"/></a></li>{% endif %}
+                            {% if course.user.get_profile.linkedin_url %}<li><a href="{{ course.user.get_profile.linkedin_url }}" target="_blank"><img src="{{ STATIC_URL }}img/linkedin.png"/></a></li>{% endif %}
+                            {% if course.user.get_profile.googleplus_url %}<li><a href="{{ course.user.get_profile.googleplus_url }}" target="_blank"><img src="{{ STATIC_URL }}img/google-plus.png"/></a></li>{% endif %}
+                        </ul>
+                    </div>
                 </div>
             </div>
         </div>

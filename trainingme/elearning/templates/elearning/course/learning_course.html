@@ -62,66 +62,116 @@
                         {% endfor %}
                     </section>
                 </div>
-                <div class="span3 offset1">
-                    <div id="course-rating">
+                <div class="left-column span3 offset1">
+                    {% if testersheet_form  %}
+                    <div class="ratings">
+                        <h4>{% trans 'Evaluation Sheet' %}</h4>
+                        <form id="testersheet_form" method="post" action="" >{% csrf_token %}
+                            {{ testersheet_form.video_rating|attr:"type:hidden" }}
+                            {{ testersheet_form.video_rating.label }}
+                            <p id="rate-video" class="stars"></p>
+                            {% for error in testersheet_form.video_rating.errors %}
+                                <p><span class="text-error">{{ error }}</span></p>
+                            {% endfor %}
+                            {{ testersheet_form.audio_rating|attr:"type:hidden" }}
+                            {{ testersheet_form.audio_rating.label }}
+                            <p id="rate-audio" class="stars"></p>
+                            {% for error in testersheet_form.audio_rating.errors %}
+                                <p><span class="text-error">{{ error }}</span></p>
+                            {% endfor %}
+                            {{ testersheet_form.course_rating|attr:"type:hidden" }}
+                            {{ testersheet_form.course_rating.label }}
+                            <p id="rate-course" class="stars"></p>
+                            {% for error in testersheet_form.course_rating.errors %}
+                                <p><span class="text-error">{{ error }}</span></p>
+                            {% endfor %}
+                            <p>{{ testersheet_form.comment.label }}</p>
+                            <p>{{ testersheet_form.comment }}</p>
+                            {% for error in testersheet_form.comment.errors %}
+                                <p><span class="text-error">{{ error }}</span></p>
+                            {% endfor %}
+                            <p>{{ testersheet_form.price_1_rating.label }} - {{ course.price_test1 }}</p>
+                            <p>{{ testersheet_form.price_1_rating }}</p>
+                            {% for error in testersheet_form.price_1_rating.errors %}
+                                <p><span class="text-error">{{ error }}</span></p>
+                            {% endfor %}
+                            <p>{{ testersheet_form.price_2_rating.label }} - {{ course.price_test2 }}</p>
+                            <p>{{ testersheet_form.price_2_rating }}</p>
+                            {% for error in testersheet_form.price_2_rating.errors %}
+                                <p><span class="text-error">{{ error }}</span></p>
+                            {% endfor %}
+                            <p>{{ testersheet_form.price_3_rating.label }} - {{ course.price_test3 }}</p>
+                            <p>{{ testersheet_form.price_3_rating }}</p>
+                            {% for error in testersheet_form.price_3_rating.errors %}
+                                <p><span class="text-error">{{ error }}</span></p>
+                            {% endfor %}
+                            <button type="submit" class="btn btn-warning" value="{% trans 'Rate' %}"><i class=" icon-ok-circle icon-white"></i> {% trans 'Send Evaluation' %}</button>
+                        </form>
+                    </div>
+                    {% else %}
+                        <div id="course-rating">
+                            <h4>{% trans 'Course Rating ' %}</h4>
                             {% if not course|user_had_vote_course:user.id and not is_teacher %}
                                 <form method="post" action="">{% csrf_token %}
-                                {{ course_vote_form.rating|attr:"type:hidden" }}
-                                {{ course_vote_form.comment.label }}
-                                {% for error in course_vote_form.comment.errors %}
-                                    <p><span class="text-error">{{ error }}</span></p>
-                                {% endfor %}
-                                {{ course_vote_form.comment }}
-                                {% for error in course_vote_form.rating.errors %}
-                                    <p><span class="text-error">{{ error }}</span></p>
-                                {% endfor %}
-                                {% trans 'Rating' %}<p id="rate-course"  data-rating="{{ course.get_scoring }}" class="star_course"></p>
-                                <button type="submit" class="btn btn-warning" value="{% trans 'Rate' %}"><i class=" icon-ok-circle icon-white"></i> {% trans 'Rate' %}</button>
+                                    {{ course_vote_form.rating|attr:"type:hidden" }}
+                                    {{ course_vote_form.comment.label }}
+                                    {% for error in course_vote_form.comment.errors %}
+                                        <p><span class="text-error">{{ error }}</span></p>
+                                    {% endfor %}
+                                    {{ course_vote_form.comment }}
+                                    {% for error in course_vote_form.rating.errors %}
+                                        <p><span class="text-error">{{ error }}</span></p>
+                                    {% endfor %}
+                                    {% trans 'Rating' %}<p data-rating="{{ course.get_scoring }}" class="star_course"></p>
+                                    <button type="submit" class="btn btn-warning" value="{% trans 'Rate' %}"><i class=" icon-ok-circle icon-white"></i> {% trans 'Rate' %}</button>
                                 </form>
                             {% else %}
-                                {% trans 'Course Rating ' %}<p id="rated-course"  data-rating="{{ course.get_scoring }}" class="star_course_rated"></p>
+                                <p id="rated-course"  data-rating="{{ course.get_scoring }}" class="star_course_rated"></p>
                             {% endif %}
-                    </div>
-                </div>
-                <div class="teacher span3 offset1">
-                    {% if course.user.get_profile.image %}
-                        {% thumbnail course.user.get_profile.image "x200" as im %}
-                            <img class="img-polaroid" src="{{ im.url }}" alt="{{ user.username }}" />
-                        {% endthumbnail %}
-                    {% else %}
-                        <img src="{{ STATIC_URL }}img/default_profile.png" alt="{{ user.username }}"  class="img-polaroid"/>
-                    {% endif %}
-                    <h4>{{ course.user.first_name }} {{ course.user.last_name }}</h4>
-                    <h5>{{ course.user.get_profile.subtitle }}</h5>
-                    <p class="teacher_description">{{ course.user.get_profile.description }}</p>
-                    <ul class="inline">
-                        {% if course.user.get_profile.twitter_user %}<li><a href="http://twitter.com/{{ course.user.get_profile.twitter_user }}" target="_blank"><img src="{{ STATIC_URL }}img/twitter-2.png"/></a></li>{% endif %}
-                        {% if course.user.get_profile.facebook_url %}<li><a href="{{ course.user.get_profile.facebook_url }}" target="_blank"><img src="{{ STATIC_URL }}img/facebook.png"/></a></li>{% endif %}
-                        {% if course.user.get_profile.linkedin_url %}<li><a href="{{ course.user.get_profile.linkedin_url }}" target="_blank"><img src="{{ STATIC_URL }}img/linkedin.png"/></a></li>{% endif %}
-                        {% if course.user.get_profile.googleplus_url %}<li><a href="{{ course.user.get_profile.googleplus_url }}" target="_blank"><img src="{{ STATIC_URL }}img/google-plus.png"/></a></li>{% endif %}
-                    </ul>
-                </div>
-                <div class="ratings span3 offset1">
-                    <h4>{% trans 'Ratings' %}</h4>
-                    {% for course_vote in course.votes.all  %}
-                        <div class="media">
-                            <a class="pull-left" href="#">
-                                {% if course_vote.user.get_profile.image %}
-                                    {% thumbnail course_vote.user.get_profile.image "x45" as im %}
-                                        <img  class="media-object"  src="{{ im.url }}" alt="{{ course_vote.user.username }}" />
-                                    {% endthumbnail %}
-                                {% else %}
-                                    <img  class="media-object" src="{{ STATIC_URL }}img/default_profile.png" alt="{{ course_vote.user.username }}" />
-                                {% endif %}
-                            </a>
-                            <div class="media-body">
-                                <h6 class="media-heading">{% trans 'By' %} {% if course_vote.user.get_full_name|length %}{{ course_vote.user.get_full_name }}{% else %}{{ course_vote.user.username }}{% endif %}</h6>
-                                <p class="created_at"><span data-rating="{{ course_vote.rating }}" class="user_rating"></span> {% blocktrans with created_at=course_vote.created_at|timesince %} {{ created_at }} ago{% endblocktrans %}</p>
-                                {{ course_vote.comment|truncatechars:220 }}
-                            </div>
                         </div>
-                        <hr/>
-                    {% endfor %}
+                    {% endif %}
+                    <div class="ratings">
+                        <h4>{% trans 'Ratings' %}</h4>
+                        {% for course_vote in course.votes.all  %}
+                            <div class="media">
+                                <a class="pull-left" href="#">
+                                    {% if course_vote.user.get_profile.image %}
+                                        {% thumbnail course_vote.user.get_profile.image "x45" as im %}
+                                            <img  class="media-object"  src="{{ im.url }}" alt="{{ course_vote.user.username }}" />
+                                        {% endthumbnail %}
+                                    {% else %}
+                                        <img  class="media-object" src="{{ STATIC_URL }}img/default_profile.png" alt="{{ course_vote.user.username }}" />
+                                    {% endif %}
+                                </a>
+                                <div class="media-body">
+                                    <h6 class="media-heading">{% trans 'By' %} {% if course_vote.user.get_full_name|length %}{{ course_vote.user.get_full_name }}{% else %}{{ course_vote.user.username }}{% endif %}</h6>
+                                    <p class="created_at"><span data-rating="{{ course_vote.rating }}" class="user_rating"></span> {% blocktrans with created_at=course_vote.created_at|timesince %} {{ created_at }} ago{% endblocktrans %}</p>
+                                    {{ course_vote.comment|truncatechars:220 }}
+                                </div>
+                            </div>
+                            <hr/>
+                        {% empty  %}
+                            <p>{% trans 'There is no ratings right now' %}</p>
+                        {% endfor %}
+                    </div>
+                    <div class="teacher">
+                        <h4>{{ course.user.get_full_name }}</h4>
+                        {% if course.user.get_profile.image %}
+                            {% thumbnail course.user.get_profile.image "x200" as im %}
+                                <img class="img-polaroid" src="{{ im.url }}" alt="{{ user.username }}" />
+                            {% endthumbnail %}
+                        {% else %}
+                            <img src="{{ STATIC_URL }}img/default_profile.png" alt="{{ user.username }}"  class="img-polaroid"/>
+                        {% endif %}
+                        <h5>{{ course.user.get_profile.subtitle }}</h5>
+                        <p class="teacher_description">{{ course.user.get_profile.description }}</p>
+                        <ul class="inline">
+                            {% if course.user.get_profile.twitter_user %}<li><a href="http://twitter.com/{{ course.user.get_profile.twitter_user }}" target="_blank"><img src="{{ STATIC_URL }}img/twitter-2.png"/></a></li>{% endif %}
+                            {% if course.user.get_profile.facebook_url %}<li><a href="{{ course.user.get_profile.facebook_url }}" target="_blank"><img src="{{ STATIC_URL }}img/facebook.png"/></a></li>{% endif %}
+                            {% if course.user.get_profile.linkedin_url %}<li><a href="{{ course.user.get_profile.linkedin_url }}" target="_blank"><img src="{{ STATIC_URL }}img/linkedin.png"/></a></li>{% endif %}
+                            {% if course.user.get_profile.googleplus_url %}<li><a href="{{ course.user.get_profile.googleplus_url }}" target="_blank"><img src="{{ STATIC_URL }}img/google-plus.png"/></a></li>{% endif %}
+                        </ul>
+                    </div>
                 </div>
             </div>
         </div>
@@ -138,38 +188,82 @@
 {% block footerscripts %}
     {{ block.super }}
     <script type="text/javascript">
-        $('.star_course').raty({
-            readOnly: false,
-            half: false,
-            score: function() {
-                return $(this).attr('data-rating');
-            },
-            size: 24,
-            target    : '#id_rating',
-            targetKeep: true,
-            targetType: 'number',
-            starHalf  : 'star-half-big.png',
-            starOff   : 'star-off-big.png',
-            starOn    : 'star-on-big.png'
-        });
-        $('.star_course_rated').raty({
-            readOnly: true,
-            half: true,
-            size : 24,
-            starHalf  : 'star-half-big.png',
-            starOff   : 'star-off-big.png',
-            starOn    : 'star-on-big.png',
-            score: function() {
-                return $(this).attr('data-rating');
-            }
-        });
-        $('.user_rating').raty({
-            readOnly: true,
-            half: true,
-            size : 24,
-            score: function() {
-                return $(this).attr('data-rating');
-            }
+        $(function(){
+            $('.star_course').raty({
+                readOnly: false,
+                half: false,
+                score: function() {
+                    return $(this).attr('data-rating');
+                },
+                size: 24,
+                target    : '#id_rating',
+                targetKeep: true,
+                targetType: 'number',
+                starHalf  : 'star-half-big.png',
+                starOff   : 'star-off-big.png',
+                starOn    : 'star-on-big.png'
+            });
+            $('.star_course_rated').raty({
+                readOnly: true,
+                half: true,
+                size : 24,
+                starHalf  : 'star-half-big.png',
+                starOff   : 'star-off-big.png',
+                starOn    : 'star-on-big.png',
+                score: function() {
+                    return $(this).attr('data-rating');
+                }
+            });
+            $('.user_rating').raty({
+                readOnly: true,
+                half: true,
+                size : 24,
+                score: function() {
+                    return $(this).attr('data-rating');
+                }
+            });
+            $('#rate-video').raty({
+                readOnly: false,
+                half: false,
+                size: 24,
+                score: function() {
+                    return $(this).attr('data-rating');
+                },
+                target: '#id_video_rating',
+                targetKeep: true,
+                targetType: 'number',
+                starHalf  : 'star-half-big.png',
+                starOff   : 'star-off-big.png',
+                starOn    : 'star-on-big.png'
+            });
+            $('#rate-audio').raty({
+                readOnly: false,
+                half: false,
+                size: 24,
+                score: function() {
+                    return $(this).attr('data-rating');
+                },
+                target: '#id_audio_rating',
+                targetKeep: true,
+                targetType: 'number',
+                starHalf  : 'star-half-big.png',
+                starOff   : 'star-off-big.png',
+                starOn    : 'star-on-big.png'
+            });
+            $('#rate-course').raty({
+                readOnly: false,
+                half: false,
+                size: 24,
+                score: function() {
+                    return $(this).attr('data-rating');
+                },
+                target: '#id_course_rating',
+                targetKeep: true,
+                targetType: 'number',
+                starHalf  : 'star-half-big.png',
+                starOff   : 'star-off-big.png',
+                starOn    : 'star-on-big.png'
+            });
         });
     </script>
     <script type="text/javascript">var switchTo5x=true;</script>
