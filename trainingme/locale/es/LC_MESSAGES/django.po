@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2013-04-08 09:44+0200\n"
-"PO-Revision-Date: 2013-04-08 09:46+0000\n"
+"POT-Creation-Date: 2013-04-08 10:36+0200\n"
+"PO-Revision-Date: 2013-04-08 10:38+0000\n"
 "Last-Translator: Jennifer Garcia Perez <jlucas@guadalux.org>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "MIME-Version: 1.0\n"
@@ -895,33 +895,62 @@ msgstr "Regístrate Ahora!"
 msgid "This course is under construction. Will be available soon."
 msgstr "Este curso está en proceso de construcción. Pronto estará disponible."
 
+#: elearning/templates/elearning/course/view_course.html:164
+msgid "¿Quieres ser evaluador?"
+msgstr ""
+
 #: elearning/templates/elearning/course/view_course.html:168
 msgid "Create An Account Now!"
 msgstr "Crear una Cuanta Ahora!"
 
+#: elearning/templates/elearning/course/view_course.html:170
+msgid "Please read the following text"
+msgstr "Por favor lee el siguiente texto"
+
 #: elearning/templates/elearning/course/view_course.html:171
-msgid "Congratulations!!"
-msgstr "Enhorabuena!"
+msgid ""
+"First we want to thank you to collaborate with our project as an evaluator. "
+"The evaluation period lasts a maximum of 30 days, so you can keep forever "
+"enrolled must perform the evaluation form."
+msgstr ""
+"En primer lugar queremos agradecerte que colabores con nuestro proyecto como"
+" evaluador. El periodo de evaluación dura como máximo 30 días, para que "
+"puedas seguir matriculado para siempre debes realizar la ficha de "
+"evaluación."
 
 #: elearning/templates/elearning/course/view_course.html:172
 msgid ""
-"This course is in Evaluation period. You can enroll in this course for FREE "
-"for evaluate it! "
+"We remind you that evaluations is one of the most important parts of this "
+"project, so we ask that you do the course thoroughly (helping with your "
+"comments on lessons if you think necessary) and performing the evaluation "
+"form."
 msgstr ""
-"Este curso esta en periodo de Evaluación. Usted puede inscribirse en este "
-"curso GRATIS para evaluarlo."
+"Queremos recordarte que las evaluaciones es una de las partes más importante"
+" de este proyecto, por lo que te pedimos que realices el curso "
+"concienzudamente (ayudando con tus comentarios en las lecciones en el caso "
+"que lo creas necesario) y realizando la ficha de evaluación."
 
 #: elearning/templates/elearning/course/view_course.html:173
-msgid ""
-"Remember: You have 30 days to evaluate the course. If you not evaluate the "
-"course during 30 days you will be unenrolled  from the course."
+msgid "Both your teacher like us, you are grateful."
 msgstr ""
-"Recuerde: Usted tiene 30 días para evaluar el curso. Si no se evalúa el "
-"curso en 30 días serás desmatriculado del mismo"
+"Tanto tu docente \"Nombre docente\" como nosotros, te estamos muy "
+"agradecidos."
 
 #: elearning/templates/elearning/course/view_course.html:174
-msgid "Evaluate Now!"
-msgstr "Evaluar ahora!"
+msgid ""
+"You agree to perform the evaluation, if you think that you will not be able "
+"to do it, please let someone else do it."
+msgstr ""
+"Debes comprometerte a realizar la evaluación, si crees que no vas a poder "
+"realizarlo, por favor deja que otra persona lo haga."
+
+#: elearning/templates/elearning/course/view_course.html:176
+msgid "I Agree"
+msgstr "Me comprometo"
+
+#: elearning/templates/elearning/course/view_course.html:177
+msgid "Not, Thank you"
+msgstr "No, gracias"
 
 #: elearning/templates/elearning/email/new_checking.html:12
 msgid ""
@@ -2702,6 +2731,26 @@ msgid ""
 msgstr ""
 "Por favor, mantenga el total de archivos subidos en%(total_size)s. Con este "
 "archivo, el total sería de  %(exceed_size)s."
+
+#~ msgid "Congratulations!!"
+#~ msgstr "Enhorabuena!"
+
+#~ msgid ""
+#~ "This course is in Evaluation period. You can enroll in this course for FREE "
+#~ "for evaluate it! "
+#~ msgstr ""
+#~ "Este curso esta en periodo de Evaluación. Usted puede inscribirse en este "
+#~ "curso GRATIS para evaluarlo."
+
+#~ msgid ""
+#~ "Remember: You have 30 days to evaluate the course. If you not evaluate the "
+#~ "course during 30 days you will be unenrolled  from the course."
+#~ msgstr ""
+#~ "Recuerde: Usted tiene 30 días para evaluar el curso. Si no se evalúa el "
+#~ "curso en 30 días serás desmatriculado del mismo"
+
+#~ msgid "Evaluate Now!"
+#~ msgstr "Evaluar ahora!"
 
 #~ msgid "Rate this course "
 #~ msgstr "Valorar Curso"

@@ -160,18 +160,22 @@
     <div id="enrroll-tester" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
         <div class="modal-header">
             <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
-            <h3>Info</h3>
+
+            <h3>{% trans '¿Quieres ser evaluador?' %}</h3>
         </div>
         <div class="modal-body">
-            <img src="{{ STATIC_URL }}img/emaillogo.png" alt="Trainingme.Net Beta Elearning"/>
             {% if not user.is_authenticated %}
                 <a class="btn btn-warning btn-large" href="/accounts/login/">{% trans 'Create An Account Now!' %}</a>
             {% else %}
-                <hr/>
-                <h3>{% trans 'Congratulations!!' %}</h3>
-                <p>{% trans 'This course is in Evaluation period. You can enroll in this course for FREE for evaluate it! ' %}</p>
-                <p>{% trans 'Remember: You have 30 days to evaluate the course. If you not evaluate the course during 30 days you will be unenrolled  from the course.' %}</p>
-                {% if course.status.name == 'evaluation period' %}<a href="{% url enrroll_tester course.id %}" class="buy_now btn btn-large btn-warning">{% trans 'Evaluate Now!' %}</a>{% endif %}
+                <h4>{% trans 'Please read the following text' %}</h4>
+                <p>{% trans 'First we want to thank you to collaborate with our project as an evaluator. The evaluation period lasts a maximum of 30 days, so you can keep forever enrolled must perform the evaluation form.' %}</p>
+                <p>{% trans 'We remind you that evaluations is one of the most important parts of this project, so we ask that you do the course thoroughly (helping with your comments on lessons if you think necessary) and performing the evaluation form.' %}</p>
+                <p>{% trans 'Both your teacher like us, you are grateful.' %}</p>
+                <p>{% trans 'You agree to perform the evaluation, if you think that you will not be able to do it, please let someone else do it.' %}</p>
+                {% if course.status.name == 'evaluation period' %}
+                    <a href="{% url enrroll_tester course.id %}" class="buy_now btn btn-large btn-success"><i class="icon-ok icon-white"></i> {% trans 'I Agree' %}</a>
+                    <a class="btn btn-large btn-danger pull-right"><i class="icon-remove icon-white"></i> {% trans 'Not, Thank you' %}</a>
+                {% endif %}
             {% endif %}
         </div>
     </div>

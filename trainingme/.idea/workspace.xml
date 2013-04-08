@@ -25,19 +25,10 @@
   <component name="ExecutionTargetManager" SELECTED_TARGET="default_target" />
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="course_evaluation_results.html" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/elearning/templates/elearning/course/course_evaluation_results.html">
+      <file leaf-file-name="view_course.html" pinned="false" current="true" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/elearning/templates/elearning/course/view_course.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="20" column="45" selection-start="874" selection-end="881" vertical-scroll-proportion="-12.5">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="learning_course.html" pinned="false" current="true" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/elearning/templates/elearning/course/learning_course.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="87" column="85" selection-start="6034" selection-end="6034" vertical-scroll-proportion="0.43842363">
+            <state line="173" column="145" selection-start="12692" selection-end="12692" vertical-scroll-proportion="0.68349755">
               <folding />
             </state>
           </provider>
@@ -58,7 +49,6 @@
         <option value="$PROJECT_DIR$/elearning/templates/elearning/edit_course.html" />
         <option value="$PROJECT_DIR$/elearning/forms.py" />
         <option value="$PROJECT_DIR$/static/css/styles.less" />
-        <option value="$PROJECT_DIR$/elearning/templates/elearning/course/view_course.html" />
         <option value="$PROJECT_DIR$/elearning/models.py" />
         <option value="$PROJECT_DIR$/elearning/management/commands/testers_checking.py" />
         <option value="$PROJECT_DIR$/elearning/management/commands/update_video_duration.py" />
@@ -69,6 +59,7 @@
         <option value="$PROJECT_DIR$/elearning/admin.py" />
         <option value="$PROJECT_DIR$/elearning/templates/elearning/course/course_evaluation_results.html" />
         <option value="$PROJECT_DIR$/elearning/templates/elearning/course/learning_course.html" />
+        <option value="$PROJECT_DIR$/elearning/templates/elearning/course/view_course.html" />
       </list>
     </option>
   </component>
@@ -540,23 +531,23 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/elearning/templates/elearning/course/view_course.html">
+    <entry file="file://$PROJECT_DIR$/elearning/templates/elearning/course/learning_course.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
+        <state line="87" column="85" selection-start="6034" selection-end="6034" vertical-scroll-proportion="0.43842363">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/elearning/templates/elearning/course/course_evaluation_results.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="20" column="45" selection-start="874" selection-end="881" vertical-scroll-proportion="-12.5">
+        <state line="20" column="45" selection-start="874" selection-end="881" vertical-scroll-proportion="0.36363637">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/elearning/templates/elearning/course/learning_course.html">
+    <entry file="file://$PROJECT_DIR$/elearning/templates/elearning/course/view_course.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="87" column="85" selection-start="6034" selection-end="6034" vertical-scroll-proportion="0.43842363">
+        <state line="173" column="145" selection-start="12692" selection-end="12692" vertical-scroll-proportion="0.68349755">
           <folding />
         </state>
       </provider>
