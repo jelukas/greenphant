@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2013-04-04 13:29+0200\n"
-"PO-Revision-Date: 2013-04-04 13:35+0000\n"
+"POT-Creation-Date: 2013-04-08 09:44+0200\n"
+"PO-Revision-Date: 2013-04-08 09:46+0000\n"
 "Last-Translator: Jennifer Garcia Perez <jlucas@guadalux.org>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "MIME-Version: 1.0\n"
@@ -81,30 +81,45 @@ msgid "price test 3"
 msgstr "Precio para Evaluar 3"
 
 #: elearning/models.py:169
+#: elearning/templates/elearning/course/course_evaluation_results.html:15
 msgid "Video Rating"
 msgstr "Calificación del Vídeo"
 
 #: elearning/models.py:170
+#: elearning/templates/elearning/course/course_evaluation_results.html:16
 msgid "Audio Rating"
 msgstr "Calificación del Audio"
 
 #: elearning/models.py:171
+#: elearning/templates/elearning/course/course_evaluation_results.html:17
 msgid "Course Rating"
 msgstr "Calificación del Curso"
 
 #: elearning/models.py:174
+#: elearning/templates/elearning/course/course_evaluation_results.html:31
+#: elearning/templates/elearning/course/course_evaluation_results.html:42
+#: elearning/templates/elearning/course/course_evaluation_results.html:53
 msgid "Never"
 msgstr "Nunca"
 
 #: elearning/models.py:175
+#: elearning/templates/elearning/course/course_evaluation_results.html:33
+#: elearning/templates/elearning/course/course_evaluation_results.html:44
+#: elearning/templates/elearning/course/course_evaluation_results.html:55
 msgid "Rarely"
 msgstr "Raramente"
 
 #: elearning/models.py:176
+#: elearning/templates/elearning/course/course_evaluation_results.html:35
+#: elearning/templates/elearning/course/course_evaluation_results.html:46
+#: elearning/templates/elearning/course/course_evaluation_results.html:57
 msgid "Frecuently"
 msgstr "Frecuentemente"
 
 #: elearning/models.py:177
+#: elearning/templates/elearning/course/course_evaluation_results.html:37
+#: elearning/templates/elearning/course/course_evaluation_results.html:48
+#: elearning/templates/elearning/course/course_evaluation_results.html:59
 msgid "Always"
 msgstr "Siempre"
 
@@ -121,8 +136,8 @@ msgid "Price 3"
 msgstr "Precio 3"
 
 #: elearning/models.py:183 elearning/models.py:349 elearning/models.py:361
-#: elearning/models.py:375 elearning/models.py:392 financial/models.py:24
-#: financial/models.py:33
+#: elearning/models.py:375 elearning/models.py:392 elearning/views.py:460
+#: financial/models.py:24 financial/models.py:33
 msgid "User"
 msgstr "Usuario"
 
@@ -178,30 +193,31 @@ msgid "Message"
 msgstr "Mensaje"
 
 #: elearning/models.py:396
+#: elearning/templates/elearning/course/course_evaluation_results.html:21
 msgid "Comment"
 msgstr "Comentar"
 
-#: elearning/views.py:41 elearning/views.py:67
+#: elearning/views.py:42 elearning/views.py:68
 msgid "Course failed to create: Title exits"
 msgstr "No se ha podido crear el curso: Ya existe un curso con ese título"
 
-#: elearning/views.py:43
+#: elearning/views.py:44
 msgid "Course created successfully"
 msgstr "Curso creado correctamente"
 
-#: elearning/views.py:46
+#: elearning/views.py:47
 msgid "Course failed to create"
 msgstr "No se ha podido crear el curso"
 
-#: elearning/views.py:69
+#: elearning/views.py:70
 msgid "Course updated successfully"
 msgstr "Curso actualizado correctamente"
 
-#: elearning/views.py:72
+#: elearning/views.py:73
 msgid "Failed to update the course"
 msgstr "No se ha podido actualizar el curso"
 
-#: elearning/views.py:91
+#: elearning/views.py:92
 msgid ""
 "Course sent to Checking process. We will contact you soon via Email when "
 "your course is published."
@@ -209,123 +225,131 @@ msgstr ""
 "El curso ha sido enviado al proceso de revisión. Pronto contactaremos "
 "contigo por email cuando tu curso este listo para ser publicado."
 
-#: elearning/views.py:95
+#: elearning/views.py:96
 msgid "A new Course is in Checking Process: "
 msgstr "Curso enviado al proceso de revisión"
 
-#: elearning/views.py:115
+#: elearning/views.py:116
 msgid "Subject added successfully"
 msgstr "Tema añadido correctamente"
 
-#: elearning/views.py:118
+#: elearning/views.py:119
 msgid "Failed to add the subject to the course"
 msgstr "No se ha podido añadir el Tema al curso"
 
-#: elearning/views.py:136
+#: elearning/views.py:137
 msgid "Subject updated successfully"
 msgstr "Tema actualizado correctamente"
 
-#: elearning/views.py:139
+#: elearning/views.py:140
 msgid "Failed to update the subject"
 msgstr "Error al actualizar el tema"
 
-#: elearning/views.py:152
+#: elearning/views.py:153
 msgid "Subject deleted successfully"
 msgstr "Tema borrado satisfactoriamente"
 
-#: elearning/views.py:155
+#: elearning/views.py:156
 msgid "Course is not in Building Status"
 msgstr "Este curso no está en fase de construcción"
 
-#: elearning/views.py:168 elearning/views.py:181
+#: elearning/views.py:169 elearning/views.py:182
 msgid "Subject order changed successfully"
 msgstr "Tema actualizado correctamente"
 
-#: elearning/views.py:194 elearning/views.py:207
+#: elearning/views.py:195 elearning/views.py:208
 msgid "Lesson order changed successfully"
 msgstr "Se ha cambiado el orden de la Lección correctamente"
 
-#: elearning/views.py:229
+#: elearning/views.py:230
 msgid "Lesson added successfully"
 msgstr "Lección añadida correctamente"
 
-#: elearning/views.py:232
+#: elearning/views.py:233
 msgid "Failed to add the lesson"
 msgstr "Error al añadir lección"
 
-#: elearning/views.py:258
+#: elearning/views.py:259
 msgid "Lesson updated successfully"
 msgstr "Lección actualizada correctamente"
 
-#: elearning/views.py:261
+#: elearning/views.py:262
 msgid "Failed to updated the lesson"
 msgstr "Error al actualizar la lección"
 
-#: elearning/views.py:274
+#: elearning/views.py:275
 msgid "Lesson deleted successfully"
 msgstr "Lección borrada correctamente"
 
-#: elearning/views.py:289
+#: elearning/views.py:290
 msgid "Video added successfully"
 msgstr "Video añadido correctamente"
 
-#: elearning/views.py:292
+#: elearning/views.py:293
 msgid "Failed to add Video"
 msgstr "Error al añadir el video"
 
-#: elearning/views.py:305
+#: elearning/views.py:306
 msgid "Video deleted successfully"
 msgstr "Video borrado correctamente"
 
-#: elearning/views.py:334
+#: elearning/views.py:335
 msgid "File attached successfully"
 msgstr "Archivo adjuntado correctamente"
 
-#: elearning/views.py:337
+#: elearning/views.py:338
 msgid "Failed to attach File"
 msgstr "Error al adjuntar archivo"
 
-#: elearning/views.py:350
+#: elearning/views.py:351
 msgid "File attached deleted succesfully"
 msgstr "El archivo adjuntado se ha borrado correctamente"
 
-#: elearning/views.py:415
+#: elearning/views.py:427
 msgid "You are not enrrolled in this course"
 msgstr "No estás matriculado en este curso: "
 
-#: elearning/views.py:467 elearning/views.py:497
+#: elearning/views.py:457
+msgid "TrainingMe.net - New Evaluation"
+msgstr "TrainingMe.net - Nueva Evaluación"
+
+#: elearning/views.py:460
+msgid "has evaluated your course: "
+msgstr "ha evaluado tu curso:"
+
+#: elearning/views.py:486 elearning/views.py:516
 msgid "You are not enrroled in that course: "
 msgstr "No estás matriculado en este curso: "
 
-#: elearning/views.py:479
+#: elearning/views.py:498
 msgid "Comment send sucesfully"
 msgstr "Comentario enviado correctamente"
 
-#: elearning/views.py:509
+#: elearning/views.py:528
 msgid "Reply sucesfully"
 msgstr "Respuesta enviada"
 
-#: elearning/views.py:543
+#: elearning/views.py:562
 msgid "This Course is not Published: "
 msgstr "Este curso no está publicado: "
 
-#: elearning/views.py:551
+#: elearning/views.py:570
 msgid "You can not vote twice this lesson: "
 msgstr "No puedes votar dos veces esta lección: "
 
-#: elearning/views.py:553
+#: elearning/views.py:572
 msgid "You have Rated the lesson with "
 msgstr "Has calificado esta lección con "
 
-#: elearning/views.py:569
+#: elearning/views.py:588
 msgid "You can not vote twice this course: "
 msgstr "No puedes votar dos veces este curso: "
 
-#: elearning/views.py:571
+#: elearning/views.py:590
 msgid "You have Rated the course with "
 msgstr "Has calificado el curso con"
 
-#: elearning/views.py:592
+#: elearning/views.py:611
 msgid "You can't be tester on that Course"
 msgstr "No puedes ser evaluador de este curso"
 
@@ -533,11 +557,15 @@ msgstr "Continúa la construcción"
 msgid "Preview Your Course"
 msgstr "Previsualizar tu Curso"
 
-#: elearning/templates/elearning/dashboard_teaching.html:38
+#: elearning/templates/elearning/dashboard_teaching.html:39
 msgid "View Your Course"
 msgstr "Ver tu Curso"
 
-#: elearning/templates/elearning/dashboard_teaching.html:48
+#: elearning/templates/elearning/dashboard_teaching.html:40
+msgid "Evaluation Results"
+msgstr "Resultados de la Evaluacion"
+
+#: elearning/templates/elearning/dashboard_teaching.html:51
 msgid "Create a New Course"
 msgstr "Crear Nuevo Curso"
 
@@ -734,6 +762,18 @@ msgstr "Crear Curso! :)"
 msgid "Back to Dashboard"
 msgstr "Volver a escritorio"
 
+#: elearning/templates/elearning/course/course_evaluation_results.html:6
+msgid "Testing Results"
+msgstr "Resultados de la Evaluación"
+
+#: elearning/templates/elearning/course/course_evaluation_results.html:14
+msgid "Student Tester"
+msgstr "Evaluador"
+
+#: elearning/templates/elearning/course/course_evaluation_results.html:70
+msgid "Back to Dahsboard"
+msgstr "Volver al escritorio"
+
 #: elearning/templates/elearning/course/learning_course.html:4
 #: elearning/templates/elearning/course/view_course.html:4
 msgid "Course of "
@@ -746,6 +786,10 @@ msgstr "default_video_image_es.jpg"
 #: elearning/templates/elearning/course/learning_course.html:68
 msgid "Evaluation Sheet"
 msgstr "Ficha de Evaluacion"
+
+#: elearning/templates/elearning/course/learning_course.html:88
+msgid "What do you think about this course?"
+msgstr "¿Qué opinas de este curso?"
 
 #: elearning/templates/elearning/course/learning_course.html:93
 msgid "Would you buy this course?"
@@ -2060,7 +2104,7 @@ msgstr "para"
 msgid "Change your description"
 msgstr "Cambiar tu descripción"
 
-#: personal/models.py:95
+#: personal/models.py:96
 msgid "TrainingMe.net - New Message"
 msgstr "Nuevo Mensaje en TrainingMe.net"
 

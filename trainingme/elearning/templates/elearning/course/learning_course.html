@@ -85,7 +85,7 @@
                             {% for error in testersheet_form.course_rating.errors %}
                                 <p><span class="text-error">{{ error }}</span></p>
                             {% endfor %}
-                            <p><strong>{{ testersheet_form.comment.label }}</strong></p>
+                            <p><strong>{% trans 'What do you think about this course?' %}</strong></p>
                             <p>{{ testersheet_form.comment }}</p>
                             {% for error in testersheet_form.comment.errors %}
                                 <p><span class="text-error">{{ error }}</span></p>
