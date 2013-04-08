@@ -8,6 +8,7 @@ from django.core.urlresolvers import reverse
 from django.core.mail import EmailMessage
 from elearning.models import Status, Course, Subject, Lesson, Video, Attach, Enrollment, Comment, TesterSheet, Course_Vote
 from elearning.forms import CourseForm, SubjectForm, LessonForm, VideoForm, AttachForm, CommentForm, CourseVoteForm, TesterSheetForm
+from personal.models import Message
 from personal.decorators import owner_required
 from django.contrib import messages
 from django.utils.translation import ugettext as _
@@ -362,10 +363,21 @@ DASHBOARD VIEWS
 def dashboard(request):
     return render_to_response('elearning/dashboard.html',{},context_instance = RequestContext(request))
 
+
 @login_required()
 def learning(request):
     enrollments = Enrollment.objects.filter(Q(user_id=request.user.id),Q(course__status__name="published") | Q(course__status__name="evaluation period"))
     return render_to_response('elearning/dashboard_learning.html',{'enrollments':enrollments},context_instance = RequestContext(request))
+
+
+@login_required()
+@owner_required(Course)
+def course_evaluation_results(request, course_id):
+    context = {}
+    course = get_object_or_404(Course,pk=course_id)
+    context.update({'course': course})
+    return render_to_response('elearning/course/course_evaluation_results.html',context,context_instance = RequestContext(request))
+
 
 @login_required()
 def teaching(request):
@@ -441,6 +453,13 @@ def learning_course(request,course_id):
                     course_vote.comment = testersheet.comment
                     course_vote.rating = testersheet.course_rating
                     course_vote.save()
+                    message = Message()
+                    message.subject = _('TrainingMe.net - New Evaluation')
+                    message.from_user_id = testersheet.user.id
+                    message.to_user_id = course.user_id
+                    message.message = _('User')+' '+testersheet.user.username+' '+_('has evaluated your course: ')+course.title
+                    message.save()
+
                 else:
                     context.update({'testersheet_form': testersheet_form})
         else:

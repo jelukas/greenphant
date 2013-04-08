@@ -19,7 +19,13 @@ class CommentAdmin(admin.ModelAdmin):
 
 
 class EnrollmentAdmin(admin.ModelAdmin):
-    list_display = ('user','course','start_date','tester',)
+    list_display = ('user','get_user_email','course','start_date','tester',)
+
+    def get_user_email(self,object):
+        url = reverse('admin:%s_%s_change' %( object.user._meta.app_label,   object.user._meta.module_name),  args=[ object.user_id] )
+        return u'<a href="%s">%s</a>' %(url,  object.user.email)
+    get_user_email.short_description = 'View User'
+    get_user_email.allow_tags = True
 
 
 class CourseAdmin(admin.ModelAdmin):
