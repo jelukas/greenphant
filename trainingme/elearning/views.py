@@ -10,6 +10,7 @@ from elearning.models import Status, Course, Subject, Lesson, Video, Attach, Enr
 from elearning.forms import CourseForm, SubjectForm, LessonForm, VideoForm, AttachForm, CommentForm, CourseVoteForm, TesterSheetForm
 from personal.models import Message
 from personal.decorators import owner_required
+from registration.forms import RegistrationFormUniqueEmail
 from django.contrib import messages
 from django.utils.translation import ugettext as _
 from django.views.decorators.csrf import csrf_exempt
@@ -598,6 +599,8 @@ Enrroll as Tester
 @login_required()
 def enrroll_tester(request,course_id):
     course = get_object_or_404(Course,pk=course_id,status__name="evaluation period")
+    if not request.user.get_profile().is_completed():
+        messages.error(request,_('You have to fill at least: Firstname, Lastname, Subtitle, Description, Country, State and Profile Image'))
     testers_number = Enrollment.objects.filter(course_id = course_id,tester = True).count()
     if testers_number < 5:
         enrollment = Enrollment(user_id=request.user.id, course_id=course_id, start_date=datetime.now(), tester=True)
@@ -608,7 +611,7 @@ def enrroll_tester(request,course_id):
 #            course.save()
 #        messages.success(request,_('Now you are Tester of the Course ')+course.title)
     else:
-        messages.error(request,_('You can\'t be tester on that Course'))
+        messages.error(request,_('You can\'t be tester on that Course. Theare are 5/5 Testers'))
     return redirect(reverse('elearning.views.view_course', args=(course.slug,)))
 
 """
@@ -633,4 +636,6 @@ def home(request):
     cursos_mas_visitados = Course.objects.filter(id__in = cursos_mas_visitados)
     featured = Course.objects.filter(id__in=cursos_destacados)
     context = {'courses_published' : courses_published,'courses_building' : courses_building,'cursos_mas_visitados': cursos_mas_visitados, 'users_count' : users_count,'featured': featured, 'form': form}
+    registration_form = RegistrationFormUniqueEmail()
+    context.update({'registration_form': registration_form})
     return render_to_response('elearning/home.html',context,context_instance = RequestContext(request))

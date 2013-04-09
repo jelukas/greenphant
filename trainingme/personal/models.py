@@ -53,6 +53,23 @@ class Profile(models.Model):
     def count_unread_received_messages(self):
         return self.user.messages_received.filter(is_read=False).count()
 
+    def is_completed(self):
+        completed = True
+        if not self.description:
+            completed = False
+        if not self.subtitle:
+            completed = False
+        if not self.image:
+            completed = False
+        if not self.country:
+            completed = False
+        if not self.state:
+            completed = False
+        if not self.user.first_name:
+            completed = False
+        if not self.user.last_name:
+            completed = False
+        return completed
 
 
 class Message(models.Model):
