@@ -29,7 +29,7 @@
                             <div class="lesson-extras">
                                 {% if lesson.attach %}
                                     <div class="pull-right">
-                                        <p><a href="{{ lesson.attach.file.url }}"><img src="{{ STATIC_URL }}img/download_attachment.png" alt="{% trans 'Download Attachment' %}"> {% trans 'Download Attachment' %}</a></p>
+                                        <p><a target="_blank" href="{{ lesson.attach.file.url }}"><img src="{{ STATIC_URL }}img/download_attachment.png" alt="{% trans 'Download Attachment' %}"> {% trans 'Download Attachment' %}</a></p>
                                     </div>
                                 {% endif %}
                             </div>
