@@ -62,7 +62,7 @@
                                 <div id="collapse{{ forloop.counter|apnumber }}" class="accordion-body collapse in">
                                     <div class="accordion-inner">
                                         {% for lesson in subject.lessons.all %}
-                                            <div class="accordionLine">
+                                            <div class="accordionLine" title="{{ lesson.title }}">
                                                 {% trans 'Lesson' %} {{ forloop.counter }} - {{ lesson.title|truncatechars:"65" }}
                                                 {% if lesson.attach.url %}
                                                     <div class="btnDownload"></div>
