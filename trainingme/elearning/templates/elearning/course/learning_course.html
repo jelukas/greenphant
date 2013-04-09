@@ -47,7 +47,7 @@
                                     <div class="accordion-inner">
                                         {% for lesson in subject.lessons.all %}
                                             <div class="accordionLine">
-                                                {% trans 'Lesson' %} {{ forloop.counter }} - {{ lesson.title }}
+                                                {% trans 'Lesson' %} {{ forloop.counter }} - {{ lesson.title|truncatechars:"65" }}
                                                 {% if lesson.attach %}
                                                     <a href="{{ lesson.attach.file.url }}"><div class="btnDownload"></div></a>
                                                 {% endif %}

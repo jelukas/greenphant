@@ -63,7 +63,7 @@
                                     <div class="accordion-inner">
                                         {% for lesson in subject.lessons.all %}
                                             <div class="accordionLine">
-                                                {% trans 'Lesson' %} {{ forloop.counter }} - {{ lesson.title }}
+                                                {% trans 'Lesson' %} {{ forloop.counter }} - {{ lesson.title|truncatechars:"65" }}
                                                 {% if lesson.attach.url %}
                                                     <div class="btnDownload"></div>
                                                 {% endif %}
