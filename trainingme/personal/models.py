@@ -160,4 +160,4 @@ def social_extra_values(sender, user, response, details, **kwargs):
     return result
 
 socialauth_registered.connect(social_extra_values, sender=None)
-socialauth_registered.connect(pre_update, sender=None)
+socialauth_registered.pre_update(social_extra_values, sender=None)
