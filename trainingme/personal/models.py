@@ -124,7 +124,7 @@ post_save.connect(send_email_message, sender=Message, dispatch_uid='send-email-m
 from social_auth.backends.facebook import FacebookBackend
 from social_auth.backends.twitter import TwitterBackend
 from social_auth.backends import google
-from social_auth.signals import socialauth_registered
+from social_auth.signals import socialauth_registered, pre_update
 
 def social_extra_values(sender, user, response, details, **kwargs):
     result = False
@@ -145,11 +145,12 @@ def social_extra_values(sender, user, response, details, **kwargs):
                 url = response["profile_image_url"]
 
             if url:
-                avatar = urlopen(url)
                 profile = user.get_profile()
-                profile.image.save(slugify(user.username + " social") + '.jpg',
-                    ContentFile(avatar.read()))
-                profile.save()
+                if not profile.image:
+                    avatar = urlopen(url)
+                    profile.image.save(slugify(user.username + " social") + '.jpg',
+                        ContentFile(avatar.read()))
+                    profile.save()
 
         except HTTPError:
             pass
@@ -159,3 +160,4 @@ def social_extra_values(sender, user, response, details, **kwargs):
     return result
 
 socialauth_registered.connect(social_extra_values, sender=None)
+socialauth_registered.connect(pre_update, sender=None)

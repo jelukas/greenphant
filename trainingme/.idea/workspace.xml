@@ -25,10 +25,10 @@
   <component name="ExecutionTargetManager" SELECTED_TARGET="default_target" />
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="base.html" pinned="false" current="true" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/templates/base.html">
+      <file leaf-file-name="models.py" pinned="false" current="true" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/personal/models.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="84" column="41" selection-start="6304" selection-end="6304" vertical-scroll-proportion="0.7758621">
+            <state line="143" column="23" selection-start="5362" selection-end="5362" vertical-scroll-proportion="0.61130744">
               <folding />
             </state>
           </provider>
@@ -44,7 +44,6 @@
   <component name="IdeDocumentHistory">
     <option name="changedFiles">
       <list>
-        <option value="$PROJECT_DIR$/elearning/models.py" />
         <option value="$PROJECT_DIR$/elearning/management/commands/testers_checking.py" />
         <option value="$PROJECT_DIR$/elearning/management/commands/update_video_duration.py" />
         <option value="$PROJECT_DIR$/elearning/templates/elearning/dashboard_teaching.html" />
@@ -57,9 +56,10 @@
         <option value="$PROJECT_DIR$/elearning/templates/elearning/course/learning_lesson.html" />
         <option value="$PROJECT_DIR$/elearning/templates/elearning/course/view_course.html" />
         <option value="$PROJECT_DIR$/elearning/templates/elearning/course/learning_course.html" />
-        <option value="$PROJECT_DIR$/personal/models.py" />
         <option value="$PROJECT_DIR$/static/css/styles.less" />
         <option value="$PROJECT_DIR$/templates/base.html" />
+        <option value="$PROJECT_DIR$/personal/management/commands/autoenrrollall.py" />
+        <option value="$PROJECT_DIR$/personal/models.py" />
       </list>
     </option>
   </component>
@@ -124,25 +124,7 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="static" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="trainingme" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="trainingme" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="static" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="css" />
+              <option name="myItemId" value="personal" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -170,11 +152,11 @@
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/personal" />
       <recent name="$PROJECT_DIR$/elearning/management/commands" />
       <recent name="$PROJECT_DIR$/static/img/buttons" />
       <recent name="$PROJECT_DIR$/static/img/home-boxes" />
       <recent name="$PROJECT_DIR$/elearning/templates/elearning" />
-      <recent name="$PROJECT_DIR$/personal" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/static/img/social" />
@@ -412,39 +394,6 @@
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/elearning/admin.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="26" column="49" selection-start="1206" selection-end="1206" vertical-scroll-proportion="0.40636042" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/elearning/templates/elearning/course/preview_lesson.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="-0.2770936">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/elearning/templates/elearning/dashboard_teaching.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="48" column="14" selection-start="3270" selection-end="3433" vertical-scroll-proportion="0.8559113">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/elearning/urls.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="29" column="75" selection-start="2061" selection-end="2069" vertical-scroll-proportion="0.5123675">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/elearning/templates/elearning/course/course_evaluation_results.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="20" column="45" selection-start="874" selection-end="881" vertical-scroll-proportion="0.36363637">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/personal/forms.py">
       <provider selected="true" editor-type-id="text-editor">
         <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" />
@@ -510,13 +459,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/personal/models.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="160" column="21" selection-start="5793" selection-end="5793" vertical-scroll-proportion="0.9293286">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/static/css/styles.less">
       <provider selected="true" editor-type-id="text-editor">
         <state line="207" column="13" selection-start="4152" selection-end="4152" vertical-scroll-proportion="0.5215311">
@@ -526,7 +468,55 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/templates/base.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="84" column="41" selection-start="6304" selection-end="6304" vertical-scroll-proportion="0.7758621">
+        <state line="83" column="40" selection-start="6202" selection-end="6202" vertical-scroll-proportion="0.33497536">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/personal/management/commands/__init__.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../../lib/python2.6/site-packages/social_auth/models.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="3" column="42" selection-start="81" selection-end="81" vertical-scroll-proportion="0.053003535">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/personal/views.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="23" column="13" selection-start="1111" selection-end="1111" vertical-scroll-proportion="0.40636042">
+          <folding>
+            <element signature="e#0#44#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../../lib/python2.6/site-packages/social_auth/db/django_models.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="1" column="0" selection-start="40" selection-end="40" vertical-scroll-proportion="0.017667845">
+          <folding>
+            <element signature="e#40#68#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/personal/management/commands/get_social_images.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="24" column="0" selection-start="1004" selection-end="1004" vertical-scroll-proportion="0.42402828">
+          <folding>
+            <element signature="e#0#65#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/personal/models.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="143" column="23" selection-start="5362" selection-end="5362" vertical-scroll-proportion="0.61130744">
           <folding />
         </state>
       </provider>
