@@ -118,3 +118,44 @@ def send_email_message(sender, instance, created, **kwargs):
             msg.send()
 
 post_save.connect(send_email_message, sender=Message, dispatch_uid='send-email-message-signal')
+
+
+#Get the avatars from Social Auth
+from social_auth.backends.facebook import FacebookBackend
+from social_auth.backends.twitter import TwitterBackend
+from social_auth.backends import google
+from social_auth.signals import socialauth_registered
+
+def social_extra_values(sender, user, response, details, **kwargs):
+    result = False
+
+    if "id" in response:
+        from urllib2 import urlopen, HTTPError
+        from django.template.defaultfilters import slugify
+        from django.core.files.base import ContentFile
+
+        try:
+            url = None
+            if sender == FacebookBackend:
+                url = "http://graph.facebook.com/%s/picture?type=large"\
+                      % response["id"]
+            elif sender == google.GoogleOAuth2Backend and "picture" in response:
+                url = response["picture"]
+            elif sender == TwitterBackend:
+                url = response["profile_image_url"]
+
+            if url:
+                avatar = urlopen(url)
+                profile = user.get_profile()
+                profile.image.save(slugify(user.username + " social") + '.jpg',
+                    ContentFile(avatar.read()))
+                profile.save()
+
+        except HTTPError:
+            pass
+
+        result = True
+
+    return result
+
+socialauth_registered.connect(social_extra_values, sender=None)
