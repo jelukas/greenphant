@@ -25,19 +25,10 @@
   <component name="ExecutionTargetManager" SELECTED_TARGET="default_target" />
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="models.py" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/personal/models.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="156" column="0" selection-start="5795" selection-end="5795" vertical-scroll-proportion="0.0">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file leaf-file-name="base.html" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/templates/base.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="79" column="235" selection-start="5889" selection-end="5889" vertical-scroll-proportion="0.7413793">
+            <state line="79" column="123" selection-start="5777" selection-end="5777" vertical-scroll-proportion="0.5726601">
               <folding />
             </state>
           </provider>
@@ -518,14 +509,14 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/personal/models.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="156" column="0" selection-start="5795" selection-end="5795" vertical-scroll-proportion="0.0">
+        <state line="156" column="0" selection-start="5795" selection-end="5795" vertical-scroll-proportion="0.8409894">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/templates/base.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="79" column="235" selection-start="5889" selection-end="5889" vertical-scroll-proportion="0.7413793">
+        <state line="79" column="123" selection-start="5777" selection-end="5777" vertical-scroll-proportion="0.5726601">
           <folding />
         </state>
       </provider>
