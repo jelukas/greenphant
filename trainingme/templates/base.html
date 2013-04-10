@@ -41,7 +41,7 @@
                         <div class="nav-collapse collapse navbar-inverse-collapse MenuBarResponsiveSecond">
                             <ul class="nav">
                                 {% for lang in LANGUAGES %}
-                                    <li class="flag">
+                                    <li class="flag visible-desktop">
                                         <form class="languageform" name="setLang{{ lang.1}}" action="/i18n/setlang/" method="POST">{% csrf_token %}
                                             <input name="next" type="hidden" value="/" />
                                             <input type="hidden" name="language" value="{{ lang.0 }}" />
@@ -51,9 +51,9 @@
                                         </form>
                                     </li>
                                 {% endfor %}
-                                <li class="flag"><img src="{{ STATIC_URL }}/img/flags/pt-disabled.png" title="Portuguese" alt="Portuguese"/></li>
-                                <li class="flag"><img src="{{ STATIC_URL }}/img/flags/fr-disabled.png" title="French" alt="French"/></li>
-                                <li class="flag"><img src="{{ STATIC_URL }}/img/flags/de-disabled.png" title="German" alt="German"/></li>
+                                <li class="flag visible-desktop"><img src="{{ STATIC_URL }}/img/flags/pt-disabled.png" title="Portuguese" alt="Portuguese"/></li>
+                                <li class="flag visible-desktop"><img src="{{ STATIC_URL }}/img/flags/fr-disabled.png" title="French" alt="French"/></li>
+                                <li class="flag visible-desktop"><img src="{{ STATIC_URL }}/img/flags/de-disabled.png" title="German" alt="German"/></li>
                                 <li><a href="{% url learning %}">{% trans "My Courses" %}</a></li>
                                 <li><a href="{% url new_course %}">{% trans "Create New Course" %}</a></li>
                                 <li><a href="{% url home %}">{% trans "Search Courses" %}</a></li>
@@ -74,18 +74,13 @@
                                         <li><a href="{% url list_messages %}" alt="{% trans 'View all Messages' %}">{% trans 'View all Messages' %}</a></li>
                                     </ul>
                                 </li>
-                                <li class="dropdown">
-                                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">{% trans "My Account" %}<b class="caret"></b></a>
-                                    <ul class="dropdown-menu">
-                                        <li><a href="{% url view_profile %}">{% trans "My Profile" %}</a></li>
-                                        <li><a href="{% url view_billing %}">{% trans "Earnings" %}</a></li>
-                                    </ul>
-                                </li>
                             </ul>
                             <ul class="nav pull-right">
                                 <li class="dropdown">
-                                    <a href="#" class="dropdown-toggle" data-toggle="dropdown"> {{ user.username }} <b class="caret"></b></a>
+                                    <a href="#" class="dropdown-toggle" data-toggle="dropdown"><img src="{{ user.get_profile.image.url }}" class="menu-profile-img img-rounded" /> {{ user.username }} <b class="caret"></b></a>
                                     <ul class="dropdown-menu">
+                                        <li><a href="{% url view_profile %}">{% trans "My Profile" %}</a></li>
+                                        <li><a href="{% url view_billing %}">{% trans "Earnings" %}</a></li>
                                         <li><a href="{% url logout %}">{% trans "Logout" %}</a></li>
                                     </ul>
                                 </li>
