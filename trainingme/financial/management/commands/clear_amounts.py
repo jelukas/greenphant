@@ -22,9 +22,9 @@ class Command(BaseCommand):
                 billing = teacher.billing
                 amount = Decimal(order.amount)*Decimal(str(0.7))
                 billing.balance += amount
-#                billing.save()
+                billing.save()
                 order.datetime_cleared = now
-#                order.save()
+                order.save()
                 if not teachers.has_key(str(teacher.id)):
                     teachers[str(teacher.id)] = { 'updated_balance': amount }
                 else:
