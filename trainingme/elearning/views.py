@@ -620,8 +620,8 @@ def enrroll_tester(request,course_id):
 HOME PAGE
 """
 def home(request):
-    cursos_de_prueba = [51,48,47,20,22,29,10,54,14]
-    cursos_mas_visitados = [29,10,54,14,23]
+    cursos_de_prueba = [51,48,47,20,22,10,54,14]
+    cursos_mas_visitados = [10,54,14,23]
     cursos_destacados = [54,13,29,23]
     from django.contrib.auth.forms import AuthenticationForm
     form = AuthenticationForm(request)
