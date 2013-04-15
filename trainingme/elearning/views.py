@@ -367,7 +367,7 @@ def dashboard(request):
 
 @login_required()
 def learning(request):
-    enrollments = Enrollment.objects.filter(Q(user_id=request.user.id),Q(course__status__name="published") | Q(course__status__name="evaluation period"))
+    enrollments = Enrollment.objects.filter(Q(user_id=request.user.id),Q(active=True),Q(course__status__name="published") | Q(course__status__name="evaluation period"))
     return render_to_response('elearning/dashboard_learning.html',{'enrollments':enrollments},context_instance = RequestContext(request))
 
 
@@ -398,7 +398,7 @@ def view_course(request,slug):
     course = get_object_or_404(Course,Q(slug=slug),Q(status__name="published")|Q(status__name="evaluation period")|Q(status__name="building"))
 
     if request.user.is_authenticated():
-        enrrollment = course.enrollments.filter(user_id=request.user.id)
+        enrrollment = course.enrollments.filter(user_id=request.user.id,active=True)
 
         if not enrrollment:
             context = {'course':course}
@@ -423,7 +423,7 @@ def learning_course(request,course_id):
     context.update({'course':course})
     if course.get_owner_id() == request.user.id:
         context.update({'enrrolled':False,'is_teacher':True})
-    enrrollment = course.enrollments.filter(user_id=request.user.id)
+    enrrollment = course.enrollments.filter(user_id=request.user.id,active = True)
     if not enrrollment and course.get_owner_id() != request.user.id and not request.user.is_staff:
         messages.error(request,_('You are not enrrolled in this course'))
         return HttpResponseRedirect(reverse('elearning.views.view_course', args=(course.slug,)))
@@ -482,7 +482,7 @@ def learning_lesson(request,lesson_id):
         lesson = get_object_or_404(Lesson,pk=lesson_id,subject__course__status__name__in=["published","evaluation period","building"])
     else:
         lesson = get_object_or_404(Lesson,pk=lesson_id)
-    enrrollment = lesson.subject.course.enrollments.filter(user_id=request.user.id)
+    enrrollment = lesson.subject.course.enrollments.filter(user_id=request.user.id,active=True)
     if not enrrollment and lesson.subject.course.get_owner_id() != request.user.id and not request.user.is_staff:
         messages.warning(request,_('You are not enrroled in that course: ')+lesson.subject.course.title)
         return HttpResponseRedirect(reverse('elearning.views.view_course', args=(lesson.subject.course.slug,)))
@@ -512,7 +512,7 @@ Responder a un comentario
 @login_required()
 def reply_comment(request,lesson_id,parent_comment_id):
     lesson = get_object_or_404(Lesson,pk=lesson_id,subject__course__status__name__in=["published","evaluation period","building"])
-    enrrollment = lesson.subject.course.enrollments.filter(user_id=request.user.id)
+    enrrollment = lesson.subject.course.enrollments.filter(user_id=request.user.id,active=True)
     if not enrrollment and lesson.subject.course.get_owner_id() != request.user.id:
         messages.warning(request,_('You are not enrroled in that course: ')+lesson.subject.course.title)
         return HttpResponseRedirect(reverse('elearning.views.view_course', args=(lesson.subject.course.slug,)))
@@ -563,7 +563,7 @@ def vote_lesson(request,lesson_id,points):
         messages.error(request,_('This Course is not Published: ')+lesson.subject.course.title)
         return HttpResponseRedirect(reverse('elearning.views.learning',))
     else:
-        enrollment = get_object_or_404(Enrollment,course_id=lesson.subject.course_id,user_id=request.user.id) # you can't vote if you re not enrroled in the course
+        enrollment = get_object_or_404(Enrollment,active=True,course_id=lesson.subject.course_id,user_id=request.user.id) # you can't vote if you re not enrroled in the course
         if not points or points < 0:
             points = 0
 
@@ -581,7 +581,7 @@ VOTAMOS un CURSO
 @login_required()
 def vote_course(request,course_id,points):
     course = Course.objects.get(Q(id=course_id),Q(status__name="published") | Q(status__name="evaluation period"))
-    enrollment = get_object_or_404(Enrollment,course_id=course_id,user_id=request.user.id) # you can't vote if you re not enrroled in the course
+    enrollment = get_object_or_404(Enrollment,active=True,course_id=course_id,user_id=request.user.id) # you can't vote if you re not enrroled in the course
     if not points or points < 0:
         points = 0
 
@@ -598,20 +598,22 @@ Enrroll as Tester
 """
 @login_required()
 def enrroll_tester(request,course_id):
+    max_testers_number = 5
     course = get_object_or_404(Course,pk=course_id,status__name="evaluation period")
     if not request.user.get_profile().is_completed():
         messages.error(request,_('You have to fill at least: Firstname, Lastname, Subtitle, Description, Country, State and Profile Image'))
-    testers_number = Enrollment.objects.filter(course_id = course_id,tester = True).count()
-    if testers_number < 5:
-        enrollment = Enrollment(user_id=request.user.id, course_id=course_id, start_date=datetime.now(), tester=True)
-        enrollment.save()
-        #Temporary Disable Auto Published Courses when 5 testers
-#        if testers_number == 4:
-#            course.status = Status.objects.get(name='published')
-#            course.save()
-#        messages.success(request,_('Now you are Tester of the Course ')+course.title)
     else:
-        messages.error(request,_('You can\'t be tester on that Course. Theare are 5/5 Testers'))
+        valid_enrollements = Enrollment.objects.filter(active=True,course_id = course_id).count()
+        if valid_enrollements < max_testers_number:
+            enrollment = Enrollment(active=True,user_id=request.user.id, course_id=course_id, start_date=datetime.now(), tester=True)
+            enrollment.save()
+            #Temporary Disable Auto Published Courses when 5 testers
+    #        if testers_number == 4:
+    #            course.status = Status.objects.get(name='published')
+    #            course.save()
+    #        messages.success(request,_('Now you are Tester of the Course ')+course.title)
+        else:
+            messages.error(request,_('You can\'t be tester on that Course. Theare are 5/5 Testers'))
     return redirect(reverse('elearning.views.view_course', args=(course.slug,)))
 
 """

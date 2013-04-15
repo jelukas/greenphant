@@ -98,7 +98,7 @@ class Course(models.Model):
         try:
             enrroll = Enrollment.objects.get(course_id = self.id,user_id = user_id)
         except ObjectDoesNotExist:
-            enrroll = Enrollment.objects.create(user_id=user_id, course_id=self.id, start_date = datetime.now())
+            enrroll = Enrollment.objects.create(user_id=user_id, course_id=self.id,active=True ,start_date = datetime.now())
             enrroll.save()
 
     def rate(self,user_id,points):
@@ -345,10 +345,13 @@ class Attach(models.Model):
 
 
 #Courses Enrrollment's
+# alter table elearning_enrollment add column `active` bool NOT NULL;
+# update elearning_enrollment set active = 1;
 class Enrollment(models.Model):
     user = models.ForeignKey(User,verbose_name=_('User'),related_name='enrollments')
     course = models.ForeignKey(Course,verbose_name=_('Course'),related_name='enrollments')
     start_date = models.DateTimeField(_('Start Date'),auto_created=True)
+    active = models.BooleanField(default=True)
     tester = models.BooleanField()
 
     def get_owner_id(self):
@@ -410,7 +413,7 @@ def auto_enrroll(sender, instance, created, **kwargs):
     if created:
         try:
             c = Course.objects.get(pk=23)
-            e = Enrollment.objects.create(user=instance,course=c, start_date = datetime.now())
+            e = Enrollment.objects.create(user=instance,course=c,active=True,start_date = datetime.now())
         except ObjectDoesNotExist:
             pass
 

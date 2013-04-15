@@ -19,7 +19,7 @@ class CommentAdmin(admin.ModelAdmin):
 
 
 class EnrollmentAdmin(admin.ModelAdmin):
-    list_display = ('user','get_user_email','course','start_date','tester',)
+    list_display = ('user','get_user_email','course','start_date','tester','active')
 
     def get_user_email(self,object):
         url = reverse('admin:%s_%s_change' %( object.user._meta.app_label,   object.user._meta.module_name),  args=[ object.user_id] )

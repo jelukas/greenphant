@@ -21,7 +21,8 @@ class Command(BaseCommand):
                 enrrollment.tester = False
                 enrrollment.save()
             else:
-                enrrollment.delete()
+                enrrollment.active = False
+                enrrollment.save()
                 self.send_mail_bad_tester(enrrollment.user, enrrollment.course)
         self.stdout.write('Checking de Testers Realizado')
 
