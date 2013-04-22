@@ -8,7 +8,7 @@ from elearning.models import Category,Course,Status,Subject,Attach,Video,Lesson,
 
 class AttachAdmin(admin.ModelAdmin):
     list_display = ('lesson','file','get_course',)
-    form = make_ajax_form(Video,{'lesson':'lesson'})
+    form = make_ajax_form(Attach,{'lesson':'lesson'})
 
     def get_course(self,object):
         url = reverse('admin:%s_%s_change' %( object.lesson.subject.course._meta.app_label,   object.lesson.subject.course._meta.module_name),  args=[ object.lesson.subject.course.id] )
