@@ -12,7 +12,6 @@ from django.utils.translation import ugettext as _
 from django.core.files.storage import default_storage
 from validatedfile import ValidatedFileField
 
-
 #Category of the Courses Model
 class Category(models.Model):
     name = models.CharField(_('Name'),blank=False,max_length=245)
@@ -406,7 +405,28 @@ class Comment(models.Model):
 
 
 
-# -------- Signals -----------
+# -------------------------
+# ------ Signals ----------
+# -------------------------
+
+# Send Message when a new comment is created
+def send_message_on_comment(sender, instance, created, **kwargs):
+    if created:
+        comment = instance
+        if comment.user_id != comment.lesson.subject.course.user_id:
+            from personal.models import Message
+            message = Message()
+            message.from_user_id = comment.user_id
+            message.to_user_id = comment.lesson.subject.course.user_id
+            message.subject = _('New comment on your course: ')+comment.lesson.subject.course.title
+            message.message = message.subject
+            message.created_at = datetime.now()
+            message.modified_at = datetime.now()
+            message.is_read = False
+            message.save()
+
+post_save.connect(send_message_on_comment, sender=Comment, dispatch_uid="send-message-on-new-comment")
+
 
 # Enrroll automatic in the course when the user is created
 def auto_enrroll(sender, instance, created, **kwargs):
