@@ -5,9 +5,11 @@ from django.views.generic import TemplateView
 
 # Uncomment the next two lines to enable the admin:
 from django.contrib import admin
+from ajax_select import urls as ajax_select_urls
 admin.autodiscover()
 
 urlpatterns = patterns('',
+    url(r'^admin/lookups/', include(ajax_select_urls)),
     url(r'^$','elearning.views.home', name='home'),
     url(r'^accounts/', include('registration.backends.default.urls')),
     url(r'', include('social_auth.urls')),

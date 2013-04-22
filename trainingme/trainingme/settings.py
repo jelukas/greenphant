@@ -165,7 +165,18 @@ INSTALLED_APPS = (
     'rosetta',
     'modeltranslation',
     'django_cleanup',
+    'ajax_select',
 )
+
+# define the lookup channels in use on the site
+AJAX_LOOKUP_CHANNELS = {
+    #   pass a dict with the model and the field to search against
+    'subject'  : {'model':'elearning.subject', 'search_field':'title'},
+    'lesson'  : {'model':'elearning.lesson', 'search_field':'title'}
+}
+# magically include jqueryUI/js/css
+AJAX_SELECT_BOOTSTRAP = True
+AJAX_SELECT_INLINES = 'inline'
 
 # A sample logging configuration. The only tangible logging
 # performed by this configuration is to send an email to

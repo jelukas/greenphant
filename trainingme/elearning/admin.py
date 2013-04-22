@@ -1,11 +1,14 @@
-from django.contrib import admin
-from elearning.models import Category,Course,Status,Subject,Attach,Video,Lesson,Enrollment,Vote,Comment, Course_Vote, TesterSheet
-from django.core.urlresolvers import reverse
 from datetime import timedelta
+from django.contrib import admin
+from django.core.urlresolvers import reverse
+from ajax_select import make_ajax_form
+from ajax_select.admin import AjaxSelectAdmin
+from elearning.models import Category,Course,Status,Subject,Attach,Video,Lesson,Enrollment,Vote,Comment, Course_Vote, TesterSheet
 
 
 class AttachAdmin(admin.ModelAdmin):
     list_display = ('lesson','file','get_course',)
+    form = make_ajax_form(Video,{'lesson':'lesson'})
 
     def get_course(self,object):
         url = reverse('admin:%s_%s_change' %( object.lesson.subject.course._meta.app_label,   object.lesson.subject.course._meta.module_name),  args=[ object.lesson.subject.course.id] )
@@ -45,8 +48,9 @@ class TesterSheetAdmin(admin.ModelAdmin):
     list_display = ('created_at','course','user','video_rating','audio_rating','course_rating','price_1_rating','price_2_rating','price_2_rating')
 
 
-class VideoAdmin(admin.ModelAdmin):
+class VideoAdmin(AjaxSelectAdmin):
     list_display = ('original_video_file','lesson','video_duration','duration','get_course',)
+    form = make_ajax_form(Video,{'lesson':'lesson'})
 
     def video_duration(self,object):
         duration = 0
@@ -61,13 +65,16 @@ class VideoAdmin(admin.ModelAdmin):
     get_course.short_description = 'Course'
     get_course.allow_tags = True
 
+class LessonAdmin(AjaxSelectAdmin):
+    form = make_ajax_form(Lesson,{'subject':'subject'})
+
 admin.site.register(Category)
 admin.site.register(Course,CourseAdmin)
 admin.site.register(Status)
 admin.site.register(Subject)
 admin.site.register(Attach,AttachAdmin)
 admin.site.register(Video,VideoAdmin)
-admin.site.register(Lesson)
+admin.site.register(Lesson,LessonAdmin)
 admin.site.register(Enrollment,EnrollmentAdmin)
 admin.site.register(Vote)
 admin.site.register(Course_Vote)
