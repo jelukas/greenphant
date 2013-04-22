@@ -22,7 +22,7 @@ class CommentAdmin(admin.ModelAdmin):
 
 
 class EnrollmentAdmin(admin.ModelAdmin):
-    list_display = ('user','get_user_email','course','start_date','tester','active')
+    list_display = ('user','get_user_email','course','start_date','tester','has_filled_testersheet','active')
 
     def get_user_email(self,object):
         url = reverse('admin:%s_%s_change' %( object.user._meta.app_label,   object.user._meta.module_name),  args=[ object.user_id] )
@@ -30,6 +30,13 @@ class EnrollmentAdmin(admin.ModelAdmin):
     get_user_email.short_description = 'View User'
     get_user_email.allow_tags = True
 
+    def has_filled_testersheet(self,object):
+        html =  u'<img src="/static/admin/img/icon-no.gif" alt="False">'
+        if TesterSheet.objects.filter(user=object.user, course=object.course):
+            html =  u'<img src="/static/admin/img/icon-yes.gif" alt="True">'
+        return html
+    has_filled_testersheet.short_description = 'Filled Testersheet'
+    has_filled_testersheet.allow_tags = True
 
 class CourseAdmin(admin.ModelAdmin):
     list_display = ('title','user','get_owner_email','price','status','category','created_at','published_at','learning_course')
