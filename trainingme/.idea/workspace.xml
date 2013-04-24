@@ -25,46 +25,10 @@
   <component name="ExecutionTargetManager" SELECTED_TARGET="default_target" />
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="base.html" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/templates/base.html">
+      <file leaf-file-name="team.html" pinned="false" current="true" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/templates/pages/team.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="17" column="48" selection-start="801" selection-end="801" vertical-scroll-proportion="-0.625">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="learning_course.html" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/elearning/templates/elearning/course/learning_course.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="26" column="48" selection-start="1443" selection-end="1462" vertical-scroll-proportion="-16.25">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="views.py" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/elearning/views.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="475" column="62" selection-start="22237" selection-end="22250" vertical-scroll-proportion="0.0">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="main.js" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/static/js/main.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="styles.less" pinned="false" current="true" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/static/css/styles.less">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="2066" column="14" selection-start="35981" selection-end="35981" vertical-scroll-proportion="0.8744019">
+            <state line="38" column="74" selection-start="2370" selection-end="2370" vertical-scroll-proportion="0.6363636">
               <folding />
             </state>
           </provider>
@@ -80,7 +44,6 @@
   <component name="IdeDocumentHistory">
     <option name="changedFiles">
       <list>
-        <option value="$PROJECT_DIR$/personal/management/commands/autoenrrollall.py" />
         <option value="$PROJECT_DIR$/personal/models.py" />
         <option value="$PROJECT_DIR$/financial/management/commands/clear_amounts.py" />
         <option value="$PROJECT_DIR$/elearning/management/commands/testers_checking.py" />
@@ -96,6 +59,7 @@
         <option value="$PROJECT_DIR$/elearning/views.py" />
         <option value="$PROJECT_DIR$/elearning/templates/elearning/course/learning_course.html" />
         <option value="$PROJECT_DIR$/static/css/styles.less" />
+        <option value="$PROJECT_DIR$/templates/pages/team.html" />
       </list>
     </option>
   </component>
@@ -159,7 +123,7 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="static" />
+              <option name="myItemId" value="templates" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -173,11 +137,11 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="static" />
+              <option name="myItemId" value="templates" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="css" />
+              <option name="myItemId" value="pages" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -448,11 +412,6 @@
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/elearning/management/commands/convert.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" />
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/elearning/decorators.py">
       <provider selected="true" editor-type-id="text-editor">
         <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" />
@@ -550,6 +509,13 @@
     <entry file="file://$PROJECT_DIR$/static/css/styles.less">
       <provider selected="true" editor-type-id="text-editor">
         <state line="2066" column="14" selection-start="35981" selection-end="35981" vertical-scroll-proportion="0.8744019">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/pages/team.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="38" column="74" selection-start="2370" selection-end="2370" vertical-scroll-proportion="0.6363636">
           <folding />
         </state>
       </provider>
