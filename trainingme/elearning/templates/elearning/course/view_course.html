@@ -218,6 +218,22 @@
                 return $(this).attr('data-rating');
             }
         });
+
+        // Initiate Countdown
+        jQuery(document).ready(function() {
+            $('#countdown_dashboard').countDown({
+                targetOffset: {
+                    'day': 		0,
+                    'month': 	0,
+                    'year': 	1,
+                    'hour': 	0,
+                    'min': 		0,
+                    'sec': 		3
+                },
+                omitWeeks: true
+            });
+        });
+
     </script>
     <script type="text/javascript">var switchTo5x=true;</script>
     <script type="text/javascript" src="http://w.sharethis.com/button/buttons.js"></script>

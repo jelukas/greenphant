@@ -18,7 +18,7 @@ from django.views.decorators.http import require_POST
 from elearning.decorators import ajax_required
 from django.http import HttpResponseNotFound, Http404
 from django.core.exceptions import ObjectDoesNotExist
-from datetime import datetime
+from datetime import datetime, timedelta
 from django.template.defaultfilters import slugify
 from django.db import IntegrityError
 from django.db.models import Q
@@ -470,6 +470,10 @@ def learning_course(request,course_id):
             elif not course.user_had_filled_testersheet_course(request.user.id):
                 testersheet_form = TesterSheetForm()
                 context.update({'testersheet_form': testersheet_form})
+            if enrrollment[0].tester:
+                thirty_days = timedelta(days=30)
+                end_test_date = enrrollment[0].start_date + thirty_days
+                context.update({'end_test_date': end_test_date})
     return render_to_response('elearning/course/learning_course.html',context,context_instance = RequestContext(request))
 
 

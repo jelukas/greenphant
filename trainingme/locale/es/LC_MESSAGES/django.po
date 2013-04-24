@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2013-04-22 09:05+0200\n"
-"PO-Revision-Date: 2013-04-22 09:08+0000\n"
+"POT-Creation-Date: 2013-04-24 10:44+0200\n"
+"PO-Revision-Date: 2013-04-24 10:45+0000\n"
 "Last-Translator:  Garcia Perez <jlucas@guadalux.org>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "MIME-Version: 1.0\n"
@@ -162,7 +162,7 @@ msgstr "Fecha de Inicio"
 
 #: elearning/models.py:364 elearning/models.py:395
 #: elearning/templates/elearning/building_course.html:46
-#: elearning/templates/elearning/course/learning_course.html:50
+#: elearning/templates/elearning/course/learning_course.html:86
 #: elearning/templates/elearning/course/learning_lesson.html:20
 #: elearning/templates/elearning/course/preview_lesson.html:20
 #: elearning/templates/elearning/course/view_course.html:69
@@ -170,15 +170,15 @@ msgid "Lesson"
 msgstr "Lección"
 
 #: elearning/models.py:366 elearning/templates/elearning/home.html:158
-#: elearning/templates/elearning/home.html:210
-#: elearning/templates/elearning/home.html:258
+#: elearning/templates/elearning/home.html:220
+#: elearning/templates/elearning/home.html:278
 #: elearning/templates/elearning/home_2.html:86
 #: elearning/templates/elearning/home_2.html:138
 msgid "Points"
 msgstr "Calificación"
 
 #: elearning/models.py:380
-#: elearning/templates/elearning/course/learning_course.html:126
+#: elearning/templates/elearning/course/learning_course.html:162
 #: elearning/templates/elearning/course/preview_lesson.html:42
 msgid "Rating"
 msgstr "Calificación"
@@ -197,7 +197,7 @@ msgstr "Mensaje"
 msgid "Comment"
 msgstr "Comentar"
 
-#: elearning/models.py:420
+#: elearning/models.py:421
 msgid "New comment on your course: "
 msgstr "Nuevo comentario en tu curso: "
 
@@ -321,39 +321,39 @@ msgstr "TrainingMe.net - Nueva Evaluación"
 msgid "has evaluated your course: "
 msgstr "ha evaluado tu curso:"
 
-#: elearning/views.py:487 elearning/views.py:517
+#: elearning/views.py:491 elearning/views.py:521
 msgid "You are not enrroled in that course: "
 msgstr "No estás matriculado en este curso: "
 
-#: elearning/views.py:499
+#: elearning/views.py:503
 msgid "Comment send sucesfully"
 msgstr "Comentario enviado correctamente"
 
-#: elearning/views.py:529
+#: elearning/views.py:533
 msgid "Reply sucesfully"
 msgstr "Respuesta enviada"
 
-#: elearning/views.py:563
+#: elearning/views.py:567
 msgid "This Course is not Published: "
 msgstr "Este curso no está publicado: "
 
-#: elearning/views.py:571
+#: elearning/views.py:575
 msgid "You can not vote twice this lesson: "
 msgstr "No puedes votar dos veces esta lección: "
 
-#: elearning/views.py:573
+#: elearning/views.py:577
 msgid "You have Rated the lesson with "
 msgstr "Has calificado esta lección con "
 
-#: elearning/views.py:589
+#: elearning/views.py:593
 msgid "You can not vote twice this course: "
 msgstr "No puedes votar dos veces este curso: "
 
-#: elearning/views.py:591
+#: elearning/views.py:595
 msgid "You have Rated the course with "
 msgstr "Has calificado el curso con"
 
-#: elearning/views.py:604
+#: elearning/views.py:608
 msgid ""
 "You have to fill at least: Firstname, Lastname, Subtitle, Description, "
 "Country, State and Profile Image"
@@ -361,7 +361,7 @@ msgstr ""
 "Para ser evaluador debes rellenar al menos: Tu nombre, apellidos, subtitulo,"
 " descripción, País, Estado o Provincia y tu Imagen de Perfil"
 
-#: elearning/views.py:616
+#: elearning/views.py:620
 msgid "You can't be tester on that Course. Theare are 5/5 Testers"
 msgstr ""
 "No puedes ser evaluador de este curso. Ya hay 5 Evaluadores de 5 posibles."
@@ -476,7 +476,7 @@ msgid "Edit Subject"
 msgstr "Editar Tema"
 
 #: elearning/templates/elearning/building_course.html:25
-#: elearning/templates/elearning/course/learning_course.html:42
+#: elearning/templates/elearning/course/learning_course.html:78
 #: elearning/templates/elearning/course/learning_lesson.html:15
 #: elearning/templates/elearning/course/preview_lesson.html:15
 #: elearning/templates/elearning/course/view_course.html:61
@@ -527,14 +527,14 @@ msgstr "¿Seguro que quieres borrar esta lección?"
 #: elearning/templates/elearning/dashboard.html:7
 #: elearning/templates/elearning/dashboard_learning.html:6
 #: elearning/templates/elearning/dashboard_teaching.html:6
-#: templates/base.html:159
+#: templates/base.html:158
 msgid "Learning"
 msgstr "Aprendiendo"
 
 #: elearning/templates/elearning/dashboard.html:8
 #: elearning/templates/elearning/dashboard_learning.html:7
 #: elearning/templates/elearning/dashboard_teaching.html:7
-#: templates/base.html:160
+#: templates/base.html:159
 msgid "Teaching"
 msgstr "Enseñando"
 
@@ -594,8 +594,8 @@ msgstr "Título del curso"
 
 #: elearning/templates/elearning/edit_course.html:23
 #: elearning/templates/elearning/home.html:157
-#: elearning/templates/elearning/home.html:209
-#: elearning/templates/elearning/home.html:257
+#: elearning/templates/elearning/home.html:219
+#: elearning/templates/elearning/home.html:277
 #: elearning/templates/elearning/home_2.html:85
 #: elearning/templates/elearning/home_2.html:137
 #: elearning/templates/elearning/new_course.html:23
@@ -726,22 +726,34 @@ msgid "Evaluation Period Courses"
 msgstr "Cursos en Periodo de Evaluacion"
 
 #: elearning/templates/elearning/home.html:156
-#: elearning/templates/elearning/home.html:208
-#: elearning/templates/elearning/home.html:256
+#: elearning/templates/elearning/home.html:218
+#: elearning/templates/elearning/home.html:276
 #: elearning/templates/elearning/home_2.html:84
 #: elearning/templates/elearning/home_2.html:136
 msgid "Enrolls"
 msgstr "Matriculados"
 
-#: elearning/templates/elearning/home.html:162
-#: elearning/templates/elearning/home.html:214
-#: elearning/templates/elearning/home.html:262
+#: elearning/templates/elearning/home.html:164
+#: elearning/templates/elearning/home.html:226
+#: elearning/templates/elearning/home.html:284
 #: elearning/templates/elearning/home_2.html:90
 #: elearning/templates/elearning/home_2.html:142
 msgid "Free !"
 msgstr "Gratis !"
 
-#: elearning/templates/elearning/home.html:169
+#: elearning/templates/elearning/home.html:166
+#: elearning/templates/elearning/home.html:228
+#: elearning/templates/elearning/home.html:286
+msgid "Testing"
+msgstr "Evaluación"
+
+#: elearning/templates/elearning/home.html:168
+#: elearning/templates/elearning/home.html:230
+#: elearning/templates/elearning/home.html:288
+msgid "Building"
+msgstr "En construcción"
+
+#: elearning/templates/elearning/home.html:179
 #: elearning/templates/elearning/home_2.html:97
 msgid "More Courses"
 msgstr "Más Cursos"
@@ -792,54 +804,75 @@ msgstr "Curso"
 msgid "default_video_image_en.jpg"
 msgstr "default_video_image_es.jpg"
 
-#: elearning/templates/elearning/course/learning_course.html:68
+#: elearning/templates/elearning/course/learning_course.html:25
+msgid "Time limit to complete Tester Sheet"
+msgstr "Tiempo límite para rellenar la ficha de Evaluación"
+
+#: elearning/templates/elearning/course/learning_course.html:30
+#: templates/registration/activation_email.txt:6
+msgid "days"
+msgstr "días"
+
+#: elearning/templates/elearning/course/learning_course.html:36
+msgid "hours"
+msgstr "horas"
+
+#: elearning/templates/elearning/course/learning_course.html:42
+msgid "minutes"
+msgstr "minutos"
+
+#: elearning/templates/elearning/course/learning_course.html:48
+msgid "seconds"
+msgstr "segundos"
+
+#: elearning/templates/elearning/course/learning_course.html:104
 msgid "Evaluation Sheet"
 msgstr "Ficha de Evaluacion"
 
-#: elearning/templates/elearning/course/learning_course.html:88
+#: elearning/templates/elearning/course/learning_course.html:124
 msgid "What do you think about this course?"
 msgstr "¿Qué opinas de este curso?"
 
-#: elearning/templates/elearning/course/learning_course.html:93
+#: elearning/templates/elearning/course/learning_course.html:129
 msgid "Would you buy this course?"
 msgstr "¿Comprarías este curso con este precio?"
 
-#: elearning/templates/elearning/course/learning_course.html:109
-#: elearning/templates/elearning/course/learning_course.html:127
+#: elearning/templates/elearning/course/learning_course.html:145
+#: elearning/templates/elearning/course/learning_course.html:163
 msgid "Rate"
 msgstr "Calificar"
 
-#: elearning/templates/elearning/course/learning_course.html:109
+#: elearning/templates/elearning/course/learning_course.html:145
 msgid "Send Evaluation"
 msgstr "Enviar Evaluación"
 
-#: elearning/templates/elearning/course/learning_course.html:114
+#: elearning/templates/elearning/course/learning_course.html:150
 #: elearning/templates/elearning/course/view_course.html:92
 msgid "Course Rating "
 msgstr "Calificación del Curso"
 
-#: elearning/templates/elearning/course/learning_course.html:135
+#: elearning/templates/elearning/course/learning_course.html:171
 #: elearning/templates/elearning/course/view_course.html:96
 msgid "Ratings"
 msgstr "Calificaciones"
 
-#: elearning/templates/elearning/course/learning_course.html:148
+#: elearning/templates/elearning/course/learning_course.html:184
 #: elearning/templates/elearning/course/view_course.html:109
 msgid "By"
 msgstr "por"
 
-#: elearning/templates/elearning/course/learning_course.html:149
+#: elearning/templates/elearning/course/learning_course.html:185
 #: elearning/templates/elearning/course/view_course.html:110
 #, python-format
 msgid " %(created_at)s ago"
 msgstr "hace %(created_at)s "
 
-#: elearning/templates/elearning/course/learning_course.html:155
+#: elearning/templates/elearning/course/learning_course.html:191
 #: elearning/templates/elearning/course/view_course.html:116
 msgid "There is no ratings right now"
 msgstr "No hay calificaciones en este momento"
 
-#: elearning/templates/elearning/course/learning_course.html:183
+#: elearning/templates/elearning/course/learning_course.html:219
 #: elearning/templates/elearning/course/view_course.html:144
 msgid "Free Video"
 msgstr "Video de Promoción"
@@ -2254,7 +2287,7 @@ msgid "Messages List"
 msgstr "Lista de Mensajes"
 
 #: personal/templates/personal/list_messages.html:9
-#: personal/templates/personal/view_conversation.html:6 templates/base.html:63
+#: personal/templates/personal/view_conversation.html:6 templates/base.html:62
 msgid "Messages"
 msgstr "Mensajes"
 
@@ -2290,7 +2323,7 @@ msgid "Since "
 msgstr "Hace"
 
 #: personal/templates/personal/view_profile.html:2
-#: personal/templates/personal/view_profile.html:7 templates/base.html:82
+#: personal/templates/personal/view_profile.html:7 templates/base.html:81
 msgid "My Profile"
 msgstr "Mi Perfil"
 
@@ -2406,83 +2439,83 @@ msgstr ""
 msgid "TrainingMe.Net - New Elearning Plataform"
 msgstr "TrainingMe.Net - Nueva Plataforma Elearning"
 
-#: templates/base.html:57
+#: templates/base.html:56
 msgid "My Courses"
 msgstr "Mis Cursos"
 
-#: templates/base.html:58
+#: templates/base.html:57
 msgid "Create New Course"
 msgstr "Crear Nuevo Curso"
 
-#: templates/base.html:59
+#: templates/base.html:58
 msgid "Search Courses"
 msgstr "Encontrar Cursos"
 
-#: templates/base.html:61
+#: templates/base.html:60
 msgid "Social Project"
 msgstr "Proyecto Social"
 
-#: templates/base.html:74
+#: templates/base.html:73
 msgid "View all Messages"
 msgstr "Ver todos mis mensajes"
 
-#: templates/base.html:83
+#: templates/base.html:82
 msgid "Earnings"
 msgstr "Ganancias"
 
-#: templates/base.html:85
+#: templates/base.html:84
 msgid "Logout"
 msgstr "Cerrar Sesión"
 
-#: templates/base.html:109
+#: templates/base.html:108
 msgid "Login or Register"
 msgstr "Entra o Regístrate"
 
-#: templates/base.html:140
+#: templates/base.html:139
 msgid "About TrainingMe.Net"
 msgstr "Acerca de TrainingMe.net"
 
-#: templates/base.html:142
+#: templates/base.html:141
 msgid "Mission, Vision and Values"
 msgstr "Misión, Visión y Valores"
 
-#: templates/base.html:143
+#: templates/base.html:142
 msgid "Team"
 msgstr "Equipo"
 
-#: templates/base.html:144
+#: templates/base.html:143
 msgid "Blog"
 msgstr "Blog"
 
-#: templates/base.html:150
+#: templates/base.html:149
 msgid "FAQ"
 msgstr "FAQ"
 
-#: templates/base.html:151
+#: templates/base.html:150
 msgid "Terms of Use"
 msgstr "Terminos de Uso"
 
-#: templates/base.html:152
+#: templates/base.html:151
 msgid "Privacy Policy"
 msgstr "Política de Privacidad"
 
-#: templates/base.html:153
+#: templates/base.html:152
 msgid "Contact"
 msgstr "Contacto"
 
-#: templates/base.html:157
+#: templates/base.html:156
 msgid "Enjoy"
 msgstr "Disfruta"
 
-#: templates/base.html:161
+#: templates/base.html:160
 msgid "Helping"
 msgstr "Ayudando"
 
-#: templates/base.html:165
+#: templates/base.html:164
 msgid "Talk about us"
 msgstr "Hablan de Nosotros"
 
-#: templates/base.html:172
+#: templates/base.html:171
 msgid "Follow us"
 msgstr "Síguenos"
 
@@ -2560,10 +2593,6 @@ msgstr "Tú (o alguien haciéndose pasar por tí) quiere registrar una cuenta en
 msgid ""
 "To activate this account, please click the following link within the next"
 msgstr "Para activar esta cuenta, por favor haga clic en el siguiente enlace"
-
-#: templates/registration/activation_email.txt:6
-msgid "days"
-msgstr "días"
 
 #: templates/registration/activation_email.txt:10
 msgid "Sincerely"

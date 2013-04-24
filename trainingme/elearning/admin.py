@@ -43,7 +43,6 @@ class CourseAdmin(admin.ModelAdmin):
     list_filter = ('status',)
     search_fields = ['title','user__email']
 
-
     def learning_course(self,object):
         url = reverse('elearning.views.learning_course', args=(object.id,))
         return u'<a href="%s">%s</a>' %(url, 'View In Site')
