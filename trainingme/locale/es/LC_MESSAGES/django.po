@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2013-04-24 10:44+0200\n"
-"PO-Revision-Date: 2013-04-24 10:45+0000\n"
+"POT-Creation-Date: 2013-04-26 10:55+0200\n"
+"PO-Revision-Date: 2013-04-26 10:56+0000\n"
 "Last-Translator:  Garcia Perez <jlucas@guadalux.org>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "MIME-Version: 1.0\n"
@@ -321,39 +321,39 @@ msgstr "TrainingMe.net - Nueva Evaluación"
 msgid "has evaluated your course: "
 msgstr "ha evaluado tu curso:"
 
-#: elearning/views.py:491 elearning/views.py:521
+#: elearning/views.py:493 elearning/views.py:523
 msgid "You are not enrroled in that course: "
 msgstr "No estás matriculado en este curso: "
 
-#: elearning/views.py:503
+#: elearning/views.py:505
 msgid "Comment send sucesfully"
 msgstr "Comentario enviado correctamente"
 
-#: elearning/views.py:533
+#: elearning/views.py:535
 msgid "Reply sucesfully"
 msgstr "Respuesta enviada"
 
-#: elearning/views.py:567
+#: elearning/views.py:569
 msgid "This Course is not Published: "
 msgstr "Este curso no está publicado: "
 
-#: elearning/views.py:575
+#: elearning/views.py:577
 msgid "You can not vote twice this lesson: "
 msgstr "No puedes votar dos veces esta lección: "
 
-#: elearning/views.py:577
+#: elearning/views.py:579
 msgid "You have Rated the lesson with "
 msgstr "Has calificado esta lección con "
 
-#: elearning/views.py:593
+#: elearning/views.py:595
 msgid "You can not vote twice this course: "
 msgstr "No puedes votar dos veces este curso: "
 
-#: elearning/views.py:595
+#: elearning/views.py:597
 msgid "You have Rated the course with "
 msgstr "Has calificado el curso con"
 
-#: elearning/views.py:608
+#: elearning/views.py:610
 msgid ""
 "You have to fill at least: Firstname, Lastname, Subtitle, Description, "
 "Country, State and Profile Image"
@@ -361,7 +361,7 @@ msgstr ""
 "Para ser evaluador debes rellenar al menos: Tu nombre, apellidos, subtitulo,"
 " descripción, País, Estado o Provincia y tu Imagen de Perfil"
 
-#: elearning/views.py:620
+#: elearning/views.py:622
 msgid "You can't be tester on that Course. Theare are 5/5 Testers"
 msgstr ""
 "No puedes ser evaluador de este curso. Ya hay 5 Evaluadores de 5 posibles."
@@ -751,7 +751,7 @@ msgstr "Evaluación"
 #: elearning/templates/elearning/home.html:230
 #: elearning/templates/elearning/home.html:288
 msgid "Building"
-msgstr "En construcción"
+msgstr "Creando"
 
 #: elearning/templates/elearning/home.html:179
 #: elearning/templates/elearning/home_2.html:97
@@ -876,6 +876,24 @@ msgstr "No hay calificaciones en este momento"
 #: elearning/templates/elearning/course/view_course.html:144
 msgid "Free Video"
 msgstr "Video de Promoción"
+
+#: elearning/templates/elearning/course/learning_course.html:228
+msgid "Thank you for your Rating"
+msgstr "Gracias por tu Evaluación"
+
+#: elearning/templates/elearning/course/learning_course.html:231
+msgid "I hope you liked my course. Please help me sharing your opinion"
+msgstr ""
+"Espero que te haya gustado mi curso. Por favor, ayúdame compartiendo  tu "
+"evaluación."
+
+#: elearning/templates/elearning/course/learning_course.html:232
+msgid "Course on TrainingMe.net"
+msgstr "Curso en TrainingMe.net"
+
+#: elearning/templates/elearning/course/learning_course.html:232
+msgid "share_on_facebook-en.png"
+msgstr "share_on_facebook-es.png"
 
 #: elearning/templates/elearning/course/learning_lesson.html:32
 #: elearning/templates/elearning/course/preview_lesson.html:32

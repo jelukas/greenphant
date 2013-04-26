@@ -460,7 +460,7 @@ def learning_course(request,course_id):
                     message.to_user_id = course.user_id
                     message.message = _('User')+' '+testersheet.user.username+' '+_('has evaluated your course: ')+course.title
                     message.save()
-
+                    return HttpResponseRedirect(reverse('elearning.views.learning_course', args=(course.id,))+'#!/popup=true')
                 else:
                     context.update({'testersheet_form': testersheet_form})
         else:
@@ -470,10 +470,12 @@ def learning_course(request,course_id):
             elif not course.user_had_filled_testersheet_course(request.user.id):
                 testersheet_form = TesterSheetForm()
                 context.update({'testersheet_form': testersheet_form})
-            if enrrollment[0].tester:
                 thirty_days = timedelta(days=30)
                 end_test_date = enrrollment[0].start_date + thirty_days
                 context.update({'end_test_date': end_test_date})
+            else:
+                user_testersheet = TesterSheet.objects.get(user_id=request.user.id,course_id=course_id)
+                context.update({'user_testersheet': user_testersheet})
     return render_to_response('elearning/course/learning_course.html',context,context_instance = RequestContext(request))
 
 

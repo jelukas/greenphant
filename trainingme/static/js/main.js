@@ -17,6 +17,7 @@ _V_("video_course").ready(function(){
     window.onresize = resizeVideoJS; // Call the function on resize
 });
 
+
 function document_ready(){
     $('#freeVideo').on('hidden', function () {
         myPlayer.pause();
@@ -31,4 +32,28 @@ function document_ready(){
         $('#loading-modal').modal('toggle');
         return true;
     });
+
+    $(window).on('hashchange',hashchanged);
+
+    $("#share_facebook").on('hidden', function () {
+        window.location.hash = '#!/popup=false';
+    });
+    hash_router(window);
+}
+
+
+function hashchanged(event){
+    hash_router(event.target);
+}
+
+
+function hash_router(window){
+    if(window.location.hash == '#!/popup=true'){
+        //Show Popup
+        $("#share_facebook").modal('show');
+
+    }else{
+        //hide popup
+        $("#share_facebook").modal('hide');
+    }
 }

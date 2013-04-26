@@ -221,6 +221,17 @@
         <div class="modal-body">
         </div>
     </div>
+    <!-- Modal share Evaluation on Facebook-->
+    <div id="share_facebook" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="share_facebook_label" aria-hidden="true">
+        <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+            <h3 id="share_facebook_label">{% trans 'Thank you for your Rating' %}</h3>
+        </div>
+        <div class="modal-body pagination-centered">
+            <p>{% if course.user.get_profile.image %}{% thumbnail course.user.get_profile.image "x75" as im %}<img class="img-circle" src="{{ im.url }}" alt="{{ course.user.username }}" />{% endthumbnail %}{% endif %} {% trans 'I hope you liked my course. Please help me sharing your opinion' %}</p>
+            <p><a target="_blank" href="https://www.facebook.com/dialog/feed?app_id=560302190653717&link={{ course.get_url }}&picture=http://trainingme.net/static/img/logo-color.png&name={{ course.title }}&caption={% trans 'Course on TrainingMe.net' %}&description={{ user_testersheet.comment }}&redirect_uri=http://trainingme.net/"><img src="{{ STATIC_URL }}img/social/{% trans 'share_on_facebook-en.png' %}" /></a></p>
+        </div>
+    </div>
 {% endblock %}
 {% block footerscripts %}
     {{ block.super }}

@@ -140,7 +140,9 @@
                                 <ul class="unstyled course-teacher">
                                     <li class="avatar">
                                         {% if course.user.get_profile.image %}
-                                            <img src="{{ course.user.get_profile.image.url }}"  class="img-rounded"/>
+                                            {% thumbnail course.user.get_profile.image "x52" as im %}
+                                                <img src="{{ im.url }}"  class="img-rounded"/>
+                                            {% endthumbnail %}
                                         {% else %}
                                             <img src="{{ STATIC_URL }}img/default_profile.png" alt="{{ course.user.get_full_name }}"  class="img-rounded" />
                                         {% endif %}
@@ -202,7 +204,9 @@
                                 <ul class="unstyled course-teacher">
                                     <li class="avatar">
                                         {% if course.user.get_profile.image %}
-                                            <img src="{{ course.user.get_profile.image.url }}"  class="img-rounded"/>
+                                            {% thumbnail course.user.get_profile.image "x52" as im %}
+                                                <img src="{{ im.url }}"  class="img-rounded"/>
+                                            {% endthumbnail %}
                                         {% else %}
                                             <img src="{{ STATIC_URL }}img/default_profile.png" alt="{{ course.user.get_full_name }}"  class="img-rounded" />
                                         {% endif %}
@@ -260,7 +264,9 @@
                                 <ul class="unstyled course-teacher">
                                     <li class="avatar">
                                         {% if course.user.get_profile.image %}
-                                            <img src="{{ course.user.get_profile.image.url }}"  class="img-rounded"/>
+                                            {% thumbnail course.user.get_profile.image "x52" as im %}
+                                                <img src="{{ im.url }}"  class="img-rounded"/>
+                                            {% endthumbnail %}
                                         {% else %}
                                             <img src="{{ STATIC_URL }}img/default_profile.png" alt="{{ course.user.get_full_name }}"  class="img-rounded" />
                                         {% endif %}
