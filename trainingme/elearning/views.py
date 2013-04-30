@@ -80,7 +80,7 @@ def edit_course(request,course_id):
 @login_required()
 @owner_required(Course)
 def building_course(request,course_id):
-    course = get_object_or_404(Course,pk=course_id,status = Status.objects.get(name="building"))
+    course = get_object_or_404(Course,pk=course_id,status__name__in=['building','evaluation period'])
     return render_to_response('elearning/building_course.html',{'course':course},context_instance = RequestContext(request))
 
 
@@ -105,7 +105,7 @@ def change_checking_status(request,course_id):
 @login_required()
 @owner_required(Course)
 def add_subject(request,course_id):
-    course = get_object_or_404(Course,pk = course_id,status__name = 'building')
+    course = get_object_or_404(Course,pk = course_id,status__name__in = ['building','evaluation period'])
     if request.method == 'POST': # If the form has been submitted...
         subject_form = SubjectForm(request.POST) # A form bound to the POST data
         if subject_form.is_valid(): # All validation rules pass
@@ -133,7 +133,6 @@ def edit_subject(request,subject_id):
         if subject_form.is_valid(): # All validation rules pass
             # Process the data in form.cleaned_data
             subject = subject_form.save(commit=False)
-            subject.order = 1
             subject.save()
             messages.success(request,_('Subject updated successfully'))
             return HttpResponseRedirect(reverse('elearning.views.building_course', args=(subject.course.id,))) # Redirect after POST
@@ -149,12 +148,12 @@ def edit_subject(request,subject_id):
 def delete_subject(request,subject_id):
     subject = get_object_or_404(Subject,pk=subject_id)
     course = subject.course
-    if course.status.name == 'building':
+    if course.status.name == 'building' or course.status.name == 'evaluation period':
         subject.delete()
         messages.success(request,_('Subject deleted successfully'))
         return_dict = (reverse('elearning.views.building_course', args=(course.id,))) # Redirect after POST
     else:
-        messages.error(request,_('Course is not in Building Status'))
+        messages.error(request,_('Course is not editable'))
         return_dict = (reverse('elearning.views.teaching',)) # Redirect after POST
     return HttpResponseRedirect(return_dict) # Redirect after POST
 
@@ -163,7 +162,7 @@ def delete_subject(request,subject_id):
 @login_required()
 @owner_required(Subject)
 def up_order_subject(request,subject_id):
-    subject = get_object_or_404(Subject,pk=subject_id,course__status__name="building")
+    subject = get_object_or_404(Subject,pk=subject_id,course__status__name__in=["building",'evaluation period'])
     course = subject.course
     subject.order = subject.order - 1
     subject.save()
@@ -176,7 +175,7 @@ def up_order_subject(request,subject_id):
 @login_required()
 @owner_required(Subject)
 def down_order_subject(request,subject_id):
-    subject = get_object_or_404(Subject,pk=subject_id,course__status__name="building")
+    subject = get_object_or_404(Subject,pk=subject_id,course__status__name__in=["building",'evaluation period'])
     course = subject.course
     subject.order = subject.order + 1
     subject.save()
@@ -189,7 +188,7 @@ def down_order_subject(request,subject_id):
 @login_required()
 @owner_required(Lesson)
 def up_order_lesson(request,lesson_id):
-    lesson = get_object_or_404(Lesson,pk=lesson_id,subject__course__status__name="building")
+    lesson = get_object_or_404(Lesson,pk=lesson_id,subject__course__status__name__in=["building",'evaluation period'])
     course_id = lesson.subject.course_id
     lesson.order = lesson.order - 1
     lesson.save()
@@ -202,7 +201,7 @@ def up_order_lesson(request,lesson_id):
 @login_required()
 @owner_required(Lesson)
 def down_order_lesson(request,lesson_id):
-    lesson = get_object_or_404(Lesson,pk=lesson_id,subject__course__status__name="building")
+    lesson = get_object_or_404(Lesson,pk=lesson_id,subject__course__status__name__in=["building",'evaluation period'])
     course_id = lesson.subject.course_id
     lesson.order = lesson.order + 1
     lesson.save()
@@ -215,7 +214,7 @@ def down_order_lesson(request,lesson_id):
 @login_required()
 @owner_required(Subject)
 def add_lesson(request,subject_id):
-    subject = get_object_or_404(Subject,pk=subject_id,course__status__name = 'building')
+    subject = get_object_or_404(Subject,pk=subject_id,course__status__name__in=["building",'evaluation period'])
     if request.method == 'POST': # If the form has been submitted...
         lesson_form = LessonForm(request.POST) # A form bound to the POST data
         video_form = VideoForm(request.POST,request.FILES) # A form bound to the POST data
@@ -241,9 +240,9 @@ def add_lesson(request,subject_id):
 @login_required()
 @owner_required(Lesson)
 def edit_lesson(request,lesson_id):
-    lesson = get_object_or_404(Lesson,pk=lesson_id,subject__course__status__name = 'building')
+    lesson = get_object_or_404(Lesson,pk=lesson_id,subject__course__status__name__in=["building",'evaluation period'])
     try:
-        video = Video.objects.get(pk=lesson.video.id,lesson__subject__course__status__name = 'building')
+        video = Video.objects.get(pk=lesson.video.id,lesson__subject__course__status__name__in=["building",'evaluation period'])
     except ObjectDoesNotExist:
         video = None
     if request.method == 'POST': # If the form has been submitted...
@@ -252,7 +251,6 @@ def edit_lesson(request,lesson_id):
         if lesson_form.is_valid() and video_form.is_valid(): # All validation rules pass
             # Process the data in form.cleaned_data
             lesson = lesson_form.save(commit=False)
-            lesson.order = 1
             lesson.save()
             video = video_form.save(commit=False)
             video.lesson = lesson
@@ -270,7 +268,7 @@ def edit_lesson(request,lesson_id):
 @login_required()
 @owner_required(Lesson)
 def delete_lesson(request,lesson_id):
-    lesson = get_object_or_404(Lesson,pk=lesson_id,subject__course__status__name = 'building')
+    lesson = get_object_or_404(Lesson,pk=lesson_id,subject__course__status__name__in=["building",'evaluation period'])
     course = lesson.subject.course
     lesson.delete()
     messages.success(request,_('Lesson deleted successfully'))
@@ -626,24 +624,19 @@ def enrroll_tester(request,course_id):
 HOME PAGE
 """
 def home(request):
-    cursos_de_prueba = [51,48,47,20,22,10,54,14]
-    cursos_mas_visitados = [10,54,14,23]
     cursos_destacados = [54,13,29,23]
     from django.contrib.auth.forms import AuthenticationForm
     form = AuthenticationForm(request)
     users_count = User.objects.count()
     if request.POST:
-        cursos_de_prueba = []
-        cursos_mas_visitados = []
         cursos_destacados = []
-        courses_published = Course.objects.filter(Q(short_description__icontains=request.POST['query']) | Q(title__icontains=request.POST['query']),Q(status__name="evaluation period"))
-        courses_building = Course.objects.filter(Q(short_description__icontains=request.POST['query']) | Q(title__icontains=request.POST['query']), Q(status__name="building")).exclude(id__in = cursos_de_prueba)
+        courses_published = Course.objects.filter(Q(short_description__icontains=request.POST['query']) | Q(title__icontains=request.POST['query']),Q(status__name="published"))
+        courses_evaluation_period = Course.objects.filter(Q(short_description__icontains=request.POST['query']) | Q(title__icontains=request.POST['query']),Q(status__name="evaluation period"))
     else:
-        courses_published = Course.objects.filter(Q(status__name="evaluation period"))
-        courses_building = Course.objects.filter(Q(status__name="building")).exclude(id__in = cursos_de_prueba)
-    cursos_mas_visitados = Course.objects.filter(id__in = cursos_mas_visitados)
-    featured = Course.objects.filter(id__in=cursos_destacados)
-    context = {'courses_published' : courses_published,'courses_building' : courses_building,'cursos_mas_visitados': cursos_mas_visitados, 'users_count' : users_count,'featured': featured, 'form': form}
+        courses_published = Course.objects.filter(Q(status__name="published"))
+        courses_evaluation_period = Course.objects.filter(Q(status__name="evaluation period"))
+    featured_courses = Course.objects.filter(id__in = cursos_destacados)
+    context = {'courses_published' : courses_published,'courses_evaluation_period': courses_evaluation_period, 'featured_courses': featured_courses, 'users_count' : users_count, 'form': form}
     registration_form = RegistrationFormUniqueEmail()
     context.update({'registration_form': registration_form})
     return render_to_response('elearning/home.html',context,context_instance = RequestContext(request))

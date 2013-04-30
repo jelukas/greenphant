@@ -63,7 +63,9 @@
                 {% endfor %}
             </div>
             <div style="text-align: center;">
-                <a class="btn btn-success " href="{% url change_checking_status course.id %}">{% trans "Send to Checking" %}</a>
+                {% if course.status.name == 'building' %}
+                    <a class="btn btn-success " href="{% url change_checking_status course.id %}">{% trans "Send to Checking" %}</a>
+                {% endif %}
                 <a href="{% url add_subject course.id %}" class="btn btn-warning ">{% trans "Add Subject" %}</a>
             </div>
         </div>
