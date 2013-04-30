@@ -186,7 +186,7 @@
                 <h3 class="span12">{% trans 'Evaluation Period Courses' %}</h3>
                 <hr/>
                 <div class="boxLine">
-                    {% for course in courses_published %}
+                    {% for course in courses_evaluation_period %}
                         <div class="span3 cursoBox">
                             <a href="{% url "view_course" course.slug %}">
                                 {% if course.image %}

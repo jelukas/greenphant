@@ -28,7 +28,7 @@
       <file leaf-file-name="views.py" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/elearning/views.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="638" column="177" selection-start="31014" selection-end="31014" vertical-scroll-proportion="0.0">
+            <state line="638" column="109" selection-start="30921" selection-end="30946" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
@@ -37,7 +37,7 @@
       <file leaf-file-name="home.html" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/elearning/templates/elearning/home.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="119" column="54" selection-start="7730" selection-end="7730" vertical-scroll-proportion="0.094827585">
+            <state line="188" column="62" selection-start="12291" selection-end="12291" vertical-scroll-proportion="0.81527096">
               <folding>
                 <element signature="e#857#879#0" expanded="true" />
                 <element signature="e#1153#1175#0" expanded="true" />
@@ -47,10 +47,10 @@
                 <element signature="e#2809#2831#0" expanded="true" />
                 <element signature="e#8193#8263#0" expanded="true" />
                 <element signature="e#8429#8534#0" expanded="true" />
-                <element signature="e#12614#12684#0" expanded="true" />
-                <element signature="e#12850#12955#0" expanded="true" />
-                <element signature="e#17024#17094#0" expanded="true" />
-                <element signature="e#17260#17365#0" expanded="true" />
+                <element signature="e#12622#12692#0" expanded="true" />
+                <element signature="e#12858#12963#0" expanded="true" />
+                <element signature="e#17032#17102#0" expanded="true" />
+                <element signature="e#17268#17373#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -500,14 +500,14 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/elearning/views.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="638" column="177" selection-start="31014" selection-end="31014" vertical-scroll-proportion="0.0">
+        <state line="638" column="109" selection-start="30921" selection-end="30946" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/elearning/templates/elearning/home.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="119" column="54" selection-start="7730" selection-end="7730" vertical-scroll-proportion="0.094827585">
+        <state line="188" column="62" selection-start="12291" selection-end="12291" vertical-scroll-proportion="0.81527096">
           <folding>
             <element signature="e#857#879#0" expanded="true" />
             <element signature="e#1153#1175#0" expanded="true" />
@@ -517,10 +517,10 @@
             <element signature="e#2809#2831#0" expanded="true" />
             <element signature="e#8193#8263#0" expanded="true" />
             <element signature="e#8429#8534#0" expanded="true" />
-            <element signature="e#12614#12684#0" expanded="true" />
-            <element signature="e#12850#12955#0" expanded="true" />
-            <element signature="e#17024#17094#0" expanded="true" />
-            <element signature="e#17260#17365#0" expanded="true" />
+            <element signature="e#12622#12692#0" expanded="true" />
+            <element signature="e#12858#12963#0" expanded="true" />
+            <element signature="e#17032#17102#0" expanded="true" />
+            <element signature="e#17268#17373#0" expanded="true" />
           </folding>
         </state>
       </provider>
