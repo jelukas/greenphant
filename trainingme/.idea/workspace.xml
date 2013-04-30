@@ -37,7 +37,7 @@
       <file leaf-file-name="home.html" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/elearning/templates/elearning/home.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="119" column="21" selection-start="7697" selection-end="7697" vertical-scroll-proportion="0.1317734">
+            <state line="119" column="54" selection-start="7730" selection-end="7730" vertical-scroll-proportion="0.094827585">
               <folding>
                 <element signature="e#857#879#0" expanded="true" />
                 <element signature="e#1153#1175#0" expanded="true" />
@@ -45,12 +45,12 @@
                 <element signature="e#2184#2206#0" expanded="true" />
                 <element signature="e#2495#2517#0" expanded="true" />
                 <element signature="e#2809#2831#0" expanded="true" />
-                <element signature="e#8099#8169#0" expanded="true" />
-                <element signature="e#8335#8440#0" expanded="true" />
-                <element signature="e#12520#12590#0" expanded="true" />
-                <element signature="e#12756#12861#0" expanded="true" />
-                <element signature="e#16930#17000#0" expanded="true" />
-                <element signature="e#17166#17271#0" expanded="true" />
+                <element signature="e#8193#8263#0" expanded="true" />
+                <element signature="e#8429#8534#0" expanded="true" />
+                <element signature="e#12614#12684#0" expanded="true" />
+                <element signature="e#12850#12955#0" expanded="true" />
+                <element signature="e#17024#17094#0" expanded="true" />
+                <element signature="e#17260#17365#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -80,8 +80,8 @@
         <option value="$PROJECT_DIR$/elearning/templates/elearning/course/learning_course.html" />
         <option value="$PROJECT_DIR$/elearning/templates/elearning/building_course.html" />
         <option value="$PROJECT_DIR$/elearning/templates/elearning/dashboard_teaching.html" />
-        <option value="$PROJECT_DIR$/elearning/templates/elearning/home.html" />
         <option value="$PROJECT_DIR$/elearning/views.py" />
+        <option value="$PROJECT_DIR$/elearning/templates/elearning/home.html" />
       </list>
     </option>
   </component>
@@ -507,7 +507,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/elearning/templates/elearning/home.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="119" column="21" selection-start="7697" selection-end="7697" vertical-scroll-proportion="0.1317734">
+        <state line="119" column="54" selection-start="7730" selection-end="7730" vertical-scroll-proportion="0.094827585">
           <folding>
             <element signature="e#857#879#0" expanded="true" />
             <element signature="e#1153#1175#0" expanded="true" />
@@ -515,12 +515,12 @@
             <element signature="e#2184#2206#0" expanded="true" />
             <element signature="e#2495#2517#0" expanded="true" />
             <element signature="e#2809#2831#0" expanded="true" />
-            <element signature="e#8099#8169#0" expanded="true" />
-            <element signature="e#8335#8440#0" expanded="true" />
-            <element signature="e#12520#12590#0" expanded="true" />
-            <element signature="e#12756#12861#0" expanded="true" />
-            <element signature="e#16930#17000#0" expanded="true" />
-            <element signature="e#17166#17271#0" expanded="true" />
+            <element signature="e#8193#8263#0" expanded="true" />
+            <element signature="e#8429#8534#0" expanded="true" />
+            <element signature="e#12614#12684#0" expanded="true" />
+            <element signature="e#12850#12955#0" expanded="true" />
+            <element signature="e#17024#17094#0" expanded="true" />
+            <element signature="e#17260#17365#0" expanded="true" />
           </folding>
         </state>
       </provider>
