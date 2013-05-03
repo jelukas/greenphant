@@ -18,7 +18,7 @@
                             <img src="{{ im.url }}"  class="img-rounded"/>
                         {% endthumbnail %}
                     {% else %}
-                        <img src="{{ STATIC_URL }}img/default_profile.png" alt="{{ enrollment.user.get_full_name }}"  class="img-rounded" />
+                        <img src="{{ STATIC_URL }}img/default_profile.png" alt="{{ enrollment.user.get_full_name }}"  class="img-rounded" style="width: 52px; height: 52px;" />
                     {% endif %}
                 </td>
                 <td>{{ enrollment.user.username }}</td>
