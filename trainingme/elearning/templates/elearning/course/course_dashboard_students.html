@@ -1,0 +1,46 @@
+{% extends 'elearning/course/course_dashboard.html' %}{% load thumbnail %}
+{% block content_dashboard %}
+    <table class="table table-striped">
+        <tr>
+            <th></th>
+            <th>{% trans 'Username' %}</th>
+            <th>{% trans 'fullname' %}</th>
+            <th>{% trans 'Enrollment Start Date' %}</th>
+            <th>{% trans 'Is Tester' %}</th>
+            <th>{% trans 'Enrollment Active' %}</th>
+            <th>{% trans 'Messages' %}</th>
+        </tr>
+        {% for enrollment in course.enrollments.all %}
+            <tr>
+                <td>
+                    {% if enrollment.user.get_profile.image %}
+                        {% thumbnail enrollment.user.get_profile.image "x52" as im %}
+                            <img src="{{ im.url }}"  class="img-rounded"/>
+                        {% endthumbnail %}
+                    {% else %}
+                        <img src="{{ STATIC_URL }}img/default_profile.png" alt="{{ enrollment.user.get_full_name }}"  class="img-rounded" />
+                    {% endif %}
+                </td>
+                <td>{{ enrollment.user.username }}</td>
+                <td>{{ enrollment.user.fullname }}</td>
+                <td>{{ enrollment.start_date }}</td>
+                <td>{% if enrollment.tester %}<img src="{{ STATIC_URL }}admin/img/icon-yes.gif" alt="Yes">{% else %}<img src="{{ STATIC_URL }}admin/img/icon-yes.gif" alt="No">{% endif %}</td>
+                <td>{% if enrollment.active %}<img src="{{ STATIC_URL }}admin/img/icon-yes.gif" alt="Yes">{% else %}<img src="{{ STATIC_URL }}admin/img/icon-yes.gif" alt="No">{% endif %}</td>
+                <td>
+                    <a href="{% url view_conversation enrollment.user.id %}" class="btn" title="{% trans 'View Conversation' %}"><i class="icon-comment"></i></a>
+                    <a href="#myModal" class="btn" role="button" data-remote="{% url send_message enrollment.user.id %}" data-toggle="modal" title="{% trans 'Send Message' %}"><i class="icon-share-alt"></i><i class="icon-envelope"></i></a>
+                </td>
+            </tr>
+        {% endfor %}
+    </table>
+    <!-- Sned Message Modal -->
+    <div id="myModal" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+        <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+            <h3 id="myModalLabel">Modal header</h3>
+        </div>
+        <div class="modal-body">
+
+        </div>
+    </div>
+{% endblock %}

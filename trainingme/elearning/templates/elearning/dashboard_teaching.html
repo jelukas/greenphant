@@ -38,10 +38,9 @@
                                     <a class="btn btn-info" href="{% url building_course course.id %}">{% trans "Continue Building" %}</a>
                                     <a class="btn btn-warning" href="{% url learning_course course.id %}">{% trans "Preview Your Course" %}</a>
                                 {% elif course.status.name == "evaluation period" or course.status.name == "published" %}
-                                    <div class="btn-group">
-                                        <a class="btn btn-success" href="{% url learning_course course.id %}">{% trans "View Your Course" %}</a>
-                                        <a class="btn btn-primary" href="{% url course_evaluation_results course.id %}">{% trans "Evaluation Results" %}</a>
-                                    </div>
+                                    <a class="btn btn-success" href="{% url learning_course course.id %}">{% trans "View Your Course" %}</a>
+                                    <a class="btn btn-primary" href="{% url course_evaluation_results course.id %}">{% trans "Evaluation Results" %}</a>
+                                    <a class="btn btn-warning" href="{% url course_dashboard course.id %}">{% trans "Dashboard" %}</a>
                                 {% endif %}
                             </div>
                         </div>

@@ -1,3 +1,4 @@
+from datetime import datetime
 from django.http import HttpResponseRedirect
 from django.shortcuts import render_to_response, get_object_or_404
 from django.template.context import  RequestContext
@@ -8,7 +9,7 @@ from django.utils.translation import ugettext as _
 from django.contrib.auth import logout
 from django.contrib.auth.models import User
 from django.db.models import Q
-from .forms import ProfileForm, UserForm, EmailForm
+from .forms import ProfileForm, UserForm, EmailForm, MessageForm
 from .models import Message
 
 @login_required
@@ -72,8 +73,28 @@ def list_messages(request):
 
 
 @login_required
+def send_message(request, user_id):
+    context = {'to_user_id': user_id}
+    send_message = MessageForm(request.POST or None)
+    if request.method == 'POST': # If the form has been submitted...
+        if send_message.is_valid():
+            message = send_message.save(commit=False)
+            message.created_at = datetime.now()
+            message.from_user_id = request.user.id
+            message.to_user_id = user_id
+            message.is_read = False
+            message.subject = _('New Message')
+            message.save()
+            return HttpResponseRedirect(reverse('view_conversation',args=(user_id,)))
+    context.update({ 'send_message': send_message  })
+    return render_to_response('personal/send_message.html',context,context_instance = RequestContext(request))
+
+
+
+@login_required
 def view_conversation(request,with_user_id,msg_id=None):
-    msgs = Message.objects.filter(Q(from_user_id=with_user_id) | Q(to_user_id=with_user_id),).order_by('-created_at')
+    #msgs = Message.objects.filter(Q(from_user_id=with_user_id) | Q(to_user_id=with_user_id),).order_by('-created_at')
+    msgs = Message.objects.filter(Q(from_user_id=with_user_id,to_user_id=request.user.id)|Q(to_user_id=with_user_id,from_user_id=request.user.id),).order_by('-created_at')
     conversation_with_user = get_object_or_404(User,pk=with_user_id)
     if msg_id:
         msg = get_object_or_404(Message,pk=msg_id)

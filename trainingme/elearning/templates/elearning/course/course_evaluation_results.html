@@ -1,74 +1,60 @@
-{% extends 'base.html' %}
+{% extends 'elearning/course/course_dashboard.html' %}
 {% load i18n %}{% load widget_tweaks %}
-{% block sections %}
-    <section>
-        <div class="container MainTitle">
-            <h3>{{ course.title }} {% trans "Testing Results" %}</h3>
-        </div>
-    </section>
-    <section class="formContent">
-        <div class="container">
-            <div class="row">
-                <table class="table table-striped">
-                    <tr>
-                        <th>{% trans 'Student Tester' %}</th>
-                        <th>{% trans 'Video Rating' %}</th>
-                        <th>{% trans 'Audio Rating' %}</th>
-                        <th>{% trans 'Course Rating' %}</th>
-                        <th>{{ course.price_test1 }}€</th>
-                        <th>{{ course.price_test2 }}€</th>
-                        <th>{{ course.price_test3 }}€</th>
-                        <th>{% trans 'Comment' %}</th>
-                    </tr>
-                    {% for tester_sheet in course.tester_sheets.all %}
-                        <tr>
-                            <td>{{ tester_sheet.user.username }}</td>
-                            <td><p data-rating="{{ tester_sheet.video_rating }}" class="star_course_rated"></p></td>
-                            <td><p data-rating="{{ tester_sheet.audio_rating }}" class="star_course_rated"></p></td>
-                            <td><p data-rating="{{ tester_sheet.course_rating }}" class="star_course_rated"></p></td>
-                            <td>
-                                {% if tester_sheet.price_1_rating == 0 %}
-                                    {% trans 'Never' %}
-                                {% elif tester_sheet.price_1_rating == 1 %}
-                                    {% trans 'Rarely' %}
-                                {% elif tester_sheet.price_1_rating == 2 %}
-                                    {% trans 'Frecuently' %}
-                                {% elif tester_sheet.price_1_rating == 3 %}
-                                    {% trans 'Always' %}
-                                {% endif %}
-                            </td>
-                            <td>
-                                {% if tester_sheet.price_2_rating == 0 %}
-                                    {% trans 'Never' %}
-                                {% elif tester_sheet.price_2_rating == 1 %}
-                                    {% trans 'Rarely' %}
-                                {% elif tester_sheet.price_2_rating == 2 %}
-                                    {% trans 'Frecuently' %}
-                                {% elif tester_sheet.price_2_rating == 3 %}
-                                    {% trans 'Always' %}
-                                {% endif %}
-                            </td>
-                            <td>
-                                {% if tester_sheet.price_3_rating == 0 %}
-                                    {% trans 'Never' %}
-                                {% elif tester_sheet.price_3_rating == 1 %}
-                                    {% trans 'Rarely' %}
-                                {% elif tester_sheet.price_3_rating == 2 %}
-                                    {% trans 'Frecuently' %}
-                                {% elif tester_sheet.price_3_rating == 3 %}
-                                    {% trans 'Always' %}
-                                {% endif %}
-                            </td>
-                            <td>{{ tester_sheet.comment }}</td>
-                        </tr>
-                    {% endfor %}
-                </table>
-            </div>
-        </div>
-    </section>
-    <section class="centeredbutton">
-        <a class="btn btn-inverse btn-large" href="{% url teaching %}">{% trans "Back to Dahsboard" %}</a>
-    </section>
+{% block content_dashboard %}
+    <table class="table table-striped">
+        <tr>
+            <th>{% trans 'Student Tester' %}</th>
+            <th>{% trans 'Video Rating' %}</th>
+            <th>{% trans 'Audio Rating' %}</th>
+            <th>{% trans 'Course Rating' %}</th>
+            <th>{{ course.price_test1 }}€</th>
+            <th>{{ course.price_test2 }}€</th>
+            <th>{{ course.price_test3 }}€</th>
+            <th>{% trans 'Comment' %}</th>
+        </tr>
+        {% for tester_sheet in course.tester_sheets.all %}
+            <tr>
+                <td>{{ tester_sheet.user.username }}</td>
+                <td><p data-rating="{{ tester_sheet.video_rating }}" class="star_course_rated"></p></td>
+                <td><p data-rating="{{ tester_sheet.audio_rating }}" class="star_course_rated"></p></td>
+                <td><p data-rating="{{ tester_sheet.course_rating }}" class="star_course_rated"></p></td>
+                <td>
+                    {% if tester_sheet.price_1_rating == 0 %}
+                        {% trans 'Never' %}
+                    {% elif tester_sheet.price_1_rating == 1 %}
+                        {% trans 'Rarely' %}
+                    {% elif tester_sheet.price_1_rating == 2 %}
+                        {% trans 'Frecuently' %}
+                    {% elif tester_sheet.price_1_rating == 3 %}
+                        {% trans 'Always' %}
+                    {% endif %}
+                </td>
+                <td>
+                    {% if tester_sheet.price_2_rating == 0 %}
+                        {% trans 'Never' %}
+                    {% elif tester_sheet.price_2_rating == 1 %}
+                        {% trans 'Rarely' %}
+                    {% elif tester_sheet.price_2_rating == 2 %}
+                        {% trans 'Frecuently' %}
+                    {% elif tester_sheet.price_2_rating == 3 %}
+                        {% trans 'Always' %}
+                    {% endif %}
+                </td>
+                <td>
+                    {% if tester_sheet.price_3_rating == 0 %}
+                        {% trans 'Never' %}
+                    {% elif tester_sheet.price_3_rating == 1 %}
+                        {% trans 'Rarely' %}
+                    {% elif tester_sheet.price_3_rating == 2 %}
+                        {% trans 'Frecuently' %}
+                    {% elif tester_sheet.price_3_rating == 3 %}
+                        {% trans 'Always' %}
+                    {% endif %}
+                </td>
+                <td>{{ tester_sheet.comment }}</td>
+            </tr>
+        {% endfor %}
+    </table>
 {% endblock %}
 {% block footerscripts %}
     {{ block.super }}

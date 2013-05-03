@@ -1,0 +1,26 @@
+{% extends 'base.html' %}
+{% load i18n %}{% load widget_tweaks %}
+{% block sections %}
+    <section>
+        <div class="container MainTitle">
+            <h3>{{ course.title }} {% trans "Administration Panel" %}</h3>
+        </div>
+    </section>
+    <div id="course_dashboard" class="container-fluid">
+        <div class="row-fluid">
+            <div class="span3">
+                <div class="sidebar-nav">
+                    <ul class="nav nav-pills nav-stacked">
+                        <li class="nav-header">Administración</li>
+                        <li><a href="{% url course_dashboard_students course.id  %}">Alumnos</a></li>
+                        <li><a href="{% url course_evaluation_results course.id %}">Resultados de la Evaluación</a></li>
+                    </ul>
+                </div><!--/.well -->
+            </div><!--/span-->
+            <div class="span9">
+               {% block content_dashboard %}
+               {% endblock %}
+            </div><!--/span-->
+        </div><!--/row-->
+    </div><!--/.fluid-container-->
+{% endblock %}

@@ -384,6 +384,25 @@ def teaching(request):
     return render_to_response('elearning/dashboard_teaching.html',{'courses':courses},context_instance = RequestContext(request))
 
 
+@login_required()
+@owner_required(Course)
+def course_dashboard(request, course_id):
+    context = {}
+    course = get_object_or_404(Course,pk=course_id)
+    context.update({'course': course})
+    return render_to_response('elearning/course/course_dashboard.html',context,context_instance = RequestContext(request))
+
+@login_required()
+@owner_required(Course)
+def course_dashboard_students(request, course_id):
+    context = {}
+    course = get_object_or_404(Course,pk=course_id)
+    context.update({'course': course})
+    return render_to_response('elearning/course/course_dashboard_students.html',context,context_instance = RequestContext(request))
+
+
+
+
 """"
 --------------------------
 COURSE
