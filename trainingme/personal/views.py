@@ -93,7 +93,6 @@ def send_message(request, user_id):
 
 @login_required
 def view_conversation(request,with_user_id,msg_id=None):
-    #msgs = Message.objects.filter(Q(from_user_id=with_user_id) | Q(to_user_id=with_user_id),).order_by('-created_at')
     msgs = Message.objects.filter(Q(from_user_id=with_user_id,to_user_id=request.user.id)|Q(to_user_id=with_user_id,from_user_id=request.user.id),).order_by('-created_at')
     conversation_with_user = get_object_or_404(User,pk=with_user_id)
     if msg_id:

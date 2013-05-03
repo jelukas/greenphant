@@ -34,10 +34,10 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="views.py" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="views.py" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/personal/views.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="96" column="128" selection-start="4446" selection-end="4446" vertical-scroll-proportion="0.7349823">
+            <state line="95" column="24" selection-start="4223" selection-end="4223" vertical-scroll-proportion="0.0">
               <folding>
                 <element signature="e#0#29#0" expanded="true" />
               </folding>
@@ -54,10 +54,10 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="course_dashboard_students.html" pinned="false" current="false" current-in-tab="false">
+      <file leaf-file-name="course_dashboard_students.html" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/elearning/templates/elearning/course/course_dashboard_students.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="29" column="72" selection-start="1709" selection-end="1709" vertical-scroll-proportion="-18.125">
+            <state line="37" column="0" selection-start="2270" selection-end="2270" vertical-scroll-proportion="0.68349755">
               <folding />
             </state>
           </provider>
@@ -86,9 +86,9 @@
         <option value="$PROJECT_DIR$/elearning/templates/elearning/course/course_evaluation_results.html" />
         <option value="$PROJECT_DIR$/personal/urls.py" />
         <option value="$PROJECT_DIR$/personal/forms.py" />
-        <option value="$PROJECT_DIR$/elearning/templates/elearning/course/course_dashboard_students.html" />
         <option value="$PROJECT_DIR$/personal/templates/personal/send_message.html" />
         <option value="$PROJECT_DIR$/personal/views.py" />
+        <option value="$PROJECT_DIR$/elearning/templates/elearning/course/course_dashboard_students.html" />
       </list>
     </option>
   </component>
@@ -520,16 +520,9 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/personal/templates/personal/send_message.html">
+    <entry file="file://$PROJECT_DIR$/elearning/views.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="5" column="66" selection-start="244" selection-end="250" vertical-scroll-proportion="-3.125">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/elearning/templates/elearning/course/course_dashboard_students.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="29" column="72" selection-start="1709" selection-end="1709" vertical-scroll-proportion="-18.125">
+        <state line="510" column="43" selection-start="24210" selection-end="24217" vertical-scroll-proportion="0.9010989">
           <folding />
         </state>
       </provider>
@@ -541,19 +534,26 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/elearning/views.py">
+    <entry file="file://$PROJECT_DIR$/personal/views.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="510" column="43" selection-start="24210" selection-end="24217" vertical-scroll-proportion="0.9010989">
+        <state line="95" column="24" selection-start="4223" selection-end="4223" vertical-scroll-proportion="0.0">
+          <folding>
+            <element signature="e#0#29#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/personal/templates/personal/send_message.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="5" column="66" selection-start="244" selection-end="250" vertical-scroll-proportion="-3.125">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/personal/views.py">
+    <entry file="file://$PROJECT_DIR$/elearning/templates/elearning/course/course_dashboard_students.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="96" column="128" selection-start="4446" selection-end="4446" vertical-scroll-proportion="0.7349823">
-          <folding>
-            <element signature="e#0#29#0" expanded="true" />
-          </folding>
+        <state line="37" column="0" selection-start="2270" selection-end="2270" vertical-scroll-proportion="0.68349755">
+          <folding />
         </state>
       </provider>
     </entry>
