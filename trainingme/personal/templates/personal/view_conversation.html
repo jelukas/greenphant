@@ -7,8 +7,9 @@
         </div>
     </section>
     <section class="container">
-        <div class="row">
+        <div class="row-fluid">
             <h1>{% trans 'Conversation with' %} {{ conversation_with_user.get_full_name }}</h1>
+            <div><a href="#SendMessageModal" class="btn btn-success" role="button" data-remote="{% url send_message conversation_with_user.id %}" data-toggle="modal" title="{% trans 'Reply Message' %}"><i class="icon-envelope icon-white"></i> {% trans 'Reply Message' %}</a></div>
             <ul class="conversation">
                 {% for message in msgs %}
                     <li {% if message.from_user_id == user.id %}class="to_me"{% endif %}>
@@ -25,6 +26,12 @@
             </ul>
         </div>
     </section>
+    <!-- Send Message Modal -->
+    <div id="SendMessageModal" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+        <div class="modal-body">
+
+        </div>
+    </div>
 {% endblock %}
 {% block footerscripts %}
     {{ block.super }}
