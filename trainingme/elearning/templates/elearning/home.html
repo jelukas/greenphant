@@ -52,13 +52,9 @@
 
                                 <form method='post' action='{% url "registration_register" %}'>{% csrf_token %}
                                     <p class="social-login">
-                                        <a href="{% url "socialauth_begin" "facebook" %}"><img src="{{ STATIC_URL }}img/buttons/facebook_button.png"/></a>
-                                    </p>
-                                    <p class="social-login">
-                                        <a href="{% url "socialauth_begin" "google-oauth2" %}"><img src="{{ STATIC_URL }}img/buttons/google_button.png"/></a>
-                                    </p>
-                                    <p class="social-login">
-                                        <a href="{% url "socialauth_begin" "twitter" %}"><img src="{{ STATIC_URL }}img/buttons/twitter_button.png"/></a>
+                                        <a href="{% url "socialauth_begin" "facebook" %}"><img src="{{ STATIC_URL }}img/social/facebook_small_login.png"/></a>
+                                        <a href="{% url "socialauth_begin" "google-oauth2" %}"><img src="{{ STATIC_URL }}img/social/gplus_small_login.png"/></a>
+                                        <a href="{% url "socialauth_begin" "twitter" %}"><img src="{{ STATIC_URL }}img/social/twitter_small_login.png"/></a>
                                     </p>
                                     <p class="social-login">
                                         {% trans 'Or' %}
@@ -79,7 +75,7 @@
                                         <span class="add-on"><i class="icon-lock"></i></span>
                                         {{ registration_form.password2|attr:"placeholder:Confirm Password" }}
                                     </div>
-                                    <p><input class="btn btn-large btn-warning" type="submit" value="{% trans "Sign Up" %}" /></p>
+                                    <p><input class="btn btn-large btn-success" type="submit" value="{% trans "Sign Up" %}" /></p>
                                     <p>{% trans 'Have account?' %} <a href="/accounts/login/">{% trans 'Login'|upper %}</a></p>
                                 </form>
                             <hr/>
