@@ -484,15 +484,18 @@ def learning_course(request,course_id):
             if enrrollment and not enrrollment[0].tester:
                 course_vote_form = CourseVoteForm()
                 context.update({'course_vote_form': course_vote_form})
-            elif not course.user_had_filled_testersheet_course(request.user.id):
+            elif not course.user_had_filled_testersheet_course(request.user.id) and course.user_id != request.user.id:
                 testersheet_form = TesterSheetForm()
                 context.update({'testersheet_form': testersheet_form})
                 thirty_days = timedelta(days=30)
                 end_test_date = enrrollment[0].start_date + thirty_days
                 context.update({'end_test_date': end_test_date})
             else:
-                user_testersheet = TesterSheet.objects.get(user_id=request.user.id,course_id=course_id)
-                context.update({'user_testersheet': user_testersheet})
+                try:
+                    user_testersheet = TesterSheet.objects.get(user_id=request.user.id,course_id=course_id)
+                    context.update({'user_testersheet': user_testersheet})
+                except ObjectDoesNotExist:
+                    pass
     return render_to_response('elearning/course/learning_course.html',context,context_instance = RequestContext(request))
 
 
