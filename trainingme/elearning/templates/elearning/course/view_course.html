@@ -60,7 +60,7 @@
                                     <a class="accordion-toggle" data-toggle="collapse" data-parent="#AccordionCurso" href="#collapse{{ forloop.counter|apnumber }}">
                                         {% trans 'Subject' %} {{ forloop.counter }} - {{ subject.title }}
                                     </a>
-                                    <div  class="arrowAccordion"  data-toggle="collapse" data-parent="#AccordionCurso" href="#collapse{{ forloop.counter|apnumber }}"></div>
+                                    <div class="arrowAccordion" data-toggle="collapse" data-parent="#AccordionCurso" href="#collapse{{ forloop.counter|apnumber }}"></div>
                                 </div>
                                 <div id="collapse{{ forloop.counter|apnumber }}" class="accordion-body collapse in">
                                     <div class="accordion-inner">
@@ -125,6 +125,7 @@
                         {% else %}
                             <img src="{{ STATIC_URL }}img/default_profile.png" alt="{{ user.username }}"  class="img-polaroid"/>
                         {% endif %}
+                        <p style="margin: 0.8em;"><i class="icon-envelope"></i> <a href="#SendMessageModal" role="button" data-remote="{% url send_message course.user.id %}" data-toggle="modal" title="{% trans 'Send Me a Private Message' %}">{% trans 'Send Me a Private Message' %}</a></p>
                         <h5>{{ course.user.get_profile.subtitle }}</h5>
                         <p class="teacher_description">{{ course.user.get_profile.description }}</p>
                         <ul class="inline">
@@ -163,6 +164,12 @@
         </div>
     </div>
     <!-- End Modal BETA -->
+    <!-- Send Message Modal -->
+    <div id="SendMessageModal" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+        <div class="modal-body">
+
+        </div>
+    </div>
     <!-- Modal TESTER -->
     <div id="enrroll-tester" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
         <div class="modal-header">
