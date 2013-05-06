@@ -28,7 +28,7 @@
       <file leaf-file-name="send_message.html" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/personal/templates/personal/send_message.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="5" column="101" selection-start="285" selection-end="285" vertical-scroll-proportion="0.09090909">
+            <state line="4" column="155" selection-start="307" selection-end="307" vertical-scroll-proportion="0.07272727">
               <folding />
             </state>
           </provider>
@@ -525,7 +525,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/personal/templates/personal/send_message.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="5" column="101" selection-start="285" selection-end="285" vertical-scroll-proportion="0.09090909">
+        <state line="4" column="155" selection-start="307" selection-end="307" vertical-scroll-proportion="0.07272727">
           <folding />
         </state>
       </provider>

@@ -2,7 +2,7 @@
 <form action="{% url send_message to_user_id  %}" method="post">{% csrf_token %}
     <fieldset>
         <legend>Enviar Mensaje</legend>
-        {{ send_message.as_p }}
-        <input type="submit" class="btn btn-success" value="Enviar" required="required" placeholder="" />
+        <p><label for="id_message">{{ send_message.message.label }}</label> <textarea id="id_message" rows="10" cols="40" name="message" required="required" placeholder=""></textarea></p>
+        <input type="submit" class="btn btn-success" value="Enviar"/>
     </fieldset>
 </form>
