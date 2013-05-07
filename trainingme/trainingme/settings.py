@@ -6,7 +6,7 @@ SITE_ROOT = os.path.dirname(os.path.realpath(__file__))
 PROJECT_ROOT = Path(__file__).ancestor(2)
 
 SITE_NAME = "trainingme.net"
-SITE_URL = 'http://testing.guadalux.org'
+SITE_URL = 'http://trainingme.net'
 
 #Debugging
 DEBUG = False
@@ -282,10 +282,10 @@ PAYPAL_PUBLIC_CERT = SITE_ROOT + '/certs/pubpaypal.pem'
 PAYPAL_CERT = SITE_ROOT + '/certs/paypal_cert.pem'
 PAYPAL_CERT_ID = 'PXKA9Y3MH3RHJ'
 # Paypal
-PAYPAL_TEST = True           # Testing mode on
-PAYPAL_WPP_USER = "turico_1350147627_biz_api1.gmail.com"      # Get from PayPal
-PAYPAL_WPP_PASSWORD = "1350147651"
-PAYPAL_WPP_SIGNATURE = "AFcWxV21C7fd0v3bYYYRCpSSRl31AUmLDz5MVEZeELoUIq04UfrAt-r7"
+PAYPAL_TEST = False           # Testing mode on
+PAYPAL_WPP_USER = "api.pi"      # Get from PayPal
+PAYPAL_WPP_PASSWORD = "5PPASSSSSS24LFM8UN"
+PAYPAL_WPP_SIGNATURE = "AwxJzVOjZFIRMAaVpwEBhwJ3E84fAw5l"
 
 
 """

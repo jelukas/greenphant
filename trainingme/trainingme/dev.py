@@ -28,3 +28,19 @@ DEBUG_TOOLBAR_PANELS = (
     'debug_toolbar.panels.signals.SignalDebugPanel',
     'debug_toolbar.panels.logger.LoggingPanel',
     )
+
+
+"Paypal Details"
+PAYPAL_RECEIVER_EMAIL = "turico_1350147627_biz@gmail.com"
+
+
+#Requires:  aptitude install swig, pip install M2Crypto
+PAYPAL_PRIVATE_CERT = SITE_ROOT + '/certs/paypal.pem'
+PAYPAL_PUBLIC_CERT = SITE_ROOT + '/certs/pubpaypal.pem'
+PAYPAL_CERT = SITE_ROOT + '/certs/paypal_cert.pem'
+PAYPAL_CERT_ID = 'PXKA9Y3MH3RHJ'
+# Paypal
+PAYPAL_TEST = False           # Testing mode on
+PAYPAL_WPP_USER = "api.pi"      # Get from PayPal
+PAYPAL_WPP_PASSWORD = "5PPASSSSSS24LFM8UN"
+PAYPAL_WPP_SIGNATURE = "AwxJzVOjZFIRMAaVpwEBhwJ3E84fAw5l"

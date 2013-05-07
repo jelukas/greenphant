@@ -24,7 +24,7 @@
                 <td>{{ enrollment.user.username }}</td>
                 <td>{{ enrollment.user.fullname }}</td>
                 <td>{{ enrollment.start_date }}</td>
-                <td>{% if enrollment.tester %}<img src="{{ STATIC_URL }}admin/img/icon-yes.gif" alt="Yes">{% else %}<img src="{{ STATIC_URL }}admin/img/icon-yes.gif" alt="No">{% endif %}</td>
+                <td>{% if enrollment.tester == True %}<img src="{{ STATIC_URL }}admin/img/icon-yes.gif" alt="Yes">{% else %}<img src="{{ STATIC_URL }}admin/img/icon-yes.gif" alt="No">{% endif %}</td>
                 <td>{% if enrollment.active %}<img src="{{ STATIC_URL }}admin/img/icon-yes.gif" alt="Yes">{% else %}<img src="{{ STATIC_URL }}admin/img/icon-yes.gif" alt="No">{% endif %}</td>
                 <td>
                     <a href="{% url view_conversation enrollment.user.id %}" class="btn" title="{% trans 'View Conversation' %}"><i class="icon-comment"></i></a>
