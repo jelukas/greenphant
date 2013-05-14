@@ -646,7 +646,7 @@ def enrroll_tester(request,course_id):
 HOME PAGE
 """
 def home(request):
-    cursos_destacados = [14,24,75,19]
+    cursos_destacados = [14,24,77,19]
     from django.contrib.auth.forms import AuthenticationForm
     form = AuthenticationForm(request)
     users_count = User.objects.count()
