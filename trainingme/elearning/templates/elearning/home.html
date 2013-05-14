@@ -162,9 +162,9 @@
 {#                                    <div class="leftSide">{{ course.enrollments.count }}</div>#}
                                     <div class="box-price">
                                         {% if course.price == 0 %}
-                                            <span class="label label-success">{% trans 'Free for Testing' %}</span>
+                                            <span class="label label-success">{% trans 'Free !' %}</span>
                                         {% elif course.status.name == 'evaluation period' %}
-                                            <span class="label label-warning">{% trans 'Testing' %}</span>
+                                            <span class="label label-warning">{% trans 'Free for Testing' %}</span>
                                         {% elif course.status.name == 'building' %}
                                             <span class="label label-info">{% trans 'Building' %}</span>
                                         {% else %}
