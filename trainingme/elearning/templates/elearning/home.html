@@ -154,15 +154,15 @@
                             </div>
                             <div class="boxInfoFooter">
                                 <div class="headerTitle">
-                                    <div class="leftSide">{% trans "Enrolls" %}</div>
-                                    <div class="middleSide">{% trans "Price" %}</div>
-                                    <div class="rightSide">{% trans "Points" %}</div>
+{#                                    <div class="leftSide">{% trans "Enrolls" %}</div>#}
+                                    <div class="box-price">{% trans "Price" %}</div>
+                                    <div class="box-points">{% trans "Points" %}</div>
                                 </div>
                                 <div class="footerInfo">
-                                    <div class="leftSide">{{ course.enrollments.count }}</div>
-                                    <div class="middleSide">
+{#                                    <div class="leftSide">{{ course.enrollments.count }}</div>#}
+                                    <div class="box-price">
                                         {% if course.price == 0 %}
-                                            <span class="label label-success">{% trans 'Free !' %}</span>
+                                            <span class="label label-success">{% trans 'Free for Testing' %}</span>
                                         {% elif course.status.name == 'evaluation period' %}
                                             <span class="label label-warning">{% trans 'Testing' %}</span>
                                         {% elif course.status.name == 'building' %}
@@ -171,7 +171,7 @@
                                             {{ course.price }} &euro;
                                         {% endif %}
                                     </div>
-                                    <div id="curso-{{ course.id }}"  data-rating="{{ course.get_scoring }}" class="star rightSide"></div>
+                                    <div id="curso-{{ course.id }}"  data-rating="{{ course.get_scoring }}" class="star box-points"></div>
                                 </div>
                             </div>
                         </div>
