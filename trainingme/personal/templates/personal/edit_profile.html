@@ -12,7 +12,7 @@
                 <fieldset>
                     <legend>{% trans 'Public Information' %}</legend>
                     <div class="control-group">
-                        <label class="control-label">{% trans "You need to Especify your Email Address" %}</label>
+                        <label class="control-label"><span class="required-field">* </span>{% trans "You need to Especify your Email Address" %}</label>
                         <div class="controls">
                             {% for error in user_form.email.errors %}
                                 <span class="text-error">{{ error }}</span>
@@ -22,7 +22,7 @@
                         </div>
                     </div>
                     <div class="control-group">
-                        <label class="control-label">{% trans "First name" %}</label>
+                        <label class="control-label"><span class="required-field">* </span>{% trans "First name" %}</label>
                         <div class="controls">
                             {% for error in user_form.first_name.errors %}
                                 <span class="text-error">{{ error }}</span>
@@ -32,7 +32,7 @@
                         </div>
                     </div>
                     <div class="control-group">
-                        <label class="control-label">{% trans "Last name" %}</label>
+                        <label class="control-label"><span class="required-field">* </span>{% trans "Last name" %}</label>
                         <div class="controls">
                             {% for error in user_form.last_name.errors %}
                                 <span class="text-error">{{ error }}</span>
@@ -42,7 +42,17 @@
                         </div>
                     </div>
                     <div class="control-group">
-                        <label class="control-label">{% trans "Subtitle" %}</label>
+                        <label class="control-label"><span class="required-field">* </span>{% trans "Country" %}</label>
+                        <div class="controls">
+                            {% for error in profile_form.country.errors %}
+                                <span class="text-error">{{ error }}</span>
+                            {% endfor %}
+                            {{ profile_form.country|add_class:"fixedtype select-pais" }}
+                            <span class="help-inline">&nbsp;</span>
+                        </div>
+                    </div>
+                    <div class="control-group">
+                        <label class="control-label"><span class="required-field">* </span>{% trans "Subtitle" %}</label>
                         <div class="controls">
                             {% for error in profile_form.subtitle.errors %}
                                 <span class="text-error">{{ error }}</span>
@@ -124,16 +134,6 @@
                 </fieldset>
                 <fieldset>
                     <legend>{% trans 'Private Information' %}</legend>
-                    <div class="control-group">
-                        <label class="control-label">{% trans "Country" %}</label>
-                        <div class="controls">
-                            {% for error in profile_form.country.errors %}
-                                <span class="text-error">{{ error }}</span>
-                            {% endfor %}
-                            {{ profile_form.country|add_class:"fixedtype" }}
-                            <span class="help-inline">&nbsp;</span>
-                        </div>
-                    </div>
                     <div class="control-group">
                         <label class="control-label">{% trans "State" %}</label>
                         <div class="controls">
