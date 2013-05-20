@@ -627,7 +627,7 @@ def enrroll_tester(request,course_id):
     max_testers_number = 5
     course = get_object_or_404(Course,pk=course_id,status__name="evaluation period")
     if not request.user.get_profile().is_completed():
-        messages.error(request,_('You have to fill at least: Firstname, Lastname, Subtitle, Description, Country, State and Profile Image'))
+        messages.error(request,_('You have to fill at least: Firstname, Lastname, Professional Profile, Description, Country and State'))
     else:
         valid_enrollements = Enrollment.objects.filter(active=True,course_id = course_id).count()
         if valid_enrollements < max_testers_number:

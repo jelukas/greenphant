@@ -59,8 +59,6 @@ class Profile(models.Model):
             completed = False
         if not self.subtitle:
             completed = False
-        if not self.image:
-            completed = False
         if not self.country:
             completed = False
         if not self.state:
