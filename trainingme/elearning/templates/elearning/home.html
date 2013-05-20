@@ -138,7 +138,7 @@
                                         {% elif course.status.name == 'building' %}
                                             <span class="label label-info">{% trans 'Building' %}</span>
                                         {% else %}
-                                            {{ course.price }} &euro;
+                                            {{ course.price }} &euro; <span class="old-price">{{ course.more_expensive }} &euro;</span>
                                         {% endif %}
                                     </div>
                                     <div id="curso-{{ course.id }}"  data-rating="{{ course.get_scoring }}" class="star box-points"></div>

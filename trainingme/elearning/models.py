@@ -93,6 +93,12 @@ class Course(models.Model):
         amount = (self.price*10)/100
         return  amount
 
+    @property
+    def more_expensive(self):
+        list = [self.price_test1, self.price_test2, self.price_test3]
+
+        return max(list)
+
     def enrroll_user(self,user_id):
         try:
             enrroll = Enrollment.objects.get(course_id = self.id,user_id = user_id)
