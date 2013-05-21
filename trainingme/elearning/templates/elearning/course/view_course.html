@@ -37,7 +37,7 @@
                             <a role="button" data-toggle="modal" href="#enrroll-tester" class="buy_now btn btn-large btn-warning">{% trans 'Test Now!!' %}</a>
                             <p class="social_reminder"><i class="icon-thumbs-up icon-white"></i> {% trans 'If you are interested please help us with your comments' %} </p>
                         {% elif course.status.name == 'published' %}
-                            <a href="{% url buy_course course.id %}?express" class="buy_now btn btn-large btn-success">Matricúlate Ahora!!<br/> Por sólo {{ course.price|floatformat:2 }} &euro;</a>
+                            <a href="{% url buy_course course.id %}?express" class="buy_now btn btn-large btn-success">Matricúlate Ahora!!<br/> Por sólo {{ course.price|floatformat:2 }} &euro; <span class="old-price">{{ course.more_expensive }} &euro;</span></a>
                             <p class="social_reminder">Recuerda que se destinarán {{ course.social_amount|floatformat:2 }} &euro; <br/> a proyectos sociales de educación</p>
                         {% else %}
                             <a role="button" data-toggle="modal" href="#enrroll-beta" class="buy_now btn btn-large btn-primary">Matricúlate Ahora!!<br/> Por sólo {{ course.price|floatformat:2 }} &euro;</a>
