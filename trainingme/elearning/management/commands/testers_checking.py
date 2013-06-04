@@ -15,7 +15,7 @@ class Command(BaseCommand):
 
     def handle(self, *args, **options):
         now = datetime.now()
-        enrrollments = Enrollment.objects.filter(tester = True, start_date__lte= now - timedelta(days=30),)
+        enrrollments = Enrollment.objects.filter(tester = True, active = True, start_date__lte= now - timedelta(days=30),)
         for enrrollment in enrrollments:
             if TesterSheet.objects.filter(user_id = enrrollment.user_id, course_id = enrrollment.course_id):
                 enrrollment.tester = False
